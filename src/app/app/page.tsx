@@ -62,14 +62,6 @@ export default function Dashboard() {
       setEntities(entityData);
       if (entityData.length > 0 && !selectedEntity) {
         setSelectedEntity(entityData[0].id);
-      } else if (entityData.length === 0) {
-        try {
-          const newEntity = await api.post('/entities?name=Default%20Entity', {});
-          setEntities([newEntity.data]);
-          setSelectedEntity(newEntity.data.id);
-        } catch (entityErr) {
-          console.error("Failed to create default entity:", entityErr);
-        }
       }
     } catch (globalErr) {
       console.error("Global init data error:", globalErr);
