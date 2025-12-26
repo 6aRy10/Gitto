@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Shield, BarChart3, TrendingUp, AlertCircle, Landmark, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { api } from "@/lib/api";
+import { Button } from "../components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
+import { api } from "../lib/api";
 
 const features = [
   { title: "Behavior-based forecasting", desc: "Learn actual payment behaviors by customer, country, and terms to predict when cash lands.", icon: <BarChart3 className="h-5 w-5 text-blue-600" /> },

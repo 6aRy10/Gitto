@@ -6,20 +6,20 @@ import {
   LayoutDashboard, BarChart3, Receipt, Briefcase, FileJson, MessageCircle, Settings,
   ChevronRight, Search, Plus, Database, ShieldCheck
 } from "lucide-react";
-import { getSnapshots, getForecast, getKPIs, uploadExcel, api } from '@/lib/api';
+import { getSnapshots, getForecast, getKPIs, uploadExcel, api } from '../../lib/api';
 import { 
   ResponsiveContainer,
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   LineChart, Line, BarChart, Bar,
 } from 'recharts';
 
-import FPAView from '@/components/FPAView';
-import WeeklyMeetingView from '@/components/WeeklyMeetingView';
-import BankLedgerView from '@/components/BankLedgerView';
-import OperationsDeskView from '@/components/OperationsDeskView';
-import ReportingView from '@/components/ReportingView';
-import ThirteenWeekWorkspace from '@/components/ThirteenWeekWorkspace';
-import { Button } from "@/components/ui/button";
+import FPAView from '../../components/FPAView';
+import WeeklyMeetingView from '../../components/WeeklyMeetingView';
+import BankLedgerView from '../../components/BankLedgerView';
+import OperationsDeskView from '../../components/OperationsDeskView';
+import ReportingView from '../../components/ReportingView';
+import ThirteenWeekWorkspace from '../../components/ThirteenWeekWorkspace';
+import { Button } from "../../components/ui/button";
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('cfo');

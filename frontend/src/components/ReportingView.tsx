@@ -1,9 +1,9 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { api } from '@/lib/api';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
+import { Button } from "./ui/button";
+import { api } from '../lib/api';
 import { FileText, Globe, CheckCircle2, TrendingDown, ArrowUpRight, Lock, MessageSquare, Send, Sparkles } from "lucide-react";
 
 export default function ReportingView({ snapshotId, entityId }: { snapshotId: number, entityId: number }) {

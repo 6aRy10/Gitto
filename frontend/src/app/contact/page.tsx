@@ -3,9 +3,9 @@
 import { useState } from 'react';
 import Link from "next/link";
 import { CheckCircle2, Mail, Send, ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { api } from "@/lib/api";
+import { Button } from "../../components/ui/button";
+import { Input } from "../../components/ui/input";
+import { api } from "../../lib/api";
 
 export default function ContactPage() {
   const [contactForm, setContactForm] = useState({ email: '', message: '' });

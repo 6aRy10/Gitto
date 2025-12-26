@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 import { ArrowLeft, CheckCircle2, Shield, BarChart3, TrendingUp, Zap, Target, Users, Landmark, ChevronRight, Clock, Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { Button } from "../../components/ui/button";
+import { Card } from "../../components/ui/card";
 
 export default function AboutPage() {
   return (

@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { api } from '@/lib/api';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
+import { Input } from "./ui/input";
+import { Button } from "./ui/button";
+import { api } from '../lib/api';
 import { AlertCircle, CheckCircle2, Database, RefreshCw, Box, Layers, Globe, ShieldCheck } from "lucide-react";
 
 export default function SnowflakeConfigView() {
