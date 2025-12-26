@@ -7,7 +7,8 @@
   ],
   "scripts": {
     "build": "cd frontend && npm install && npm run build",
-    "install": "cd frontend && npm install"
+    "install": "npm install --prefix frontend",
+    "postinstall": "npm install --prefix frontend"
   }
 }
 
