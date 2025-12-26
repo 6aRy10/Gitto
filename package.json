@@ -4,11 +4,5 @@
   "private": true,
   "workspaces": [
     "frontend"
-  ],
-  "scripts": {
-    "build": "cd frontend && npm install && npm run build",
-    "install": "npm install --prefix frontend",
-    "postinstall": "npm install --prefix frontend"
-  }
+  ]
 }
-
