@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
-import { api } from '@/lib/api';
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "./ui/card";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "./ui/table";
+import { Button } from "./ui/button";
+import { api } from '../lib/api';
 import { ShieldAlert, Zap, TrendingUp, DollarSign, Clock, ArrowRight } from "lucide-react";
 
 export default function OperationsDeskView({ snapshotId }: { snapshotId: number }) {

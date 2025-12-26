@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { api } from '@/lib/api';
+import { api } from '../lib/api';
 import { 
   DollarSign, 
   TrendingDown, 
@@ -18,8 +18,8 @@ import {
   Plus,
   X
 } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
+import { Button } from './ui/button';
+import { Card, CardContent } from './ui/card';
 
 interface WorkspaceData {
   summary: {
