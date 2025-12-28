@@ -63,16 +63,31 @@ export default function Landing() {
             <div className="lg:col-span-8 space-y-10">
               <div className="inline-flex items-center gap-3 px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20">
                 <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">Deterministic Treasury Engine v4.2</span>
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">Deterministic Treasury Engine v4.2 // Global_Ingest_Active</span>
               </div>
               <h1 className="text-[80px] md:text-[130px] font-black tracking-[-0.08em] leading-[0.8] text-white uppercase italic">
                 CASH TRUTH <br />
                 <span className="text-white/10 not-italic">IS THE ONLY</span> <br />
                 <span className="text-blue-600">REALITY.</span>
               </h1>
-              <p className="text-2xl text-slate-400 font-medium leading-tight max-w-2xl border-l border-blue-600/30 pl-8 italic">
-                Spreadsheets model the "theoretical." Gitto anchors your liquidity in actual bank receipts, intercompany washes, and deterministic behavioral bias.
-              </p>
+              <div className="flex flex-col md:flex-row gap-12 items-start">
+                <p className="text-2xl text-slate-400 font-medium leading-tight max-w-xl border-l border-blue-600/30 pl-8 italic">
+                  Spreadsheets model the "theoretical." Gitto anchors your liquidity in actual bank receipts, intercompany washes, and deterministic behavioral bias.
+                </p>
+                <div className="flex flex-col gap-4 bg-white/[0.02] border border-white/5 p-6 rounded-2xl backdrop-blur-xl shrink-0">
+                   <div className="flex items-center gap-3">
+                      <Activity className="h-4 w-4 text-emerald-500" />
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Live_Latency</span>
+                   </div>
+                   <div className="flex items-baseline gap-2">
+                      <span className="text-2xl font-black italic">14.2</span>
+                      <span className="text-[10px] font-black text-emerald-500 uppercase">ms</span>
+                   </div>
+                   <div className="h-1 w-32 bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-emerald-500 animate-shimmer" style={{ width: '70%' }} />
+                   </div>
+                </div>
+              </div>
               <div className="flex items-center gap-10 pt-6">
                 <Link href="/app">
                   <Button className="bg-white text-black hover:bg-slate-200 rounded-none px-12 h-20 text-sm font-black uppercase tracking-widest shadow-[0_20px_80px_rgba(255,255,255,0.1)] transition-all hover:scale-105">
@@ -150,6 +165,27 @@ export default function Landing() {
 
           <div className="lg:col-span-7 relative flex items-center justify-center">
             <div className="absolute inset-0 bg-blue-600/5 blur-[150px] animate-pulse rounded-full" />
+            
+            {/* Diverging Reality Graph - Visualizing the Problem */}
+            <div className="absolute top-0 right-0 w-64 h-48 bg-white/[0.02] border border-white/5 rounded-2xl p-6 backdrop-blur-xl z-20 hidden md:block">
+               <div className="flex items-center justify-between mb-4">
+                  <span className="text-[9px] font-black text-slate-500 uppercase tracking-widest">Theoretical_vs_Reality</span>
+                  <TrendingUp className="h-3 w-3 text-red-500" />
+               </div>
+               <div className="relative h-20 w-full overflow-hidden">
+                  {/* Theoretical Line */}
+                  <svg className="absolute inset-0 w-full h-full">
+                     <path d="M0 60 Q 50 55, 100 50 T 200 40" stroke="#334155" strokeWidth="2" fill="none" />
+                     {/* Reality Line - Diverging */}
+                     <path d="M0 60 Q 50 70, 100 85 T 200 110" stroke="#2563eb" strokeWidth="2" fill="none" strokeDasharray="4 2" className="animate-draw" />
+                  </svg>
+               </div>
+               <div className="flex justify-between mt-2">
+                  <div className="text-[8px] font-bold text-slate-600">Week 1</div>
+                  <div className="text-[8px] font-bold text-blue-500">14d Gap</div>
+               </div>
+            </div>
+
             <div className="relative z-10 w-full aspect-square border border-white/5 rounded-full flex items-center justify-center p-20 animate-spin-slow">
               <div className="w-full h-full border border-white/10 rounded-full flex items-center justify-center p-20 animate-reverse-spin">
                 <div className="w-full h-full bg-blue-600 rounded-full shadow-[0_0_100px_rgba(37,99,235,0.4)] flex items-center justify-center">
@@ -191,10 +227,19 @@ export default function Landing() {
                   </p>
                   <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 space-y-6">
                      <div className="flex items-center justify-between text-[9px] font-black text-slate-400 uppercase tracking-widest">
-                        <span>Live_Stream</span>
-                        <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span>Terminal_Log</span>
+                        <div className="flex gap-1">
+                           <div className="h-1 w-1 rounded-full bg-blue-600 animate-ping" />
+                           <div className="h-1 w-1 rounded-full bg-blue-600" />
+                        </div>
                      </div>
-                     <div className="space-y-3">
+                     <div className="space-y-2 font-mono text-[9px] text-slate-400 h-24 overflow-hidden">
+                        <div className="animate-type-log">[14:22:01] INGEST // MT940_PARSE_SUCCESS</div>
+                        <div className="animate-type-log" style={{ animationDelay: '0.2s' }}>[14:22:02] RECON // MATCH_FOUND: #INV-9942</div>
+                        <div className="animate-type-log" style={{ animationDelay: '0.4s' }}>[14:22:02] LEDGER // SYNC_COMPLETED</div>
+                        <div className="animate-type-log" style={{ animationDelay: '0.6s' }}>[14:22:03] SLACK // NOTIFY: UNMATCHED_WIRE_€12K</div>
+                     </div>
+                     <div className="space-y-3 pt-4 border-t border-slate-100">
                         <div className="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
                            <div className="h-full bg-blue-600 animate-flow-fast" style={{ width: '40%' }} />
                         </div>
@@ -202,7 +247,6 @@ export default function Landing() {
                            <div className="h-full bg-blue-600 animate-flow-fast" style={{ width: '60%', animationDelay: '0.2s' }} />
                         </div>
                      </div>
-                     <div className="text-[10px] font-bold text-blue-600 italic">Matching wires to #INV-994...</div>
                   </div>
                </div>
             </div>
@@ -219,8 +263,16 @@ export default function Landing() {
                <p className="text-lg text-slate-500 font-bold leading-relaxed">
                  We learn customer payment habit shifts (Regime Shifts) to predict actual cash timing, not just due dates. 
                </p>
-               <div className="pt-8">
-                  <div className="text-4xl font-black italic text-blue-600 tracking-tighter">+14 Days</div>
+               <div className="pt-8 space-y-6">
+                  <div className="h-16 w-full bg-slate-50 rounded-xl relative overflow-hidden flex items-end">
+                     <svg className="absolute inset-0 w-full h-full opacity-30">
+                        <path d="M0 40 Q 20 10, 40 40 T 80 40 T 120 40 T 160 40" stroke="#2563eb" fill="none" className="animate-draw" />
+                     </svg>
+                     <div className="flex w-full items-baseline px-4 pb-2 justify-between z-10">
+                        <span className="text-[8px] font-black text-slate-400">SHIFT_DETECTED</span>
+                        <div className="text-xl font-black italic text-blue-600 tracking-tighter">+14 Days</div>
+                     </div>
+                  </div>
                   <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Detected Delay Insight</div>
                </div>
             </div>
@@ -503,6 +555,21 @@ export default function Landing() {
         }
         .animate-float {
           animation: float 5s ease-in-out infinite;
+        }
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        .animate-draw {
+          stroke-dasharray: 1000;
+          animation: draw 5s linear forwards infinite;
+        }
+        @keyframes type-log {
+          from { opacity: 0; transform: translateY(5px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-type-log {
+          animation: type-log 0.5s ease-out forwards;
         }
       `}</style>
     </div>
