@@ -19,6 +19,7 @@ import BankLedgerView from '../../components/BankLedgerView';
 import OperationsDeskView from '../../components/OperationsDeskView';
 import ReportingView from '../../components/ReportingView';
 import ThirteenWeekWorkspace from '../../components/ThirteenWeekWorkspace';
+import AllInvoicesView from '../../components/AllInvoicesView';
 import { Button } from "../../components/ui/button";
 
 export default function Dashboard() {
@@ -140,6 +141,7 @@ export default function Dashboard() {
   const navItems = [
     { id: 'cfo', label: 'Overview', icon: LayoutDashboard },
     { id: 'forecast13', label: '13-Week View', icon: BarChart3 },
+    { id: 'all_invoices', label: 'All Invoices', icon: FileJson },
     { id: 'fpa', label: 'Analyst Desk', icon: Search },
     { id: 'bank', label: 'Banking', icon: Receipt },
     { id: 'ops', label: 'Operations', icon: Briefcase },
@@ -340,6 +342,10 @@ export default function Dashboard() {
 
             {activeTab === 'forecast13' && selectedSnapshot && (
               <ThirteenWeekWorkspace snapshotId={selectedSnapshot} />
+            )}
+
+            {activeTab === 'all_invoices' && selectedSnapshot && (
+              <AllInvoicesView snapshotId={selectedSnapshot} />
             )}
 
             {activeTab === 'fpa' && <FPAView snapshotId={selectedSnapshot || 0} />}
