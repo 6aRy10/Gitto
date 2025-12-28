@@ -459,6 +459,110 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* NEW: INTEGRATION GALAXY - As requested by user */}
+      <section className="px-8 py-32 bg-[#0A0A0B] relative z-10 overflow-hidden border-t border-white/5">
+        {/* Diagonal Line Pattern Background */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #ffffff, #ffffff 1px, transparent 1px, transparent 10px)' }} />
+        
+        <div className="max-w-[1400px] mx-auto text-center space-y-24 relative">
+           <div className="space-y-4">
+              <span className="text-[10px] font-black text-blue-500 tracking-[0.5em] uppercase">Global_Connectivity // Data_Ingest</span>
+              <h2 className="text-5xl md:text-7xl font-black italic tracking-tighter uppercase text-white">Universal Ingest <br /> <span className="text-white/20 not-italic">Engine.</span></h2>
+           </div>
+
+           <div className="relative h-[600px] w-full flex items-center justify-center">
+              {/* Central Core */}
+              <div className="relative z-20 group">
+                 <div className="absolute inset-0 bg-blue-600/30 blur-[60px] rounded-full animate-pulse group-hover:bg-blue-600/50 transition-all duration-1000" />
+                 <div className="relative h-24 w-24 bg-blue-600 rounded-[32px] flex items-center justify-center shadow-[0_0_50px_rgba(37,99,235,0.4)] border border-blue-400/30">
+                    <div className="text-white font-black text-4xl italic -skew-x-12">G</div>
+                 </div>
+                 <div className="absolute top-32 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                    <div className="px-6 py-2 bg-blue-600/10 border border-blue-600/30 rounded-full backdrop-blur-xl">
+                       <span className="text-xs font-black text-blue-400 uppercase tracking-[0.2em]">1.2B+ Auto-Synced Transactions</span>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Flowing Lines Container */}
+              <svg className="absolute inset-0 w-full h-full pointer-events-none z-10" viewBox="0 0 1000 600">
+                 <defs>
+                    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                       <stop offset="0%" stopColor="transparent" />
+                       <stop offset="50%" stopColor="#2563eb" stopOpacity="0.5" />
+                       <stop offset="100%" stopColor="#2563eb" />
+                    </linearGradient>
+                 </defs>
+                 
+                 {/* Animated Paths - Dynamically generated to curve towards center */}
+                 {[
+                    "M 200 150 Q 400 200, 500 300", // Snowflake
+                    "M 350 100 Q 450 150, 500 300", // SAP
+                    "M 650 100 Q 550 150, 500 300", // NetSuite
+                    "M 800 150 Q 600 200, 500 300", // Salesforce
+                    "M 150 450 Q 350 400, 500 300", // HSBC
+                    "M 850 450 Q 650 400, 500 300", // JP Morgan
+                 ].map((d, i) => (
+                    <path key={i} d={d} fill="none" stroke="url(#lineGrad)" strokeWidth="1.5" strokeDasharray="10 200" className="animate-path-flow" style={{ animationDelay: `${i * 0.8}s` }} />
+                 ))}
+              </svg>
+
+              {/* Integration Tiles */}
+              <div className="absolute inset-0">
+                 {/* Top Row */}
+                 <div className="absolute top-20 left-[15%] group">
+                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                       <span className="text-[10px] font-black text-slate-500 italic uppercase">Snowflake</span>
+                    </div>
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                 </div>
+
+                 <div className="absolute top-5 left-[35%] group">
+                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                       <span className="text-[10px] font-black text-slate-500 italic uppercase">SAP</span>
+                    </div>
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                 </div>
+
+                 <div className="absolute top-5 right-[35%] group">
+                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                       <span className="text-[10px] font-black text-slate-500 italic uppercase">NetSuite</span>
+                    </div>
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                 </div>
+
+                 <div className="absolute top-20 right-[15%] group">
+                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                       <span className="text-[10px] font-black text-slate-500 italic uppercase">Salesforce</span>
+                    </div>
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                 </div>
+
+                 {/* Bottom Row */}
+                 <div className="absolute bottom-20 left-[10%] group">
+                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                       <div className="text-center">
+                          <Landmark className="h-5 w-5 text-slate-500 mx-auto mb-1" />
+                          <span className="text-[8px] font-black text-slate-600 italic uppercase">HSBC Feed</span>
+                       </div>
+                    </div>
+                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                 </div>
+
+                 <div className="absolute bottom-20 right-[10%] group">
+                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                       <div className="text-center">
+                          <Globe className="h-5 w-5 text-slate-500 mx-auto mb-1" />
+                          <span className="text-[8px] font-black text-slate-600 italic uppercase">J.P. Morgan</span>
+                       </div>
+                    </div>
+                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                 </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
       {/* The Governance Layer - Institutional Strength */}
       <section id="enterprise" className="px-8 py-32 bg-[#0A0A0B] text-white relative z-10 text-left">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-32 items-center">
@@ -701,6 +805,13 @@ export default function Landing() {
         }
         .animate-scroll-feed {
           animation: scroll-feed 20s linear infinite;
+        }
+        @keyframes path-flow {
+          0% { stroke-dashoffset: 210; }
+          100% { stroke-dashoffset: -210; }
+        }
+        .animate-path-flow {
+          animation: path-flow 3s linear infinite;
         }
       `}</style>
     </div>
