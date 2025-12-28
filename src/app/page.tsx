@@ -257,10 +257,11 @@ export default function Landing() {
       </section>
 
       {/* High-Fidelity Workflow Videos Section */}
-      <section className="px-6 py-32 max-w-7xl mx-auto space-y-24">
-        <div className="text-center space-y-6">
-          <h2 className="text-[48px] md:text-[64px] font-black tracking-tighter leading-tight text-slate-900">Experience the Workflow</h2>
-          <p className="text-xl text-slate-500 font-medium max-w-2xl mx-auto italic">High-fidelity automation for the modern finance stack.</p>
+      <section className="px-6 py-64 max-w-7xl mx-auto space-y-32 relative">
+        <div className="absolute top-1/2 -right-64 w-[500px] h-[500px] bg-emerald-50/30 blur-[150px] rounded-full -z-10" />
+        <div className="text-center space-y-8">
+          <h2 className="text-[56px] md:text-[72px] font-black tracking-tighter leading-tight text-slate-900">Experience the Workflow</h2>
+          <p className="text-2xl text-slate-400 font-bold max-w-2xl mx-auto italic">High-fidelity automation for the modern finance stack.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
@@ -290,8 +291,9 @@ export default function Landing() {
       </section>
 
       {/* The 12 Pillars of Finance Excellence (Rings Feature Grid) */}
-      <section className="px-6 py-32 max-w-7xl mx-auto border-t border-slate-100">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+      <section className="px-6 py-64 max-w-7xl mx-auto border-t border-slate-100 relative">
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-slate-50/50 blur-[150px] rounded-full -z-10" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
           {[
             { title: "7k+ Integrations", desc: "Native integrations to Snowflake, SAP, Oracle, Netsuite, and all major global banks.", icon: <Database /> },
             { title: "Rich Notes & Files", desc: "Never lose context again - capture and access every detail that matters to your deals.", icon: <FileText /> },
@@ -343,8 +345,9 @@ export default function Landing() {
       </section>
 
       {/* FAQ Section - Rings Styled */}
-      <section className="px-6 py-32 max-w-3xl mx-auto space-y-20">
-        <h2 className="text-[48px] font-black tracking-tighter text-center text-slate-900">Frequently Asked Questions</h2>
+      <section className="px-6 py-48 max-w-3xl mx-auto space-y-24 relative">
+        <div className="absolute top-0 -left-64 w-96 h-96 bg-blue-50/50 blur-[100px] rounded-full -z-10" />
+        <h2 className="text-[48px] font-black tracking-tighter text-center text-slate-900 leading-none">Frequently Asked Questions</h2>
         <div className="space-y-2">
           {[
             "What makes Gitto different from traditional Treasury tools?",
@@ -365,50 +368,90 @@ export default function Landing() {
       </section>
 
       {/* Final CTA - Magic Section */}
-      <section className="px-6 py-40 text-center bg-slate-50 border-t border-slate-100 relative overflow-hidden">
+      <section className="px-6 py-64 text-center relative overflow-hidden bg-white">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-50/50 blur-[120px] rounded-full scale-150" />
         <div className="max-w-4xl mx-auto space-y-12 relative z-10">
-          <h2 className="text-[56px] md:text-[84px] font-bold tracking-tight leading-[0.95] text-slate-900">Feel the magic today</h2>
-          <p className="text-2xl text-slate-500 font-bold italic">Make every connection count.</p>
-          <Link href="/app">
-            <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-20 text-2xl font-black shadow-2xl shadow-slate-900/20 transition-all hover:scale-[1.05] active:scale-[0.95]">
-              Book a Demo
-            </Button>
-          </Link>
+          <h2 className="text-[64px] md:text-[96px] font-bold tracking-tight leading-[0.9] text-slate-900">Feel the magic today</h2>
+          <p className="text-2xl text-slate-400 font-bold italic">Make every collection count.</p>
+          <div className="pt-8">
+            <Link href="/app">
+              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-20 text-2xl font-black shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all hover:scale-[1.05] active:scale-[0.95]">
+                Book a Demo
+              </Button>
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Footer - Rings Aesthetic */}
-      <footer className="px-6 py-24 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20">
-          <div className="space-y-8 text-left">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
-              <span className="font-black text-2xl tracking-tighter text-slate-900">gitto</span>
-            </Link>
-            <div className="space-y-4">
-              <p className="text-slate-400 font-bold text-sm uppercase tracking-widest">© 2025 Gitto Inc.</p>
-              <p className="text-slate-400 font-bold text-sm hover:text-slate-900 transition-colors cursor-pointer">info@gitto.ai</p>
+      {/* Footer - Rings Aesthetic Redesign */}
+      <footer className="px-6 py-32 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-8">
+            {/* Logo & Info */}
+            <div className="lg:col-span-1 space-y-10">
+              <Link href="/" className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
+                <span className="font-black text-2xl tracking-tighter text-slate-900 uppercase">gitto</span>
+              </Link>
+              <div className="space-y-4">
+                <p className="text-[13px] font-black text-slate-900 uppercase tracking-widest leading-relaxed">info@gitto.ai</p>
+                <Link href="/app">
+                  <Button className="bg-slate-900 text-white rounded-full px-8 h-11 text-[13px] font-bold shadow-lg">
+                    Book a Demo
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Links Columns */}
+            <div className="space-y-8">
+              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Platform</h4>
+              <ul className="space-y-4 text-[15px] text-slate-900 font-bold">
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Features</li>
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Integrations</li>
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Blog</li>
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Compare</li>
+              </ul>
+            </div>
+
+            <div className="space-y-8">
+              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Compare</h4>
+              <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">Spreadsheets</li>
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">Kyriba</li>
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">HighRadius</li>
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">Tesorio</li>
+              </ul>
+            </div>
+
+            <div className="space-y-8 lg:col-span-2">
+              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Industries</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Venture Capital</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Private Equity</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">SaaS & BD</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Investment Banking</li>
+                </ul>
+                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Startups</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Fund of Funds</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Manufacturing</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Wealth Management</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-12 lg:col-span-3">
-            <div className="space-y-8 text-left">
-              <h4 className="font-black text-[11px] text-slate-900 uppercase tracking-[0.3em]">Command Desks</h4>
-              <ul className="space-y-5 text-[15px] text-slate-400 font-bold">
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">CFO Overview</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">13-Week Grid</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Banking Truth</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Analyst RAG</li>
-              </ul>
+
+          {/* Bottom Bar */}
+          <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div className="flex flex-wrap gap-8 text-[12px] font-bold text-slate-400 uppercase tracking-widest">
+              <span className="hover:text-slate-900 cursor-pointer">Privacy Policy</span>
+              <span className="hover:text-slate-900 cursor-pointer">Cookie Policy</span>
+              <span className="hover:text-slate-900 cursor-pointer">Terms of Service</span>
+              <span className="hover:text-slate-900 cursor-pointer">Consent Preferences</span>
             </div>
-            <div className="space-y-8 text-left">
-              <h4 className="font-black text-[11px] text-slate-900 uppercase tracking-[0.3em]">Company</h4>
-              <ul className="space-y-5 text-[15px] text-slate-400 font-bold">
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">About Us</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Careers</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Privacy Policy</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Terms of Service</li>
-              </ul>
-            </div>
+            <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.2em]">© 2025 Gitto Inc.</p>
           </div>
         </div>
       </footer>
