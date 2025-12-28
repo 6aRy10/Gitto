@@ -138,6 +138,130 @@ export default function Landing() {
         </div>
       </section>
 
+      {/* NEW: LIVE PRODUCT FEED SIMULATION (The "Video") */}
+      <section className="px-8 pb-32 max-w-[1400px] mx-auto z-10">
+        <div className="bg-[#111113] rounded-[40px] border border-white/10 shadow-[0_40px_100px_rgba(0,0,0,0.8)] overflow-hidden relative group">
+           {/* Scanline overlay for TV/Monitor feel */}
+           <div className="absolute inset-0 pointer-events-none opacity-[0.03] z-20" style={{ backgroundImage: 'linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06))', backgroundSize: '100% 2px, 3px 100%' }} />
+           
+           {/* Terminal Header */}
+           <div className="h-14 border-b border-white/5 flex items-center justify-between px-8 bg-[#161618]">
+              <div className="flex items-center gap-6">
+                <div className="flex gap-1.5">
+                  <div className="h-2 w-2 rounded-full bg-red-500/50" />
+                  <div className="h-2 w-2 rounded-full bg-amber-500/50" />
+                  <div className="h-2 w-2 rounded-full bg-emerald-500/50" />
+                </div>
+                <div className="h-4 w-[1px] bg-white/10" />
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500 italic">Gitto_Product_Feed // Live_Environment</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="text-[10px] font-black uppercase tracking-widest text-emerald-500 flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Primary_Bank_Feed: ACTIVE
+                </div>
+              </div>
+           </div>
+
+           <div className="grid grid-cols-1 lg:grid-cols-12 h-[650px]">
+              {/* Left Sidebar Simulation */}
+              <div className="lg:col-span-3 border-r border-white/5 p-8 space-y-10 bg-[#0D0D0F]">
+                 <div className="space-y-6">
+                    <h4 className="text-[9px] font-black uppercase tracking-[0.4em] text-slate-600">Liquidity_Metrics</h4>
+                    <div className="space-y-8">
+                       {[
+                         { label: 'Group_Cash', val: '€12.8M', trend: '+4.2%' },
+                         { label: 'Unmatched_Cash', val: '€430k', trend: 'CRITICAL' },
+                         { label: 'MAE_Accuracy', val: '0.8d', trend: '99%' },
+                       ].map((m, i) => (
+                         <div key={i} className="space-y-1">
+                           <div className="text-[8px] font-bold text-slate-500 uppercase tracking-widest">{m.label}</div>
+                           <div className="flex items-baseline gap-3">
+                             <div className="text-2xl font-black tracking-tighter text-white italic">{m.val}</div>
+                             <div className={`text-[8px] font-black uppercase ${m.trend === 'CRITICAL' ? 'text-red-500' : 'text-blue-500'}`}>{m.trend}</div>
+                           </div>
+                         </div>
+                       ))}
+                    </div>
+                 </div>
+                 <div className="pt-10 border-t border-white/5 space-y-4">
+                    <div className="p-5 rounded-2xl bg-blue-600/5 border border-blue-600/10 space-y-3">
+                       <div className="flex items-center gap-2 text-blue-400">
+                          <Sparkles className="h-3 w-3" />
+                          <span className="text-[9px] font-black uppercase tracking-widest">Analyst_RAG</span>
+                       </div>
+                       <p className="text-[11px] text-slate-400 leading-relaxed italic font-medium">
+                         "Found 12 regime shifts in Enterprise SaaS. Adjusting W4 forecast by +€210k."
+                       </p>
+                    </div>
+                 </div>
+              </div>
+
+              {/* Main Feed Simulation (The Scrolling "Video") */}
+              <div className="lg:col-span-9 bg-white/[0.01] relative overflow-hidden flex flex-col">
+                 <div className="p-10 border-b border-white/5 flex items-center justify-between bg-[#111113]/50 backdrop-blur-xl z-10">
+                    <div className="space-y-1">
+                       <h3 className="text-3xl font-black italic tracking-tighter uppercase">Deterministic_Ledger</h3>
+                       <p className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Real-time MT940 / BAI2 Stream</p>
+                    </div>
+                    <div className="flex gap-3">
+                       <div className="h-10 w-32 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-white transition-colors cursor-pointer">Export_CSV</div>
+                       <div className="h-10 w-32 rounded-xl bg-blue-600 flex items-center justify-center text-[10px] font-black uppercase tracking-widest text-white shadow-lg shadow-blue-600/20 cursor-pointer">Live_Sync</div>
+                    </div>
+                 </div>
+
+                 {/* The Scrolling Feed Container */}
+                 <div className="flex-1 relative overflow-hidden">
+                    <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#111113] to-transparent z-10" />
+                    <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#111113] to-transparent z-10" />
+                    
+                    <div className="animate-scroll-feed p-10 space-y-4">
+                       {[
+                         { e: 'Siemens AG', a: '+€120,400', s: 'Reconciled', d: 'MT940_Global', t: '14:22:01' },
+                         { e: 'Emirates Group', a: '+€88,000', s: 'Predicted', d: 'Behavioral_AI', t: '14:21:45' },
+                         { e: 'Shell Global', a: '-€45,000', s: 'Wash_Match', d: 'Intercompany', t: '14:20:12' },
+                         { e: 'Apple Inc', a: '+€210,000', s: 'Reconciled', d: 'BAI2_Direct', t: '14:18:55' },
+                         { e: 'BP PLC', a: '-€12,000', s: 'Verified', d: 'MT940_Global', t: '14:15:30' },
+                         { e: 'TotalEnergies', a: '+€55,400', s: 'Predicted', d: 'Behavioral_AI', t: '14:12:10' },
+                         { e: 'Stripe', a: '+€12,000', s: 'Processing', d: 'API_Weblink', t: '14:10:05' },
+                         { e: 'Siemens AG', a: '+€120,400', s: 'Reconciled', d: 'MT940_Global', t: '14:22:01' },
+                         { e: 'Emirates Group', a: '+€88,000', s: 'Predicted', d: 'Behavioral_AI', t: '14:21:45' },
+                         { e: 'Shell Global', a: '-€45,000', s: 'Wash_Match', d: 'Intercompany', t: '14:20:12' },
+                         { e: 'Apple Inc', a: '+€210,000', s: 'Reconciled', d: 'BAI2_Direct', t: '14:18:55' },
+                         { e: 'BP PLC', a: '-€12,000', s: 'Verified', d: 'MT940_Global', t: '14:15:30' },
+                         { e: 'TotalEnergies', a: '+€55,400', s: 'Predicted', d: 'Behavioral_AI', t: '14:12:10' },
+                         { e: 'Stripe', a: '+€12,000', s: 'Processing', d: 'API_Weblink', t: '14:10:05' },
+                       ].map((tx, i) => (
+                         <div key={i} className="p-8 bg-white/[0.02] border border-white/5 rounded-3xl flex items-center justify-between group hover:bg-white/[0.05] transition-all cursor-default">
+                            <div className="flex items-center gap-8">
+                               <div className="h-12 w-12 rounded-2xl bg-blue-600/10 border border-blue-600/20 flex items-center justify-center text-blue-500 font-black italic text-xl">
+                                  {tx.e[0]}
+                               </div>
+                               <div className="space-y-1">
+                                  <div className="text-lg font-black text-white italic tracking-tight">{tx.e}</div>
+                                  <div className="flex items-center gap-3">
+                                     <span className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">{tx.d}</span>
+                                     <div className="h-1 w-1 rounded-full bg-white/10" />
+                                     <span className="text-[10px] font-black text-blue-500 uppercase tracking-widest">{tx.t}</span>
+                                  </div>
+                               </div>
+                            </div>
+                            <div className="text-right space-y-2">
+                               <div className={`text-xl font-black ${tx.a.startsWith('+') ? 'text-emerald-500' : 'text-white'} italic tracking-tighter`}>{tx.a}</div>
+                               <div className="flex items-center gap-2 justify-end">
+                                  <div className={`h-1.5 w-1.5 rounded-full ${tx.s === 'Predicted' ? 'bg-blue-500' : tx.s === 'Reconciled' ? 'bg-emerald-500' : 'bg-amber-500'}`} />
+                                  <span className="text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">{tx.s}</span>
+                               </div>
+                            </div>
+                         </div>
+                       ))}
+                    </div>
+                 </div>
+              </div>
+           </div>
+        </div>
+      </section>
+
       {/* The Problem: Brutalist Breakdown */}
       <section id="problem" className="px-8 py-32 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left bg-[#0D0D0F]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
@@ -570,6 +694,13 @@ export default function Landing() {
         }
         .animate-type-log {
           animation: type-log 0.5s ease-out forwards;
+        }
+        @keyframes scroll-feed {
+          0% { transform: translateY(0); }
+          100% { transform: translateY(-50%); }
+        }
+        .animate-scroll-feed {
+          animation: scroll-feed 20s linear infinite;
         }
       `}</style>
     </div>
