@@ -154,8 +154,8 @@ export default function Dashboard() {
       {/* Sidebar - Harvey Aesthetic */}
       <aside className="w-64 border-r border-[#E5E5E7] bg-white flex flex-col shrink-0">
         <div className="p-6 flex items-center gap-3">
-          <div className="h-8 w-8 bg-[#1A1A1A] rounded-lg flex items-center justify-center">
-            <span className="text-white font-black text-xs">G</span>
+          <div className="h-8 w-8 bg-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-600/20">
+            <span className="text-white font-black text-sm italic">G</span>
           </div>
           <span className="text-lg font-black tracking-tight text-[#1A1A1A]">Gitto</span>
         </div>
