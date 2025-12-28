@@ -7,7 +7,7 @@ import {
   Landmark, Users, Search, Bell, Calendar, ChevronRight, MessageSquare,
   Lock, Zap, Database, Globe, Briefcase, Plus, Sparkles, Filter, 
   FileText, ArrowDownRight, ArrowUpRight, Play, Layout, MousePointer2,
-  Cloud as CloudIcon, Activity, Layers, Terminal, ShieldCheck
+  Cloud as CloudIcon, Activity, Layers, Terminal, ShieldCheck, Cpu, Code2, MoveRight
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -56,202 +56,291 @@ export default function Landing() {
         </div>
       </nav>
 
-      {/* Hero: Authority through Technical Precision */}
-      <section className="relative pt-40 pb-20 px-8 z-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-8 space-y-8">
-            <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
-              Enterprise Treasury Engine // Live Ingest Active
-            </div>
-            <h1 className="text-[70px] md:text-[110px] font-black tracking-[-0.06em] leading-[0.85] text-white">
-              CASH REALITY <br />
-              ANCHORED IN <br />
-              <span className="text-blue-500">BANK TRUTH.</span>
-            </h1>
-            <p className="text-xl text-slate-400 font-medium leading-relaxed max-w-2xl border-l-2 border-blue-500/30 pl-6">
-              The gap between your forecast and your bank balance is where enterprise risk lives. Gitto bridges this deficit with a deterministic ledger that reconciles live MT940/BAI2 bank feeds against your 13-week liquidity grid.
-            </p>
-            <div className="flex items-center gap-8 pt-4">
-              <Link href="/app">
-                <Button className="bg-white text-black hover:bg-slate-200 rounded-none px-10 h-16 text-sm font-black uppercase tracking-widest transition-all hover:scale-105">
-                  Access Liquidity Terminal
-                </Button>
-              </Link>
-              <div className="flex flex-col">
-                <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Global Ingest Accuracy</span>
-                <span className="text-2xl font-black text-emerald-500">99.98%</span>
+      {/* Hero: High-Contrast Technical Authority */}
+      <section className="relative pt-48 pb-24 px-8 z-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+            <div className="lg:col-span-8 space-y-10">
+              <div className="inline-flex items-center gap-3 px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500 animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">Deterministic Treasury Engine v4.2</span>
+              </div>
+              <h1 className="text-[80px] md:text-[130px] font-black tracking-[-0.08em] leading-[0.8] text-white uppercase italic">
+                CASH TRUTH <br />
+                <span className="text-white/10 not-italic">IS THE ONLY</span> <br />
+                <span className="text-blue-600">REALITY.</span>
+              </h1>
+              <p className="text-2xl text-slate-400 font-medium leading-tight max-w-2xl border-l border-blue-600/30 pl-8 italic">
+                Spreadsheets model the "theoretical." Gitto anchors your liquidity in actual bank receipts, intercompany washes, and deterministic behavioral bias.
+              </p>
+              <div className="flex items-center gap-10 pt-6">
+                <Link href="/app">
+                  <Button className="bg-white text-black hover:bg-slate-200 rounded-none px-12 h-20 text-sm font-black uppercase tracking-widest shadow-[0_20px_80px_rgba(255,255,255,0.1)] transition-all hover:scale-105">
+                    Enter Terminal
+                  </Button>
+                </Link>
+                <div className="hidden md:flex gap-12">
+                   <div className="space-y-1">
+                      <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">MAE Accuracy</div>
+                      <div className="text-2xl font-black italic text-blue-500">0.8d</div>
+                   </div>
+                   <div className="space-y-1">
+                      <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Bank Ingest</div>
+                      <div className="text-2xl font-black italic text-emerald-500">Real-Time</div>
+                   </div>
+                </div>
               </div>
             </div>
-          </div>
-          
-          <div className="lg:col-span-4 relative">
-             <div className="bg-[#111113] border border-white/5 rounded-3xl p-8 space-y-6 shadow-2xl animate-fade-in-up">
-                <div className="flex items-center justify-between border-b border-white/5 pb-4">
-                  <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Network_Health</span>
-                  <div className="flex gap-1">
-                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-                    <div className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            
+            <div className="lg:col-span-4 relative group">
+               <div className="absolute -inset-4 bg-blue-600/20 blur-[100px] rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+               <div className="relative bg-[#111113] border border-white/10 rounded-[40px] p-10 space-y-8 shadow-2xl overflow-hidden">
+                  <div className="flex items-center justify-between">
+                     <span className="text-[9px] font-black text-slate-600 uppercase tracking-[0.4em]">Node_Status</span>
+                     <div className="h-2 w-2 rounded-full bg-blue-500 shadow-[0_0_10px_rgba(59,130,246,0.5)]" />
                   </div>
-                </div>
-                <div className="space-y-4">
-                   {[
-                     { l: 'SAP Integration', s: 'Connected' },
-                     { l: 'Oracle NetSuite', s: 'Synced' },
-                     { l: 'Global Bank Feed', s: 'Live' }
-                   ].map((sys, i) => (
-                     <div key={i} className="flex items-center justify-between bg-white/[0.02] p-3 rounded-xl border border-white/5">
-                        <span className="text-xs font-bold text-slate-400">{sys.l}</span>
-                        <span className="text-[10px] font-black uppercase tracking-widest text-blue-400">{sys.s}</span>
+                  <div className="space-y-6">
+                     {[
+                       { label: 'Ingest_Engine', val: 'Active', color: 'text-blue-400' },
+                       { label: 'RAG_Citations', val: 'Verified', color: 'text-emerald-400' },
+                       { label: 'MAE_Variance', val: '0.82%', color: 'text-white' }
+                     ].map((s, i) => (
+                       <div key={i} className="flex items-center justify-between border-b border-white/5 pb-4">
+                          <span className="text-xs font-bold text-slate-500">{s.label}</span>
+                          <span className={`text-xs font-black uppercase tracking-widest ${s.color}`}>{s.val}</span>
+                       </div>
+                     ))}
+                  </div>
+                  <div className="pt-4">
+                     <div className="h-32 w-full bg-white/[0.02] border border-white/5 rounded-2xl flex items-center justify-center relative">
+                        <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 10px, #ffffff 10px, #ffffff 11px)' }} />
+                        <Activity className="h-12 w-12 text-blue-600 animate-pulse" />
                      </div>
-                   ))}
-                </div>
-             </div>
+                  </div>
+               </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* The Problem: Deep Domain Expertise */}
+      {/* The Problem: Brutalist Breakdown */}
       <section id="problem" className="px-8 py-32 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left bg-[#0D0D0F]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
-          <div className="lg:col-span-5 space-y-8">
-            <h2 className="text-5xl font-black tracking-tighter leading-[0.9] text-white uppercase italic">THE <br /><span className="text-blue-500">EXPLAINABILITY</span> <br /> DEFICIT.</h2>
-            <p className="text-lg text-slate-400 font-medium leading-relaxed">
-              Black-box forecasting models fail CFOs because they lack provenance. When a cash position shifts, you need to know exactly which wire or vendor bill caused the variance.
-            </p>
-            <div className="space-y-4 pt-6">
-               <div className="flex items-center gap-4 text-sm font-bold text-slate-300">
-                  <AlertCircle className="h-5 w-5 text-red-500" />
-                  <span>Unmodeled Behavioral Bias: Customers ignore due dates.</span>
-               </div>
-               <div className="flex items-center gap-4 text-sm font-bold text-slate-300">
-                  <AlertCircle className="h-5 w-5 text-red-500" />
-                  <span>Fragmented Bank Data: 14+ logins to see group liquidity.</span>
-               </div>
-               <div className="flex items-center gap-4 text-sm font-bold text-slate-300">
-                  <AlertCircle className="h-5 w-5 text-red-500" />
-                  <span>The Manual Sync Drain: Static 13-week grids are dead on arrival.</span>
-               </div>
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
-            {[
-              { t: 'MT940/BAI2 Ingest', d: 'Automated direct bank connectivity eliminates the manual download-and-format loop.' },
-              { t: 'MAE Optimization', d: 'We track Mean Absolute Error across every scenario to refine your forecasting regime.' },
-              { t: 'Entity Netting', d: 'Automated intercompany wash detection for a true consolidated group liquidity view.' },
-              { t: 'Provenance Audit', d: 'Every snapshot is locked. Every variance is linked to a specific underlying document.' },
-            ].map((p, i) => (
-              <div key={i} className="bg-[#0A0A0B] p-12 space-y-4 hover:bg-white/[0.02] transition-colors group">
-                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-600 group-hover:text-blue-500 transition-colors">CAPABILITY_0{i+1}</h4>
-                <div className="space-y-2">
-                  <h3 className="text-xl font-black text-white italic tracking-tight">{p.t}</h3>
-                  <p className="text-sm text-slate-500 font-medium leading-relaxed">{p.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Solution: Engineered for Treasury */}
-      <section id="ledger" className="px-8 py-32 bg-white text-black relative z-10 text-left">
-        <div className="max-w-[1400px] mx-auto space-y-24">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-end">
-            <div className="lg:col-span-7 space-y-6">
-               <span className="text-[10px] font-black text-blue-600 tracking-[0.5em] uppercase">Architecture // v4.2</span>
-               <h2 className="text-[64px] font-black tracking-tighter italic leading-[0.85] uppercase">
-                 THE LIQUIDITY <br /> <span className="text-blue-600">LEDGER.</span>
-               </h2>
-               <p className="text-2xl font-bold text-slate-500 max-w-2xl leading-tight">
-                 A deterministic truth layer that synchronizes your ERP's theoretical due dates with your bank's behavioral reality.
-               </p>
-            </div>
-            <div className="lg:col-span-5 pb-4">
-              <div className="flex gap-4">
-                 <div className="flex-1 bg-slate-50 p-6 border border-slate-100 rounded-2xl">
-                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Direct API Connects</div>
-                    <div className="text-3xl font-black">7,000+</div>
-                 </div>
-                 <div className="flex-1 bg-slate-50 p-6 border border-slate-100 rounded-2xl">
-                    <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">MT940 Parse Speed</div>
-                    <div className="text-3xl font-black">&lt;1.2s</div>
-                 </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            {[
-              { t: 'Bank-Truth Reconciliation', d: 'Automated matching of MT940 statements against open ledger items with 99.8% precision.', icon: <Landmark /> },
-              { t: 'Behavioral Variance Analysis', d: 'We learn payment habit shifts (Regime Shifts) to predict delay before your runway is impacted.', icon: <Activity /> },
-              { t: 'Scenario Stress Testing', d: 'Model "What-If" liquidity levers (Delay Vendor, Accelerate SaaS) with real-time ROI projection.', icon: <Layers /> },
-              { t: 'Multi-Entity Maestro', d: 'Consolidated group visibility with snapshot-locked FX rates and reporting currency normalization.', icon: <Globe /> },
-              { t: 'Analyst RAG Engine', d: 'Natural language queries grounded in verified document citations. No more black-box answers.', icon: <Sparkles /> },
-              { t: 'Enterprise Governance', d: 'Audit-ready logs for every lever shift and manual override. Built for external audit transparency.', icon: <ShieldCheck /> }
-            ].map((m, i) => (
-              <div key={i} className="p-12 border border-slate-100 bg-[#F9F9FB] space-y-10 group hover:bg-black hover:text-white transition-all duration-700">
-                <div className="h-14 w-14 rounded-2xl bg-white border border-slate-200 flex items-center justify-center shadow-sm group-hover:bg-blue-600 group-hover:border-blue-500 group-hover:text-white transition-all group-hover:scale-110">
-                  {m.icon}
-                </div>
-                <div className="space-y-4">
-                  <h3 className="text-3xl font-black italic tracking-tight uppercase leading-none">{m.t}</h3>
-                  <p className="text-lg font-bold opacity-50 leading-relaxed group-hover:opacity-100">{m.d}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* The Impact: Real-Time Command */}
-      <section id="enterprise" className="px-8 py-32 max-w-[1400px] mx-auto relative z-10 text-left bg-[#0A0A0B]">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
           <div className="lg:col-span-5 space-y-12">
-            <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
-              Operational Impact // v1.0
+            <div className="space-y-6">
+              <h2 className="text-6xl font-black tracking-[-0.05em] leading-[0.9] text-white uppercase italic underline decoration-blue-600/50 underline-offset-8">THE <br />TRUST <br /> DEFICIT.</h2>
+              <p className="text-xl text-slate-400 font-medium leading-relaxed italic">
+                Finance teams operate on "Theoretical Cash." Numbers that exist in a model but don't exist in the bank. We close the gap.
+              </p>
             </div>
-            <h2 className="text-6xl font-black tracking-tighter leading-none text-white uppercase italic">
-              COMMAND YOUR <br /> RUNWAY.
-            </h2>
-            <div className="space-y-8">
-               <div className="border-l-2 border-blue-600 pl-8 space-y-2">
-                  <div className="text-4xl font-black">14 Days</div>
-                  <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Earlier insight into cash shortfalls</p>
-               </div>
-               <div className="border-l-2 border-blue-600 pl-8 space-y-2">
-                  <div className="text-4xl font-black">92%</div>
-                  <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Reduction in manual sync overhead</p>
-               </div>
-               <div className="border-l-2 border-blue-600 pl-8 space-y-2">
-                  <div className="text-4xl font-black">0.8d</div>
-                  <p className="text-slate-500 font-bold uppercase tracking-widest text-xs">Average MAE forecast accuracy</p>
-               </div>
+            
+            <div className="space-y-10">
+              {[
+                { title: 'Behavioral Bias', desc: 'Real life averages 14+ days of unmodeled delay. We find them before they hit your runway.' },
+                { title: 'Explainability Crisis', desc: 'Black-box forecasts are useless. Gitto provides provenance for every variance, linked to actual MT940 wires.' },
+                { title: 'Fragmented Liquidity', desc: 'Managing group cash shouldn\'t require 14 logins. We normalize global bank data into a single truth layer.' },
+              ].map((gap, i) => (
+                <div key={i} className="space-y-2 border-l-2 border-white/10 pl-8 hover:border-blue-600 transition-all group cursor-default">
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-slate-500 group-hover:text-white transition-colors">{gap.title}</h4>
+                  <p className="text-sm text-slate-500 font-medium leading-relaxed group-hover:text-slate-400 transition-colors">{gap.desc}</p>
+                </div>
+              ))}
             </div>
           </div>
-          
-          <div className="lg:col-span-7">
-             <div className="bg-[#111113] border border-white/5 rounded-[40px] p-12 overflow-hidden relative group">
-                <div className="absolute inset-0 bg-blue-600/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
-                <div className="relative z-10 space-y-8">
-                   <div className="flex items-center justify-between">
-                      <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Active_Liquidity_Simulation</span>
-                      <Terminal className="h-4 w-4 text-blue-500" />
-                   </div>
-                   <div className="h-px w-full bg-white/5" />
-                   <p className="text-xl text-slate-400 font-medium italic leading-relaxed">
-                     "Simulating 14-day delay on Enterprise SaaS inflows. Liquidity buffer remains above €4.2M threshold. No lever adjustment required for W4 payment run."
-                   </p>
-                   <div className="flex gap-4">
-                      <div className="px-4 py-2 bg-blue-600/10 border border-blue-600/20 rounded-lg text-[9px] font-black text-blue-400 uppercase tracking-widest">Status: Deterministic</div>
-                      <div className="px-4 py-2 bg-emerald-600/10 border border-emerald-600/20 rounded-lg text-[9px] font-black text-emerald-500 uppercase tracking-widest">Risk: Cleared</div>
-                   </div>
+
+          <div className="lg:col-span-7 relative flex items-center justify-center">
+            <div className="absolute inset-0 bg-blue-600/5 blur-[150px] animate-pulse rounded-full" />
+            <div className="relative z-10 w-full aspect-square border border-white/5 rounded-full flex items-center justify-center p-20 animate-spin-slow">
+              <div className="w-full h-full border border-white/10 rounded-full flex items-center justify-center p-20 animate-reverse-spin">
+                <div className="w-full h-full bg-blue-600 rounded-full shadow-[0_0_100px_rgba(37,99,235,0.4)] flex items-center justify-center">
+                  <span className="text-white font-black text-4xl italic tracking-tighter">TRUTH</span>
                 </div>
-             </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonial - The CFO Voice */}
+      {/* The Product Engine: No more cards, this is a schematic */}
+      <section id="ledger" className="px-8 py-32 bg-white text-black relative z-10 text-left overflow-hidden">
+        <div className="max-w-[1400px] mx-auto space-y-32">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+             <div className="space-y-4">
+               <span className="text-[10px] font-black text-blue-600 tracking-[0.5em] uppercase border-b border-blue-600 pb-2">Product_Architecture // Module_Sync</span>
+               <h2 className="text-[80px] font-black tracking-[-0.08em] italic leading-[0.8] uppercase">THE <br />DETERMINISTIC <br /> <span className="text-blue-600">STACK.</span></h2>
+             </div>
+             <p className="text-2xl font-bold text-slate-500 max-w-md leading-none italic uppercase">
+               Engineered to eliminate the gap between forecast and reality.
+             </p>
+          </div>
+
+          {/* Schematic Layout */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-slate-200 border border-slate-200">
+            {/* Feature 01 - Large Schematic */}
+            <div className="lg:col-span-8 bg-white p-16 space-y-12 group hover:bg-[#F9F9FB] transition-all">
+               <div className="flex justify-between items-start">
+                  <div className="space-y-4">
+                     <span className="text-[10px] font-black text-slate-300 tracking-[0.4em]">01 // INGEST_LAYER</span>
+                     <h3 className="text-5xl font-black italic tracking-tighter uppercase">MT940 Bank-Truth <br /> Reconciliation</h3>
+                  </div>
+                  <Landmark className="h-12 w-12 text-slate-200 group-hover:text-blue-600 transition-all" />
+               </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                  <p className="text-lg text-slate-500 font-bold leading-relaxed">
+                    Automatically match MT940 and BAI2 statements against open ledger items. Our engine identifieswires, nets out fees, and identifies intercompany washes with 99.8% precision.
+                  </p>
+                  <div className="bg-slate-50 border border-slate-100 rounded-3xl p-8 space-y-6">
+                     <div className="flex items-center justify-between text-[9px] font-black text-slate-400 uppercase tracking-widest">
+                        <span>Live_Stream</span>
+                        <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                     </div>
+                     <div className="space-y-3">
+                        <div className="h-1 w-full bg-slate-200 rounded-full overflow-hidden">
+                           <div className="h-full bg-blue-600 animate-flow-fast" style={{ width: '40%' }} />
+                        </div>
+                        <div className="h-1 w-2/3 bg-slate-200 rounded-full overflow-hidden">
+                           <div className="h-full bg-blue-600 animate-flow-fast" style={{ width: '60%', animationDelay: '0.2s' }} />
+                        </div>
+                     </div>
+                     <div className="text-[10px] font-bold text-blue-600 italic">Matching wires to #INV-994...</div>
+                  </div>
+               </div>
+            </div>
+
+            {/* Feature 02 - Column */}
+            <div className="lg:col-span-4 bg-white p-16 space-y-12 group hover:bg-[#F9F9FB] transition-all">
+               <div className="flex justify-between items-start">
+                  <div className="space-y-4">
+                     <span className="text-[10px] font-black text-slate-300 tracking-[0.4em]">02 // BIAS_AI</span>
+                     <h3 className="text-4xl font-black italic tracking-tighter uppercase">Behavioral <br /> Variance</h3>
+                  </div>
+                  <Activity className="h-10 w-10 text-slate-200 group-hover:text-blue-600 transition-all" />
+               </div>
+               <p className="text-lg text-slate-500 font-bold leading-relaxed">
+                 We learn customer payment habit shifts (Regime Shifts) to predict actual cash timing, not just due dates. 
+               </p>
+               <div className="pt-8">
+                  <div className="text-4xl font-black italic text-blue-600 tracking-tighter">+14 Days</div>
+                  <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Detected Delay Insight</div>
+               </div>
+            </div>
+
+            {/* Feature 03 - Column */}
+            <div className="lg:col-span-4 bg-white p-16 space-y-12 group hover:bg-[#F9F9FB] transition-all border-t border-slate-200 lg:border-t-0">
+               <div className="flex justify-between items-start">
+                  <div className="space-y-4">
+                     <span className="text-[10px] font-black text-slate-300 tracking-[0.4em]">03 // SIM_ENGINE</span>
+                     <h3 className="text-4xl font-black italic tracking-tighter uppercase">Scenario <br /> Levers</h3>
+                  </div>
+                  <Layers className="h-10 w-10 text-slate-200 group-hover:text-blue-600 transition-all" />
+               </div>
+               <p className="text-lg text-slate-500 font-bold leading-relaxed">
+                 Model "What-If" liquidity levers like vendor delays or SaaS acceleration with real-time ROI projection.
+               </p>
+               <div className="flex gap-2">
+                  <div className="h-8 w-16 rounded bg-slate-100 flex items-center justify-center text-[10px] font-black">W1</div>
+                  <div className="h-8 w-16 rounded bg-blue-600 flex items-center justify-center text-[10px] font-black text-white">W2</div>
+                  <div className="h-8 w-16 rounded bg-slate-100 flex items-center justify-center text-[10px] font-black">W3</div>
+               </div>
+            </div>
+
+            {/* Feature 04 - Large Schematic */}
+            <div className="lg:col-span-8 bg-white p-16 space-y-12 group hover:bg-[#F9F9FB] transition-all border-t border-slate-200">
+               <div className="flex justify-between items-start">
+                  <div className="space-y-4">
+                     <span className="text-[10px] font-black text-slate-300 tracking-[0.4em]">04 // INSIGHT_RAG</span>
+                     <h3 className="text-5xl font-black italic tracking-tighter uppercase">Analyst RAG <br /> & Citations</h3>
+                  </div>
+                  <Sparkles className="h-12 w-12 text-slate-200 group-hover:text-blue-600 transition-all" />
+               </div>
+               <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+                  <div className="bg-black text-white p-8 rounded-3xl space-y-6 shadow-2xl">
+                     <div className="flex items-center gap-3">
+                        <div className="h-6 w-6 rounded bg-blue-600 flex items-center justify-center text-[10px] italic font-black">G</div>
+                        <span className="text-[9px] font-black uppercase tracking-widest text-slate-500">Gitto_Analyst</span>
+                     </div>
+                     <p className="text-sm font-medium italic text-slate-300">
+                       "W3 forecast dropped €2.1M due to a regime shift in Enterprise-SaaS payment habits. Found citations in 42 bank receipts."
+                     </p>
+                     <div className="flex gap-2">
+                        <div className="px-2 py-1 bg-white/10 rounded text-[8px] font-black uppercase">Ref: #BAI2-992</div>
+                        <div className="px-2 py-1 bg-white/10 rounded text-[8px] font-black uppercase">Ref: #INV-441</div>
+                     </div>
+                  </div>
+                  <div className="space-y-6 pt-4">
+                     <p className="text-lg text-slate-500 font-bold leading-relaxed">
+                       No more black-box AI answers. Every insight provided by Gitto is retrieved from specific bank truth and invoice reality, grounded in verifiable citations.
+                     </p>
+                     <Link href="/app">
+                        <div className="flex items-center gap-3 text-blue-600 font-black uppercase tracking-widest text-xs cursor-pointer group/link">
+                           Try the Analyst <MoveRight className="h-4 w-4 group-hover/link:translate-x-2 transition-transform" />
+                        </div>
+                     </Link>
+                  </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Governance Layer - Institutional Strength */}
+      <section id="enterprise" className="px-8 py-32 bg-[#0A0A0B] text-white relative z-10 text-left">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-32 items-center">
+           <div className="lg:col-span-6 space-y-12">
+              <div className="space-y-6">
+                 <span className="text-[10px] font-black text-blue-400 tracking-[0.5em] uppercase">Control_Plane // Governance</span>
+                 <h2 className="text-7xl font-black tracking-tighter leading-none italic uppercase">AUDIT-READY <br />COMMAND.</h2>
+                 <p className="text-xl text-slate-400 font-medium leading-relaxed italic">
+                   Gitto is built for the complexity of global group treasury. SOC2 Type II compliant and engineered for external audit transparency.
+                 </p>
+              </div>
+              <div className="grid grid-cols-2 gap-12">
+                 <div className="space-y-2">
+                    <h4 className="text-xs font-black uppercase tracking-widest text-white">Immutable Snapshots</h4>
+                    <p className="text-sm text-slate-500 font-medium leading-relaxed text-left">Every 13-week forecast is version-locked. Track variance from W1 to W13 with zero drift.</p>
+                 </div>
+                 <div className="space-y-2">
+                    <h4 className="text-xs font-black uppercase tracking-widest text-white">Entity Netting</h4>
+                    <p className="text-sm text-slate-500 font-medium leading-relaxed text-left">Detect and wash intercompany transfers automatically to see true group liquidity.</p>
+                 </div>
+              </div>
+           </div>
+           <div className="lg:col-span-6 relative">
+              <div className="absolute inset-0 bg-blue-600/10 blur-[120px] animate-pulse rounded-full" />
+              <div className="relative z-10 bg-white/5 border border-white/5 rounded-[40px] p-16 space-y-10 shadow-2xl">
+                 <div className="flex items-center justify-between border-b border-white/10 pb-8">
+                    <div className="flex items-center gap-4">
+                       <ShieldCheck className="h-8 w-8 text-emerald-500" />
+                       <div className="space-y-1">
+                          <div className="text-lg font-black italic tracking-tight uppercase">SOC2 Certified</div>
+                          <div className="text-[10px] font-black text-slate-500 uppercase tracking-widest">Enterprise Security Core</div>
+                       </div>
+                    </div>
+                    <div className="h-12 w-32 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center">
+                       <span className="text-[10px] font-black text-emerald-500 uppercase tracking-widest">Active</span>
+                    </div>
+                 </div>
+                 <div className="space-y-6">
+                    <div className="flex items-center gap-4">
+                       <Code2 className="h-5 w-5 text-slate-600" />
+                       <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                          <div className="h-full bg-blue-600 rounded-full" style={{ width: '85%' }} />
+                       </div>
+                    </div>
+                    <div className="flex items-center gap-4">
+                       <Cpu className="h-5 w-5 text-slate-600" />
+                       <div className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                          <div className="h-full bg-blue-600 rounded-full" style={{ width: '92%' }} />
+                       </div>
+                    </div>
+                 </div>
+                 <p className="text-[11px] text-slate-500 font-bold italic text-center uppercase tracking-widest">Audit Logs Version 4.2.0 // Permanent Trail</p>
+              </div>
+           </div>
+        </div>
+      </section>
+
+      {/* Testimonial - CFO Voice */}
       <section className="px-8 py-32 bg-white text-black z-10 text-center border-t border-slate-100">
         <div className="max-w-4xl mx-auto space-y-16">
           <h2 className="text-[40px] md:text-[56px] font-black italic tracking-tight leading-[1.1] uppercase">
@@ -267,14 +356,14 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Final CTA: Massive Authority */}
+      {/* Final Call: Massive Authority */}
       <section className="px-8 py-64 bg-[#0A0A0B] text-white text-center relative z-10 overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-600/10 blur-[150px] rounded-full scale-150" />
         <div className="max-w-5xl mx-auto space-y-16 relative z-10">
-          <h2 className="text-[80px] md:text-[140px] font-black tracking-[-0.08em] leading-[0.8] uppercase">ELIMINATE <br /> <span className="text-white/10 italic">THE DEFICIT.</span></h2>
+          <h2 className="text-[80px] md:text-[140px] font-black tracking-[-0.08em] leading-[0.8] uppercase italic">KNOW <br /> <span className="text-white/10 not-italic">YOUR</span> <br /> <span className="text-blue-600">CASH.</span></h2>
           <div className="pt-12">
             <Link href="/app">
-              <Button className="bg-white text-black hover:bg-slate-200 rounded-none px-20 h-24 text-2xl font-black uppercase tracking-[0.2em] shadow-[0_40px_100px_rgba(255,255,255,0.1)] transition-all hover:scale-110">
+              <Button className="bg-white text-black hover:bg-slate-200 rounded-none px-20 h-24 text-2xl font-black uppercase tracking-[0.2em] shadow-[0_40px_100px_rgba(255,255,255,0.1)] transition-all hover:scale-110 active:scale-95">
                 Access Terminal
               </Button>
             </Link>
@@ -323,6 +412,99 @@ export default function Landing() {
           <span>Security_First_Architecture</span>
         </div>
       </footer>
+
+      {/* Global CSS for unique animations */}
+      <style jsx global>{`
+        @keyframes bounce-y {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-y {
+          animation: bounce-y 3s ease-in-out infinite;
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        @keyframes reverse-spin-slow {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-reverse-spin-slow {
+          animation: reverse-spin-slow 15s linear infinite;
+        }
+        @keyframes reverse-spin {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-reverse-spin {
+          animation: reverse-spin 10s linear infinite;
+        }
+        @keyframes pulse-slow {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+        @keyframes flow {
+          0% { transform: translate(0, 0); opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        .animate-flow {
+          animation: flow 3s linear infinite;
+        }
+        @keyframes flow-fast {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(100%); }
+        }
+        .animate-flow-fast {
+          animation: flow-fast 2s linear infinite;
+        }
+        @keyframes workflow-card {
+          0% { transform: translateX(-100px); opacity: 0; }
+          10%, 90% { transform: translateX(0); opacity: 1; }
+          100% { transform: translateX(100px); opacity: 0; }
+        }
+        .animate-workflow-card {
+          animation: workflow-card 4.5s ease-in-out infinite;
+        }
+        @keyframes workflow-card-reverse {
+          0% { transform: translateX(100px); opacity: 0; }
+          10%, 90% { transform: translateX(0); opacity: 1; }
+          100% { transform: translateX(-100px); opacity: 0; }
+        }
+        .animate-workflow-card-reverse {
+          animation: workflow-card-reverse 4.5s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+          0% { opacity: 0.3; }
+          50% { opacity: 1; }
+          100% { opacity: 0.3; }
+        }
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+        @keyframes fade-in-up {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out forwards;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .animate-float {
+          animation: float 5s ease-in-out infinite;
+        }
+      `}</style>
     </div>
   );
 }
