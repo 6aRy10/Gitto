@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  experimental: {
+    turbopack: {
+      root: __dirname,
+    },
+  },
   async rewrites() {
     return [
       {
