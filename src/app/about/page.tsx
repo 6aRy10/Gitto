@@ -153,28 +153,93 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="px-8 py-32 text-center bg-white relative overflow-hidden">
-          <div className="max-w-3xl mx-auto space-y-10 relative z-10">
-            <h2 className="text-[48px] md:text-[64px] font-bold tracking-tight leading-tight text-slate-900">Ready for cash truth?</h2>
-            <p className="text-xl text-slate-500 font-medium italic">Join the next generation of data-aware finance teams.</p>
+      {/* Final CTA */}
+      <section className="px-8 py-64 text-center bg-white relative overflow-hidden">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-indigo-50/50 blur-[120px] rounded-full scale-150" />
+        <div className="max-w-4xl mx-auto space-y-12 relative z-10">
+          <h2 className="text-[64px] md:text-[96px] font-bold tracking-tight leading-[0.9] text-slate-900">Ready for cash truth?</h2>
+          <p className="text-2xl text-slate-400 font-bold italic">Join the next generation of data-aware finance teams.</p>
+          <div className="pt-8">
             <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-18 text-xl font-bold shadow-2xl shadow-slate-900/20">
+              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-20 text-2xl font-black shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all hover:scale-[1.05] active:scale-[0.95]">
                 Book a Demo
               </Button>
             </Link>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
 
-      <footer className="px-8 py-20 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-left">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
-            <span className="font-bold text-xl tracking-tighter text-slate-900">gitto</span>
+      {/* Footer - Redesign */}
+      <footer className="px-8 py-32 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto space-y-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-8 text-left">
+            {/* Logo & Info */}
+            <div className="lg:col-span-1 space-y-10">
+              <Link href="/" className="flex items-center gap-2">
+                <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
+                <span className="font-black text-2xl tracking-tighter text-slate-900 uppercase">gitto</span>
+              </Link>
+              <div className="space-y-4 text-left">
+                <p className="text-[13px] font-black text-slate-900 uppercase tracking-widest leading-relaxed">info@gitto.ai</p>
+                <Link href="/app">
+                  <Button className="bg-slate-900 text-white rounded-full px-8 h-11 text-[13px] font-bold shadow-lg">
+                    Book a Demo
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Platform Columns */}
+            <div className="space-y-8">
+              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Platform</h4>
+              <ul className="space-y-4 text-[15px] text-slate-900 font-bold">
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Features</li>
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Integrations</li>
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Blog</li>
+                <li className="hover:text-blue-600 cursor-pointer transition-colors">Compare</li>
+              </ul>
+            </div>
+
+            {/* Compare Column */}
+            <div className="space-y-8">
+              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Compare</h4>
+              <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">Spreadsheets</li>
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">Kyriba</li>
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">HighRadius</li>
+                <li className="hover:text-slate-900 cursor-pointer transition-colors">Tesorio</li>
+              </ul>
+            </div>
+
+            {/* Industries Column */}
+            <div className="space-y-8 lg:col-span-2">
+              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Industries</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Venture Capital</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Private Equity</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">SaaS & BD</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Investment Banking</li>
+                </ul>
+                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Startups</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Fund of Funds</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Manufacturing</li>
+                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Wealth Management</li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div className="text-[12px] font-bold text-slate-400 uppercase tracking-widest">
-            © 2025 Gitto Inc.
+
+          {/* Bottom Bar */}
+          <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-start gap-8">
+            <div className="flex flex-wrap gap-8 text-[12px] font-bold text-slate-400 uppercase tracking-widest text-left">
+              <span className="hover:text-slate-900 cursor-pointer">Privacy Policy</span>
+              <span className="hover:text-slate-900 cursor-pointer">Cookie Policy</span>
+              <span className="hover:text-slate-900 cursor-pointer">Terms of Service</span>
+              <span className="hover:text-slate-900 cursor-pointer">Consent Preferences</span>
+            </div>
+            <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.2em]">© 2025 Gitto Inc.</p>
           </div>
         </div>
       </footer>
