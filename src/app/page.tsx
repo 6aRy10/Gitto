@@ -29,7 +29,7 @@ export default function Landing() {
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
           <div className="flex items-center gap-12">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+              <div className="h-6 w-6 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-[12px] italic">G</div>
               <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
             </Link>
             <div className="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
@@ -293,10 +293,10 @@ export default function Landing() {
                             <div className="text-[10px] font-black text-white">€{12000 * i},000</div>
                             <div className="text-[8px] font-bold text-slate-500 uppercase">Incoming_Wire</div>
                           </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
+              </div>
+            </div>
+          ))}
+        </div>
 
                   <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
                     <Zap className="h-12 w-12 text-blue-500 animate-pulse opacity-50" />
@@ -333,7 +333,7 @@ export default function Landing() {
                    </div>
                    
                    <div className="flex gap-4 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-                      <div className="h-10 w-10 rounded-xl bg-blue-500 flex items-center justify-center text-white font-black text-xs">G</div>
+                      <div className="h-10 w-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-sm italic shadow-lg shadow-blue-600/20">G</div>
                       <div className="flex-1 bg-blue-600/10 border border-blue-500/20 p-8 rounded-3xl space-y-4">
                         <div className="h-2 w-3/4 bg-blue-400/30 rounded-full animate-shimmer" />
                         <div className="h-2 w-1/2 bg-blue-400/30 rounded-full animate-shimmer" style={{ animationDelay: '0.2s' }} />
@@ -463,7 +463,7 @@ export default function Landing() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
           <div className="space-y-10">
             <div className="flex items-center gap-2">
-              <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+              <div className="h-6 w-6 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-[12px] italic">G</div>
               <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
             </div>
             <div className="space-y-2 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">

@@ -36,7 +36,7 @@ export default function Contact() {
       <nav className="fixed top-0 left-0 right-0 z-[60] bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 px-8 py-5">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+            <div className="h-6 w-6 rounded-lg bg-blue-600 flex items-center justify-center text-white font-black text-[12px] italic">G</div>
             <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
           </Link>
           <div className="flex items-center gap-8">
