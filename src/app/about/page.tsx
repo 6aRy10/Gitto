@@ -2,244 +2,168 @@
 
 import Link from "next/link";
 import { 
-  ArrowLeft, CheckCircle2, Shield, BarChart3, TrendingUp, Zap, 
-  Target, Users, Landmark, ChevronRight, Clock, Sparkles,
-  ShieldCheck, Globe, Database, Lock, Search, Heart, ArrowUpRight
+  ArrowLeft, Landmark, Zap, Search, Shield, ShieldCheck
 } from "lucide-react";
 import { Button } from "../../components/ui/button";
-import { Card } from "../../components/ui/card";
 
-export default function AboutPage() {
+export default function About() {
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 antialiased flex flex-col overflow-x-hidden">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100 px-8 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-blue-500/30 antialiased overflow-x-hidden relative">
+      {/* Shared Design Elements */}
+      <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/5 blur-[120px] rounded-full" />
+      </div>
+
+      <nav className="fixed top-0 left-0 right-0 z-[60] bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 px-8 py-5">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2 group">
-            <ArrowLeft className="h-4 w-4 text-slate-400 group-hover:text-slate-900 transition-transform group-hover:-translate-x-1" />
-            <div className="h-7 w-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
-            <span className="font-bold text-xl tracking-tighter text-slate-900">gitto</span>
+            <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+            <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
           </Link>
-          <div className="flex gap-4">
-            <Link href="/contact">
-              <Button variant="ghost" className="text-[14px] font-bold text-slate-600 hover:text-slate-900 rounded-full px-6">
-                Contact Sales
-              </Button>
-            </Link>
+          <div className="flex items-center gap-8">
+            <Link href="/" className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-white transition-colors">Return_Home</Link>
             <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-8 h-10 text-[14px] font-bold shadow-xl shadow-slate-900/10">
-                Book a Demo
-              </Button>
+              <div className="bg-white text-black px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.1em] hover:bg-slate-200 transition-all cursor-pointer">
+                Access Terminal
+              </div>
             </Link>
           </div>
         </div>
       </nav>
 
-      <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative pt-48 pb-32 px-8">
-          <div className="max-w-4xl mx-auto text-center space-y-10 relative z-10">
-            <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-[11px] font-black uppercase tracking-[0.2em] text-blue-600">
-              The Gitto Mission
+      <main className="relative z-10">
+        {/* About Hero - Massive Type */}
+        <section className="pt-64 pb-32 px-8">
+          <div className="max-w-[1400px] mx-auto">
+            <div className="inline-flex items-center px-3 py-1 rounded-sm bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400 mb-12">
+              The Thesis // v1.0
             </div>
-            <h1 className="text-[56px] md:text-[84px] font-bold tracking-tight text-slate-900 leading-[1.05]">
-              Closing the gap between <br /> 
-              <span className="text-slate-400 font-medium italic">forecast and reality.</span>
+            <h1 className="text-[80px] md:text-[160px] font-black tracking-[-0.08em] leading-[0.8] text-white uppercase">
+              DEATH TO <br />
+              <span className="text-white/10 italic">AVERAGES.</span>
             </h1>
-            <p className="text-[20px] text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
-              We believe spreadsheets are the enemy of cash truth. Gitto was built to give CFOs a deterministic anchor for their liquidity.
+            <p className="mt-20 text-3xl text-slate-400 font-medium max-w-4xl leading-tight tracking-tight italic">
+              "We believe that the most dangerous number in any enterprise is the one that was guessed."
             </p>
           </div>
         </section>
 
-        {/* The Three Gaps We Solve */}
-        <section className="max-w-6xl mx-auto px-8 py-24 border-t border-slate-100">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
-            <div className="space-y-10">
-              <div className="space-y-4">
-                <h2 className="text-[42px] font-bold tracking-tight text-slate-900">Why we exist</h2>
-                <p className="text-xl text-slate-500 font-medium leading-relaxed">
-                  Most finance teams are operating on "theoretical cash"—numbers that look good in a model but don't exist in the bank.
-                </p>
+        {/* The Why - Two Column Brutalist */}
+        <section className="px-8 py-64 border-t border-white/5 bg-white text-black">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-24">
+            <div className="lg:col-span-4 space-y-8">
+              <h2 className="text-[10px] font-black text-slate-300 tracking-[0.5em] uppercase">The_Problem</h2>
+              <h3 className="text-5xl font-black italic tracking-tighter leading-none">THE BANK-TRUTH GAP.</h3>
+            </div>
+            <div className="lg:col-span-8 space-y-12">
+              <p className="text-2xl font-bold leading-relaxed text-slate-600">
+                Most treasury software is just a prettier version of Excel. It takes your assumptions and displays them in a graph. But assumptions don't pay bills—cash does.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-12 pt-12">
+                <div className="space-y-4">
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-900">01 // The Behavioral Bias</h4>
+                  <p className="text-slate-500 font-medium leading-relaxed">Customers don't pay on due dates. They pay according to their own internal bottlenecks, payment runs, and liquidity constraints. Gitto learns these patterns.</p>
+                </div>
+                <div className="space-y-4">
+                  <h4 className="text-[11px] font-black uppercase tracking-widest text-slate-900">02 // The Explainability Deficit</h4>
+                  <p className="text-slate-500 font-medium leading-relaxed">When a forecast is wrong, "the model said so" isn't an answer. Gitto provides grounded citations for every movement, linked back to specific bank receipts.</p>
+                </div>
               </div>
-              <div className="space-y-8">
+            </div>
+          </div>
+        </section>
+
+        {/* The Solution - High Density */}
+        <section className="px-8 py-64 bg-[#0A0A0B] text-white overflow-hidden">
+          <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-32 items-center">
+            <div className="space-y-16">
+              <h2 className="text-7xl font-black tracking-tighter italic">BUILT FOR <br /><span className="text-blue-500">LIQUIDITY</span> <br /> MASTERY.</h2>
+              <div className="space-y-10">
                 {[
-                  { 
-                    title: "The Bank-Truth Gap", 
-                    desc: "Models fail when they aren't tied to live transactions. We ingest bank feeds to build an immutable cash ledger.", 
-                    icon: <Landmark className="h-5 w-5" /> 
-                  },
-                  { 
-                    title: "The Behavioral Bias", 
-                    desc: "Customers pay based on their own habits, not your invoice terms. Our AI learns those habits to find the hidden delay.", 
-                    icon: <Zap className="h-5 w-5" /> 
-                  },
-                  { 
-                    title: "The Explainability Deficit", 
-                    desc: "When a number changes, CFOs need to know 'Why'. Our RAG-powered analyst provides citations to specific invoices.", 
-                    icon: <Search className="h-5 w-5" /> 
-                  },
-                ].map((value, i) => (
-                  <div key={i} className="flex gap-5 text-left">
-                    <div className="h-12 w-12 rounded-2xl bg-slate-50 flex items-center justify-center text-slate-900 shadow-sm border border-slate-100 shrink-0">
-                      {value.icon}
-                    </div>
-                    <div className="space-y-1">
-                      <h4 className="font-bold text-slate-900 text-[18px]">{value.title}</h4>
-                      <p className="text-[15px] text-slate-500 font-medium leading-relaxed">{value.desc}</p>
+                  { t: 'Multi-Currency Core', d: 'Snapshot-locked FX rates and cross-border normalization that doesn\'t drift.' },
+                  { t: 'Intercompany Washes', d: 'Automatically detect and net-out internal transfers to see group reality.' },
+                  { t: 'Audit-Grade Controls', d: 'Every scenario change is logged. Every lever shift is attributed.' },
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-8 group">
+                    <div className="h-px w-12 bg-white/20 mt-4 group-hover:bg-blue-500 transition-colors" />
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-black uppercase italic tracking-tight">{item.t}</h4>
+                      <p className="text-slate-400 font-medium leading-relaxed max-w-md">{item.d}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            
-            <div className="bg-slate-50 rounded-[48px] aspect-square flex items-center justify-center p-12 relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-tr from-blue-500/5 to-indigo-500/5" />
-              <div className="relative z-10 w-full bg-white rounded-[32px] shadow-2xl border border-slate-100 p-10 space-y-10">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <ShieldCheck className="h-5 w-5 text-emerald-500" />
-                    <span className="font-black text-[11px] uppercase tracking-widest text-slate-400">Audit-Ready Ledger</span>
-                  </div>
-                  <div className="h-2 w-12 bg-emerald-100 rounded-full" />
+            <div className="relative">
+              <div className="absolute inset-0 bg-blue-600/10 blur-[150px] animate-pulse rounded-full" />
+              <div className="relative z-10 bg-white/5 border border-white/5 rounded-[40px] p-12 space-y-8">
+                <div className="flex items-center justify-between border-b border-white/10 pb-6">
+                  <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Enterprise_Readiness_Score</span>
+                  <span className="text-emerald-500 font-black">99.9%</span>
                 </div>
                 <div className="space-y-6">
-                  {[
-                    { label: 'Reconciled Inflows', val: '+€4.2M', color: 'text-emerald-600' },
-                    { label: 'Behavioral Variance', val: '-€120k', color: 'text-red-500' },
-                    { label: 'Group Liquidity', val: '€12.8M', color: 'text-slate-900' },
-                  ].map((row, i) => (
-                    <div key={i} className="flex items-center justify-between border-b border-slate-50 pb-4 last:border-none">
-                      <span className="text-sm font-bold text-slate-500">{row.label}</span>
-                      <span className={`text-lg font-black tracking-tight ${row.color}`}>{row.val}</span>
+                  {[1,2,3,4].map(i => (
+                    <div key={i} className="h-2 w-full bg-white/5 rounded-full overflow-hidden">
+                      <div className="h-full bg-blue-600 rounded-full" style={{ width: `${90 - (i*10)}%` }} />
                     </div>
                   ))}
                 </div>
-                <div className="pt-4">
-                  <div className="p-4 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-between">
-                    <span className="text-[10px] font-black text-blue-600 uppercase tracking-widest">CFO Sign-off Status</span>
-                    <span className="text-[10px] font-black text-emerald-600 uppercase tracking-widest">Verified</span>
-                  </div>
-                </div>
+                <p className="text-[11px] text-slate-500 font-bold italic text-center">Gitto v4.2 // Production Ready</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Enterprise Readiness Section */}
-        <section className="bg-slate-900 text-white py-32 px-8 overflow-hidden relative">
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 blur-[120px]" />
-          <div className="max-w-5xl mx-auto space-y-20 relative z-10">
-            <div className="text-center space-y-4">
-              <h2 className="text-[42px] font-bold tracking-tight">Built for Enterprise Readiness</h2>
-              <p className="text-slate-400 text-lg font-medium max-w-2xl mx-auto">Gitto isn't just a dashboard; it's a governance layer for global group structures.</p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
-              {[
-                { title: "Multi-Currency Mastery", desc: "Group-level visibility with snapshot-locked FX rates and automated reporting currency normalization." },
-                { title: "Intercompany Washes", desc: "Instantly detect and exclude intercompany flows to see the true external cash position." },
-                { title: "Audit & Controls", desc: "Full history of every lever change and scenario override. Built for external audit transparency." },
-              ].map((item, i) => (
-                <div key={i} className="space-y-4">
-                  <div className="h-10 w-10 rounded-xl bg-white/10 flex items-center justify-center">
-                    <Shield className="h-5 w-5 text-blue-400" />
-                  </div>
-                  <h4 className="text-xl font-bold tracking-tight">{item.title}</h4>
-                  <p className="text-slate-400 text-sm leading-relaxed font-medium">{item.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-      {/* Final CTA */}
-      <section className="px-8 py-64 text-center bg-white relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-indigo-50/50 blur-[120px] rounded-full scale-150" />
-        <div className="max-w-4xl mx-auto space-y-12 relative z-10">
-          <h2 className="text-[64px] md:text-[96px] font-bold tracking-tight leading-[0.9] text-slate-900">Ready for cash truth?</h2>
-          <p className="text-2xl text-slate-400 font-bold italic">Join the next generation of data-aware finance teams.</p>
-          <div className="pt-8">
-            <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-20 text-2xl font-black shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all hover:scale-[1.05] active:scale-[0.95]">
-                Book a Demo
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer - Redesign */}
-      <footer className="px-8 py-32 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto space-y-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-8 text-left">
-            {/* Logo & Info */}
-            <div className="lg:col-span-1 space-y-10">
-              <Link href="/" className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
-                <span className="font-black text-2xl tracking-tighter text-slate-900 uppercase">gitto</span>
+        {/* Mission Final Call */}
+        <section className="px-8 py-64 bg-white text-black text-center">
+          <div className="max-w-4xl mx-auto space-y-12">
+            <h2 className="text-[60px] md:text-[100px] font-black tracking-[-0.05em] leading-[0.9] uppercase">WE EXIST TO <br /> <span className="text-slate-300 italic">SECURE</span> <br /> THE FUTURE.</h2>
+            <div className="pt-12">
+              <Link href="/contact">
+                <Button className="bg-black text-white hover:bg-slate-900 rounded-none px-20 h-20 text-xl font-black uppercase tracking-[0.1em]">
+                  Join the Mission
+                </Button>
               </Link>
-              <div className="space-y-4 text-left">
-                <p className="text-[13px] font-black text-slate-900 uppercase tracking-widest leading-relaxed">info@gitto.ai</p>
-                <Link href="/app">
-                  <Button className="bg-slate-900 text-white rounded-full px-8 h-11 text-[13px] font-bold shadow-lg">
-                    Book a Demo
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            {/* Platform Columns */}
-            <div className="space-y-8">
-              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Platform</h4>
-              <ul className="space-y-4 text-[15px] text-slate-900 font-bold">
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Features</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Integrations</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Blog</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Compare</li>
-              </ul>
-            </div>
-
-            {/* Compare Column */}
-            <div className="space-y-8">
-              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Compare</h4>
-              <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Spreadsheets</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Kyriba</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">HighRadius</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Tesorio</li>
-              </ul>
-            </div>
-
-            {/* Industries Column */}
-            <div className="space-y-8 lg:col-span-2">
-              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Industries</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Venture Capital</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Private Equity</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">SaaS & BD</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Investment Banking</li>
-                </ul>
-                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Startups</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Fund of Funds</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Manufacturing</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors">Wealth Management</li>
-                </ul>
-              </div>
             </div>
           </div>
+        </section>
+      </main>
 
-          {/* Bottom Bar */}
-          <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-start gap-8">
-            <div className="flex flex-wrap gap-8 text-[12px] font-bold text-slate-400 uppercase tracking-widest text-left">
-              <span className="hover:text-slate-900 cursor-pointer">Privacy Policy</span>
-              <span className="hover:text-slate-900 cursor-pointer">Cookie Policy</span>
-              <span className="hover:text-slate-900 cursor-pointer">Terms of Service</span>
-              <span className="hover:text-slate-900 cursor-pointer">Consent Preferences</span>
+      {/* Footer - Mirrored from Home */}
+      <footer className="px-8 py-32 bg-[#0A0A0B] text-white border-t border-white/5 text-left">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
+          <div className="space-y-10">
+            <div className="flex items-center gap-2">
+              <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+              <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
             </div>
-            <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.2em]">© 2025 Gitto Inc.</p>
+            <div className="space-y-2 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+              <p>Based in New York City</p>
+              <p>info@gitto.ai</p>
+            </div>
+          </div>
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Platform</h4>
+            <ul className="space-y-4 text-[13px] font-black uppercase tracking-widest text-slate-400">
+              <li className="hover:text-white cursor-pointer transition-colors">Terminals</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Ledger_Truth</li>
+              <li className="hover:text-white cursor-pointer transition-colors">RAG_Insights</li>
+            </ul>
+          </div>
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Compare</h4>
+            <ul className="space-y-4 text-[13px] font-black uppercase tracking-widest text-slate-400">
+              <li className="hover:text-white cursor-pointer transition-colors">vs_Kyriba</li>
+              <li className="hover:text-white cursor-pointer transition-colors">vs_Manual</li>
+              <li className="hover:text-white cursor-pointer transition-colors">vs_Deficit</li>
+            </ul>
+          </div>
+          <div className="space-y-8 text-right">
+            <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Governance</h4>
+            <p className="text-[11px] font-bold text-slate-500 leading-relaxed max-w-[200px] ml-auto">
+              Built for external audit transparency and group-level group liquidity controls.
+            </p>
           </div>
         </div>
       </footer>

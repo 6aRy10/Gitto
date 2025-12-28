@@ -12,455 +12,353 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 
 export default function Landing() {
-  const [activeWorkflow, setActiveWorkflow] = useState(0);
-
-  const workflows = [
-    {
-      title: "Bank-Truth Reconciliation",
-      desc: "Watch as Gitto automatically matches incoming bank receipts to open invoices with 99% accuracy.",
-      videoMock: (
-        <div className="w-full h-full bg-slate-900 rounded-3xl p-8 flex flex-col gap-6 relative overflow-hidden">
-          <div className="flex items-center justify-between border-b border-white/10 pb-4">
-            <div className="flex items-center gap-3">
-              <Landmark className="h-5 w-5 text-emerald-400" />
-              <span className="text-white font-bold text-sm">Live Bank Feed</span>
-            </div>
-            <div className="px-3 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-[10px] font-black uppercase tracking-widest animate-pulse">Syncing</div>
-          </div>
-          <div className="space-y-4">
-            <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex items-center justify-between animate-in slide-in-from-left duration-700">
-              <div className="space-y-1">
-                <div className="text-[10px] text-slate-500 font-bold uppercase">Transaction</div>
-                <div className="text-white font-bold text-sm">€43,200 from Siemens AG</div>
-              </div>
-              <ArrowRight className="h-4 w-4 text-emerald-400 animate-bounce-x" />
-              <div className="text-right space-y-1">
-                <div className="text-[10px] text-slate-500 font-bold uppercase">Matched Invoice</div>
-                <div className="text-white font-bold text-sm">#INV-9942</div>
-              </div>
-            </div>
-            <div className="h-[1px] w-full bg-white/5" />
-            <div className="bg-emerald-500/10 border border-emerald-500/20 p-4 rounded-2xl flex items-center gap-4">
-              <CheckCircle2 className="h-5 w-5 text-emerald-400" />
-              <span className="text-emerald-400 font-bold text-sm uppercase tracking-tight">Reconciliation Success: Ledger Updated</span>
-            </div>
-          </div>
-          {/* Mouse pointer simulation */}
-          <MousePointer2 className="absolute bottom-10 right-20 text-white h-6 w-6 animate-pulse" />
-        </div>
-      )
-    },
-    {
-      title: "Grounded RAG Insights",
-      desc: "Ask any complex cash question and see Gitto retrieve specific evidence from your snapshots.",
-      videoMock: (
-        <div className="w-full h-full bg-indigo-950 rounded-3xl p-8 flex flex-col gap-6 relative overflow-hidden">
-          <div className="bg-white/10 rounded-2xl p-4 flex items-center gap-3 border border-white/10">
-            <Sparkles className="h-4 w-4 text-indigo-300" />
-            <div className="text-white text-sm font-medium italic">"Why is my W3 forecast lower than expected?"</div>
-          </div>
-          <div className="space-y-4">
-            <div className="flex gap-3">
-              <div className="h-8 w-8 rounded-lg bg-indigo-500 flex items-center justify-center text-white font-black text-xs">G</div>
-              <div className="bg-white/5 border border-white/10 p-4 rounded-2xl flex-1 space-y-3">
-                <p className="text-indigo-100 text-xs leading-relaxed">
-                  Analyzing 1,684 invoices... I found a **regime shift** in 'Enterprise-SaaS' customers. Average payment delay has increased by **4.2 days** this month.
-                </p>
-                <div className="flex gap-2">
-                  <div className="px-2 py-1 rounded-md bg-indigo-500/20 text-[9px] font-black text-indigo-300 uppercase border border-indigo-500/30">Ref: #INV-221</div>
-                  <div className="px-2 py-1 rounded-md bg-indigo-500/20 text-[9px] font-black text-indigo-300 uppercase border border-indigo-500/30">MAE: 0.8d</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )
-    }
-  ];
-
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 antialiased overflow-x-hidden">
-      {/* Translucent Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/70 backdrop-blur-xl border-b border-slate-100 px-6 py-4">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center gap-10">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="h-7 w-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
-              <span className="font-bold text-xl tracking-tighter text-slate-900">gitto</span>
+    <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-blue-500/30 antialiased overflow-x-hidden relative">
+      {/* Dynamic Grain Overlay */}
+      <div className="fixed inset-0 z-50 pointer-events-none opacity-[0.03]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
+      
+      {/* Moving Ambient Glows */}
+      <div className="fixed inset-0 z-0 pointer-events-none overflow-hidden">
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/10 blur-[120px] rounded-full animate-pulse" />
+        <div className="absolute bottom-[10%] right-[-5%] w-[30%] h-[30%] bg-emerald-600/5 blur-[100px] rounded-full" />
+      </div>
+
+      {/* Ultra-Slim Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-[60] bg-[#0A0A0B]/80 backdrop-blur-md border-b border-white/5 px-8 py-5">
+        <div className="max-w-[1400px] mx-auto flex items-center justify-between">
+          <div className="flex items-center gap-12">
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+              <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
             </Link>
-            <div className="hidden md:flex items-center gap-8 text-[13px] font-bold text-slate-500 uppercase tracking-widest">
-              <button className="hover:text-slate-900 transition-colors">Features</button>
-              <button className="hover:text-slate-900 transition-colors">Industries</button>
-              <button className="hover:text-slate-900 transition-colors">Resources</button>
+            <div className="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+              <button className="hover:text-white transition-colors">The Problem</button>
+              <button className="hover:text-white transition-colors">The Ledger</button>
+              <button className="hover:text-white transition-colors">Enterprise</button>
             </div>
           </div>
-          <div className="flex items-center gap-4">
-            <Link href="/app" className="text-[14px] font-bold text-slate-900 hover:text-slate-600 transition-colors px-4">Sign In</Link>
-            <Link href="/contact" className="hidden sm:block">
-              <Button variant="outline" className="border-slate-200 text-slate-900 rounded-full px-6 h-10 text-[13px] font-bold">
-                Product Tour
-              </Button>
-            </Link>
+          <div className="flex items-center gap-6">
+            <Link href="/app" className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-white transition-colors">Access Terminal</Link>
             <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-6 h-10 text-[13px] font-bold shadow-lg shadow-slate-900/10">
-                Book a Demo
-              </Button>
+              <div className="bg-white text-black px-6 py-2.5 rounded-full text-[11px] font-black uppercase tracking-[0.1em] hover:bg-slate-200 transition-all cursor-pointer shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+                Reserve Demo
+              </div>
             </Link>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section - Rings Aesthetic */}
-      <section className="relative pt-48 pb-20 px-6">
-        <div className="max-w-5xl mx-auto text-center space-y-10">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-50 border border-slate-100 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
-            Intelligent Cash Command Center
+      {/* Expressive Hero */}
+      <section className="relative pt-64 pb-32 px-8 z-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-end">
+          <div className="lg:col-span-8 space-y-12">
+            <div className="inline-flex items-center px-3 py-1 rounded-sm bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
+              Deterministic Cash Intelligence
+            </div>
+            <h1 className="text-[80px] md:text-[140px] font-black tracking-[-0.07em] leading-[0.85] text-white">
+              BANK <span className="text-white/20 italic font-medium">TRUTH</span> <br />
+              IS THE ONLY <br />
+              <span className="text-blue-500">REALITY.</span>
+            </h1>
           </div>
-          <h1 className="text-[64px] md:text-[92px] font-bold tracking-tight text-slate-900 leading-[0.95]">
-            An intelligent <span className="text-slate-400 font-medium italic">Cash Truth Layer</span>
-          </h1>
-          <p className="text-[22px] text-slate-500 font-medium max-w-3xl mx-auto leading-relaxed">
-            An all-in-one data enriched treasury layer to identify, access, and win more liquidity opportunities. Move from theoretical forecasts to bank-anchored reality.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6">
-            <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-12 h-16 text-[17px] font-black shadow-2xl shadow-slate-900/20 transition-all hover:scale-[1.02]">
-                Book a Demo
-              </Button>
-            </Link>
-            <Link href="/contact">
-              <Button variant="outline" className="border-slate-200 text-slate-900 rounded-full px-12 h-16 text-[17px] font-black hover:bg-slate-50 transition-all">
-                Product Tour
-              </Button>
-            </Link>
+          <div className="lg:col-span-4 pb-6 space-y-8">
+            <p className="text-xl text-slate-400 font-medium leading-relaxed tracking-tight border-l-2 border-blue-500/30 pl-8">
+              Spreadsheets model the "theoretical." Gitto anchors your liquidity in actual bank receipts, intercompany washes, and behavioral bias.
+            </p>
+            <div className="pl-8 flex items-center gap-4">
+              <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center animate-bounce-y">
+                <ArrowDownRight className="h-5 w-5 text-blue-400" />
+              </div>
+              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Scroll to enter the command center</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* The Living Dashboard (Rings Style) */}
-      <section className="px-6 py-20 bg-slate-50/50">
-        <div className="max-w-6xl mx-auto">
-          <div className="bg-white rounded-[40px] border border-slate-200 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col md:flex-row h-[750px]">
-            {/* Sidebar Mockup */}
-            <div className="w-72 border-r border-slate-100 p-8 hidden md:block space-y-10 bg-slate-50/30">
-              <div className="space-y-6 text-left">
-                <h3 className="text-xl font-bold text-slate-900">Good morning, Ayush</h3>
-                <div className="space-y-2">
-                  <div className="h-9 w-full bg-white border border-slate-100 rounded-xl flex items-center px-3 gap-3 shadow-sm">
-                    <Search className="h-4 w-4 text-slate-400" />
-                    <div className="h-2 w-24 bg-slate-100 rounded-full" />
+      {/* The Asymmetric Dashboard - Bloomberg/Harvey Style */}
+      <section className="px-8 py-20 relative z-10">
+        <div className="max-w-[1400px] mx-auto">
+          <div className="bg-[#111113] rounded-[24px] border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col h-[850px] relative">
+            {/* Terminal Header */}
+            <div className="h-14 border-b border-white/5 flex items-center justify-between px-8 bg-[#161618]">
+              <div className="flex items-center gap-6">
+                <div className="flex gap-1.5">
+                  <div className="h-2 w-2 rounded-full bg-white/10" />
+                  <div className="h-2 w-2 rounded-full bg-white/10" />
+                  <div className="h-2 w-2 rounded-full bg-white/10" />
+                </div>
+                <div className="h-4 w-[1px] bg-white/10" />
+                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Gitto Terminal v4.2 // Main_Ledger</span>
+              </div>
+              <div className="flex items-center gap-4">
+                <div className="text-[10px] font-black uppercase tracking-widest text-emerald-500 flex items-center gap-2">
+                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Live Bank Feed: 100% Sync
+                </div>
+              </div>
+            </div>
+
+            <div className="flex flex-1 overflow-hidden">
+              {/* Left: Metadata Column */}
+              <div className="w-80 border-r border-white/5 p-8 flex flex-col gap-12 bg-[#0D0D0F]">
+                <div className="space-y-6">
+                  <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">Liquidity_Metrics</h4>
+                  <div className="space-y-8">
+                    {[
+                      { label: 'Group_Cash', val: '€12.8M', trend: '+4.2%' },
+                      { label: 'Unmatched_Inflow', val: '€430k', trend: 'Critical' },
+                      { label: 'MAE_Accuracy', val: '0.8d', trend: '99%' },
+                    ].map((m, i) => (
+                      <div key={i} className="space-y-1">
+                        <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{m.label}</div>
+                        <div className="flex items-baseline gap-3">
+                          <div className="text-2xl font-black tracking-tighter text-white">{m.val}</div>
+                          <div className={`text-[9px] font-black uppercase ${m.trend === 'Critical' ? 'text-red-500' : 'text-emerald-500'}`}>{m.trend}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                
+                <div className="mt-auto space-y-4">
+                  <div className="p-4 rounded-xl bg-white/5 border border-white/5 space-y-3">
+                    <div className="flex items-center gap-2">
+                      <Sparkles className="h-3 w-3 text-blue-400" />
+                      <span className="text-[9px] font-black uppercase tracking-widest text-blue-400">Analyst_Insight</span>
+                    </div>
+                    <p className="text-[11px] text-slate-400 leading-relaxed font-medium italic">
+                      "Siemens AG has missing payment run for 2 weeks. Predicting +14d delay on #INV-221."
+                    </p>
                   </div>
                 </div>
               </div>
-              <div className="space-y-6">
-                <div className="px-2 text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Discover Gitto</div>
-                <div className="space-y-1.5">
-                  {[
-                    { label: 'CFO Desk', icon: Layout, active: true },
-                    { label: '13-Week Grid', icon: Calendar },
-                    { label: 'Banking Truth', icon: Landmark },
-                    { label: 'Analyst RAG', icon: Sparkles },
-                    { label: 'Operations', icon: Briefcase },
-                  ].map((item, i) => (
-                    <div key={i} className={`h-11 w-full rounded-2xl flex items-center px-4 gap-4 transition-all ${item.active ? 'bg-slate-900 text-white shadow-xl shadow-slate-900/20' : 'text-slate-400 hover:bg-white hover:text-slate-600'}`}>
-                      <item.icon className={`h-4 w-4 ${item.active ? 'text-white' : 'text-slate-300'}`} />
-                      <span className="text-[13px] font-bold tracking-tight">{item.label}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
 
-            {/* Main Canvas Mockup */}
-            <div className="flex-1 p-10 overflow-y-auto space-y-12 text-left bg-white relative">
-              <div className="flex items-center justify-between">
-                <div className="space-y-1">
-                  <h2 className="text-2xl font-black tracking-tight text-slate-900">Liquidity Overview</h2>
-                  <p className="text-[11px] font-bold text-slate-400 uppercase tracking-widest">Group Consolidated · Live Sync</p>
-                </div>
-                <Button variant="outline" size="sm" className="rounded-full gap-2 border-slate-100 text-[11px] font-black h-10 px-5 uppercase tracking-widest">
-                  <Plus className="h-3 w-3" /> Add Widget
-                </Button>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-                {/* Schedule Card (Rings Schedule Match) */}
-                <Card className="rounded-[32px] border-slate-100 shadow-sm overflow-hidden bg-white hover:shadow-xl transition-shadow duration-500">
-                  <CardContent className="p-8 space-y-8">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <Calendar className="h-5 w-5 text-slate-900" />
-                        <span className="font-black text-lg tracking-tight">Schedule</span>
-                      </div>
-                      <span className="text-[11px] font-black text-slate-400 uppercase tracking-[0.2em]">December 2025</span>
-                    </div>
-                    <div className="space-y-5">
-                      {[
-                        { time: 'In 15 mins', label: 'Payment Run Sync', insights: '12 Insights', color: 'bg-blue-50 text-blue-600' },
-                        { time: 'In 2 hours', label: 'Reconciliation Review', insights: '8 Insights', color: 'bg-emerald-50 text-emerald-600' },
-                        { time: 'In 4 hours', label: 'Board Cash Briefing', insights: '15 Insights', color: 'bg-indigo-50 text-indigo-600' },
-                      ].map((item, i) => (
-                        <div key={i} className="group flex items-center justify-between p-5 rounded-3xl border border-slate-50 hover:border-slate-200 hover:bg-slate-50/50 transition-all cursor-pointer">
-                          <div className="space-y-1.5">
-                            <div className="flex items-center gap-2">
-                              <span className="text-[11px] font-black text-slate-400 uppercase tracking-widest">{item.time}</span>
-                              <div className="h-1 w-1 rounded-full bg-slate-200" />
-                              <span className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors">{item.label}</span>
-                            </div>
-                          </div>
-                          <div className={`px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest ${item.color}`}>
-                            {item.insights}
-                          </div>
+              {/* Center: The Main Ledger Canvas */}
+              <div className="flex-1 p-10 space-y-12 bg-white/[0.01]">
+                <div className="grid grid-cols-12 gap-8 items-start">
+                  <div className="col-span-8 space-y-8 text-left">
+                    <h3 className="text-4xl font-black tracking-tight text-white italic">13-Week Cash Command</h3>
+                    <div className="grid grid-cols-4 gap-4">
+                      {[1,2,3,4].map(i => (
+                        <div key={i} className={`h-24 rounded-2xl border ${i === 1 ? 'bg-blue-600 border-blue-500 shadow-[0_0_30px_rgba(37,99,235,0.3)]' : 'bg-white/5 border-white/5'} p-4 flex flex-col justify-between transition-all hover:scale-105 cursor-pointer`}>
+                          <span className={`text-[9px] font-black uppercase tracking-widest ${i === 1 ? 'text-white' : 'text-slate-500'}`}>Week_{i}</span>
+                          <span className="text-lg font-black text-white">€{i}.2M</span>
                         </div>
                       ))}
                     </div>
-                  </CardContent>
-                </Card>
-
-                {/* Key Liquidity Updates (Rings Relationship Match) */}
-                <Card className="rounded-[32px] border-slate-100 shadow-sm overflow-hidden bg-white hover:shadow-xl transition-shadow duration-500">
-                  <CardContent className="p-8 space-y-8">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center gap-3">
-                        <TrendingUp className="h-5 w-5 text-slate-900" />
-                        <span className="font-black text-lg tracking-tight">Key Liquidity Updates</span>
+                    
+                    {/* Living Grid Mockup */}
+                    <div className="rounded-2xl border border-white/5 bg-[#161618] overflow-hidden">
+                      <div className="p-4 bg-white/5 flex items-center justify-between px-6">
+                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Transaction_Stream</span>
+                        <div className="h-2 w-2 rounded-full bg-emerald-500" />
                       </div>
-                      <span className="text-[11px] font-black text-blue-600 uppercase tracking-widest cursor-pointer hover:text-blue-700 transition-colors">See all</span>
-                    </div>
-                    <div className="space-y-6">
-                      {[
-                        { name: 'Siemens AG', role: 'Strategic Enterprise', status: 'Payment Reconciled · Today', insights: '10 Insights', icon: 'S', color: 'bg-slate-900' },
-                        { name: 'Emirates Group', role: 'Main Inflow Driver', status: 'Followup Overdue · 3 days ago', insights: '12 Insights', icon: 'E', color: 'bg-indigo-600' },
-                        { name: 'Standard Chartered', role: 'Treasury Partner', status: 'New FX Risk Detected', insights: '16 Insights', icon: 'S', color: 'bg-emerald-600' },
-                      ].map((update, i) => (
-                        <div key={i} className="flex items-start gap-5 group cursor-pointer">
-                          <div className={`h-12 w-12 rounded-2xl ${update.color} flex items-center justify-center text-white font-black text-sm shadow-lg group-hover:scale-110 transition-transform`}>
-                            {update.icon}
-                          </div>
-                          <div className="flex-1 space-y-1">
-                            <div className="flex items-center justify-between">
-                              <span className="text-[15px] font-black text-slate-900 group-hover:text-blue-600 transition-colors">{update.name}</span>
-                              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{update.insights}</span>
+                      <div className="divide-y divide-white/5 text-left">
+                        {[
+                          { entity: 'Emirates_Group', amt: '+€120,400', status: 'Reconciled', date: 'TODAY' },
+                          { entity: 'Kuwait_Petroleum', amt: '+€88,000', status: 'Predicted', date: 'JAN 04' },
+                          { entity: 'Standard_Chartered', amt: '-€45,000', status: 'Wash_Match', date: 'JAN 08' },
+                        ].map((tx, i) => (
+                          <div key={i} className="p-5 flex items-center justify-between hover:bg-white/5 transition-colors group cursor-pointer text-left">
+                            <div className="flex items-center gap-4">
+                              <div className="h-8 w-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-black group-hover:bg-blue-600 group-hover:border-blue-500 transition-all">{tx.entity[0]}</div>
+                              <div>
+                                <div className="text-xs font-black text-white">{tx.entity}</div>
+                                <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{tx.date}</div>
+                              </div>
                             </div>
-                            <p className="text-[12px] text-slate-400 font-bold uppercase tracking-tight">{update.role}</p>
-                            <p className={`text-[11px] font-black pt-1 ${update.status.includes('Overdue') ? 'text-red-500' : 'text-emerald-500'} uppercase tracking-widest`}>{update.status}</p>
+                            <div className="text-right">
+                              <div className={`text-xs font-black ${tx.amt.startsWith('+') ? 'text-emerald-500' : 'text-white'}`}>{tx.amt}</div>
+                              <div className="text-[9px] font-black uppercase tracking-widest text-slate-500">{tx.status}</div>
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* High-Fidelity Workflow Videos Section */}
-      <section className="px-6 py-64 max-w-7xl mx-auto space-y-32 relative">
-        <div className="absolute top-1/2 -right-64 w-[500px] h-[500px] bg-emerald-50/30 blur-[150px] rounded-full -z-10" />
-        <div className="text-center space-y-8">
-          <h2 className="text-[56px] md:text-[72px] font-black tracking-tighter leading-tight text-slate-900">Experience the Workflow</h2>
-          <p className="text-2xl text-slate-400 font-bold max-w-2xl mx-auto italic">High-fidelity automation for the modern finance stack.</p>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-          <div className="space-y-12">
-            {workflows.map((wf, i) => (
-              <div 
-                key={i} 
-                className={`p-10 rounded-[40px] cursor-pointer transition-all duration-500 border ${activeWorkflow === i ? 'bg-white border-slate-200 shadow-2xl' : 'bg-slate-50 border-transparent opacity-50 grayscale hover:opacity-100 hover:grayscale-0'}`}
-                onClick={() => setActiveWorkflow(i)}
-              >
-                <div className="space-y-4 text-left">
-                  <div className="flex items-center gap-4">
-                    <div className={`h-10 w-10 rounded-xl flex items-center justify-center ${activeWorkflow === i ? 'bg-slate-900 text-white' : 'bg-slate-200 text-slate-400'}`}>
-                      {i === 0 ? <RefreshCcw className="h-5 w-5" /> : <Sparkles className="h-5 w-5" />}
-                    </div>
-                    <h3 className="text-2xl font-black tracking-tight">{wf.title}</h3>
                   </div>
-                  <p className="text-slate-500 text-lg font-medium leading-relaxed">{wf.desc}</p>
+
+                  {/* Right: Action Playbook */}
+                  <div className="col-span-4 space-y-6 text-left">
+                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">Action_Playbook</h4>
+                    <div className="space-y-4">
+                      {[
+                        { title: 'Accelerate_SaaS_Run', roi: '12.4x' },
+                        { title: 'Delay_Vendor_Net30', roi: '4.2x' },
+                        { title: 'FX_Hedge_EURUSD', roi: 'Sign-off' },
+                      ].map((act, i) => (
+                        <div key={i} className="p-5 rounded-2xl bg-[#1A1A1C] border border-white/5 hover:border-blue-500/50 transition-all cursor-pointer group">
+                          <div className="flex justify-between items-center">
+                            <span className="text-[11px] font-black text-white tracking-tight">{act.title}</span>
+                            <ChevronRight className="h-3 w-3 text-slate-600 group-hover:text-blue-400 transition-colors" />
+                          </div>
+                          <div className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-500 mt-2">ROI: {act.roi}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-          <div className="aspect-square w-full transition-all duration-700 animate-in fade-in zoom-in">
-            {workflows[activeWorkflow].videoMock}
-          </div>
-        </div>
-      </section>
-
-      {/* The 12 Pillars of Finance Excellence (Rings Feature Grid) */}
-      <section className="px-6 py-64 max-w-7xl mx-auto border-t border-slate-100 relative">
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-slate-50/50 blur-[150px] rounded-full -z-10" />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16">
-          {[
-            { title: "7k+ Integrations", desc: "Native integrations to Snowflake, SAP, Oracle, Netsuite, and all major global banks.", icon: <Database /> },
-            { title: "Rich Notes & Files", desc: "Never lose context again - capture and access every detail that matters to your deals.", icon: <FileText /> },
-            { title: "Smart Privacy", desc: "Intuitive privacy controls ensure that sensitive treasury data stays... private.", icon: <Lock /> },
-            { title: "AI Natural Language Search", desc: "Ask anything, find everything - your Gitto data responds to plain English.", icon: <Search /> },
-            { title: "Track Cash Movements", desc: "Don't miss an opportunity - view and track your global liquidity in motion.", icon: <TrendingUp /> },
-            { title: "Proprietary AI Scoring", desc: "Stop guessing which collections matter - our AI scores customers and risks.", icon: <Zap /> },
-            { title: "Team & Workspaces", desc: "One platform, one truth - align your entire finance team around shared intelligence.", icon: <Users /> },
-            { title: "Customization", desc: "Your business, your rules - configure Gitto to match how you actually work.", icon: <Filter /> },
-            { title: "Project Management", desc: "Powerful treasury management with fully customizable project & task hierarchies.", icon: <Briefcase /> },
-            { title: "Dedicated CSM in Slack", desc: "Expert help, zero friction - get answers without leaving your workflow.", icon: <MessageSquare /> },
-            { title: "iOS App", desc: "A powerful iOS app to manage your cash and opportunities on the go.", icon: <Globe /> },
-            { title: "Chrome Extension", desc: "See Gitto data wherever you browse with our real-time Chrome Extension.", icon: <Plus /> }
-          ].map((feature, i) => (
-            <Card key={i} className="border-0 shadow-none hover:bg-slate-50 transition-all duration-500 p-10 space-y-6 rounded-[32px] group text-left">
-              <div className="h-14 w-14 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-slate-900 shadow-sm group-hover:scale-110 group-hover:shadow-xl transition-all">
-                {feature.icon}
-              </div>
-              <div className="space-y-3">
-                <h3 className="font-black text-xl text-slate-900">{feature.title}</h3>
-                <p className="text-slate-500 text-[15px] font-medium leading-relaxed italic opacity-80 group-hover:opacity-100 transition-opacity">
-                  {feature.desc}
-                </p>
-              </div>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Testimonial Section - Rings Styled Quote */}
-      <section className="px-6 py-40 bg-slate-900 text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[150px]" />
-        <div className="absolute bottom-0 left-0 w-1/2 h-full bg-emerald-600/5 blur-[150px]" />
-        <div className="max-w-4xl mx-auto text-center space-y-16 relative z-10">
-          <div className="flex justify-center gap-1">
-            {[1,2,3,4,5].map(i => <Sparkles key={i} className="h-6 w-6 text-blue-400 fill-blue-400" />)}
-          </div>
-          <h2 className="text-[36px] md:text-[52px] font-bold leading-tight italic tracking-tight text-indigo-100">
-            "I've been a treasury nerd and community builder both in business and personal and have been looking for a tool like this my whole career. This changes everything."
-          </h2>
-          <div className="space-y-3">
-            <div className="h-16 w-16 rounded-full bg-slate-800 mx-auto border-2 border-white/10" />
-            <div>
-              <p className="text-xl font-black tracking-tight">Raphael Leopold</p>
-              <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Partner, Coolwater Capital</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section - Rings Styled */}
-      <section className="px-6 py-48 max-w-3xl mx-auto space-y-24 relative">
-        <div className="absolute top-0 -left-64 w-96 h-96 bg-blue-50/50 blur-[100px] rounded-full -z-10" />
-        <h2 className="text-[48px] font-black tracking-tighter text-center text-slate-900 leading-none">Frequently Asked Questions</h2>
-        <div className="space-y-2">
-          {[
-            "What makes Gitto different from traditional Treasury tools?",
-            "Do I have to give up my existing ERP?",
-            "What is 'Liquidity Power'?",
-            "How can I use Gitto to prepare for board meetings?",
-            "How does Gitto protect my data privacy?",
-            "How do I get started with Gitto AI in 5 minutes?",
-            "What is the level of dedicated support?",
-            "Can I access Gitto data on the go?"
-          ].map((q, i) => (
-            <div key={i} className="group border-b border-slate-100 py-8 flex items-center justify-between cursor-pointer hover:border-slate-300 transition-all">
-              <span className="text-[20px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-left">{q}</span>
-              <Plus className="h-6 w-6 text-slate-300 group-hover:text-blue-600 group-hover:rotate-90 transition-all duration-500" />
+      {/* The "Brutal" Sections: No more standard cards */}
+      <section className="px-8 py-64 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+          <div className="lg:col-span-5 space-y-16">
+            <div className="space-y-6">
+              <h2 className="text-6xl font-black tracking-[-0.05em] leading-[0.9] text-white">THE <br /><span className="text-white/20 italic font-medium underline underline-offset-8 decoration-blue-500/50">SPREADSHEET</span> <br /> GAP.</h2>
+              <p className="text-xl text-slate-400 font-medium leading-relaxed">
+                Most finance teams are chasing "theoretical cash." Numbers that exist in a model but don't exist in the bank. Gitto closes the deficit.
+              </p>
             </div>
-          ))}
-        </div>
-      </section>
+            
+            <div className="space-y-12">
+              {[
+                { title: 'Behavioral_Bias', desc: 'Real life averages 14+ days of unmodeled delay. We find them before they hit your runway.' },
+                { title: 'Bank_Truth', desc: 'If the bank doesn\'t see the receipt, it isn\'t truth. Deterministic matching for CFO sign-off.' },
+                { title: 'Group_Normalization', desc: 'Consolidated FX and Intercompany washes that don\'t break at scale.' },
+              ].map((gap, i) => (
+                <div key={i} className="space-y-2 border-l-2 border-white/5 pl-8 hover:border-blue-500 transition-all">
+                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-white">{gap.title}</h4>
+                  <p className="text-sm text-slate-500 font-medium leading-relaxed">{gap.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
 
-      {/* Final CTA - Magic Section */}
-      <section className="px-6 py-64 text-center relative overflow-hidden bg-white">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-blue-50/50 blur-[120px] rounded-full scale-150" />
-        <div className="max-w-4xl mx-auto space-y-12 relative z-10">
-          <h2 className="text-[64px] md:text-[96px] font-bold tracking-tight leading-[0.9] text-slate-900">Feel the magic today</h2>
-          <p className="text-2xl text-slate-400 font-bold italic">Make every collection count.</p>
-          <div className="pt-8">
-            <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-20 text-2xl font-black shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all hover:scale-[1.05] active:scale-[0.95]">
-                Book a Demo
-              </Button>
-            </Link>
+          <div className="lg:col-span-7 flex items-center justify-center relative">
+            <div className="absolute inset-0 bg-blue-600/10 blur-[150px] animate-pulse rounded-full" />
+            <div className="relative z-10 w-full aspect-square border border-white/5 rounded-full flex items-center justify-center p-20 animate-spin-slow">
+              <div className="w-full h-full border border-white/10 rounded-full flex items-center justify-center p-20 animate-reverse-spin">
+                <div className="w-full h-full bg-blue-600 rounded-full shadow-[0_0_100px_rgba(37,99,235,0.4)] flex items-center justify-center">
+                  <span className="text-white font-black text-4xl italic tracking-tighter">TRUTH</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Footer - Rings Aesthetic Redesign */}
-      <footer className="px-6 py-32 bg-white border-t border-slate-100">
-        <div className="max-w-7xl mx-auto space-y-24">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 lg:gap-8">
-            {/* Logo & Info */}
-            <div className="lg:col-span-1 space-y-10">
-              <Link href="/" className="flex items-center gap-2">
-                <div className="h-8 w-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
-                <span className="font-black text-2xl tracking-tighter text-slate-900 uppercase">gitto</span>
-              </Link>
+      {/* The 6 Pillars - Abstracted Grid */}
+      <section className="px-8 py-64 bg-white text-black relative overflow-hidden z-10 text-left">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-px bg-black/10 border border-black/10">
+          {[
+            { t: 'BANK_TRUTH', d: 'Ingest transactions and reconcile receipts against invoices for a definitive closing cash number.' },
+            { t: 'BEHAVIORAL_BIAS', d: 'Spreadsheets use due dates; real life doesn\'t. We learn customer payment habits to predict reality.' },
+            { t: 'RAG_INSIGHTS', d: 'Ask anything. Get answers grounded in specific retrieved invoice evidence with citations.' },
+            { t: '13_WEEK_GRID', d: 'The single source of truth for the weekly cash meeting. Interactive drill-downs from W1 to W13.' },
+            { t: 'FX_NORMALIZATION', d: 'Snapshot-locked rates and intercompany wash detection. Consolidated group visibility.' },
+            { t: 'GOVERNANCE', d: 'Enterprise-ready audit logs for every scenario change, lever shift, and CFO sign-off.' },
+          ].map((p, i) => (
+            <div key={i} className="bg-white p-16 space-y-10 group hover:bg-[#F9F9FB] transition-all">
+              <span className="text-[10px] font-black text-slate-300 tracking-[0.4em]">PILLAR_0{i+1}</span>
               <div className="space-y-4">
-                <p className="text-[13px] font-black text-slate-900 uppercase tracking-widest leading-relaxed">info@gitto.ai</p>
-                <Link href="/app">
-                  <Button className="bg-slate-900 text-white rounded-full px-8 h-11 text-[13px] font-bold shadow-lg">
-                    Book a Demo
-                  </Button>
-                </Link>
+                <h3 className="text-3xl font-black tracking-tighter leading-none italic uppercase">{p.t}</h3>
+                <p className="text-lg text-slate-500 font-bold leading-relaxed">{p.d}</p>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
 
-            {/* Links Columns */}
-            <div className="space-y-8">
-              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Platform</h4>
-              <ul className="space-y-4 text-[15px] text-slate-900 font-bold">
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Features</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Integrations</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Blog</li>
-                <li className="hover:text-blue-600 cursor-pointer transition-colors">Compare</li>
-              </ul>
-            </div>
-
-            <div className="space-y-8">
-              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Compare</h4>
-              <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Spreadsheets</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Kyriba</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">HighRadius</li>
-                <li className="hover:text-slate-900 cursor-pointer transition-colors">Tesorio</li>
-              </ul>
-            </div>
-
-            <div className="space-y-8 lg:col-span-2">
-              <h4 className="font-black text-[11px] text-slate-400 uppercase tracking-[0.3em]">Industries</h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
-                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Venture Capital</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Private Equity</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">SaaS & BD</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Investment Banking</li>
-                </ul>
-                <ul className="space-y-4 text-[15px] text-slate-500 font-bold">
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Startups</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Fund of Funds</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Manufacturing</li>
-                  <li className="hover:text-slate-900 cursor-pointer transition-colors whitespace-nowrap">Wealth Management</li>
-                </ul>
-              </div>
+      {/* Testimonial - Stark Style */}
+      <section className="px-8 py-64 bg-[#0A0A0B] text-white z-10 text-center">
+        <div className="max-w-4xl mx-auto space-y-16">
+          <h2 className="text-[40px] md:text-[60px] font-black italic tracking-tight leading-[1.1]">
+            "I've been a treasury nerd for my whole career. Gitto is the first command center that actually feels like <span className="text-blue-500">truth</span>."
+          </h2>
+          <div className="space-y-4">
+            <div className="h-[1px] w-24 bg-white/20 mx-auto" />
+            <div>
+              <p className="text-xl font-black uppercase tracking-[0.2em]">Raphael Leopold</p>
+              <p className="text-[11px] font-bold text-slate-500 uppercase tracking-[0.3em]">Partner // Coolwater Capital</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Bottom Bar */}
-          <div className="pt-16 border-t border-slate-100 flex flex-col md:flex-row justify-between items-start gap-8">
-            <div className="flex flex-wrap gap-8 text-[12px] font-bold text-slate-400 uppercase tracking-widest">
-              <span className="hover:text-slate-900 cursor-pointer">Privacy Policy</span>
-              <span className="hover:text-slate-900 cursor-pointer">Cookie Policy</span>
-              <span className="hover:text-slate-900 cursor-pointer">Terms of Service</span>
-              <span className="hover:text-slate-900 cursor-pointer">Consent Preferences</span>
-            </div>
-            <p className="text-[12px] font-black text-slate-400 uppercase tracking-[0.2em]">© 2025 Gitto Inc.</p>
+      {/* Final Call - The Magic Finish */}
+      <section className="px-8 py-64 bg-white text-black text-center relative z-10">
+        <div className="max-w-5xl mx-auto space-y-12">
+          <h2 className="text-[100px] md:text-[180px] font-black tracking-[-0.08em] leading-[0.8] uppercase">KNOW <br /> <span className="text-slate-200">YOUR</span> <br /> CASH.</h2>
+          <div className="pt-12">
+            <Link href="/app">
+              <Button className="bg-black text-white hover:bg-slate-900 rounded-none px-20 h-24 text-2xl font-black uppercase tracking-[0.1em] transition-all hover:scale-105 active:scale-95 shadow-[0_20px_60px_rgba(0,0,0,0.2)]">
+                Access Terminal
+              </Button>
+            </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Footer - Minimalist Brutalist */}
+      <footer className="px-8 py-32 bg-[#0A0A0B] text-white border-t border-white/5 text-left">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-20">
+          <div className="space-y-10">
+            <div className="flex items-center gap-2">
+              <div className="h-6 w-6 rounded bg-white flex items-center justify-center text-black font-black text-[10px]">G</div>
+              <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
+            </div>
+            <div className="space-y-2 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
+              <p>Based in New York City</p>
+              <p>info@gitto.ai</p>
+            </div>
+          </div>
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Platform</h4>
+            <ul className="space-y-4 text-[13px] font-black uppercase tracking-widest text-slate-400">
+              <li className="hover:text-white cursor-pointer transition-colors">Terminals</li>
+              <li className="hover:text-white cursor-pointer transition-colors">Ledger_Truth</li>
+              <li className="hover:text-white cursor-pointer transition-colors">RAG_Insights</li>
+            </ul>
+          </div>
+          <div className="space-y-8">
+            <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Compare</h4>
+            <ul className="space-y-4 text-[13px] font-black uppercase tracking-widest text-slate-400">
+              <li className="hover:text-white cursor-pointer transition-colors">vs_Kyriba</li>
+              <li className="hover:text-white cursor-pointer transition-colors">vs_Manual</li>
+              <li className="hover:text-white cursor-pointer transition-colors">vs_Deficit</li>
+            </ul>
+          </div>
+          <div className="space-y-8 text-right">
+            <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Governance</h4>
+            <p className="text-[11px] font-bold text-slate-500 leading-relaxed max-w-[200px] ml-auto">
+              Built for external audit transparency and group-level group liquidity controls.
+            </p>
+          </div>
+        </div>
+        <div className="max-w-[1400px] mx-auto pt-32 flex justify-between items-center text-[9px] font-black uppercase tracking-[0.5em] text-slate-700">
+          <span>©2025 Gitto_Intelligence_Inc.</span>
+          <span>Security_First_Architecture</span>
         </div>
       </footer>
+
+      {/* Global CSS for unique animations */}
+      <style jsx global>{`
+        @keyframes bounce-y {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-10px); }
+        }
+        .animate-bounce-y {
+          animation: bounce-y 3s ease-in-out infinite;
+        }
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 20s linear infinite;
+        }
+        @keyframes reverse-spin {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-reverse-spin {
+          animation: reverse-spin 10s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
-
-const RefreshCcw = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" /><path d="M3 3v5h5" /><path d="M3 12a9 9 0 0 0 9 9 9.75 9.75 0 0 0 6.74-2.74L21 16" /><path d="M16 21v-5h5" />
-  </svg>
-);
