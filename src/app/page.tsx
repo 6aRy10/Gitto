@@ -2,72 +2,43 @@
 
 import { useState } from 'react';
 import Link from "next/link";
-import { ArrowRight, CheckCircle2, Shield, BarChart3, TrendingUp, AlertCircle, Landmark, Users } from "lucide-react";
+import { 
+  ArrowRight, CheckCircle2, Shield, BarChart3, TrendingUp, AlertCircle, 
+  Landmark, Users, Search, Bell, Calendar, ChevronRight, MessageSquare,
+  Lock, Zap, Database, Globe, Briefcase, Plus, Sparkles, Filter
+} from "lucide-react";
 import { Button } from "../components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "../components/ui/card";
-import { api } from "../lib/api";
-
-const features = [
-  { title: "Behavior-based forecasting", desc: "Learn actual payment behaviors by customer, country, and terms to predict when cash lands.", icon: <BarChart3 className="h-5 w-5 text-blue-600" /> },
-  { title: "13-Week CFO Command Center", desc: "Interactive weekly grid with live drill-downs into invoices and vendor bills.", icon: <CheckCircle2 className="h-5 w-5 text-emerald-600" /> },
-  { title: "Liquidity Levers & Actions", desc: "Simulate delay shocks or aggressive collections and track ROI-positive actions.", icon: <ArrowRight className="h-5 w-5 text-indigo-600" /> },
-  { title: "Multi-Currency Bank Truth", desc: "Ingest bank balances and reconcile cash receipts with snapshot-locked FX rates.", icon: <Shield className="h-5 w-5 text-amber-600" /> },
-];
-
-const steps = [
-  { label: "01", title: "Unified Ingest", desc: "Upload Excel for quick starts or connect Snowflake for enterprise-scale integration." },
-  { label: "02", title: "Bank-Truth Layer", desc: "Connect actual bank feeds to build an immutable cash ledger and reconcile receipts." },
-  { label: "03", title: "Grounded RAG Insights", desc: "Ask 'Why' behind variances and get answers grounded in specific retrieved invoices." },
-  { label: "04", title: "Audit-Ready Controls", desc: "Persistent audit logs for every lever change, scenario override, and CFO sign-off." },
-];
+import { Card, CardContent } from "../components/ui/card";
 
 export default function Landing() {
-  const barColors = Array.from({ length: 40 }, (_, i) =>
-    i % 2 === 0 ? '#3b82f6' : '#6366f1'
-  );
-  const barOpacities = Array.from({ length: 40 }, (_, i) =>
-    0.2 + ((i % 5) * 0.08)
-  ); // deterministic to avoid hydration mismatches
-  return (
-    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 antialiased relative">
-      {/* Global Background Effect */}
-      <div className="fixed inset-0 z-0 flex w-full h-full overflow-hidden pointer-events-none opacity-[0.12]">
-        {barColors.map((color, i) => (
-          <div 
-            key={i} 
-            className="h-full flex-1 border-r border-slate-100/10" 
-            style={{ 
-              backgroundColor: color,
-              opacity: barOpacities[i]
-            }} 
-          />
-        ))}
-        <div 
-          className="absolute inset-0 opacity-[0.6] pointer-events-none" 
-          style={{ 
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
-            mixBlendMode: 'overlay'
-          }} 
-        />
-      </div>
+  const [activeTab, setActiveTab] = useState('features');
 
-      {/* Floating Navigation */}
-      <nav className="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] max-w-5xl z-50">
-        <div className="bg-white/90 backdrop-blur-xl border border-slate-200/50 rounded-2xl px-8 py-3.5 flex items-center justify-between shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
-          <div className="flex items-center gap-2">
-            <div className="h-6 w-6 rounded-sm bg-slate-900 flex items-center justify-center text-white font-black text-xs">G</div>
-            <span className="font-bold text-2xl tracking-tighter text-slate-900">gitto</span>
+  return (
+    <div className="min-h-screen bg-white text-slate-900 font-sans selection:bg-blue-100 antialiased overflow-x-hidden">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-100">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-10">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="h-7 w-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
+              <span className="font-bold text-xl tracking-tighter text-slate-900">gitto</span>
+            </Link>
+            <div className="hidden md:flex items-center gap-8 text-[14px] font-medium text-slate-500">
+              <button className="hover:text-slate-900 transition-colors">Features</button>
+              <button className="hover:text-slate-900 transition-colors">Industries</button>
+              <button className="hover:text-slate-900 transition-colors">Resources</button>
+            </div>
           </div>
-          <div className="hidden md:flex items-center gap-10 text-[13px] font-semibold text-slate-500 tracking-tight">
-            <button onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-slate-900 transition-colors">Features</button>
-            <button onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-slate-900 transition-colors">Pricing</button>
-            <Link href="/contact" className="hover:text-slate-900 transition-colors">Contact</Link>
-          </div>
-          <div className="flex items-center gap-6">
-            <Link href="/app" className="text-[13px] font-semibold text-slate-900 hover:text-slate-600 transition-colors">Sign In</Link>
+          <div className="flex items-center gap-4">
+            <Link href="/app" className="text-[14px] font-medium text-slate-900 hover:text-slate-600 transition-colors px-4">Sign In</Link>
+            <Link href="/contact" className="hidden sm:block">
+              <Button variant="outline" className="border-slate-200 text-slate-900 rounded-full px-6 h-10 text-[14px] font-semibold">
+                Product Tour
+              </Button>
+            </Link>
             <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-lg px-6 h-10 text-[13px] font-bold tracking-tight">
-                Get Started
+              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-6 h-10 text-[14px] font-bold">
+                Book a Demo
               </Button>
             </Link>
           </div>
@@ -75,302 +46,325 @@ export default function Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-64 pb-48 px-6 min-h-[900px] flex items-center justify-center overflow-hidden">
-        <div className="max-w-5xl mx-auto text-center space-y-12 relative z-10">
-          <div className="inline-flex items-center px-5 py-2 rounded-full bg-white/60 backdrop-blur-md border border-white/40 text-[13px] font-black text-slate-900 tracking-tight shadow-sm">
-            Get started with Gitto
+      <section className="relative pt-40 pb-20 px-6">
+        <div className="max-w-4xl mx-auto text-center space-y-8">
+          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-slate-50 border border-slate-100 text-[13px] font-semibold text-slate-600">
+            Introducing Gitto Intelligence
           </div>
-          
-          <h1 className="text-[64px] md:text-[92px] font-bold tracking-[-0.05em] text-slate-900 leading-[0.92] max-w-4xl mx-auto">
-            Enterprise Cash <br className="hidden sm:block" />
-            Command Center <br className="hidden sm:block" />
-            <span className="text-blue-600">Built for Trust.</span>
+          <h1 className="text-[56px] md:text-[84px] font-bold tracking-tight text-slate-900 leading-[1.05]">
+            An intelligent <span className="text-slate-400 font-medium italic">Cash Command Center</span>
           </h1>
-          
-          <p className="text-[19px] text-slate-600 font-medium max-w-2xl mx-auto tracking-tight leading-relaxed opacity-90">
-            Behavior-based forecasting meets bank-truth reality. The only workspace that retrieves specific invoice evidence to explain your cash.
+          <p className="text-[19px] text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
+            An all-in-one data enriched treasury layer (or CRM for your cash) to identify, access, and win more liquidity opportunities.
           </p>
-          
-          <div className="flex flex-col items-center gap-10 pt-6">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
             <Link href="/app">
-              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-xl px-12 h-16 text-[17px] font-black shadow-2xl shadow-slate-900/10 transition-all hover:scale-[1.02] active:scale-[0.98]">
-                Get Started
+              <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-10 h-14 text-[16px] font-bold shadow-xl shadow-slate-900/10">
+                Book a Demo
               </Button>
             </Link>
-            
-            <div className="flex items-center gap-3">
-              <span className="text-sm font-bold text-slate-900 tracking-tight">G</span>
-              <div className="flex gap-0.5">
-                {[1,2,3,4,5].map(i => (
-                  <svg key={i} className="w-4 h-4 text-slate-900 fill-current" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+            <Link href="/contact">
+              <Button variant="outline" className="border-slate-200 text-slate-900 rounded-full px-10 h-14 text-[16px] font-bold hover:bg-slate-50">
+                Product Tour
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Dashboard Mockup (Rings Style) */}
+      <section className="px-6 py-20 bg-slate-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-[32px] border border-slate-200 shadow-2xl overflow-hidden flex flex-col md:flex-row h-[700px]">
+            {/* Sidebar Mockup */}
+            <div className="w-64 border-r border-slate-100 p-6 hidden md:block space-y-8 bg-slate-50/30">
+              <div className="space-y-4">
+                <div className="h-4 w-24 bg-slate-100 rounded-full" />
+                <div className="space-y-2">
+                  <div className="h-8 w-full bg-white border border-slate-100 rounded-lg flex items-center px-3 gap-2">
+                    <Search className="h-3.5 w-3.5 text-slate-400" />
+                    <div className="h-2 w-16 bg-slate-50 rounded-full" />
+                  </div>
+                </div>
               </div>
-              <span className="text-[13px] font-bold text-slate-900 tracking-tight">4.9 Rating from Users</span>
+              <div className="space-y-4">
+                <div className="h-2 w-16 bg-slate-100 rounded-full ml-2" />
+                <div className="space-y-1">
+                  {[1,2,3,4,5].map(i => (
+                    <div key={i} className={`h-10 w-full rounded-xl flex items-center px-3 gap-3 ${i === 1 ? 'bg-white shadow-sm border border-slate-100' : 'text-slate-400'}`}>
+                      <div className={`h-4 w-4 rounded ${i === 1 ? 'bg-slate-900' : 'bg-slate-100'}`} />
+                      <div className={`h-2 w-20 rounded-full ${i === 1 ? 'bg-slate-900' : 'bg-slate-100'}`} />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Main Content Mockup */}
+            <div className="flex-1 p-8 overflow-y-auto space-y-10">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h2 className="text-xl font-bold text-slate-900">Good morning, Ayush</h2>
+                  <p className="text-sm text-slate-400 font-medium">Discover Gitto Insights</p>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Button variant="outline" size="sm" className="rounded-full gap-2 border-slate-100 text-[12px] h-9">
+                    <Plus className="h-3.5 w-3.5" /> Add Widget
+                  </Button>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Schedule Card */}
+                <Card className="rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                  <CardContent className="p-6 space-y-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-slate-900" />
+                        <span className="font-bold text-[15px]">Schedule</span>
+                      </div>
+                      <span className="text-[12px] font-bold text-slate-400 uppercase tracking-widest">December 2025</span>
+                    </div>
+                    <div className="space-y-4">
+                      {[
+                        { time: 'In 15 mins', label: 'Payment Run Review', insights: '12 Insights', color: 'bg-blue-50 text-blue-600' },
+                        { time: 'In 2 hours', label: 'Reconciliation Sync', insights: '8 Insights', color: 'bg-emerald-50 text-emerald-600' },
+                        { time: 'In 4 hours', label: 'Cash Flow Forecast', insights: '15 Insights', color: 'bg-indigo-50 text-indigo-600' },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center justify-between p-4 rounded-2xl border border-slate-50 hover:bg-slate-50 transition-colors">
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-2">
+                              <span className="text-[11px] font-bold text-slate-400">{item.time}</span>
+                              <span className="h-1 w-1 rounded-full bg-slate-200" />
+                              <span className="text-[13px] font-bold text-slate-900">{item.label}</span>
+                            </div>
+                          </div>
+                          <div className={`px-3 py-1 rounded-full text-[11px] font-bold ${item.color}`}>
+                            {item.insights}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Key Relationship Updates (Liquidity) */}
+                <Card className="rounded-3xl border border-slate-100 shadow-sm overflow-hidden">
+                  <CardContent className="p-6 space-y-6">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-slate-900" />
+                        <span className="font-bold text-[15px]">Key Liquidity Updates</span>
+                      </div>
+                      <span className="text-[12px] font-bold text-blue-600 cursor-pointer">See all</span>
+                    </div>
+                    <div className="space-y-5">
+                      {[
+                        { name: 'Emirates Group', role: 'Main Enterprise Customer', status: 'Payment Overdue · 3 days ago', insights: '10 Insights', icon: 'E' },
+                        { name: 'Kuwait Finance', role: 'Strategic Partner', status: 'Account Balance Low · Today', insights: '12 Insights', icon: 'K' },
+                        { name: 'Standard Chartered', role: 'Main Banking Partner', status: 'New FX Risk Detected', insights: '16 Insights', icon: 'S' },
+                      ].map((update, i) => (
+                        <div key={i} className="flex items-start gap-4">
+                          <div className="h-10 w-10 rounded-xl bg-slate-900 flex items-center justify-center text-white font-black text-xs">
+                            {update.icon}
+                          </div>
+                          <div className="flex-1 space-y-0.5">
+                            <div className="flex items-center justify-between">
+                              <span className="text-[14px] font-bold text-slate-900">{update.name}</span>
+                              <span className="text-[11px] font-bold text-slate-400">{update.insights}</span>
+                            </div>
+                            <p className="text-[12px] text-slate-400 font-medium">{update.role}</p>
+                            <p className="text-[11px] text-red-500 font-bold pt-1">{update.status}</p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Feature Section (Talunt Style) */}
-      <section id="features" className="relative z-10 max-w-7xl mx-auto px-6 py-32 space-y-24">
-        <div className="space-y-4 text-left">
-          <div className="flex items-center gap-3 text-slate-400 text-[13px] font-bold uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-slate-900" />
-            One stop solution
-          </div>
-          <h2 className="text-[72px] font-bold tracking-tighter text-slate-900 leading-none">Get Started</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+      {/* Features Grid (Rings Style) */}
+      <section className="px-6 py-32 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            {
-              title: "13-Week Command Center",
-              desc: "The single brain for CFOs. Interactive weekly grid with live drill-downs into every invoice and vendor bill.",
-              img: (
-                <div className="w-full h-full bg-[#111] flex items-center justify-center p-8">
-                  <div className="bg-white rounded-xl shadow-2xl p-6 w-full space-y-4 border border-slate-100/50">
-                    <div className="flex items-center justify-between border-b pb-3 border-slate-50">
-                      <div className="flex items-center gap-2">
-                        <div className="h-5 w-5 rounded bg-blue-100 flex items-center justify-center text-[10px] font-black text-blue-600">W1</div>
-                        <span className="text-[10px] font-black">+€19.7k</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <div className="h-5 w-5 rounded bg-emerald-100 flex items-center justify-center text-[10px] font-black text-emerald-600">W3</div>
-                        <span className="text-[10px] font-black text-emerald-600">+€4.2M</span>
-                      </div>
-                    </div>
-                    <div className="space-y-3 pt-2 text-left">
-                      <div className="text-[9px] font-black text-slate-400 uppercase">Live Prediction Grid</div>
-                      <div className="h-2 w-full bg-slate-100 rounded-full" />
-                      <div className="h-2 w-[60%] bg-slate-100 rounded-full" />
-                    </div>
-                  </div>
-                </div>
-              )
+            { 
+              title: "7k+ Integrations", 
+              desc: "Native integrations to Snowflake, SAP, Oracle, Netsuite, and all major global banks.",
+              icon: <Database className="h-5 w-5" /> 
             },
-            {
-              title: "The Three Desks",
-              desc: "Specialized workspaces for Banking (Treasury), Analyst (FP&A), and Operations (AR) teams to collaborate on cash truth.",
-              img: (
-                <div className="w-full h-full bg-[#111] flex items-center justify-center p-8">
-                  <div className="w-full space-y-3">
-                    {[
-                      { label: 'Banking Desk', icon: <Landmark className="h-3 w-3" />, color: 'text-emerald-400' },
-                      { label: 'Analyst Desk', icon: <BarChart3 className="h-3 w-3" />, color: 'text-blue-400' },
-                      { label: 'Operations Desk', icon: <Users className="h-3 w-3" />, color: 'text-amber-400' },
-                    ].map((desk, i) => (
-                      <div key={i} className="bg-white/10 backdrop-blur-md border border-white/10 rounded-xl p-3 flex items-center gap-3">
-                        <div className={desk.color}>{desk.icon}</div>
-                        <span className="text-[10px] font-bold text-white uppercase tracking-widest">{desk.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )
+            { 
+              title: "Rich Notes & Files", 
+              desc: "Never lose context again - capture and access every detail that matters to your cash.",
+              icon: <MessageSquare className="h-5 w-5" /> 
             },
-            {
-              title: "CFO-Grounded RAG Insights",
-              desc: "Ask any question and get answers grounded in specific invoice evidence. Zero hallucinations, 100% data-aware.",
-              img: (
-                <div className="w-full h-full bg-[#111] flex items-center justify-center p-8">
-                  <div className="bg-white rounded-xl shadow-2xl p-6 w-full space-y-4 border border-slate-100/50 text-left relative overflow-hidden">
-                    <div className="flex items-center gap-2 mb-2">
-                      <div className="h-4 w-4 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600">
-                        <Sparkles className="h-2.5 w-2.5" />
-                      </div>
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-400">Grounded Evidence</span>
-                    </div>
-                    <div className="space-y-3 border-t border-slate-50 pt-4">
-                      <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
-                        <div className="text-[10px] font-black text-indigo-900 uppercase">Retrieved from Snapshot</div>
-                        <p className="text-[9px] text-slate-600 leading-tight">Inv #2943307 (€4.3k) from Kuwait: Predicted landing delayed 59 days.</p>
-                      </div>
-                    </div>
-                    <div className="flex gap-2 pt-2">
-                      <div className="flex-1 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-[10px] font-black text-white">Ask Analyst</div>
-                    </div>
-                  </div>
-                </div>
-              )
+            { 
+              title: "Smart Privacy", 
+              desc: "Intuitive privacy controls ensure that sensitive treasury data stays... private.",
+              icon: <Lock className="h-5 w-5" /> 
+            },
+            { 
+              title: "AI & Natural Language Search", 
+              desc: "Ask anything, find everything - your Gitto data responds to plain English.",
+              icon: <Search className="h-5 w-5" /> 
+            },
+            { 
+              title: "Track Cash Movements", 
+              desc: "Don't miss an opportunity - view and track your global liquidity in motion.",
+              icon: <TrendingUp className="h-5 w-5" /> 
+            },
+            { 
+              title: "Proprietary AI Scoring", 
+              desc: "Stop guessing which collections matter - our AI scores customers and risks.",
+              icon: <Zap className="h-5 w-5" /> 
+            },
+            { 
+              title: "Team & Workspaces", 
+              desc: "One platform, one truth - align your entire finance team around shared intelligence.",
+              icon: <Users className="h-5 w-5" /> 
+            },
+            { 
+              title: "Customization", 
+              desc: "Your business, your rules - configure Gitto to match how you actually work.",
+              icon: <Filter className="h-5 w-5" /> 
+            },
+            { 
+              title: "Project Management", 
+              desc: "Powerful treasury management with fully customizable project & task hierarchies.",
+              icon: <Briefcase className="h-5 w-5" /> 
+            },
+            { 
+              title: "Dedicated CSM in Slack", 
+              desc: "Expert help, zero friction - get answers without leaving your workflow.",
+              icon: <MessageSquare className="h-5 w-5" /> 
+            },
+            { 
+              title: "iOS App", 
+              desc: "A powerful iOS app to manage your cash and opportunities on the go.",
+              icon: <Globe className="h-5 w-5" /> 
+            },
+            { 
+              title: "Chrome Extension", 
+              desc: "See Gitto data wherever you browse with our real-time Chrome Extension.",
+              icon: <Plus className="h-5 w-5" /> 
             }
           ].map((feature, i) => (
-            <div key={i} className="group cursor-pointer space-y-8">
-              <div className="aspect-[4/3] rounded-[40px] bg-black overflow-hidden shadow-2xl transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-[0_32px_64px_rgba(0,0,0,0.1)]">
-                {feature.img}
+            <Card key={i} className="border-0 shadow-none hover:bg-slate-50 transition-colors p-8 space-y-4 rounded-[24px]">
+              <div className="h-12 w-12 rounded-2xl bg-white border border-slate-100 flex items-center justify-center text-slate-900 shadow-sm">
+                {feature.icon}
               </div>
-              <div className="space-y-4 px-2">
-                <h3 className="text-2xl font-bold text-slate-900 tracking-tight">{feature.title}</h3>
-                <p className="text-slate-500 text-[17px] leading-relaxed font-semibold tracking-tight opacity-70">{feature.desc}</p>
+              <div className="space-y-2 text-left">
+                <h3 className="font-bold text-[18px] text-slate-900">{feature.title}</h3>
+                <p className="text-slate-500 text-[15px] font-medium leading-relaxed">
+                  {feature.desc}
+                </p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Secondary Features Section (Talunt "... and so much more" Style) */}
-        <div className="space-y-16 pt-16">
-          <div className="space-y-4">
-            <h2 className="text-4xl font-bold tracking-tight text-slate-900 leading-none">... and so much more</h2>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
-            {[
-              {
-                title: "Accuracy Backtesting",
-                desc: "Automatically compare historical forecasts against actual collections to measure and improve Mean Absolute Error (MAE).",
-                icon: <TrendingUp className="h-6 w-6 text-slate-900" />
-              },
-              {
-                title: "FX Exposure Analysis",
-                desc: "Instantly surface multi-currency cash dependencies and implied risk before they impact reporting currency totals.",
-                icon: <AlertCircle className="h-6 w-6 text-slate-900" />
-              },
-              {
-                title: "Explainable Predictions",
-                desc: "No black boxes. Every collection date is backed by segment-level data and historical behavioral patterns.",
-                icon: <BarChart3 className="h-6 w-6 text-slate-900" />
-              },
-              {
-                title: "Enterprise Data Ingest",
-                desc: "Seamlessly blend manual Excel exports with Snowflake or ERP pipelines in a single unified workspace.",
-                icon: <Shield className="h-6 w-6 text-slate-900" />
-              }
-            ].map((item, i) => (
-              <div key={i} className="space-y-6">
-                <div className="h-12 w-12 flex items-center justify-center rounded-xl bg-slate-50 border border-slate-100 shadow-sm group-hover:scale-110 transition-transform">
-                  {item.icon}
-                </div>
-                <div className="space-y-3">
-                  <h4 className="text-lg font-bold text-slate-900 tracking-tight">{item.title}:</h4>
-                  <p className="text-slate-500 font-medium leading-relaxed text-[15px]">
-                    {item.desc}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section (Talunt Style) */}
-      <section id="pricing" className="relative z-10 max-w-7xl mx-auto px-6 py-32 space-y-20">
-        <div className="space-y-4">
-          <div className="flex items-center gap-3 text-slate-400 text-[13px] font-bold uppercase tracking-wider">
-            <span className="w-2 h-2 rounded-full bg-slate-900" />
-            Transparent Pricing
-          </div>
-          <h2 className="text-[72px] font-bold tracking-tighter text-slate-900 leading-none text-left">Plans</h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          {[
-            {
-              name: "Pro",
-              price: "€2,500",
-              period: "/month",
-              desc: "For high-growth finance teams needing rolling visibility.",
-              features: [
-                "13-Week Behavioral Forecast",
-                "Excel & ERP Ingestion",
-                "Bank-Truth Reconciliation",
-                "Cash Variance Explainer",
-                "Scenario Modeling",
-                "Segment-Level Analytics"
-              ]
-            },
-            {
-              name: "Enterprise",
-              price: "Custom",
-              period: "",
-              desc: "For global enterprises with complex ERP stacks.",
-              features: [
-                "Snowflake Native Connector",
-                "Multi-Entity / Multi-Currency",
-                "Treasury Action Hub",
-                "Dispute Risk Prediction",
-                "CFO-Grade RAG Reporting",
-                "Liquidity Lever Simulation",
-                "Audit & Enterprise Governance"
-              ]
-            }
-          ].map((plan, i) => (
-            <Card key={i} className="rounded-[40px] border border-slate-100 shadow-2xl p-12 space-y-8 group hover:scale-[1.01] transition-transform">
-              <div className="space-y-4">
-                <h3 className="text-2xl font-black tracking-tight">{plan.name}</h3>
-                <div className="flex items-baseline gap-1">
-                  <span className="text-[56px] font-black tracking-tighter">{plan.price}</span>
-                  <span className="text-slate-400 font-bold">{plan.period}</span>
-                </div>
-                <p className="text-slate-500 font-semibold text-lg">{plan.desc}</p>
-              </div>
-              <ul className="space-y-4 pt-8 border-t border-slate-50">
-                {plan.features.map((f, j) => (
-                  <li key={j} className="flex items-center gap-3 text-[15px] font-bold text-slate-700">
-                    <CheckCircle2 className="h-5 w-5 text-blue-600" />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <Button className="w-full h-16 bg-slate-900 text-white rounded-2xl text-lg font-black tracking-tight mt-8">
-                Get Started
-              </Button>
             </Card>
           ))}
         </div>
       </section>
 
-      {/* Footer (Simplified Talunt Style) */}
-      <footer className="relative z-10 border-t border-slate-100 pt-32 pb-16 px-6 bg-white/40 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-16">
-          <div className="space-y-8 max-w-sm">
-            <div className="flex items-center gap-2">
-              <div className="h-6 w-6 rounded-sm bg-slate-900 flex items-center justify-center text-white font-black text-xs">G</div>
-              <span className="font-bold text-2xl tracking-tighter text-slate-900">gitto</span>
-            </div>
-            <p className="text-[15px] text-slate-500 font-semibold leading-relaxed tracking-tight">
-              Enterprise cash intelligence for high-growth teams. Behavior-based forecasting, bank-truth reconciliation, and audit-ready controls in one unified command center.
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-24">
-            <div className="space-y-6">
-              <h4 className="text-[13px] font-black uppercase tracking-widest text-slate-900">Resources</h4>
-              <ul className="space-y-3 text-[15px] font-semibold text-slate-500 tracking-tight">
-                <li onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-slate-900 transition-colors cursor-pointer text-left">Pricing</li>
-                <li onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-slate-900 transition-colors cursor-pointer text-left">Features</li>
-                <li className="hover:text-slate-900 transition-colors cursor-pointer text-left">FAQs</li>
-              </ul>
-            </div>
-            <div className="space-y-6">
-              <h4 className="text-[13px] font-black uppercase tracking-widest text-slate-900">Support</h4>
-              <ul className="space-y-3 text-[15px] font-semibold text-slate-500 tracking-tight">
-                <li><Link href="/contact" className="hover:text-slate-900 transition-colors cursor-pointer text-left">Contact us</Link></li>
-                <li><Link href="/about" className="hover:text-slate-900 transition-colors cursor-pointer text-left">About us</Link></li>
-              </ul>
-            </div>
-            <div className="space-y-6">
-              <h4 className="text-[13px] font-black uppercase tracking-widest text-slate-900">Legal</h4>
-              <ul className="space-y-3 text-[15px] font-semibold text-slate-500 tracking-tight">
-                <li className="hover:text-slate-900 transition-colors cursor-pointer text-left">Terms & conditions</li>
-                <li className="hover:text-slate-900 transition-colors cursor-pointer text-left">Privacy policy</li>
-              </ul>
-            </div>
+      {/* Testimonial (Rings Style) */}
+      <section className="px-6 py-32 bg-slate-900 text-white overflow-hidden relative">
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-blue-600/10 blur-[120px]" />
+        <div className="max-w-4xl mx-auto text-center space-y-12 relative z-10">
+          <h2 className="text-[32px] md:text-[42px] font-bold leading-tight italic">
+            "I've been a treasury nerd and community builder both in business and personal and have been looking for a tool like this my whole career. This changes everything."
+          </h2>
+          <div className="space-y-2">
+            <p className="text-[18px] font-bold">Raphael Leopold</p>
+            <p className="text-[15px] text-slate-400 font-medium">Partner, Coolwater Capital</p>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto pt-32 flex justify-between items-center text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 px-6">
-          <span>©2025 Gitto. All rights reserved.</span>
-          <div className="flex gap-8">
-            <span className="hover:text-slate-900 transition-colors cursor-pointer">Twitter</span>
-            <span className="hover:text-slate-900 transition-colors cursor-pointer">LinkedIn</span>
+      </section>
+
+      {/* Industries Section (Rings Style) */}
+      <section className="px-6 py-32 max-w-7xl mx-auto space-y-20">
+        <div className="text-center space-y-4">
+          <h2 className="text-[42px] font-bold tracking-tight">The platform for finance excellence</h2>
+          <p className="text-slate-500 text-lg font-medium">Powering the next generation of global companies.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[
+            'Venture Capital', 'Private Equity', 'Sales & BD', 'Investment Banking',
+            'Startups', 'Fund of Funds', 'Recruiting', 'Wealth Management'
+          ].map((industry, i) => (
+            <div key={i} className="p-10 rounded-[32px] bg-slate-50 flex flex-col items-center justify-center text-center space-y-4 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all cursor-pointer border border-transparent hover:border-slate-100">
+              <span className="font-bold text-[17px] text-slate-900">{industry}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* FAQ Section (Rings Style) */}
+      <section className="px-6 py-32 max-w-3xl mx-auto space-y-16">
+        <h2 className="text-[42px] font-bold tracking-tight text-center">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {[
+            "What makes Gitto different from traditional Treasury tools?",
+            "Do I have to give up my existing ERP?",
+            "What is Liquidity Power?",
+            "How can I use Gitto to prepare for board meetings?",
+            "How does Gitto protect my privacy?",
+            "How do I get started with Gitto AI in 5 minutes?",
+            "What is the level of support?",
+            "Can I access Gitto data on the go?"
+          ].map((q, i) => (
+            <div key={i} className="group border-b border-slate-100 py-6 flex items-center justify-between cursor-pointer">
+              <span className="text-[18px] font-bold text-slate-900 group-hover:text-blue-600 transition-colors text-left">{q}</span>
+              <Plus className="h-5 w-5 text-slate-400 group-hover:text-blue-600" />
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Final CTA (Rings Style) */}
+      <section className="px-6 py-32 text-center bg-slate-50 border-t border-slate-100">
+        <div className="max-w-3xl mx-auto space-y-10">
+          <h2 className="text-[48px] md:text-[64px] font-bold tracking-tight leading-tight">Feel the magic today</h2>
+          <p className="text-xl text-slate-500 font-bold">Make every connection count.</p>
+          <Link href="/app">
+            <Button className="bg-slate-900 text-white hover:bg-slate-800 rounded-full px-16 h-18 text-xl font-bold shadow-2xl shadow-slate-900/20">
+              Book a Demo
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer (Rings Style) */}
+      <footer className="px-6 py-20 bg-white border-t border-slate-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
+          <div className="space-y-8">
+            <Link href="/" className="flex items-center gap-2">
+              <div className="h-7 w-7 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">G</div>
+              <span className="font-bold text-xl tracking-tighter text-slate-900">gitto</span>
+            </Link>
+            <p className="text-slate-400 font-bold text-sm">© 2025 Gitto Inc.</p>
+            <p className="text-slate-400 font-bold text-sm">info@gitto.ai</p>
+          </div>
+          <div className="grid grid-cols-2 gap-8 lg:col-span-3">
+            <div className="space-y-6 text-left">
+              <h4 className="font-bold text-sm text-slate-900">Features</h4>
+              <ul className="space-y-4 text-sm text-slate-400 font-bold">
+                <li className="hover:text-slate-900 cursor-pointer text-left">Integrations</li>
+                <li className="hover:text-slate-900 cursor-pointer text-left">Blog</li>
+                <li className="hover:text-slate-900 cursor-pointer text-left">Compare</li>
+              </ul>
+            </div>
+            <div className="space-y-6 text-left">
+              <h4 className="font-bold text-sm text-slate-900">Company</h4>
+              <ul className="space-y-4 text-sm text-slate-400 font-bold">
+                <li className="hover:text-slate-900 cursor-pointer text-left">About</li>
+                <li className="hover:text-slate-900 cursor-pointer text-left">Careers</li>
+                <li className="hover:text-slate-900 cursor-pointer text-left">Privacy Policy</li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>
     </div>
   );
 }
-
-const Sparkles = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M12 3L14.5 9L21 11.5L14.5 14L12 21L9.5 14L3 11.5L9.5 9L12 3Z" fill="currentColor" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);

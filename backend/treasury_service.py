@@ -75,3 +75,5 @@ def simulate_financing(db: Session, snapshot_id: int, config: dict):
 
 
 
+
+
