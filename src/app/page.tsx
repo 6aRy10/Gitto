@@ -13,6 +13,13 @@ import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
 
 export default function Landing() {
+  const [activeWorkflow, setActiveWorkflow] = useState(0);
+
+  const scrollTo = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <div className="min-h-screen bg-[#0A0A0B] text-white font-sans selection:bg-blue-500/30 antialiased overflow-x-hidden relative">
       {/* Dynamic Grain Overlay */}
@@ -33,10 +40,10 @@ export default function Landing() {
               <span className="font-bold text-lg tracking-[-0.04em] text-white uppercase italic">Gitto</span>
             </Link>
             <div className="hidden lg:flex items-center gap-8 text-[11px] font-black uppercase tracking-[0.2em] text-slate-500">
-              <button className="hover:text-white transition-colors">The Problem</button>
-              <button className="hover:text-white transition-colors">The Ledger</button>
-              <button className="hover:text-white transition-colors">Enterprise</button>
-          </div>
+              <button onClick={() => scrollTo('problem')} className="hover:text-white transition-colors">The Problem</button>
+              <button onClick={() => scrollTo('ledger')} className="hover:text-white transition-colors">The Ledger</button>
+              <button onClick={() => scrollTo('enterprise')} className="hover:text-white transition-colors">Enterprise</button>
+            </div>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/app" className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-white transition-colors">Access Terminal</Link>
@@ -106,7 +113,7 @@ export default function Landing() {
       </section>
 
       {/* The Problem: Why Gitto? - More Compact */}
-      <section className="px-8 py-32 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left bg-[#0D0D0F]">
+      <section id="problem" className="px-8 py-32 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left bg-[#0D0D0F]">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
           <div className="lg:col-span-5 space-y-8">
             <h2 className="text-5xl font-black tracking-tighter leading-[0.9] text-white uppercase">THE <br /><span className="text-blue-500 italic">DEFICIT</span> <br /> OF TRUST.</h2>
@@ -142,7 +149,7 @@ export default function Landing() {
       </section>
 
       {/* Product Deep Dive: Core Modules */}
-      <section className="px-8 py-32 bg-white text-black relative z-10 text-left">
+      <section id="enterprise" className="px-8 py-32 bg-white text-black relative z-10 text-left">
         <div className="max-w-[1400px] mx-auto space-y-20">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
              <div className="space-y-4">
@@ -176,7 +183,7 @@ export default function Landing() {
       </section>
 
       {/* The Product Walkthrough - Tighter */}
-      <section className="px-8 py-32 max-w-[1400px] mx-auto relative z-10 text-left">
+      <section id="ledger" className="px-8 py-32 max-w-[1400px] mx-auto relative z-10 text-left">
         <div className="space-y-20">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
             <div className="lg:col-span-5 space-y-8">
@@ -272,16 +279,16 @@ export default function Landing() {
               <li className="hover:text-white cursor-pointer transition-colors">Terminals</li>
               <li className="hover:text-white cursor-pointer transition-colors">Ledger_Truth</li>
               <li className="hover:text-white cursor-pointer transition-colors">RAG_Insights</li>
-              </ul>
-            </div>
+            </ul>
+          </div>
           <div className="space-y-8">
             <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Compare</h4>
             <ul className="space-y-4 text-[13px] font-black uppercase tracking-widest text-slate-400">
               <li className="hover:text-white cursor-pointer transition-colors">vs_Kyriba</li>
               <li className="hover:text-white cursor-pointer transition-colors">vs_Manual</li>
               <li className="hover:text-white cursor-pointer transition-colors">vs_Deficit</li>
-              </ul>
-            </div>
+            </ul>
+          </div>
           <div className="space-y-8 text-right">
             <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Governance</h4>
             <p className="text-[11px] font-bold text-slate-500 leading-relaxed max-w-[200px] ml-auto">
