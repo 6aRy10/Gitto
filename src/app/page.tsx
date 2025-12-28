@@ -7,7 +7,7 @@ import {
   Landmark, Users, Search, Bell, Calendar, ChevronRight, MessageSquare,
   Lock, Zap, Database, Globe, Briefcase, Plus, Sparkles, Filter, 
   FileText, ArrowDownRight, ArrowUpRight, Play, Layout, MousePointer2,
-  Cloud as CloudIcon, Activity, Layers, Terminal
+  Cloud as CloudIcon, Activity, Layers, Terminal, ShieldCheck
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
