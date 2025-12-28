@@ -49,272 +49,170 @@ export default function Landing() {
         </div>
       </nav>
 
-      {/* Expressive Hero */}
-      <section className="relative pt-64 pb-32 px-8 z-10">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-end">
-          <div className="lg:col-span-7 space-y-12">
-            <div className="inline-flex items-center px-3 py-1 rounded-sm bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
+      {/* Expressive Hero - Tighter */}
+      <section className="relative pt-40 pb-20 px-8 z-10">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="lg:col-span-7 space-y-8">
+            <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
               Deterministic Cash Intelligence
             </div>
-            <h1 className="text-[80px] md:text-[140px] font-black tracking-[-0.07em] leading-[0.85] text-white">
+            <h1 className="text-[70px] md:text-[110px] font-black tracking-[-0.06em] leading-[0.85] text-white">
               BANK <span className="text-white/20 italic font-medium">TRUTH</span> <br />
-              IS THE ONLY <br />
-              <span className="text-blue-500">REALITY.</span>
+              FOR GROUP <br />
+              <span className="text-blue-500">LIQUIDITY.</span>
             </h1>
+            <p className="text-lg text-slate-400 font-medium leading-relaxed max-w-xl border-l-2 border-blue-500/30 pl-6">
+              Gitto bridges the gap between theoretical forecasts and bank reality. We ingest your direct bank feeds to eliminate behavioral bias and unmodeled delays.
+            </p>
           </div>
           
-          <div className="lg:col-span-5 relative flex items-center justify-center min-h-[500px]">
-            {/* The Integration Engine - Animated Visual from User Query */}
-            <div className="relative w-[450px] h-[450px] flex items-center justify-center">
-              {/* Background Scanline Mesh */}
-              <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 1px, transparent 1px), linear-gradient(-45deg, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+          <div className="lg:col-span-5 relative flex items-center justify-center">
+            {/* The Integration Engine - Animated Visual */}
+            <div className="relative w-[400px] h-[400px] flex items-center justify-center">
+              <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 1px, transparent 1px), linear-gradient(-45deg, #ffffff 1px, transparent 1px)', backgroundSize: '15px 15px' }} />
               
-              {/* Central Logo Core */}
-              <div className="relative z-20 w-32 h-32 bg-blue-600 rounded-[32px] flex items-center justify-center shadow-[0_0_80px_rgba(37,99,235,0.6)] animate-pulse-slow">
-                <div className="text-white font-black text-6xl italic -skew-x-12">G</div>
-                {/* Internal data pings */}
-                <div className="absolute inset-0 rounded-[32px] border-2 border-white/20 animate-ping" />
+              <div className="relative z-20 w-24 h-24 bg-blue-600 rounded-[24px] flex items-center justify-center shadow-[0_0_60px_rgba(37,99,235,0.4)] animate-pulse-slow">
+                <div className="text-white font-black text-4xl italic -skew-x-12">G</div>
               </div>
 
-              {/* Orbiting Integrations - Layer 1 (Slow) */}
               <div className="absolute inset-0 animate-spin-slow">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                   <div className="h-14 w-14 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center group hover:bg-white/10 transition-colors">
-                     <Database className="h-6 w-6 text-slate-400" />
-                     <div className="absolute -top-1 -right-1 h-2 w-2 bg-blue-500 rounded-full animate-ping" />
+                   <div className="h-12 w-12 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center group hover:bg-white/10 transition-colors">
+                     <Database className="h-5 w-5 text-slate-400" />
                    </div>
                 </div>
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
-                   <div className="h-14 w-14 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center">
-                     <Globe className="h-6 w-6 text-slate-400" />
+                   <div className="h-12 w-12 rounded-xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center">
+                     <Globe className="h-5 w-5 text-slate-400" />
                    </div>
                 </div>
               </div>
 
-              {/* Orbiting Integrations - Layer 2 (Reverse, Faster) */}
               <div className="absolute inset-8 animate-reverse-spin-slow">
                 <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                   <div className="h-12 w-12 rounded-2xl bg-[#f57c00]/10 border border-[#f57c00]/30 flex items-center justify-center shadow-[0_0_20px_rgba(245,124,0,0.2)]">
-                     <div className="h-6 w-6 rounded bg-[#f57c00] flex items-center justify-center text-[8px] font-black">sf</div>
+                   <div className="h-10 w-10 rounded-xl bg-[#f57c00]/10 border border-[#f57c00]/30 flex items-center justify-center">
+                     <div className="h-5 w-5 rounded bg-[#f57c00] flex items-center justify-center text-[7px] font-black text-white">sf</div>
                    </div>
                 </div>
                 <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2">
-                   <div className="h-12 w-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)]">
-                     <CloudIcon className="h-6 w-6 text-blue-400" />
+                   <div className="h-10 w-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                     <CloudIcon className="h-5 w-5 text-blue-400" />
                    </div>
                 </div>
               </div>
-
-              {/* Connecting Data Particles */}
-              <div className="absolute inset-0">
-                {[...Array(6)].map((_, i) => (
-                  <div 
-                    key={i} 
-                    className="absolute h-1 w-1 bg-blue-400 rounded-full animate-flow" 
-                    style={{ 
-                      top: '50%', 
-                      left: '50%', 
-                      '--tx': `${Math.cos(i * 60 * Math.PI / 180) * 200}px`,
-                      '--ty': `${Math.sin(i * 60 * Math.PI / 180) * 200}px`,
-                      animationDelay: `${i * 0.5}s`
-                    } as any} 
-                  />
-                ))}
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* The Asymmetric Dashboard - Bloomberg/Harvey Style */}
-      <section className="px-8 py-20 relative z-10">
-        <div className="max-w-[1400px] mx-auto">
-          <div className="bg-[#111113] rounded-[24px] border border-white/5 shadow-[0_40px_100px_rgba(0,0,0,0.5)] overflow-hidden flex flex-col h-[850px] relative">
-            {/* Terminal Header */}
-            <div className="h-14 border-b border-white/5 flex items-center justify-between px-8 bg-[#161618]">
-              <div className="flex items-center gap-6">
-                <div className="flex gap-1.5">
-                  <div className="h-2 w-2 rounded-full bg-white/10" />
-                  <div className="h-2 w-2 rounded-full bg-white/10" />
-                  <div className="h-2 w-2 rounded-full bg-white/10" />
-          </div>
-                <div className="h-4 w-[1px] bg-white/10" />
-                <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Gitto Terminal v4.2 // Main_Ledger</span>
-        </div>
-              <div className="flex items-center gap-4">
-                <div className="text-[10px] font-black uppercase tracking-widest text-emerald-500 flex items-center gap-2">
-                  <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  Live Bank Feed: 100% Sync
-                    </div>
-                  </div>
-                </div>
-
-            <div className="flex flex-1 overflow-hidden">
-              {/* Left: Metadata Column */}
-              <div className="w-80 border-r border-white/5 p-8 flex flex-col gap-12 bg-[#0D0D0F]">
-                <div className="space-y-6">
-                  <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-600">Liquidity_Metrics</h4>
-                  <div className="space-y-8">
-                    {[
-                      { label: 'Group_Cash', val: '€12.8M', trend: '+4.2%' },
-                      { label: 'Unmatched_Inflow', val: '€430k', trend: 'Critical' },
-                      { label: 'MAE_Accuracy', val: '0.8d', trend: '99%' },
-                    ].map((m, i) => (
-                      <div key={i} className="space-y-1">
-                        <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{m.label}</div>
-                        <div className="flex items-baseline gap-3">
-                          <div className="text-2xl font-black tracking-tighter text-white">{m.val}</div>
-                          <div className={`text-[9px] font-black uppercase ${m.trend === 'Critical' ? 'text-red-500' : 'text-emerald-500'}`}>{m.trend}</div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                
-                <div className="mt-auto space-y-4">
-                  <div className="p-4 rounded-xl bg-white/5 border border-white/5 space-y-3">
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="h-3 w-3 text-blue-400" />
-                      <span className="text-[9px] font-black uppercase tracking-widest text-blue-400">Analyst_Insight</span>
-                    </div>
-                    <p className="text-[11px] text-slate-400 leading-relaxed font-medium italic">
-                      "Siemens AG has missing payment run for 2 weeks. Predicting +14d delay on #INV-221."
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Center: The Main Ledger Canvas */}
-              <div className="flex-1 p-10 space-y-12 bg-white/[0.01]">
-                <div className="grid grid-cols-12 gap-8 items-start">
-                  <div className="col-span-8 space-y-8 text-left">
-                    <h3 className="text-4xl font-black tracking-tight text-white italic">13-Week Cash Command</h3>
-                    <div className="grid grid-cols-4 gap-4">
-                      {[1,2,3,4].map(i => (
-                        <div key={i} className={`h-24 rounded-2xl border ${i === 1 ? 'bg-blue-600 border-blue-500 shadow-[0_0_30px_rgba(37,99,235,0.3)]' : 'bg-white/5 border-white/5'} p-4 flex flex-col justify-between transition-all hover:scale-105 cursor-pointer`}>
-                          <span className={`text-[9px] font-black uppercase tracking-widest ${i === 1 ? 'text-white' : 'text-slate-500'}`}>Week_{i}</span>
-                          <span className="text-lg font-black text-white">€{i}.2M</span>
-                        </div>
-                      ))}
-                    </div>
-                    
-                    {/* Living Grid Mockup */}
-                    <div className="rounded-2xl border border-white/5 bg-[#161618] overflow-hidden">
-                      <div className="p-4 bg-white/5 flex items-center justify-between px-6">
-                        <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-400">Transaction_Stream</span>
-                        <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                      </div>
-                      <div className="divide-y divide-white/5 text-left">
-                        {[
-                          { entity: 'Emirates_Group', amt: '+€120,400', status: 'Reconciled', date: 'TODAY' },
-                          { entity: 'Kuwait_Petroleum', amt: '+€88,000', status: 'Predicted', date: 'JAN 04' },
-                          { entity: 'Standard_Chartered', amt: '-€45,000', status: 'Wash_Match', date: 'JAN 08' },
-                        ].map((tx, i) => (
-                          <div key={i} className="p-5 flex items-center justify-between hover:bg-white/5 transition-colors group cursor-pointer text-left">
-                            <div className="flex items-center gap-4">
-                              <div className="h-8 w-8 rounded bg-white/5 border border-white/10 flex items-center justify-center text-[10px] font-black group-hover:bg-blue-600 group-hover:border-blue-500 transition-all">{tx.entity[0]}</div>
-                              <div>
-                                <div className="text-xs font-black text-white">{tx.entity}</div>
-                                <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">{tx.date}</div>
-                              </div>
-                            </div>
-                            <div className="text-right">
-                              <div className={`text-xs font-black ${tx.amt.startsWith('+') ? 'text-emerald-500' : 'text-white'}`}>{tx.amt}</div>
-                              <div className="text-[9px] font-black uppercase tracking-widest text-slate-500">{tx.status}</div>
-                            </div>
-                    </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Right: Action Playbook */}
-                  <div className="col-span-4 space-y-6 text-left">
-                    <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">Action_Playbook</h4>
-                    <div className="space-y-4">
-                      {[
-                        { title: 'Accelerate_SaaS_Run', roi: '12.4x' },
-                        { title: 'Delay_Vendor_Net30', roi: '4.2x' },
-                        { title: 'FX_Hedge_EURUSD', roi: 'Sign-off' },
-                      ].map((act, i) => (
-                        <div key={i} className="p-5 rounded-2xl bg-[#1A1A1C] border border-white/5 hover:border-blue-500/50 transition-all cursor-pointer group">
-                          <div className="flex justify-between items-center">
-                            <span className="text-[11px] font-black text-white tracking-tight">{act.title}</span>
-                            <ChevronRight className="h-3 w-3 text-slate-600 group-hover:text-blue-400 transition-colors" />
-                          </div>
-                          <div className="text-[9px] font-black uppercase tracking-[0.2em] text-blue-500 mt-2">ROI: {act.roi}</div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
+      {/* The Problem: Why Gitto? - More Compact */}
+      <section className="px-8 py-32 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left bg-[#0D0D0F]">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
+          <div className="lg:col-span-5 space-y-8">
+            <h2 className="text-5xl font-black tracking-tighter leading-[0.9] text-white uppercase">THE <br /><span className="text-blue-500 italic">DEFICIT</span> <br /> OF TRUST.</h2>
+            <p className="text-lg text-slate-400 font-medium leading-relaxed">
+              Finance teams are drowning in "Theoretical Cash." Numbers that look perfect in a model but never hit the bank.
+            </p>
+            <div className="pt-6">
+               <Link href="/app">
+                 <Button className="bg-white text-black hover:bg-slate-200 rounded-full px-8 h-12 text-xs font-black uppercase tracking-widest shadow-xl transition-all hover:scale-105 active:scale-95">
+                   Access Product Terminal
+                 </Button>
+               </Link>
             </div>
+          </div>
+
+          <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-px bg-white/5 border border-white/5">
+            {[
+              { t: 'Behavioral Blindness', d: 'ERP due dates are ignored by customers. We learn actual payment habits to find the 14-day "Hidden Delay".' },
+              { t: 'The Bank-Truth Gap', d: 'Forecasts built in isolation fail. Gitto reconciles live receipts directly to your 13-week grid.' },
+              { t: 'Explainability Crisis', d: 'When cash drops, CFOs need evidence. Gitto provides direct citations to underlying bank transactions.' },
+              { t: 'Manual Overhead', d: 'Static spreadsheets take days to update. Gitto syncs every hour to provide a live liquidity ledger.' },
+            ].map((p, i) => (
+              <div key={i} className="bg-[#0A0A0B] p-10 space-y-4 hover:bg-white/[0.02] transition-colors">
+                <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-blue-400">ERROR_0{i+1}</h4>
+                <div className="space-y-2">
+                  <h3 className="text-xl font-black text-white italic">{p.t}</h3>
+                  <p className="text-sm text-slate-500 font-medium leading-relaxed">{p.d}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Animated Workflows - "The Video Wall" */}
-      <section className="px-8 py-64 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left">
-        <div className="space-y-32">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
-            <div className="lg:col-span-5 space-y-12">
+      {/* Product Deep Dive: Core Modules */}
+      <section className="px-8 py-32 bg-white text-black relative z-10 text-left">
+        <div className="max-w-[1400px] mx-auto space-y-20">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+             <div className="space-y-4">
+               <span className="text-[10px] font-black text-blue-600 tracking-[0.5em] uppercase">The_Gitto_Stack</span>
+               <h2 className="text-6xl font-black tracking-tighter italic">ENGINEERED FOR <br />TREASURY SCALE.</h2>
+             </div>
+             <p className="text-xl text-slate-500 font-bold max-w-md leading-tight">
+               Four deterministic modules built to consolidate group liquidity and automate forecasting.
+             </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { t: '13-Week Grid', d: 'Interactive multi-entity grid with snapshot locking and weekly variance tracking.', icon: <Layout className="h-6 w-6" /> },
+              { t: 'Bank Ledger', d: 'Live bank ingest with automated receipt matching and "Unmatched Cash" queues.', icon: <Landmark className="h-6 w-6" /> },
+              { t: 'Analyst RAG', icon: <Sparkles className="h-6 w-6" />, d: 'Ask natural language questions grounded in verified invoice data with citations.' },
+              { t: 'FX Maestro', icon: <Globe className="h-6 w-6" />, d: 'Snapshot-locked FX rates and automated reporting currency normalization across the group.' }
+            ].map((m, i) => (
+              <div key={i} className="p-10 border border-slate-100 bg-[#F9F9FB] space-y-8 group hover:bg-black hover:text-white transition-all duration-500">
+                <div className="h-12 w-12 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm group-hover:bg-blue-600 group-hover:border-blue-500 group-hover:text-white transition-all">
+                  {m.icon}
+                </div>
+                <div className="space-y-3">
+                  <h3 className="text-2xl font-black italic tracking-tight">{m.t}</h3>
+                  <p className="text-sm font-bold opacity-60 leading-relaxed group-hover:opacity-100">{m.d}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* The Product Walkthrough - Tighter */}
+      <section className="px-8 py-32 max-w-[1400px] mx-auto relative z-10 text-left">
+        <div className="space-y-20">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+            <div className="lg:col-span-5 space-y-8">
               <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
-                Workflow_01 // Reconciliation
+                Module_01 // Reconciliation
               </div>
-              <h2 className="text-6xl font-black tracking-tighter leading-none text-white uppercase italic">
-                AUTOMATED <br /> RECONCILIATION.
+              <h2 className="text-5xl font-black tracking-tighter leading-none text-white uppercase italic">
+                LEAVE NO CASH <br /> UNMATCHED.
               </h2>
-              <p className="text-xl text-slate-400 font-medium leading-relaxed">
-                Watch as Gitto's core engine identifies incoming bank receipts and matches them against open ledger items in real-time. 
+              <p className="text-lg text-slate-400 font-medium leading-relaxed">
+                Our Bank Ledger ingest identifies incoming wires and matches them to open invoices. Unmatched pings your Slack instantly.
               </p>
-              <div className="flex items-center gap-6">
-                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
-                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Live Simulation Active</span>
-              </div>
             </div>
             
             <div className="lg:col-span-7">
-              <div className="bg-[#111113] rounded-[32px] border border-white/5 p-8 h-[450px] relative overflow-hidden shadow-2xl">
-                {/* Background Grid */}
-                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
-                
-                {/* Animated Stream */}
-                <div className="relative h-full flex items-center justify-between px-12">
-                  <div className="space-y-6 z-10">
-                    <div className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-4">Inbound_Bank_Feed</div>
-                    {[1,2,3].map(i => (
-                      <div key={i} className={`h-16 w-64 bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between animate-workflow-card`} style={{ animationDelay: `${i * 1.5}s` }}>
+              <div className="bg-[#111113] rounded-[32px] border border-white/5 p-8 h-[350px] relative overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 opacity-5" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '25px 25px' }} />
+                <div className="relative h-full flex items-center justify-between px-10">
+                  <div className="space-y-4">
+                    <div className="text-[9px] font-black text-slate-600 uppercase tracking-widest">Bank_Stream</div>
+                    {[1,2].map(i => (
+                      <div key={i} className="h-14 w-56 bg-white/5 border border-white/10 rounded-xl p-4 flex items-center justify-between animate-workflow-card">
                         <div className="flex items-center gap-3">
-                          <div className="h-8 w-8 rounded bg-emerald-500/20 flex items-center justify-center">
-                            <Landmark className="h-4 w-4 text-emerald-500" />
-                          </div>
-                          <div className="space-y-0.5">
-                            <div className="text-[10px] font-black text-white">€{12000 * i},000</div>
-                            <div className="text-[8px] font-bold text-slate-500 uppercase">Incoming_Wire</div>
-                          </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
-                    <Zap className="h-12 w-12 text-blue-500 animate-pulse opacity-50" />
-                  </div>
-
-                  <div className="space-y-6 z-10 text-right">
-                    <div className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-4">Ledger_Truth</div>
-                    {[1,2,3].map(i => (
-                      <div key={i} className={`h-16 w-64 bg-blue-600/10 border border-blue-500/30 rounded-2xl p-4 flex items-center justify-between animate-workflow-card-reverse`} style={{ animationDelay: `${i * 1.5}s` }}>
-                        <div className="flex items-center gap-3">
-                          <div className="space-y-0.5">
-                            <div className="text-[10px] font-black text-blue-400">#INV-990{i}</div>
-                            <div className="text-[8px] font-bold text-slate-500 uppercase">Siemens_AG</div>
-                          </div>
-                          <div className="h-8 w-8 rounded bg-blue-500/20 flex items-center justify-center">
-                            <CheckCircle2 className="h-4 w-4 text-blue-400" />
-                          </div>
+                          <Landmark className="h-4 w-4 text-emerald-500" />
+                          <div className="text-[10px] font-black text-white">€{12000 * i},000</div>
                         </div>
+                      </div>
+                    ))}
+                  </div>
+                  <Zap className="h-8 w-8 text-blue-500 animate-pulse" />
+                  <div className="space-y-4 text-right">
+                    <div className="text-[9px] font-black text-slate-600 uppercase tracking-widest">Gitto_Ledger</div>
+                    {[1,2].map(i => (
+                      <div key={i} className="h-14 w-56 bg-blue-600/10 border border-blue-500/30 rounded-xl p-4 flex items-center justify-between animate-workflow-card-reverse">
+                        <CheckCircle2 className="h-4 w-4 text-blue-400" />
+                        <div className="text-[10px] font-black text-blue-400">#INV-990{i}</div>
                       </div>
                     ))}
                   </div>
@@ -322,109 +220,6 @@ export default function Landing() {
               </div>
             </div>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
-            <div className="lg:col-span-7 order-2 lg:order-1">
-              <div className="bg-[#111113] rounded-[32px] border border-white/5 p-12 h-[450px] relative overflow-hidden shadow-2xl flex flex-col justify-center">
-                <div className="space-y-8 relative z-10">
-                   <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-6 rounded-3xl animate-fade-in-up">
-                      <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-black">?</div>
-                      <p className="text-xl font-medium italic text-slate-300">"Show me the invoices behind the W3 forecast shift."</p>
-                   </div>
-                   
-                   <div className="flex gap-4 animate-fade-in-up" style={{ animationDelay: '1s' }}>
-                      <div className="h-10 w-10 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-sm italic shadow-lg shadow-blue-600/20">G</div>
-                      <div className="flex-1 bg-blue-600/10 border border-blue-500/20 p-8 rounded-3xl space-y-4">
-                        <div className="h-2 w-3/4 bg-blue-400/30 rounded-full animate-shimmer" />
-                        <div className="h-2 w-1/2 bg-blue-400/30 rounded-full animate-shimmer" style={{ animationDelay: '0.2s' }} />
-                        <div className="pt-4 flex gap-3">
-                           <div className="px-3 py-1 bg-white/5 rounded-md text-[9px] font-black text-slate-400 uppercase tracking-widest border border-white/10">Ref: #INV-221</div>
-                           <div className="px-3 py-1 bg-white/5 rounded-md text-[9px] font-black text-slate-400 uppercase tracking-widest border border-white/10">Bank_Balance: Verified</div>
-                        </div>
-                      </div>
-                   </div>
-                </div>
-                {/* Floating particles */}
-                <div className="absolute inset-0 z-0">
-                   {[...Array(12)].map((_, i) => (
-                     <div key={i} className="absolute h-1 w-1 bg-blue-500/20 rounded-full animate-float" style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
-                   ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="lg:col-span-5 space-y-12 order-1 lg:order-2">
-              <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
-                Workflow_02 // RAG_Analyst
-              </div>
-              <h2 className="text-6xl font-black tracking-tighter leading-none text-white uppercase italic">
-                GROUNDED <br /> INSIGHTS.
-              </h2>
-              <p className="text-xl text-slate-400 font-medium leading-relaxed">
-                Query your entire treasury history with natural language. Every answer is retrieved from specific bank truth and invoice reality.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The "Brutal" Sections */}
-      <section className="px-8 py-64 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
-          <div className="lg:col-span-5 space-y-16">
-            <div className="space-y-6">
-              <h2 className="text-6xl font-black tracking-[-0.05em] leading-[0.9] text-white">THE <br /><span className="text-white/20 italic font-medium underline underline-offset-8 decoration-blue-500/50">SPREADSHEET</span> <br /> GAP.</h2>
-              <p className="text-xl text-slate-400 font-medium leading-relaxed">
-                Most finance teams are chasing "theoretical cash." Numbers that exist in a model but don't exist in the bank. Gitto closes the deficit.
-              </p>
-          </div>
-
-            <div className="space-y-12">
-              {[
-                { title: 'Behavioral_Bias', desc: 'Real life averages 14+ days of unmodeled delay. We find them before they hit your runway.' },
-                { title: 'Bank_Truth', desc: 'If the bank doesn\'t see the receipt, it isn\'t truth. Deterministic matching for CFO sign-off.' },
-                { title: 'Group_Normalization', desc: 'Consolidated FX and Intercompany washes that don\'t break at scale.' },
-              ].map((gap, i) => (
-                <div key={i} className="space-y-2 border-l-2 border-white/5 pl-8 hover:border-blue-500 transition-all">
-                  <h4 className="text-[11px] font-black uppercase tracking-[0.3em] text-white">{gap.title}</h4>
-                  <p className="text-sm text-slate-500 font-medium leading-relaxed">{gap.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="lg:col-span-7 flex items-center justify-center relative">
-            <div className="absolute inset-0 bg-blue-600/10 blur-[150px] animate-pulse rounded-full" />
-            <div className="relative z-10 w-full aspect-square border border-white/5 rounded-full flex items-center justify-center p-20 animate-spin-slow">
-              <div className="w-full h-full border border-white/10 rounded-full flex items-center justify-center p-20 animate-reverse-spin">
-                <div className="w-full h-full bg-blue-600 rounded-full shadow-[0_0_100px_rgba(37,99,235,0.4)] flex items-center justify-center">
-                  <span className="text-white font-black text-4xl italic tracking-tighter">TRUTH</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* The 6 Pillars - Abstracted Grid */}
-      <section className="px-8 py-64 bg-white text-black relative overflow-hidden z-10 text-left">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-3 gap-px bg-black/10 border border-black/10">
-          {[
-            { t: 'BANK_TRUTH', d: 'Ingest transactions and reconcile receipts against invoices for a definitive closing cash number.' },
-            { t: 'BEHAVIORAL_BIAS', d: 'Spreadsheets use due dates; real life doesn\'t. We learn customer payment habits to predict reality.' },
-            { t: 'RAG_INSIGHTS', d: 'Ask anything. Get answers grounded in specific retrieved invoice evidence with citations.' },
-            { t: '13_WEEK_GRID', d: 'The single source of truth for the weekly cash meeting. Interactive drill-downs from W1 to W13.' },
-            { t: 'FX_NORMALIZATION', d: 'Snapshot-locked rates and intercompany wash detection. Consolidated group visibility.' },
-            { t: 'GOVERNANCE', d: 'Enterprise-ready audit logs for every scenario change, lever shift, and CFO sign-off.' },
-          ].map((p, i) => (
-            <div key={i} className="bg-white p-16 space-y-10 group hover:bg-[#F9F9FB] transition-all">
-              <span className="text-[10px] font-black text-slate-300 tracking-[0.4em]">PILLAR_0{i+1}</span>
-              <div className="space-y-4">
-                <h3 className="text-3xl font-black tracking-tighter leading-none italic uppercase">{p.t}</h3>
-                <p className="text-lg text-slate-500 font-bold leading-relaxed">{p.d}</p>
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
