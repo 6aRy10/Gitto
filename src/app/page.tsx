@@ -6,7 +6,8 @@ import {
   ArrowRight, CheckCircle2, Shield, BarChart3, TrendingUp, AlertCircle, 
   Landmark, Users, Search, Bell, Calendar, ChevronRight, MessageSquare,
   Lock, Zap, Database, Globe, Briefcase, Plus, Sparkles, Filter, 
-  FileText, ArrowDownRight, ArrowUpRight, Play, Layout, MousePointer2
+  FileText, ArrowDownRight, ArrowUpRight, Play, Layout, MousePointer2,
+  Cloud as CloudIcon
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Card, CardContent } from "../components/ui/card";
@@ -35,7 +36,7 @@ export default function Landing() {
               <button className="hover:text-white transition-colors">The Problem</button>
               <button className="hover:text-white transition-colors">The Ledger</button>
               <button className="hover:text-white transition-colors">Enterprise</button>
-            </div>
+          </div>
           </div>
           <div className="flex items-center gap-6">
             <Link href="/app" className="text-[11px] font-black uppercase tracking-[0.2em] text-slate-400 hover:text-white transition-colors">Access Terminal</Link>
@@ -51,7 +52,7 @@ export default function Landing() {
       {/* Expressive Hero */}
       <section className="relative pt-64 pb-32 px-8 z-10">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-20 items-end">
-          <div className="lg:col-span-8 space-y-12">
+          <div className="lg:col-span-7 space-y-12">
             <div className="inline-flex items-center px-3 py-1 rounded-sm bg-white/5 border border-white/10 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
               Deterministic Cash Intelligence
             </div>
@@ -61,15 +62,65 @@ export default function Landing() {
               <span className="text-blue-500">REALITY.</span>
             </h1>
           </div>
-          <div className="lg:col-span-4 pb-6 space-y-8">
-            <p className="text-xl text-slate-400 font-medium leading-relaxed tracking-tight border-l-2 border-blue-500/30 pl-8">
-              Spreadsheets model the "theoretical." Gitto anchors your liquidity in actual bank receipts, intercompany washes, and behavioral bias.
-            </p>
-            <div className="pl-8 flex items-center gap-4">
-              <div className="h-12 w-12 rounded-full border border-white/10 flex items-center justify-center animate-bounce-y">
-                <ArrowDownRight className="h-5 w-5 text-blue-400" />
+          
+          <div className="lg:col-span-5 relative flex items-center justify-center min-h-[500px]">
+            {/* The Integration Engine - Animated Visual from User Query */}
+            <div className="relative w-[450px] h-[450px] flex items-center justify-center">
+              {/* Background Scanline Mesh */}
+              <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(45deg, #ffffff 1px, transparent 1px), linear-gradient(-45deg, #ffffff 1px, transparent 1px)', backgroundSize: '20px 20px' }} />
+              
+              {/* Central Logo Core */}
+              <div className="relative z-20 w-32 h-32 bg-blue-600 rounded-[32px] flex items-center justify-center shadow-[0_0_80px_rgba(37,99,235,0.6)] animate-pulse-slow">
+                <div className="text-white font-black text-6xl italic -skew-x-12">G</div>
+                {/* Internal data pings */}
+                <div className="absolute inset-0 rounded-[32px] border-2 border-white/20 animate-ping" />
               </div>
-              <span className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-500">Scroll to enter the command center</span>
+
+              {/* Orbiting Integrations - Layer 1 (Slow) */}
+              <div className="absolute inset-0 animate-spin-slow">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                   <div className="h-14 w-14 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center group hover:bg-white/10 transition-colors">
+                     <Database className="h-6 w-6 text-slate-400" />
+                     <div className="absolute -top-1 -right-1 h-2 w-2 bg-blue-500 rounded-full animate-ping" />
+                   </div>
+                </div>
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
+                   <div className="h-14 w-14 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl flex items-center justify-center">
+                     <Globe className="h-6 w-6 text-slate-400" />
+                   </div>
+                </div>
+              </div>
+
+              {/* Orbiting Integrations - Layer 2 (Reverse, Faster) */}
+              <div className="absolute inset-8 animate-reverse-spin-slow">
+                <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2">
+                   <div className="h-12 w-12 rounded-2xl bg-[#f57c00]/10 border border-[#f57c00]/30 flex items-center justify-center shadow-[0_0_20px_rgba(245,124,0,0.2)]">
+                     <div className="h-6 w-6 rounded bg-[#f57c00] flex items-center justify-center text-[8px] font-black">sf</div>
+                   </div>
+                </div>
+                <div className="absolute right-0 top-1/2 translate-x-1/2 -translate-y-1/2">
+                   <div className="h-12 w-12 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center shadow-[0_0_20px_rgba(59,130,246,0.2)]">
+                     <CloudIcon className="h-6 w-6 text-blue-400" />
+                   </div>
+                </div>
+              </div>
+
+              {/* Connecting Data Particles */}
+              <div className="absolute inset-0">
+                {[...Array(6)].map((_, i) => (
+                  <div 
+                    key={i} 
+                    className="absolute h-1 w-1 bg-blue-400 rounded-full animate-flow" 
+                    style={{ 
+                      top: '50%', 
+                      left: '50%', 
+                      '--tx': `${Math.cos(i * 60 * Math.PI / 180) * 200}px`,
+                      '--ty': `${Math.sin(i * 60 * Math.PI / 180) * 200}px`,
+                      animationDelay: `${i * 0.5}s`
+                    } as any} 
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -86,17 +137,17 @@ export default function Landing() {
                   <div className="h-2 w-2 rounded-full bg-white/10" />
                   <div className="h-2 w-2 rounded-full bg-white/10" />
                   <div className="h-2 w-2 rounded-full bg-white/10" />
-                </div>
+          </div>
                 <div className="h-4 w-[1px] bg-white/10" />
                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-slate-500">Gitto Terminal v4.2 // Main_Ledger</span>
-              </div>
+        </div>
               <div className="flex items-center gap-4">
                 <div className="text-[10px] font-black uppercase tracking-widest text-emerald-500 flex items-center gap-2">
                   <div className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Live Bank Feed: 100% Sync
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
 
             <div className="flex flex-1 overflow-hidden">
               {/* Left: Metadata Column */}
@@ -171,7 +222,7 @@ export default function Landing() {
                               <div className={`text-xs font-black ${tx.amt.startsWith('+') ? 'text-emerald-500' : 'text-white'}`}>{tx.amt}</div>
                               <div className="text-[9px] font-black uppercase tracking-widest text-slate-500">{tx.status}</div>
                             </div>
-                          </div>
+                    </div>
                         ))}
                       </div>
                     </div>
@@ -203,7 +254,121 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* The "Brutal" Sections: No more standard cards */}
+      {/* Animated Workflows - "The Video Wall" */}
+      <section className="px-8 py-64 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left">
+        <div className="space-y-32">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+            <div className="lg:col-span-5 space-y-12">
+              <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
+                Workflow_01 // Reconciliation
+              </div>
+              <h2 className="text-6xl font-black tracking-tighter leading-none text-white uppercase italic">
+                AUTOMATED <br /> RECONCILIATION.
+              </h2>
+              <p className="text-xl text-slate-400 font-medium leading-relaxed">
+                Watch as Gitto's core engine identifies incoming bank receipts and matches them against open ledger items in real-time. 
+              </p>
+              <div className="flex items-center gap-6">
+                 <div className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" />
+                 <span className="text-[10px] font-black uppercase tracking-[0.3em] text-emerald-500">Live Simulation Active</span>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-7">
+              <div className="bg-[#111113] rounded-[32px] border border-white/5 p-8 h-[450px] relative overflow-hidden shadow-2xl">
+                {/* Background Grid */}
+                <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)', backgroundSize: '30px 30px' }} />
+                
+                {/* Animated Stream */}
+                <div className="relative h-full flex items-center justify-between px-12">
+                  <div className="space-y-6 z-10">
+                    <div className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-4">Inbound_Bank_Feed</div>
+                    {[1,2,3].map(i => (
+                      <div key={i} className={`h-16 w-64 bg-white/5 border border-white/10 rounded-2xl p-4 flex items-center justify-between animate-workflow-card`} style={{ animationDelay: `${i * 1.5}s` }}>
+                        <div className="flex items-center gap-3">
+                          <div className="h-8 w-8 rounded bg-emerald-500/20 flex items-center justify-center">
+                            <Landmark className="h-4 w-4 text-emerald-500" />
+                          </div>
+                          <div className="space-y-0.5">
+                            <div className="text-[10px] font-black text-white">€{12000 * i},000</div>
+                            <div className="text-[8px] font-bold text-slate-500 uppercase">Incoming_Wire</div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
+                    <Zap className="h-12 w-12 text-blue-500 animate-pulse opacity-50" />
+                  </div>
+
+                  <div className="space-y-6 z-10 text-right">
+                    <div className="text-[10px] font-black text-slate-600 uppercase tracking-widest mb-4">Ledger_Truth</div>
+                    {[1,2,3].map(i => (
+                      <div key={i} className={`h-16 w-64 bg-blue-600/10 border border-blue-500/30 rounded-2xl p-4 flex items-center justify-between animate-workflow-card-reverse`} style={{ animationDelay: `${i * 1.5}s` }}>
+                        <div className="flex items-center gap-3">
+                          <div className="space-y-0.5">
+                            <div className="text-[10px] font-black text-blue-400">#INV-990{i}</div>
+                            <div className="text-[8px] font-bold text-slate-500 uppercase">Siemens_AG</div>
+                          </div>
+                          <div className="h-8 w-8 rounded bg-blue-500/20 flex items-center justify-center">
+                            <CheckCircle2 className="h-4 w-4 text-blue-400" />
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+            <div className="lg:col-span-7 order-2 lg:order-1">
+              <div className="bg-[#111113] rounded-[32px] border border-white/5 p-12 h-[450px] relative overflow-hidden shadow-2xl flex flex-col justify-center">
+                <div className="space-y-8 relative z-10">
+                   <div className="flex items-center gap-4 bg-white/5 border border-white/10 p-6 rounded-3xl animate-fade-in-up">
+                      <div className="h-10 w-10 rounded-full bg-blue-600 flex items-center justify-center text-white font-black">?</div>
+                      <p className="text-xl font-medium italic text-slate-300">"Show me the invoices behind the W3 forecast shift."</p>
+                   </div>
+                   
+                   <div className="flex gap-4 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+                      <div className="h-10 w-10 rounded-xl bg-blue-500 flex items-center justify-center text-white font-black text-xs">G</div>
+                      <div className="flex-1 bg-blue-600/10 border border-blue-500/20 p-8 rounded-3xl space-y-4">
+                        <div className="h-2 w-3/4 bg-blue-400/30 rounded-full animate-shimmer" />
+                        <div className="h-2 w-1/2 bg-blue-400/30 rounded-full animate-shimmer" style={{ animationDelay: '0.2s' }} />
+                        <div className="pt-4 flex gap-3">
+                           <div className="px-3 py-1 bg-white/5 rounded-md text-[9px] font-black text-slate-400 uppercase tracking-widest border border-white/10">Ref: #INV-221</div>
+                           <div className="px-3 py-1 bg-white/5 rounded-md text-[9px] font-black text-slate-400 uppercase tracking-widest border border-white/10">Bank_Balance: Verified</div>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+                {/* Floating particles */}
+                <div className="absolute inset-0 z-0">
+                   {[...Array(12)].map((_, i) => (
+                     <div key={i} className="absolute h-1 w-1 bg-blue-500/20 rounded-full animate-float" style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 5}s` }} />
+                   ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 space-y-12 order-1 lg:order-2">
+              <div className="inline-flex items-center px-3 py-1 rounded-sm bg-blue-500/10 border border-blue-500/20 text-[10px] font-black uppercase tracking-[0.3em] text-blue-400">
+                Workflow_02 // RAG_Analyst
+              </div>
+              <h2 className="text-6xl font-black tracking-tighter leading-none text-white uppercase italic">
+                GROUNDED <br /> INSIGHTS.
+              </h2>
+              <p className="text-xl text-slate-400 font-medium leading-relaxed">
+                Query your entire treasury history with natural language. Every answer is retrieved from specific bank truth and invoice reality.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* The "Brutal" Sections */}
       <section className="px-8 py-64 max-w-[1400px] mx-auto border-t border-white/5 relative z-10 text-left">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
           <div className="lg:col-span-5 space-y-16">
@@ -212,8 +377,8 @@ export default function Landing() {
               <p className="text-xl text-slate-400 font-medium leading-relaxed">
                 Most finance teams are chasing "theoretical cash." Numbers that exist in a model but don't exist in the bank. Gitto closes the deficit.
               </p>
-            </div>
-            
+          </div>
+
             <div className="space-y-12">
               {[
                 { title: 'Behavioral_Bias', desc: 'Real life averages 14+ days of unmodeled delay. We find them before they hit your runway.' },
@@ -312,16 +477,16 @@ export default function Landing() {
               <li className="hover:text-white cursor-pointer transition-colors">Terminals</li>
               <li className="hover:text-white cursor-pointer transition-colors">Ledger_Truth</li>
               <li className="hover:text-white cursor-pointer transition-colors">RAG_Insights</li>
-            </ul>
-          </div>
+              </ul>
+            </div>
           <div className="space-y-8">
             <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Compare</h4>
             <ul className="space-y-4 text-[13px] font-black uppercase tracking-widest text-slate-400">
               <li className="hover:text-white cursor-pointer transition-colors">vs_Kyriba</li>
               <li className="hover:text-white cursor-pointer transition-colors">vs_Manual</li>
               <li className="hover:text-white cursor-pointer transition-colors">vs_Deficit</li>
-            </ul>
-          </div>
+              </ul>
+            </div>
           <div className="space-y-8 text-right">
             <h4 className="text-[10px] font-black text-slate-600 uppercase tracking-[0.4em]">Governance</h4>
             <p className="text-[11px] font-bold text-slate-500 leading-relaxed max-w-[200px] ml-auto">
@@ -351,12 +516,73 @@ export default function Landing() {
         .animate-spin-slow {
           animation: spin-slow 20s linear infinite;
         }
+        @keyframes reverse-spin-slow {
+          from { transform: rotate(360deg); }
+          to { transform: rotate(0deg); }
+        }
+        .animate-reverse-spin-slow {
+          animation: reverse-spin-slow 15s linear infinite;
+        }
         @keyframes reverse-spin {
           from { transform: rotate(360deg); }
           to { transform: rotate(0deg); }
         }
         .animate-reverse-spin {
           animation: reverse-spin 10s linear infinite;
+        }
+        @keyframes pulse-slow {
+          0%, 100% { transform: scale(1); opacity: 1; }
+          50% { transform: scale(1.05); opacity: 0.8; }
+        }
+        .animate-pulse-slow {
+          animation: pulse-slow 4s ease-in-out infinite;
+        }
+        @keyframes flow {
+          0% { transform: translate(0, 0); opacity: 0; }
+          20% { opacity: 1; }
+          80% { opacity: 1; }
+          100% { transform: translate(var(--tx), var(--ty)); opacity: 0; }
+        }
+        .animate-flow {
+          animation: flow 3s linear infinite;
+        }
+        @keyframes workflow-card {
+          0% { transform: translateX(-100px); opacity: 0; }
+          10%, 90% { transform: translateX(0); opacity: 1; }
+          100% { transform: translateX(100px); opacity: 0; }
+        }
+        .animate-workflow-card {
+          animation: workflow-card 4.5s ease-in-out infinite;
+        }
+        @keyframes workflow-card-reverse {
+          0% { transform: translateX(100px); opacity: 0; }
+          10%, 90% { transform: translateX(0); opacity: 1; }
+          100% { transform: translateX(-100px); opacity: 0; }
+        }
+        .animate-workflow-card-reverse {
+          animation: workflow-card-reverse 4.5s ease-in-out infinite;
+        }
+        @keyframes shimmer {
+          0% { opacity: 0.3; }
+          50% { opacity: 1; }
+          100% { opacity: 0.3; }
+        }
+        .animate-shimmer {
+          animation: shimmer 2s infinite;
+        }
+        @keyframes fade-in-up {
+          from { transform: translateY(20px); opacity: 0; }
+          to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-fade-in-up {
+          animation: fade-in-up 0.8s ease-out forwards;
+        }
+        @keyframes float {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-20px); }
+        }
+        .animate-float {
+          animation: float 5s ease-in-out infinite;
         }
       `}</style>
     </div>
