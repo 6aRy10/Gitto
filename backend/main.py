@@ -323,6 +323,20 @@ def get_snapshot_kpis(snapshot_id: int, db: Session = Depends(get_db)):
         "data_health_score": snapshot.data_health.get('total_invoices', 0) if snapshot.data_health else 0
     }
 
+@app.get("/snapshots/{snapshot_id}/invoices")
+def get_snapshot_invoices(snapshot_id: int, page: int = 1, page_size: int = 100, db: Session = Depends(get_db)):
+    offset = (page - 1) * page_size
+    query = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id)
+    total = query.count()
+    items = query.order_by(models.Invoice.expected_due_date.asc()).offset(offset).limit(page_size).all()
+    return {
+        "items": items,
+        "total": total,
+        "page": page,
+        "page_size": page_size,
+        "total_pages": (total + page_size - 1) // page_size
+    }
+
 @app.get("/snapshots/{snapshot_id}/stats")
 def get_snapshot_stats(
     snapshot_id: int, 
