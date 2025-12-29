@@ -511,14 +511,11 @@ export default function Landing() {
               <div className="absolute inset-0">
                  {/* Top Row */}
                  <div className="absolute top-20 left-[15%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
-                       {/* Background Glow */}
-                       <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20 transition-all" />
+                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
-                          src="https://cdn.worldvectorlogo.com/logos/snowflake-1.svg" 
+                          src="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg" 
                           alt="Snowflake" 
-                          className="w-full h-full object-contain relative z-10 brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-500" 
-                          onError={(e) => { e.currentTarget.src = "https://logo.clearbit.com/snowflake.com" }}
+                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500" 
                        />
                     </div>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -528,13 +525,11 @@ export default function Landing() {
                  </div>
 
                  <div className="absolute top-5 left-[35%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
-                       <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20 transition-all" />
+                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
-                          src="https://cdn.worldvectorlogo.com/logos/sap-3.svg" 
+                          src="https://www.vectorlogo.zone/logos/sap/sap-icon.svg" 
                           alt="SAP" 
-                          className="w-full h-full object-contain relative z-10 brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
-                          onError={(e) => { e.currentTarget.src = "https://logo.clearbit.com/sap.com" }}
+                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
                        />
                     </div>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -544,28 +539,25 @@ export default function Landing() {
                  </div>
 
                  <div className="absolute top-5 right-[35%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
-                       <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20 transition-all" />
+                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
-                          src="https://logo.clearbit.com/netsuite.com" 
+                          src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" 
                           alt="NetSuite" 
-                          className="w-full h-full object-contain relative z-10 brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
+                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
                        />
                     </div>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                       <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">NetSuite</span>
+                       <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">NetSuite (Oracle)</span>
                     </div>
                     <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-20 right-[15%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
-                       <div className="absolute inset-0 bg-blue-500/5 group-hover:bg-blue-500/20 transition-all" />
+                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
-                          src="https://cdn.worldvectorlogo.com/logos/salesforce-2.svg" 
+                          src="https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg" 
                           alt="Salesforce" 
-                          className="w-full h-full object-contain relative z-10 brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
-                          onError={(e) => { e.currentTarget.src = "https://logo.clearbit.com/salesforce.com" }}
+                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
                        />
                     </div>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -576,13 +568,11 @@ export default function Landing() {
 
                  {/* Bottom Row */}
                  <div className="absolute bottom-20 left-[10%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
-                       <div className="absolute inset-0 bg-emerald-500/5 group-hover:bg-emerald-500/20 transition-all" />
+                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
-                          src="https://cdn.worldvectorlogo.com/logos/hsbc.svg" 
+                          src="https://www.vectorlogo.zone/logos/hsbc/hsbc-icon.svg" 
                           alt="HSBC" 
-                          className="w-full h-full object-contain relative z-10 brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
-                          onError={(e) => { e.currentTarget.src = "https://logo.clearbit.com/hsbc.com" }}
+                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
                        />
                     </div>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
@@ -592,12 +582,11 @@ export default function Landing() {
                  </div>
 
                  <div className="absolute bottom-20 right-[10%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
-                       <div className="absolute inset-0 bg-emerald-500/5 group-hover:bg-emerald-500/20 transition-all" />
+                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
-                          src="https://logo.clearbit.com/jpmorgan.com" 
+                          src="https://upload.wikimedia.org/wikipedia/commons/a/af/J_P_Morgan_Chase_Logo_2008-1.svg" 
                           alt="JP Morgan" 
-                          className="w-full h-full object-contain relative z-10 brightness-0 invert opacity-60 group-hover:opacity-100 group-hover:brightness-100 group-hover:invert-0 transition-all duration-500"
+                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500 brightness-0 invert"
                        />
                     </div>
                     <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
