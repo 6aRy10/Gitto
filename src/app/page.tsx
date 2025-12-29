@@ -511,50 +511,62 @@ export default function Landing() {
               <div className="absolute inset-0">
                  {/* Top Row */}
                  <div className="absolute top-20 left-[15%] group">
-                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                       <span className="text-[10px] font-black text-slate-500 italic uppercase">Snowflake</span>
+                    <div className="h-24 w-24 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4">
+                       <img src="https://logo.clearbit.com/snowflake.com" alt="Snowflake" className="w-full h-full object-contain brightness-[0.8] grayscale group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" />
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                       <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">Snowflake</span>
                     </div>
                     <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-5 left-[35%] group">
-                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                       <span className="text-[10px] font-black text-slate-500 italic uppercase">SAP</span>
+                    <div className="h-24 w-24 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4">
+                       <img src="https://logo.clearbit.com/sap.com" alt="SAP" className="w-full h-full object-contain brightness-[0.8] grayscale group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" />
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                       <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">SAP</span>
                     </div>
                     <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-5 right-[35%] group">
-                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                       <span className="text-[10px] font-black text-slate-500 italic uppercase">NetSuite</span>
+                    <div className="h-24 w-24 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4">
+                       <img src="https://logo.clearbit.com/netsuite.com" alt="NetSuite" className="w-full h-full object-contain brightness-[0.8] grayscale group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" />
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                       <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">NetSuite</span>
                     </div>
                     <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-20 right-[15%] group">
-                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                       <span className="text-[10px] font-black text-slate-500 italic uppercase">Salesforce</span>
+                    <div className="h-24 w-24 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4">
+                       <img src="https://logo.clearbit.com/salesforce.com" alt="Salesforce" className="w-full h-full object-contain brightness-[0.8] grayscale group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" />
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                       <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">Salesforce</span>
                     </div>
                     <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  {/* Bottom Row */}
                  <div className="absolute bottom-20 left-[10%] group">
-                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                       <div className="text-center">
-                          <Landmark className="h-5 w-5 text-slate-500 mx-auto mb-1" />
-                          <span className="text-[8px] font-black text-slate-600 italic uppercase">HSBC Feed</span>
-                       </div>
+                    <div className="h-24 w-24 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4">
+                       <img src="https://logo.clearbit.com/hsbc.com" alt="HSBC" className="w-full h-full object-contain brightness-[0.8] grayscale group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" />
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                       <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">HSBC Feed</span>
                     </div>
                     <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute bottom-20 right-[10%] group">
-                    <div className="h-20 w-20 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-                       <div className="text-center">
-                          <Globe className="h-5 w-5 text-slate-500 mx-auto mb-1" />
-                          <span className="text-[8px] font-black text-slate-600 italic uppercase">J.P. Morgan</span>
-                       </div>
+                    <div className="h-24 w-24 rounded-2xl bg-white/[0.02] border border-white/5 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/[0.05] group-hover:border-white/20 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4">
+                       <img src="https://logo.clearbit.com/jpmorgan.com" alt="JP Morgan" className="w-full h-full object-contain brightness-[0.8] grayscale group-hover:grayscale-0 group-hover:brightness-100 transition-all duration-500" />
+                    </div>
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                       <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">J.P. Morgan</span>
                     </div>
                     <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                  </div>
