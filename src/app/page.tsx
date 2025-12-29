@@ -511,88 +511,88 @@ export default function Landing() {
               <div className="absolute inset-0">
                  {/* Top Row */}
                  <div className="absolute top-20 left-[15%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
+                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
                           src="https://www.vectorlogo.zone/logos/snowflake/snowflake-icon.svg" 
                           alt="Snowflake" 
-                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500" 
+                          className="w-full h-full object-contain relative z-10 transition-all duration-500" 
                        />
                     </div>
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-100 transition-opacity whitespace-nowrap">
                        <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">Snowflake</span>
                     </div>
-                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-5 left-[35%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
+                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
                           src="https://www.vectorlogo.zone/logos/sap/sap-icon.svg" 
                           alt="SAP" 
-                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
+                          className="w-full h-full object-contain relative z-10 transition-all duration-500"
                        />
                     </div>
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-100 transition-opacity whitespace-nowrap">
                        <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">SAP</span>
                     </div>
-                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-5 right-[35%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
+                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
                           src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" 
                           alt="NetSuite" 
-                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
+                          className="w-full h-full object-contain relative z-10 transition-all duration-500"
                        />
                     </div>
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-100 transition-opacity whitespace-nowrap">
                        <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">NetSuite (Oracle)</span>
                     </div>
-                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute top-20 right-[15%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
+                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-blue-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
                           src="https://www.vectorlogo.zone/logos/salesforce/salesforce-icon.svg" 
                           alt="Salesforce" 
-                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
+                          className="w-full h-full object-contain relative z-10 transition-all duration-500"
                        />
                     </div>
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-100 transition-opacity whitespace-nowrap">
                        <span className="text-[9px] font-black text-blue-400 uppercase tracking-widest">Salesforce</span>
                     </div>
-                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-blue-500/10 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  {/* Bottom Row */}
                  <div className="absolute bottom-20 left-[10%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
+                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
                           src="https://www.vectorlogo.zone/logos/hsbc/hsbc-icon.svg" 
                           alt="HSBC" 
-                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500"
+                          className="w-full h-full object-contain relative z-10 transition-all duration-500"
                        />
                     </div>
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-100 transition-opacity whitespace-nowrap">
                        <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">HSBC Feed</span>
                     </div>
-                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                  </div>
 
                  <div className="absolute bottom-20 right-[10%] group">
-                    <div className="h-24 w-24 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/10 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
+                    <div className="h-24 w-24 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center backdrop-blur-xl group-hover:bg-white/20 group-hover:border-emerald-500/50 transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden p-4 relative">
                        <img 
                           src="https://upload.wikimedia.org/wikipedia/commons/a/af/J_P_Morgan_Chase_Logo_2008-1.svg" 
                           alt="JP Morgan" 
-                          className="w-full h-full object-contain relative z-10 opacity-40 group-hover:opacity-100 transition-all duration-500 brightness-0 invert"
+                          className="w-full h-full object-contain relative z-10 transition-all duration-500 brightness-0 invert"
                        />
                     </div>
-                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                    <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 opacity-100 transition-opacity whitespace-nowrap">
                        <span className="text-[9px] font-black text-emerald-400 uppercase tracking-widest">J.P. Morgan</span>
                     </div>
-                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                    <div className="absolute inset-0 bg-emerald-500/5 blur-2xl rounded-full opacity-50 group-hover:opacity-100 transition-opacity" />
                  </div>
               </div>
            </div>
