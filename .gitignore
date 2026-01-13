@@ -12,6 +12,11 @@
 
 # testing
 /coverage
+.pytest_cache/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
 # next.js
 /.next/
@@ -19,6 +24,7 @@
 
 # production
 /build
+/dist
 
 # misc
 .DS_Store
@@ -32,6 +38,10 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # vercel
 .vercel
@@ -40,6 +50,45 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
 
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+backend/*.db
+backend/sql_app.db
+backend/gitto.db
 
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 
+# OS
+Thumbs.db
+.DS_Store
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
