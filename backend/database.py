@@ -89,6 +89,9 @@ def init_db():
     # Cash-to-Plan Bridge models also use models.Base
     import cash_plan_bridge_models
     
+    # Startup Planning models also use models.Base
+    import startup_planning_models
+    
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints
     try:

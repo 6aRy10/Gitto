@@ -108,6 +108,10 @@ app.include_router(trust_report_router)
 from cash_plan_bridge_api import router as cash_plan_bridge_router
 app.include_router(cash_plan_bridge_router)
 
+# Startup Planning API
+from startup_planning_api import router as startup_planning_router
+app.include_router(startup_planning_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
