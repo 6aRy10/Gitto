@@ -98,6 +98,10 @@ app.include_router(invariant_router)
 
 # Register trust report API router (Trust Certification + Lock Gates)
 from trust_report_api import router as trust_report_router
+
+# Register external certification API router (External TMS Certification)
+from external_certification_api import router as external_certification_router
+app.include_router(external_certification_router)
 app.include_router(trust_report_router)
 
 # Health check endpoint

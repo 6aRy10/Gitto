@@ -207,4 +207,59 @@ export const getDatasetHealth = (datasetId: string) =>
 export const getConnectionHealthLatest = (connectionId: number) =>
   api.get(`/connections/${connectionId}/health/latest`).then(res => res.data);
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// EXTERNAL SYSTEM CERTIFICATION API
+// ═══════════════════════════════════════════════════════════════════════════════
+
+export const importTmsData = (formData: FormData) =>
+  api.post('/external-certification/import', formData, {
+    headers: { 'Content-Type': 'multipart/form-data' }
+  }).then(res => res.data);
+
+export const listTmsImports = (snapshotId?: number, systemName?: string, limit: number = 20) => {
+  const params = new URLSearchParams();
+  if (snapshotId) params.append('snapshot_id', snapshotId.toString());
+  if (systemName) params.append('system_name', systemName);
+  params.append('limit', limit.toString());
+  return api.get(`/external-certification/imports?${params}`).then(res => res.data);
+};
+
+export const getTmsImport = (importId: number) =>
+  api.get(`/external-certification/imports/${importId}`).then(res => res.data);
+
+export const generateCertificationReport = (importId: number, createdBy: string = 'api') =>
+  api.post(`/external-certification/imports/${importId}/generate-report?created_by=${createdBy}`).then(res => res.data);
+
+export const listCertificationReports = (snapshotId?: number, status?: string, limit: number = 20) => {
+  const params = new URLSearchParams();
+  if (snapshotId) params.append('snapshot_id', snapshotId.toString());
+  if (status) params.append('status', status);
+  params.append('limit', limit.toString());
+  return api.get(`/external-certification/reports?${params}`).then(res => res.data);
+};
+
+export const getCertificationReport = (reportId: number) =>
+  api.get(`/external-certification/reports/${reportId}`).then(res => res.data);
+
+export const certifyReport = (reportId: number, certifiedBy: string, notes?: string) =>
+  api.post(`/external-certification/reports/${reportId}/certify`, {
+    certified_by: certifiedBy,
+    notes: notes || ''
+  }).then(res => res.data);
+
+export const exportCertificationReport = (reportId: number, format: string = 'json') =>
+  api.get(`/external-certification/reports/${reportId}/export?format=${format}`).then(res => res.data);
+
+export const resolveDiscrepancy = (reportId: number, discrepancyId: number, resolutionNotes: string, resolvedBy: string) =>
+  api.post(`/external-certification/reports/${reportId}/discrepancies/${discrepancyId}/resolve`, {
+    resolution_notes: resolutionNotes,
+    resolved_by: resolvedBy
+  }).then(res => res.data);
+
+export const getDiscrepancyEvidence = (reportId: number, discrepancyId: number) =>
+  api.get(`/external-certification/reports/${reportId}/discrepancies/${discrepancyId}/evidence`).then(res => res.data);
+
+export const getSnapshotCertificationStatus = (snapshotId: number) =>
+  api.get(`/external-certification/snapshots/${snapshotId}/certification-status`).then(res => res.data);
+
 

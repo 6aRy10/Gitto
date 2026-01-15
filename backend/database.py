@@ -82,6 +82,10 @@ def init_db():
     import trust_report_models
     trust_report_models.Base.metadata.create_all(bind=engine)
     
+    # Initialize external certification models (separate Base)
+    import external_certification_models
+    external_certification_models.Base.metadata.create_all(bind=engine)
+    
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints
     try:
