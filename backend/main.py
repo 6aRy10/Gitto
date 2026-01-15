@@ -104,6 +104,10 @@ from external_certification_api import router as external_certification_router
 app.include_router(external_certification_router)
 app.include_router(trust_report_router)
 
+# Cash-to-Plan Bridge API
+from cash_plan_bridge_api import router as cash_plan_bridge_router
+app.include_router(cash_plan_bridge_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():

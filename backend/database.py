@@ -86,6 +86,9 @@ def init_db():
     # Just import to ensure they're registered
     import external_certification_models
     
+    # Cash-to-Plan Bridge models also use models.Base
+    import cash_plan_bridge_models
+    
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints
     try:
