@@ -92,6 +92,9 @@ def init_db():
     # Startup Planning models also use models.Base
     import startup_planning_models
     
+    # Board Pack models also use models.Base
+    import board_pack_models
+    
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints
     try:

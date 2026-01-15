@@ -112,6 +112,10 @@ app.include_router(cash_plan_bridge_router)
 from startup_planning_api import router as startup_planning_router
 app.include_router(startup_planning_router)
 
+# Board Pack Autopilot API
+from board_pack_api import router as board_pack_router
+app.include_router(board_pack_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
