@@ -1,0 +1,146 @@
+{
+  "version": "1.0",
+  "description": "Golden dataset expected results for CI Trust Gauntlet",
+  "created_at": "2026-01-15",
+  
+  "dataset": {
+    "entity_name": "Golden Test Corp",
+    "snapshot_name": "Golden Snapshot Q4 2025",
+    "base_currency": "EUR"
+  },
+
+  "invoices": {
+    "total_count": 100,
+    "total_amount_eur": 3425000.00,
+    "count_by_currency": {
+      "EUR": 80,
+      "GBP": 10,
+      "USD": 10
+    },
+    "amount_by_currency": {
+      "EUR": 2680000.00,
+      "GBP": 395000.00,
+      "USD": 350000.00
+    },
+    "count_by_customer": {
+      "ACME Corp": 20,
+      "Beta Industries": 20,
+      "Gamma Holdings": 20,
+      "Delta Tech": 20,
+      "Epsilon Ltd": 20
+    }
+  },
+
+  "bank_transactions": {
+    "total_count": 50,
+    "inflow_count": 40,
+    "outflow_count": 10,
+    "total_inflows_eur": 800000.00,
+    "total_outflows_eur": 204000.00,
+    "net_cash_flow_eur": 596000.00
+  },
+
+  "reconciliation": {
+    "matched_transaction_count": 45,
+    "matched_invoice_count": 45,
+    "matched_amount_eur": 750000.00,
+    "unmatched_transaction_count": 5,
+    "unmatched_exposure_eur": 50000.00,
+    "match_rate_percent": 90.0
+  },
+
+  "trust_report": {
+    "trust_score_min": 85.0,
+    "trust_score_max": 95.0,
+    "lock_eligible": true,
+    "metrics": {
+      "cash_explained_pct": {
+        "expected_min": 90.0,
+        "expected_max": 96.0,
+        "unit": "percent"
+      },
+      "unknown_exposure_base": {
+        "expected_min": 40000.0,
+        "expected_max": 60000.0,
+        "unit": "currency"
+      },
+      "missing_fx_exposure_base": {
+        "expected": 0.0,
+        "tolerance": 1.0,
+        "unit": "currency"
+      },
+      "freshness_mismatch_hours": {
+        "expected_max": 24.0,
+        "unit": "hours"
+      },
+      "duplicate_exposure_base": {
+        "expected": 0.0,
+        "tolerance": 0.0,
+        "unit": "currency"
+      }
+    }
+  },
+
+  "invariants": {
+    "weekly_cash_math": {
+      "expected_status": "pass",
+      "description": "close = open + inflows - outflows"
+    },
+    "drilldown_sum_integrity": {
+      "expected_status": "pass",
+      "description": "grid cell total == sum(drilldown rows)"
+    },
+    "reconciliation_conservation": {
+      "expected_status": "pass",
+      "description": "allocations + fees + writeoffs == txn_amount"
+    },
+    "no_overmatch": {
+      "expected_status": "pass",
+      "description": "allocations <= invoice open_amount, non-negative"
+    },
+    "fx_safety": {
+      "expected_status": "pass",
+      "description": "foreign currency without FX => Unknown, never 1.0"
+    },
+    "snapshot_immutability": {
+      "expected_status": "pass",
+      "description": "locked snapshots reject modifications"
+    },
+    "idempotency": {
+      "expected_status": "pass",
+      "description": "no duplicate canonical_ids"
+    }
+  },
+
+  "regression_tests": {
+    "amount_mutation": {
+      "description": "Changing 1 txn amount by €1 must fail reconciliation_conservation",
+      "expected_failure": "reconciliation_conservation"
+    },
+    "fx_removal": {
+      "description": "Removing FX rate for GBP must increase missing_fx_exposure",
+      "expected_exposure_increase_min": 395000.0
+    },
+    "duplicate_import": {
+      "description": "Re-importing same data must not create duplicates",
+      "expected_duplicate_count": 0
+    }
+  },
+
+  "performance_thresholds": {
+    "reconciliation_candidate_generation": {
+      "max_runtime_seconds": 30.0,
+      "transaction_count": 50000,
+      "invoice_count": 200000,
+      "expected_complexity": "O(n*k) where k = blocking bucket size"
+    },
+    "trust_report_generation": {
+      "max_runtime_seconds": 5.0,
+      "description": "Full trust report with metrics"
+    },
+    "invariant_run": {
+      "max_runtime_seconds": 10.0,
+      "description": "All 7 invariants"
+    }
+  }
+}
