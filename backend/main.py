@@ -80,6 +80,10 @@ async def database_connection_handler(request, exc):
 from collaboration_api import router as collaboration_router
 app.include_router(collaboration_router)
 
+# Register lineage API router (Data Lineage + SyncRun spine)
+from lineage_api import router as lineage_router
+app.include_router(lineage_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():

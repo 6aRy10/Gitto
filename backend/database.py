@@ -66,6 +66,10 @@ def init_db():
     import models
     models.Base.metadata.create_all(bind=engine)
     
+    # Initialize lineage models (separate Base)
+    import lineage_models
+    lineage_models.Base.metadata.create_all(bind=engine)
+    
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints
     try:
