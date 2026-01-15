@@ -1319,3 +1319,92 @@ class CollaborationAuditLog(Base):
     ip_address = Column(String(50), nullable=True)
     user_agent = Column(String(200), nullable=True)
     notes = Column(String(500), nullable=True)
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
+# GITTO TRUST CERTIFICATION MODELS
+# ═══════════════════════════════════════════════════════════════════════════════
+
+class TrustReportRecord(Base):
+    """
+    Persisted Trust Report for audit trail.
+    Generated for every snapshot certification attempt.
+    """
+    __tablename__ = "trust_report_records"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    snapshot_id = Column(Integer, ForeignKey("snapshots.id"), nullable=False)
+    
+    # Report metadata
+    generated_at = Column(DateTime, default=datetime.datetime.utcnow)
+    generated_by = Column(String(100), nullable=True)
+    
+    # Overall scores
+    overall_trust_score = Column(Float, nullable=False)
+    lock_eligible = Column(Integer, default=0)  # 0 or 1
+    
+    # Full report JSON
+    report_json = Column(JSON, nullable=False)
+    
+    # Checksum for integrity verification
+    report_checksum = Column(String(64), nullable=True)
+    
+    # Status
+    status = Column(String(30), default="generated")  # generated, reviewed, approved, rejected
+
+
+class TrustGateOverride(Base):
+    """
+    CFO Override record for failed trust gates.
+    Requires explicit acknowledgment text for audit.
+    """
+    __tablename__ = "trust_gate_overrides"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    snapshot_id = Column(Integer, ForeignKey("snapshots.id"), nullable=False)
+    trust_report_id = Column(Integer, ForeignKey("trust_report_records.id"), nullable=True)
+    
+    # Gate identification
+    gate_name = Column(String(100), nullable=False)
+    gate_type = Column(String(30), nullable=False)  # metric, invariant
+    
+    # Override details
+    acknowledgment_text = Column(String(500), nullable=False)
+    override_reason = Column(String(500), nullable=True)
+    
+    # CFO/User info
+    overridden_by = Column(String(100), nullable=False)
+    overridden_at = Column(DateTime, default=datetime.datetime.utcnow)
+    user_role = Column(String(50), nullable=True)
+    
+    # Evidence at time of override
+    gate_value_at_override = Column(Float, nullable=True)
+    gate_threshold = Column(Float, nullable=True)
+    evidence_refs_json = Column(JSON, nullable=True)
+
+
+class TrustInvariantResult(Base):
+    """
+    Persisted invariant check results.
+    Stored each time trust certification runs.
+    """
+    __tablename__ = "trust_invariant_results"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    trust_report_id = Column(Integer, ForeignKey("trust_report_records.id"), nullable=False)
+    snapshot_id = Column(Integer, ForeignKey("snapshots.id"), nullable=False)
+    
+    # Invariant identification
+    invariant_name = Column(String(100), nullable=False)
+    
+    # Result
+    passed = Column(Integer, nullable=False)  # 0 or 1
+    severity = Column(String(20), nullable=False)  # critical, error, warning
+    message = Column(String(500), nullable=True)
+    
+    # Evidence
+    evidence_count = Column(Integer, default=0)
+    evidence_refs_json = Column(JSON, nullable=True)
+    details_json = Column(JSON, nullable=True)
+    
+    checked_at = Column(DateTime, default=datetime.datetime.utcnow)

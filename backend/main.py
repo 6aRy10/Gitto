@@ -1980,20 +1980,182 @@ def get_snapshot_actions(snapshot_id: int, status: str = None, db: Session = Dep
 @app.get("/snapshots/{snapshot_id}/trust-report")
 def get_trust_report(snapshot_id: int, db: Session = Depends(get_db)):
     """
-    Generate CFO-facing trust report.
+    Generate CFO-facing Trust Certification report.
+    
+    Returns comprehensive trust metrics:
+        - Cash Explained % (amount-weighted)
+        - Unknown Exposure € (amount-weighted)
+        - Missing FX Exposure € (amount-weighted)
+        - Data Freshness Mismatch (hours)
+        - Reconciliation Integrity % (amount-weighted)
+        - Forecast Calibration Coverage (amount-weighted)
+    
+    Plus invariant checks:
+        - Cash Math (totals balance)
+        - Drilldown Sums (detail = summary)
+        - Reconciliation Conservation (allocations valid)
+        - Snapshot Immutability (locked = frozen)
+        - Idempotency (re-import = same result)
+        - No Silent FX (no rate=1.0 fallbacks)
+    
+    And lock gates with CFO override capability.
+    """
+    from trust_certification import TrustCertificationService
+    service = TrustCertificationService(db)
+    report = service.generate_trust_report(snapshot_id)
+    return report.to_dict()
+
+
+@app.post("/snapshots/{snapshot_id}/trust-certification/lock")
+def attempt_trust_lock(
+    snapshot_id: int,
+    lock_request: dict = Body(...),
+    db: Session = Depends(get_db)
+):
+    """
+    Attempt to lock a snapshot with trust certification.
+    
+    Request body:
+        {
+            "user": "string",
+            "override_acknowledgments": {
+                "Gate: Missing FX Exposure €": "I acknowledge missing FX rates...",
+                ...
+            }
+        }
     
     Returns:
-        - Cash Explained % (amount-weighted)
-        - Unknown exposure €
-        - Missing FX exposure €
-        - Data freshness mismatch hours
-        - Calibration coverage (amount-weighted)
-        - # suggested matches pending approval
-        - Whether snapshot is lock-eligible and why/why not
+        - success: bool
+        - message: string
+        - missing_acknowledgments: list (if overrides needed)
+        - trust_report: dict (if successful)
     """
-    from trust_report_service import TrustReportService
-    service = TrustReportService(db)
-    return service.generate_trust_report(snapshot_id)
+    from trust_certification import TrustCertificationService
+    
+    user = lock_request.get("user", "anonymous")
+    overrides = lock_request.get("override_acknowledgments", {})
+    
+    service = TrustCertificationService(db)
+    result = service.attempt_lock(snapshot_id, user, overrides)
+    
+    if not result["success"]:
+        raise HTTPException(status_code=400, detail=result)
+    
+    return result
+
+
+@app.get("/snapshots/{snapshot_id}/trust-certification/gates")
+def get_trust_gates(snapshot_id: int, db: Session = Depends(get_db)):
+    """
+    Get current lock gate status for a snapshot.
+    
+    Returns list of gates with:
+        - name
+        - passed (bool)
+        - can_override (bool)
+        - requires_acknowledgment (bool)
+        - acknowledgment_text_required (string, if needed)
+    """
+    from trust_certification import TrustCertificationService
+    service = TrustCertificationService(db)
+    report = service.generate_trust_report(snapshot_id)
+    return {
+        "snapshot_id": snapshot_id,
+        "lock_eligible": report.lock_eligible,
+        "lock_blocked_reasons": report.lock_blocked_reasons,
+        "gates": [g.to_dict() for g in report.lock_gates]
+    }
+
+
+@app.get("/snapshots/{snapshot_id}/trust-certification/evidence/{gate_name}")
+def get_gate_evidence(
+    snapshot_id: int,
+    gate_name: str,
+    limit: int = 50,
+    offset: int = 0,
+    db: Session = Depends(get_db)
+):
+    """
+    Get detailed evidence for a specific trust gate.
+    
+    Returns paginated list of evidence references with:
+        - ref_type (invoice, bank_txn, reconciliation, fx_rate)
+        - ref_id
+        - ref_key (human-readable identifier)
+        - amount
+        - currency
+        - description
+    """
+    from trust_certification import TrustCertificationService
+    service = TrustCertificationService(db)
+    report = service.generate_trust_report(snapshot_id)
+    
+    # Find the gate
+    gate = next((g for g in report.lock_gates if g.name == gate_name), None)
+    if not gate:
+        raise HTTPException(status_code=404, detail=f"Gate '{gate_name}' not found")
+    
+    # Get evidence from metric or invariant
+    evidence = []
+    if gate.metric:
+        evidence = gate.metric.evidence
+    elif gate.invariant:
+        evidence = gate.invariant.evidence
+    
+    # Paginate
+    total = len(evidence)
+    evidence_page = evidence[offset:offset + limit]
+    
+    return {
+        "gate_name": gate_name,
+        "total_evidence": total,
+        "offset": offset,
+        "limit": limit,
+        "evidence": [e.to_dict() for e in evidence_page]
+    }
+
+
+@app.get("/snapshots/{snapshot_id}/trust-certification/history")
+def get_trust_history(snapshot_id: int, db: Session = Depends(get_db)):
+    """
+    Get trust certification history for a snapshot.
+    
+    Returns:
+        - Previous trust reports
+        - Gate overrides with acknowledgments
+        - Lock attempts
+    """
+    # Get trust report records
+    reports = db.query(models.TrustReportRecord).filter(
+        models.TrustReportRecord.snapshot_id == snapshot_id
+    ).order_by(models.TrustReportRecord.generated_at.desc()).all()
+    
+    # Get gate overrides
+    overrides = db.query(models.TrustGateOverride).filter(
+        models.TrustGateOverride.snapshot_id == snapshot_id
+    ).order_by(models.TrustGateOverride.overridden_at.desc()).all()
+    
+    return {
+        "snapshot_id": snapshot_id,
+        "trust_reports": [{
+            "id": r.id,
+            "generated_at": r.generated_at.isoformat() if r.generated_at else None,
+            "generated_by": r.generated_by,
+            "overall_trust_score": r.overall_trust_score,
+            "lock_eligible": bool(r.lock_eligible),
+            "status": r.status
+        } for r in reports],
+        "gate_overrides": [{
+            "id": o.id,
+            "gate_name": o.gate_name,
+            "gate_type": o.gate_type,
+            "acknowledgment_text": o.acknowledgment_text,
+            "overridden_by": o.overridden_by,
+            "overridden_at": o.overridden_at.isoformat() if o.overridden_at else None,
+            "gate_value_at_override": o.gate_value_at_override,
+            "gate_threshold": o.gate_threshold
+        } for o in overrides]
+    }
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
