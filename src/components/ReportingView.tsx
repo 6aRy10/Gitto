@@ -15,7 +15,7 @@ export default function ReportingView({ snapshotId, entityId }: { snapshotId: nu
   const [qaQuery, setQaQuery] = useState('');
   const [qaAnswer, setQaAnswer] = useState<string | null>(null);
   const [qaLoading, setQaLoading] = useState(false);
-  const [chatHistory, setChatHistory] = useState<{q: string, a: string}[]>([]);
+  const [chatHistory, setChatHistory] = useState<{q: string, a: string, total?: number}[]>([]);
 
   useEffect(() => {
     if (snapshotId && entityId) loadReportingData();
@@ -47,8 +47,8 @@ export default function ReportingView({ snapshotId, entityId }: { snapshotId: nu
     
     setQaLoading(true);
     try {
-      const res = await api.post(`/snapshots/${snapshotId}/ask-insights?entity_id=${entityId}&query=${encodeURIComponent(qaQuery)}`);
-      const newEntry = { q: qaQuery, a: res.data.answer };
+      const res = await api.get(`/snapshots/${snapshotId}/ask-insights?query=${encodeURIComponent(qaQuery)}`);
+      const newEntry = { q: qaQuery, a: res.data.answer, total: res.data.verified_total };
       setChatHistory([newEntry, ...chatHistory]);
       setQaQuery('');
     } catch (err) {
@@ -201,6 +201,12 @@ export default function ReportingView({ snapshotId, entityId }: { snapshotId: nu
                           <span className="text-[10px] font-black uppercase tracking-widest text-indigo-200">Analyst Insight</span>
                         </div>
                         {chat.a}
+                        {chat.total !== undefined && (
+                          <div className="mt-4 pt-4 border-t border-indigo-400/30 flex items-center justify-between">
+                            <span className="text-[9px] font-black uppercase tracking-widest text-indigo-200">Verified Aggregation</span>
+                            <span className="text-xs font-black">€{chat.total.toLocaleString()}</span>
+                          </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -236,4 +242,3 @@ export default function ReportingView({ snapshotId, entityId }: { snapshotId: nu
     </div>
   );
 }
-

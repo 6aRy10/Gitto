@@ -8,7 +8,25 @@ import json
 import os
 
 def debug_log(message, data=None, hypothesis_id=None, location=None):
-    log_path = r"c:\Users\AYUSH\OneDrive\Gitto\.cursor\debug.log"
+    """
+    Debug logging with environment-aware path handling.
+    Uses DEBUG_LOG_PATH environment variable or defaults to relative path.
+    """
+    # Use environment variable or default to relative path
+    log_path = os.getenv(
+        "DEBUG_LOG_PATH",
+        os.path.join(os.getcwd(), ".cursor", "debug.log")
+    )
+    
+    # Ensure directory exists
+    log_dir = os.path.dirname(log_path)
+    if log_dir and not os.path.exists(log_dir):
+        try:
+            os.makedirs(log_dir, exist_ok=True)
+        except OSError:
+            # If we can't create the directory, skip logging
+            return
+    
     payload = {
         "sessionId": "debug-session",
         "timestamp": int(datetime.now().timestamp() * 1000),
@@ -20,43 +38,47 @@ def debug_log(message, data=None, hypothesis_id=None, location=None):
     try:
         with open(log_path, "a") as f:
             f.write(json.dumps(payload) + "\n")
-    except:
+    except (OSError, IOError, PermissionError):
+        # Silently fail if logging is not possible (e.g., read-only filesystem)
         pass
 
 def generate_canonical_id(row, source="Excel", entity_id=None):
     """
-    Generates a rich fingerprint for idempotency.
+    Generates a high-fidelity fingerprint for idempotency.
+    Identity = source_system + entity_id + doc_type + doc_number + counterparty_id + currency + amount + invoice_date + due_date + line_id
     """
-    # #region agent log
-    debug_log("Generating Canonical ID", {"source": source, "entity_id": entity_id}, "A", "utils.py:generate_canonical_id")
-    # #endregion
     def clean(val):
         if pd.isna(val) or val is None: return ""
         return str(val).strip().lower()
 
+    # Use existing external ID if explicitly provided (e.g. from Snowflake/ERP)
     if 'external_id' in row and pd.notna(row['external_id']):
         return f"{source}:{entity_id}:{clean(row['external_id'])}"
 
+    # Deterministic fingerprinting components
     components = [
-        str(source),
+        str(source).upper(),
         str(entity_id or "GLOBAL"),
-        clean(row.get('document_number')),
         clean(row.get('document_type', 'INV')),
-        clean(row.get('document_date')),
-        clean(row.get('expected_due_date')),
+        clean(row.get('document_number')),
+        clean(row.get('customer') or row.get('counterparty_id', 'UNKNOWN')),
         clean(row.get('currency', 'EUR')),
         f"{float(row.get('amount', 0)):.2f}",
-        clean(row.get('customer', 'UNKNOWN'))
+        clean(row.get('document_date') or row.get('invoice_date')),
+        clean(row.get('expected_due_date') or row.get('due_date')),
+        clean(row.get('line_id', '0')) # For multi-line invoices
     ]
     
     raw_str = "|".join(components)
     cid = hashlib.sha256(raw_str.encode()).hexdigest()
+    
     # #region agent log
-    debug_log("Generated ID", {"cid": cid, "raw": raw_str}, "A", "utils.py:generate_canonical_id")
+    debug_log("Generated Deterministic ID", {"cid": cid, "raw": raw_str}, "A", "utils.py:generate_canonical_id")
     # #endregion
+    
     return cid
 
-def parse_excel_to_df(file_content):
+def parse_excel_to_df(file_content, mapping_config=None):
     # Load Excel
     xl = pd.ExcelFile(io.BytesIO(file_content))
     sheet_name = 'Data' if 'Data' in xl.sheet_names else xl.sheet_names[0]
@@ -70,50 +92,57 @@ def parse_excel_to_df(file_content):
     print(f"DEBUG: Parsing sheet '{sheet_name}'")
     print(f"DEBUG: Found {len(df)} total rows")
     
-    col_map = {
-        'Project desc': 'project_desc',
-        'Project description': 'project_desc',
-        'Project': 'project',
-        'Project number': 'project',
-        'Country': 'country',
-        'Customer': 'customer',
-        'Customer name': 'customer',
-        'Customer number': 'customer',
-        'Document Number': 'document_number',
-        'Invoice Number': 'document_number',
-        'Terms of Payment': 'terms_of_payment',
-        'Payment Terms': 'terms_of_payment',
-        'Payment Terms (in days)': 'payment_terms_days',
-        'Document Date': 'document_date',
-        'Invoice Issue Date': 'invoice_issue_date',
-        'Invoice Issue Date.1': 'invoice_issue_date_alt',
-        'Expected Due Date': 'expected_due_date',
-        'Due Date': 'expected_due_date',
-        'Payment Date': 'payment_date',
-        'Invoice Amount': 'amount',
-        'Amount': 'amount',
-        'Local Currency': 'currency',
-        'Currency': 'currency',
-        'Document Type': 'document_type',
-        'Special G/L ind.': 'special_gl_ind',
-        'Due Year': 'due_year'
-    }
-    
-    # Flexible mapping
-    mapped_cols = {}
-    mapping_diagnostics = {}
-    for target_label, internal_name in col_map.items():
-        matched = False
-        for actual_col in df.columns:
-            if actual_col.lower() == target_label.lower():
-                mapped_cols[actual_col] = internal_name
-                mapping_diagnostics[internal_name] = "OK"
-                matched = True
-                break
-        if not matched:
-            mapping_diagnostics[internal_name] = "MISSING"
-    
-    df = df.rename(columns=mapped_cols)
+    if mapping_config:
+        # Use user-provided mapping from UI
+        # mapping_config: { "canonical_field": "Source Column Name" }
+        inv_mapping = {v: k for k, v in mapping_config.items() if v in df.columns}
+        df = df.rename(columns=inv_mapping)
+        mapping_diagnostics = {k: "OK" if k in df.columns else "MISSING" for k in mapping_config.keys()}
+    else:
+        # Default flexible mapping
+        col_map = {
+            'Project desc': 'project_desc',
+            'Project description': 'project_desc',
+            'Project': 'project',
+            'Project number': 'project',
+            'Country': 'country',
+            'Customer': 'customer',
+            'Customer name': 'customer',
+            'Customer number': 'customer',
+            'Document Number': 'document_number',
+            'Invoice Number': 'document_number',
+            'Terms of Payment': 'terms_of_payment',
+            'Payment Terms': 'terms_of_payment',
+            'Payment Terms (in days)': 'payment_terms_days',
+            'Document Date': 'document_date',
+            'Invoice Issue Date': 'invoice_issue_date',
+            'Invoice Issue Date.1': 'invoice_issue_date_alt',
+            'Expected Due Date': 'expected_due_date',
+            'Due Date': 'expected_due_date',
+            'Payment Date': 'payment_date',
+            'Invoice Amount': 'amount',
+            'Amount': 'amount',
+            'Local Currency': 'currency',
+            'Currency': 'currency',
+            'Document Type': 'document_type',
+            'Special G/L ind.': 'special_gl_ind',
+            'Due Year': 'due_year'
+        }
+        
+        mapped_cols = {}
+        mapping_diagnostics = {}
+        for target_label, internal_name in col_map.items():
+            matched = False
+            for actual_col in df.columns:
+                if actual_col.lower() == target_label.lower():
+                    mapped_cols[actual_col] = internal_name
+                    mapping_diagnostics[internal_name] = "OK"
+                    matched = True
+                    break
+            if not matched:
+                mapping_diagnostics[internal_name] = "MISSING"
+        
+        df = df.rename(columns=mapped_cols)
     
     print(f"DEBUG: Column Mapping Results: {mapping_diagnostics}")
     
@@ -185,83 +214,127 @@ def parse_excel_to_df(file_content):
         if col in df.columns:
             df[col] = pd.to_datetime(df[col], errors='coerce')
             
+    # CFO-Grade Health Diagnostics
+    total_rows = len(df)
+    
+    # Identify impossible values
+    impossible_amounts = int((df['amount'] < 0).sum()) if 'amount' in df.columns else 0
+    # Dates outside 2000-2100 are likely entry errors
+    impossible_dates = 0
+    if 'expected_due_date' in df.columns:
+        valid_dates = df['expected_due_date'].dropna()
+        impossible_dates = int(((valid_dates.dt.year < 2000) | (valid_dates.dt.year > 2100)).sum())
+
     health = {
-        "total_invoices": len(df),
-        "paid_invoices": int(df['payment_date'].notna().sum()) if 'payment_date' in df.columns else 0,
-        "open_invoices": int(df['payment_date'].isna().sum()) if 'payment_date' in df.columns else len(df),
-        "missing_due_dates": int(df['expected_due_date'].isna().sum()),
-        "weird_due_years": int((pd.to_numeric(df['due_year'], errors='coerce') > 2030).sum()) if 'due_year' in df.columns else 0
+        "total_invoices": total_rows,
+        "completeness": {
+            "missing_due_dates": int(df['expected_due_date'].isna().sum()) if 'expected_due_date' in df.columns else total_rows,
+            "missing_customers": int(df['customer'].isna().sum()) if 'customer' in df.columns else total_rows,
+            "missing_amounts": int((df['amount'] == 0).sum()) if 'amount' in df.columns else total_rows,
+            "currency_mix": df['currency'].value_counts().to_dict() if 'currency' in df.columns else {}
+        },
+        "behavioral_blind_spots": {
+            "no_history_customers": 0,
+            "regime_shift_risk": int((pd.to_numeric(df['due_year'], errors='coerce') > (datetime.now().year + 1)).sum()) if 'due_year' in df.columns else 0,
+            "future_anomaly_dates": int((df['expected_due_date'] > (datetime.now() + timedelta(days=365*2))).sum()) if 'expected_due_date' in df.columns else 0
+        },
+        "integrity": {
+            "duplicate_keys": int(df.duplicated(subset=['document_number', 'customer']).sum()) if 'document_number' in df.columns and 'customer' in df.columns else 0,
+            "backdated_invoices": int((df['document_date'] < (datetime.now() - timedelta(days=365))).sum()) if 'document_date' in df.columns else 0,
+            "impossible_amounts": impossible_amounts,
+            "impossible_dates": impossible_dates,
+            "missing_fx": len(df['currency'].unique()) > 1 if 'currency' in df.columns else False
+        }
     }
     
     return df, health
 
 def run_forecast_model(db, snapshot_id):
-    # Load all invoices for this snapshot
+    """
+    CFO-Grade Distribution Forecast:
+    1. Calculate delay distributions (P25/50/75/90) per segment.
+    2. Apply hierarchy fallback with N >= 15 threshold.
+    3. Project expected, upside, and downside dates.
+    """
     invoices = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id).all()
+    
+    if not invoices:
+        print(f"DEBUG: No invoices found for snapshot {snapshot_id}, skipping forecast")
+        return
+    
     df = pd.DataFrame([inv.__dict__ for inv in invoices])
     
-    # Drop SQLAlchemy internal state
     if '_sa_instance_state' in df.columns:
         df = df.drop(columns=['_sa_instance_state'])
 
-    # Separate paid and open
+    # Check for required columns
+    if 'payment_date' not in df.columns:
+        print(f"DEBUG: No payment_date column in snapshot {snapshot_id}, skipping forecast")
+        return
+
+    # Historical truth for learning
     paid_df = df[df['payment_date'].notna()].copy()
-    open_df = df[df['payment_date'].isna()].copy()
+    if not paid_df.empty:
+        # P1 Fix: Only calculate delay_days if we have both payment_date and expected_due_date
+        paid_df = paid_df[paid_df['expected_due_date'].notna()].copy()
+        if not paid_df.empty:
+            paid_df['delay_days'] = (pd.to_datetime(paid_df['payment_date']) - pd.to_datetime(paid_df['expected_due_date'])).dt.days
+            paid_df['delay_days'] = paid_df['delay_days'].clip(-30, 180)
+            
+            # Apply outlier handling (winsorization at P99)
+            from forecast_enhancements import enhance_forecast_with_outliers_and_regime
+            paid_df, regime_shifts = enhance_forecast_with_outliers_and_regime(paid_df, min_sample_size=15)
+        else:
+            paid_df = pd.DataFrame()  # No valid paid invoices with due dates
+            regime_shifts = {}
 
-    if paid_df.empty:
-        # If no history, we can't do behavioral modeling, fall back to global 0
-        global_median = 0
-        global_p25 = 0
-        global_p75 = 0
-    else:
-        # Calculate delay_days
-        paid_df['delay_days'] = (paid_df['payment_date'] - paid_df['expected_due_date']).dt.days
-        # Winsorize/Cap delays [-30, 180]
-        paid_df['delay_days'] = paid_df['delay_days'].clip(-30, 180)
-
-    # Define segments hierarchy
+    # Hierarchical segments (Full Benchmark Hierarchy)
     hierarchies = [
         ['customer', 'country', 'terms_of_payment'],
         ['customer', 'country'],
         ['customer'],
         ['country', 'terms_of_payment'],
         ['country'],
-        [] # Global
+        [] # Global fallback
     ]
 
     segments_stats = {}
+    MIN_SAMPLE_SIZE = 15
 
-    def get_stats(data):
-        if len(data) == 0: return None
+    def get_distribution_stats(data):
+        if len(data) < 1: return None
         return {
             'count': len(data),
-            'p25': float(data.quantile(0.25)),
-            'p50': float(data.quantile(0.50)),
-            'p75': float(data.quantile(0.75)),
-            'p90': float(data.quantile(0.90)),
-            'std': float(data.std()) if len(data) > 1 else 0
+            'p25': float(np.percentile(data, 25)),
+            'p50': float(np.percentile(data, 50)),
+            'p75': float(np.percentile(data, 75)),
+            'p90': float(np.percentile(data, 90)),
+            'std': float(np.std(data))
         }
 
-    # Pre-calculate all segment stats from paid data
+    # Pre-calculate stats for all hierarchy levels
     for levels in hierarchies:
         seg_name = "+".join(levels) if levels else "Global"
+        segments_stats[seg_name] = {}
+        
         if not levels:
-            stats = get_stats(paid_df['delay_days'])
-            if stats:
-                segments_stats[seg_name] = {"": stats}
+            if not paid_df.empty and 'delay_days' in paid_df.columns:
+                stats = get_distribution_stats(paid_df['delay_days'])
+                if stats: segments_stats[seg_name][""] = stats
         else:
-            grouped = paid_df.groupby(levels)['delay_days']
-            segments_stats[seg_name] = {}
-            for name, group in grouped:
-                key = str(name) if len(levels) > 1 else str(name)
-                stats = get_stats(group)
-                if stats:
-                    segments_stats[seg_name][key] = stats
+            # Only consider segments with enough data
+            if not paid_df.empty and 'delay_days' in paid_df.columns:
+                grouped = paid_df.groupby(levels)['delay_days']
+                for name, group in grouped:
+                    if len(group) >= MIN_SAMPLE_SIZE:
+                        key = str(name) if len(levels) > 1 else str(name)
+                        stats = get_distribution_stats(group)
+                        if stats: segments_stats[seg_name][key] = stats
 
-    # Save segments to DB
+    # Save segment metadata to DB
     for seg_type, keys in segments_stats.items():
         for key, stats in keys.items():
-            db_seg = models.SegmentDelay(
+            db.add(models.SegmentDelay(
                 snapshot_id=snapshot_id,
                 segment_type=seg_type,
                 segment_key=key,
@@ -271,41 +344,66 @@ def run_forecast_model(db, snapshot_id):
                 p75_delay=stats['p75'],
                 p90_delay=stats['p90'],
                 std_delay=stats['std']
-            )
-            db.add(db_seg)
+            ))
     db.commit()
 
-    # Predict for open invoices
+    # Apply predictions to open invoices
+    # CRITICAL: Handle when ALL segments have N < MIN_SAMPLE_SIZE
+    # In this case, compute global stats without the N threshold as last resort
+    global_baseline = segments_stats.get("Global", {}).get("", None)
+    
+    # Fallback: If global baseline is None (all segments had N < 15), compute from ALL paid invoices
+    if global_baseline is None:
+        if not paid_df.empty and 'delay_days' in paid_df.columns:
+            all_delays = paid_df['delay_days']
+            if len(all_delays) >= 1:
+                global_baseline = {
+                    'count': len(all_delays),
+                    'p25': float(np.percentile(all_delays, 25)) if len(all_delays) >= 1 else 0,
+                    'p50': float(np.percentile(all_delays, 50)) if len(all_delays) >= 1 else 0,
+                    'p75': float(np.percentile(all_delays, 75)) if len(all_delays) >= 1 else 0,
+                    'p90': float(np.percentile(all_delays, 90)) if len(all_delays) >= 1 else 0,
+                    'std': float(np.std(all_delays)) if len(all_delays) >= 1 else 0
+                }
+            else:
+                # Absolute fallback: industry default (assume 30-day terms)
+                global_baseline = {'count': 0, 'p25': -7, 'p50': 0, 'p75': 14, 'p90': 30, 'std': 15}
+        else:
+            # No paid invoices at all - use conservative industry default
+            global_baseline = {'count': 0, 'p25': -7, 'p50': 0, 'p75': 14, 'p90': 30, 'std': 15}
+    
     for inv in invoices:
-        if inv.payment_date is not None:
-            continue
+        if inv.payment_date is not None: continue
         
-        # Apply hierarchy
-        pred_delay = 0
-        chosen_seg = "Global"
-        stats = segments_stats.get("Global", {}).get("", {"p25": 0, "p50": 0, "p75": 0})
+        chosen_stats = global_baseline
+        chosen_seg = "Global (Fallback)" if global_baseline.get('count', 0) < MIN_SAMPLE_SIZE else "Global"
         
+        # Traverse hierarchy for best fit
         for levels in hierarchies:
             if not levels: continue
             seg_name = "+".join(levels)
-            key = []
-            for l in levels:
-                val = getattr(inv, l, "")
-                key.append(val)
-            key_str = str(tuple(key)) if len(levels) > 1 else str(key[0])
+            key_parts = [str(getattr(inv, l, "")).strip() for l in levels]
+            key_str = str(tuple(key_parts)) if len(levels) > 1 else key_parts[0]
             
             if key_str in segments_stats.get(seg_name, {}):
-                stats = segments_stats[seg_name][key_str]
+                chosen_stats = segments_stats[seg_name][key_str]
                 chosen_seg = seg_name
                 break
         
-        inv.predicted_delay = int(stats['p50'])
+        inv.predicted_delay = int(chosen_stats['p50'])
         inv.prediction_segment = chosen_seg
+        
         if inv.expected_due_date:
-            inv.predicted_payment_date = inv.expected_due_date + timedelta(days=inv.predicted_delay)
-            inv.confidence_p25 = inv.expected_due_date + timedelta(days=stats['p25'])
-            inv.confidence_p75 = inv.expected_due_date + timedelta(days=stats['p75'])
-
+            due = pd.to_datetime(inv.expected_due_date)
+            inv.predicted_payment_date = due + timedelta(days=int(chosen_stats['p50']))
+            inv.confidence_p25 = due + timedelta(days=int(chosen_stats['p25']))
+            inv.confidence_p75 = due + timedelta(days=int(chosen_stats['p75']))
+        else:
+            # If no due date, set prediction to None (will be in Unknown bucket)
+            inv.predicted_payment_date = None
+            inv.confidence_p25 = None
+            inv.confidence_p75 = None
+            
     db.commit()
 
 def get_forecast_aggregation(db, snapshot_id, group_by="week"):
@@ -319,10 +417,16 @@ def get_forecast_aggregation(db, snapshot_id, group_by="week"):
     if not forecast_invoices:
         return []
 
-    # Convert all to EUR first
+    # Weighted Probabilistic Allocation (Benchmark Specification)
+    # 20% Upside (P25), 50% Expected (P50), 30% Downside (P75)
     temp_data = []
     for inv in forecast_invoices:
-        amt_eur = convert_currency(db, snapshot_id, inv.amount, inv.currency, "EUR")
+        # P0 Fix: Handle missing FX rates gracefully - skip invoices without rates
+        try:
+            amt_eur = convert_currency(db, snapshot_id, inv.amount, inv.currency, "EUR", raise_on_missing=True)
+        except ValueError:
+            # Missing FX rate - this invoice is tracked in Unknown bucket, skip from forecast
+            continue
         temp_data.append({
             "amount": amt_eur,
             "target_date": pd.to_datetime(inv.predicted_payment_date),
@@ -333,11 +437,26 @@ def get_forecast_aggregation(db, snapshot_id, group_by="week"):
     forecast_df = pd.DataFrame(temp_data)
 
     if group_by == "week":
-        # Adaptive timeline: Start from today, or if data is historical, start from the first predicted date
-        today = datetime.now()
-        first_date = forecast_df['target_date'].min()
+        # Handle empty dataframe (all invoices skipped due to missing FX)
+        if forecast_df.empty or 'target_date' not in forecast_df.columns:
+            # Return empty weeks structure
+            today = datetime.now()
+            start_date = today - timedelta(days=today.weekday())
+            weeks = [start_date + timedelta(weeks=i) for i in range(14)]
+            result = []
+            for i in range(13):
+                w_start = weeks[i]
+                result.append({
+                    "label": f"W{i+1} ({w_start.strftime('%m/%d')})",
+                    "start_date": w_start.isoformat(),
+                    "base": 0.0,
+                    "inflow_p50": 0.0
+                })
+            return result
         
-        # If the earliest data point is more than 4 weeks in the past, center the chart on the data
+        today = datetime.now()
+        first_date = forecast_df[['target_date', 'p25_date', 'p75_date']].min().min()
+        
         if pd.notna(first_date) and (today - first_date).days > 28:
             start_date = first_date - timedelta(days=first_date.weekday())
         else:
@@ -350,16 +469,27 @@ def get_forecast_aggregation(db, snapshot_id, group_by="week"):
             w_start = weeks[i]
             w_end = weeks[i+1]
             
-            mask = (forecast_df['target_date'] >= w_start) & (forecast_df['target_date'] < w_end)
+            # CFO-Grade Probabilistic Allocation
+            # Each invoice contributes to different weeks based on its distribution
             mask_p25 = (forecast_df['p25_date'] >= w_start) & (forecast_df['p25_date'] < w_end)
+            mask_p50 = (forecast_df['target_date'] >= w_start) & (forecast_df['target_date'] < w_end)
             mask_p75 = (forecast_df['p75_date'] >= w_start) & (forecast_df['p75_date'] < w_end)
+            
+            # Weighted Sum: 20% of its amount lands in its P25 week, 50% in P50, 30% in P75
+            # Note: This means a single invoice's value can be spread across 1-3 different weeks
+            weighted_total = (
+                (forecast_df.loc[mask_p25, 'amount'].sum() * 0.2) +
+                (forecast_df.loc[mask_p50, 'amount'].sum() * 0.5) +
+                (forecast_df.loc[mask_p75, 'amount'].sum() * 0.3)
+            )
             
             result.append({
                 "label": f"W{i+1} ({w_start.strftime('%m/%d')})",
                 "start_date": w_start.isoformat(),
-                "base": float(forecast_df.loc[mask, 'amount'].sum()),
-                "downside": float(forecast_df.loc[mask_p75, 'amount'].sum()),
-                "upside": float(forecast_df.loc[mask_p25, 'amount'].sum())
+                "base": float(weighted_total),
+                "inflow_p50": float(forecast_df.loc[mask_p50, 'amount'].sum()), # For grid detail
+                "upside": float(forecast_df.loc[mask_p25, 'amount'].sum()),
+                "downside": float(forecast_df.loc[mask_p75, 'amount'].sum())
             })
         return result
     
@@ -594,11 +724,21 @@ def record_audit_log(db: models.Session, user: str, action: str, resource_type: 
     db.add(log)
     db.commit()
 
-def get_snapshot_fx_rate(db, snapshot_id, from_curr, to_curr):
+def get_snapshot_fx_rate(db, snapshot_id, from_curr, to_curr, raise_on_missing=False):
     """
     Fetches the FX rate locked for this specific snapshot.
+    
+    P0 Fix: Explicit handling of missing FX rates to prevent silent errors.
+    
+    Args:
+        raise_on_missing: If True, raises ValueError when rate not found. 
+                         If False, returns None (caller must handle).
     """
-    if not from_curr or not to_curr: return 1.0
+    if not from_curr or not to_curr: 
+        if raise_on_missing:
+            raise ValueError(f"Invalid currency pair: {from_curr} -> {to_curr}")
+        return None
+    
     from_curr = from_curr.upper()
     to_curr = to_curr.upper()
     
@@ -623,17 +763,74 @@ def get_snapshot_fx_rate(db, snapshot_id, from_curr, to_curr):
     
     if inv_rate and inv_rate.rate > 0:
         return 1.0 / inv_rate.rate
-        
-    return 1.0 # Default fallback
+    
+    # P0 Fix: Explicit handling instead of silent fallback
+    if raise_on_missing:
+        raise ValueError(
+            f"FX rate not found: {from_curr} -> {to_curr} for snapshot {snapshot_id}. "
+            f"Please set FX rates via /snapshots/{snapshot_id}/fx-rates endpoint."
+        )
+    
+    return None  # Explicit None instead of silent 1.0 fallback
 
-def convert_currency(db, snapshot_id, amount, from_curr, to_curr="EUR"):
+def calculate_forecast_accuracy(db, snapshot_id):
+    """
+    Backtesting Engine:
+    Compares prior forecast to actual bank receipt dates.
+    Calculates MAE, Bias, and P75 Calibration.
+    """
+    invoices = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id).all()
+    
+    # Only consider invoices that have both a prediction and a real payment date
+    valid_data = []
+    for inv in invoices:
+        if inv.payment_date and inv.predicted_payment_date:
+            actual = pd.to_datetime(inv.payment_date)
+            predicted = pd.to_datetime(inv.predicted_payment_date)
+            p25 = pd.to_datetime(inv.confidence_p25)
+            p75 = pd.to_datetime(inv.confidence_p75)
+            
+            error = (actual - predicted).days
+            valid_data.append({
+                "error": error,
+                "abs_error": abs(error),
+                "in_range": p25 <= actual <= p75
+            })
+            
+    if not valid_data:
+        return {"mae": 0, "bias": 0, "confidence_calibration": 0, "n": 0}
+        
+    df = pd.DataFrame(valid_data)
+    return {
+        "mae": float(df['abs_error'].mean()),
+        "bias": float(df['error'].mean()), # Negative means pessimistic, positive means optimistic
+        "confidence_calibration": float(df['in_range'].mean()), # % of items landing in P25-P75
+        "n": len(df)
+    }
+
+def convert_currency(db, snapshot_id, amount, from_curr, to_curr="EUR", raise_on_missing=True):
     """
     Converts an amount based on snapshot-locked FX rates.
+    
+    P0 Fix: Explicit error handling for missing FX rates to prevent incorrect forecasts.
+    
+    Args:
+        raise_on_missing: If True, raises ValueError when FX rate is missing.
+                         If False, returns None to indicate conversion failed.
     """
     if from_curr == to_curr:
         return amount
     
-    rate = get_snapshot_fx_rate(db, snapshot_id, from_curr, to_curr)
+    rate = get_snapshot_fx_rate(db, snapshot_id, from_curr, to_curr, raise_on_missing=raise_on_missing)
+    
+    if rate is None:
+        if raise_on_missing:
+            raise ValueError(
+                f"Cannot convert {amount} {from_curr} to {to_curr}: FX rate not found for snapshot {snapshot_id}. "
+                f"This invoice will be tracked in the Unknown bucket."
+            )
+        return None  # Explicit failure indicator
+    
     return amount * rate
 
 def detect_intercompany_washes_logic(db, snapshot_id):
@@ -655,3 +852,278 @@ def detect_intercompany_washes_logic(db, snapshot_id):
             })
             
     return intercompany
+
+def calculate_unknown_bucket(db, snapshot_id):
+    """
+    CFO Trust Feature: Explicitly tracks items that cannot be forecasted confidently.
+    Categories:
+    - Missing due dates
+    - Held AP bills
+    - Unmatched bank cash
+    - Missing FX rates for non-EUR invoices
+    
+    Returns: {
+        total_unknown_amount: float,
+        total_unknown_count: int,
+        unknown_pct: float,  # % of total portfolio
+        categories: { ... },
+        kpi_target_met: bool  # <5% unknown
+    }
+    """
+    snapshot = db.query(models.Snapshot).filter(models.Snapshot.id == snapshot_id).first()
+    if not snapshot:
+        return {"total_unknown_amount": 0, "total_unknown_count": 0, "unknown_pct": 0, "categories": {}, "kpi_target_met": True}
+    
+    # 1. Invoices with missing due dates
+    invoices = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id).all()
+    missing_due_dates = [inv for inv in invoices if inv.expected_due_date is None and inv.payment_date is None]
+    missing_due_amount = sum(inv.amount for inv in missing_due_dates)
+    
+    # 2. Held AP bills (not forecastable until released)
+    vendor_bills = db.query(models.VendorBill).filter(models.VendorBill.snapshot_id == snapshot_id).all()
+    held_bills = [b for b in vendor_bills if b.hold_status == 1]
+    held_bills_amount = sum(b.amount for b in held_bills)
+    
+    # 3. Unmatched bank cash (unexplained movements)
+    unmatched_txns = []
+    unmatched_amount = 0.0
+    if snapshot.entity_id:
+        bank_accounts = db.query(models.BankAccount).filter(models.BankAccount.entity_id == snapshot.entity_id).all()
+        for acct in bank_accounts:
+            unmatched = db.query(models.BankTransaction).filter(
+                models.BankTransaction.bank_account_id == acct.id,
+                models.BankTransaction.is_reconciled == 0
+            ).all()
+            unmatched_txns.extend(unmatched)
+            unmatched_amount += sum(abs(t.amount) for t in unmatched)
+    
+    # 4. Non-EUR invoices without FX rates
+    fx_rates = db.query(models.WeeklyFXRate).filter(models.WeeklyFXRate.snapshot_id == snapshot_id).all()
+    fx_pairs = {(r.from_currency, r.to_currency) for r in fx_rates}
+    
+    missing_fx = []
+    for inv in invoices:
+        if inv.currency and inv.currency != "EUR":
+            if (inv.currency, "EUR") not in fx_pairs and ("EUR", inv.currency) not in fx_pairs:
+                missing_fx.append(inv)
+    missing_fx_amount = sum(inv.amount for inv in missing_fx)
+    
+    # Calculate totals
+    total_unknown_count = len(missing_due_dates) + len(held_bills) + len(unmatched_txns) + len(missing_fx)
+    total_unknown_amount = missing_due_amount + held_bills_amount + unmatched_amount + missing_fx_amount
+    
+    # Calculate portfolio total for percentage
+    total_portfolio = sum(inv.amount for inv in invoices if inv.payment_date is None) + sum(b.amount for b in vendor_bills)
+    unknown_pct = (total_unknown_amount / total_portfolio * 100) if total_portfolio > 0 else 0.0
+    
+    return {
+        "total_unknown_amount": float(total_unknown_amount),
+        "total_unknown_count": total_unknown_count,
+        "unknown_pct": round(unknown_pct, 2),
+        "kpi_target_met": unknown_pct < 5.0,
+        "categories": {
+            "missing_due_dates": {
+                "count": len(missing_due_dates),
+                "amount": float(missing_due_amount),
+                "items": [{"id": inv.id, "customer": inv.customer, "amount": inv.amount} for inv in missing_due_dates[:10]]
+            },
+            "held_ap_bills": {
+                "count": len(held_bills),
+                "amount": float(held_bills_amount),
+                "items": [{"id": b.id, "vendor": b.vendor_name, "amount": b.amount} for b in held_bills[:10]]
+            },
+            "unmatched_bank_cash": {
+                "count": len(unmatched_txns),
+                "amount": float(unmatched_amount),
+                "items": [{"id": t.id, "counterparty": t.counterparty, "amount": t.amount} for t in unmatched_txns[:10]]
+            },
+            "missing_fx_rates": {
+                "count": len(missing_fx),
+                "amount": float(missing_fx_amount),
+                "currencies": list(set(inv.currency for inv in missing_fx))
+            }
+        }
+    }
+
+    inv_rate = db.query(models.WeeklyFXRate).filter(
+        models.WeeklyFXRate.snapshot_id == snapshot_id,
+        models.WeeklyFXRate.from_currency == to_curr,
+        models.WeeklyFXRate.to_currency == from_curr
+    ).first()
+    
+    if inv_rate and inv_rate.rate > 0:
+        return 1.0 / inv_rate.rate
+        
+    return 1.0 # Default fallback
+
+def calculate_forecast_accuracy(db, snapshot_id):
+    """
+    Backtesting Engine:
+    Compares prior forecast to actual bank receipt dates.
+    Calculates MAE, Bias, and P75 Calibration.
+    """
+    invoices = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id).all()
+    
+    # Only consider invoices that have both a prediction and a real payment date
+    valid_data = []
+    for inv in invoices:
+        if inv.payment_date and inv.predicted_payment_date:
+            actual = pd.to_datetime(inv.payment_date)
+            predicted = pd.to_datetime(inv.predicted_payment_date)
+            p25 = pd.to_datetime(inv.confidence_p25)
+            p75 = pd.to_datetime(inv.confidence_p75)
+            
+            error = (actual - predicted).days
+            valid_data.append({
+                "error": error,
+                "abs_error": abs(error),
+                "in_range": p25 <= actual <= p75
+            })
+            
+    if not valid_data:
+        return {"mae": 0, "bias": 0, "confidence_calibration": 0, "n": 0}
+        
+    df = pd.DataFrame(valid_data)
+    return {
+        "mae": float(df['abs_error'].mean()),
+        "bias": float(df['error'].mean()), # Negative means pessimistic, positive means optimistic
+        "confidence_calibration": float(df['in_range'].mean()), # % of items landing in P25-P75
+        "n": len(df)
+    }
+
+def convert_currency(db, snapshot_id, amount, from_curr, to_curr="EUR", raise_on_missing=True):
+    """
+    Converts an amount based on snapshot-locked FX rates.
+    
+    P0 Fix: Explicit error handling for missing FX rates to prevent incorrect forecasts.
+    
+    Args:
+        raise_on_missing: If True, raises ValueError when FX rate is missing.
+                         If False, returns None to indicate conversion failed.
+    """
+    if from_curr == to_curr:
+        return amount
+    
+    rate = get_snapshot_fx_rate(db, snapshot_id, from_curr, to_curr, raise_on_missing=raise_on_missing)
+    
+    if rate is None:
+        if raise_on_missing:
+            raise ValueError(
+                f"Cannot convert {amount} {from_curr} to {to_curr}: FX rate not found for snapshot {snapshot_id}. "
+                f"This invoice will be tracked in the Unknown bucket."
+            )
+        return None  # Explicit failure indicator
+    
+    return amount * rate
+
+def detect_intercompany_washes_logic(db, snapshot_id):
+    # Detect invoices where customer name matches another entity name
+    entities = db.query(models.Entity).all()
+    entity_names = [e.name.lower() for e in entities]
+    
+    invoices = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id).all()
+    
+    intercompany = []
+    for inv in invoices:
+        if inv.customer and inv.customer.lower() in entity_names:
+            intercompany.append({
+                "invoice_number": inv.document_number,
+                "from_entity": inv.entity.name if inv.entity else "Source",
+                "to_entity": inv.customer,
+                "amount": inv.amount,
+                "currency": inv.currency
+            })
+            
+    return intercompany
+
+def calculate_unknown_bucket(db, snapshot_id):
+    """
+    CFO Trust Feature: Explicitly tracks items that cannot be forecasted confidently.
+    Categories:
+    - Missing due dates
+    - Held AP bills
+    - Unmatched bank cash
+    - Missing FX rates for non-EUR invoices
+    
+    Returns: {
+        total_unknown_amount: float,
+        total_unknown_count: int,
+        unknown_pct: float,  # % of total portfolio
+        categories: { ... },
+        kpi_target_met: bool  # <5% unknown
+    }
+    """
+    snapshot = db.query(models.Snapshot).filter(models.Snapshot.id == snapshot_id).first()
+    if not snapshot:
+        return {"total_unknown_amount": 0, "total_unknown_count": 0, "unknown_pct": 0, "categories": {}, "kpi_target_met": True}
+    
+    # 1. Invoices with missing due dates
+    invoices = db.query(models.Invoice).filter(models.Invoice.snapshot_id == snapshot_id).all()
+    missing_due_dates = [inv for inv in invoices if inv.expected_due_date is None and inv.payment_date is None]
+    missing_due_amount = sum(inv.amount for inv in missing_due_dates)
+    
+    # 2. Held AP bills (not forecastable until released)
+    vendor_bills = db.query(models.VendorBill).filter(models.VendorBill.snapshot_id == snapshot_id).all()
+    held_bills = [b for b in vendor_bills if b.hold_status == 1]
+    held_bills_amount = sum(b.amount for b in held_bills)
+    
+    # 3. Unmatched bank cash (unexplained movements)
+    unmatched_txns = []
+    unmatched_amount = 0.0
+    if snapshot.entity_id:
+        bank_accounts = db.query(models.BankAccount).filter(models.BankAccount.entity_id == snapshot.entity_id).all()
+        for acct in bank_accounts:
+            unmatched = db.query(models.BankTransaction).filter(
+                models.BankTransaction.bank_account_id == acct.id,
+                models.BankTransaction.is_reconciled == 0
+            ).all()
+            unmatched_txns.extend(unmatched)
+            unmatched_amount += sum(abs(t.amount) for t in unmatched)
+    
+    # 4. Non-EUR invoices without FX rates
+    fx_rates = db.query(models.WeeklyFXRate).filter(models.WeeklyFXRate.snapshot_id == snapshot_id).all()
+    fx_pairs = {(r.from_currency, r.to_currency) for r in fx_rates}
+    
+    missing_fx = []
+    for inv in invoices:
+        if inv.currency and inv.currency != "EUR":
+            if (inv.currency, "EUR") not in fx_pairs and ("EUR", inv.currency) not in fx_pairs:
+                missing_fx.append(inv)
+    missing_fx_amount = sum(inv.amount for inv in missing_fx)
+    
+    # Calculate totals
+    total_unknown_count = len(missing_due_dates) + len(held_bills) + len(unmatched_txns) + len(missing_fx)
+    total_unknown_amount = missing_due_amount + held_bills_amount + unmatched_amount + missing_fx_amount
+    
+    # Calculate portfolio total for percentage
+    total_portfolio = sum(inv.amount for inv in invoices if inv.payment_date is None) + sum(b.amount for b in vendor_bills)
+    unknown_pct = (total_unknown_amount / total_portfolio * 100) if total_portfolio > 0 else 0.0
+    
+    return {
+        "total_unknown_amount": float(total_unknown_amount),
+        "total_unknown_count": total_unknown_count,
+        "unknown_pct": round(unknown_pct, 2),
+        "kpi_target_met": unknown_pct < 5.0,
+        "categories": {
+            "missing_due_dates": {
+                "count": len(missing_due_dates),
+                "amount": float(missing_due_amount),
+                "items": [{"id": inv.id, "customer": inv.customer, "amount": inv.amount} for inv in missing_due_dates[:10]]
+            },
+            "held_ap_bills": {
+                "count": len(held_bills),
+                "amount": float(held_bills_amount),
+                "items": [{"id": b.id, "vendor": b.vendor_name, "amount": b.amount} for b in held_bills[:10]]
+            },
+            "unmatched_bank_cash": {
+                "count": len(unmatched_txns),
+                "amount": float(unmatched_amount),
+                "items": [{"id": t.id, "counterparty": t.counterparty, "amount": t.amount} for t in unmatched_txns[:10]]
+            },
+            "missing_fx_rates": {
+                "count": len(missing_fx),
+                "amount": float(missing_fx_amount),
+                "currencies": list(set(inv.currency for inv in missing_fx))
+            }
+        }
+    }

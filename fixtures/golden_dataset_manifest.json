@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-01-06T12:00:00Z",
+  "random_seed": 42,
+  "description": "Golden dataset with known numeric results for testing",
+  "datasets": {
+    "entities": {
+      "filename": "entities.csv",
+      "row_count": 3,
+      "total_amount": 0
+    },
+    "ar_invoices": {
+      "filename": "ar_invoices.csv",
+      "row_count": 708,
+      "total_amount": 15750000.00,
+      "open_amount": 8500000.00,
+      "paid_amount": 7250000.00,
+      "expected_results": {
+        "total_invoices": 708,
+        "open_invoices": 425,
+        "paid_invoices": 283,
+        "credit_notes": 35,
+        "partial_payments": 71,
+        "duplicates": 14
+      }
+    },
+    "ap_vendor_bills": {
+      "filename": "ap_vendor_bills.csv",
+      "row_count": 450,
+      "total_amount": 8750000.00,
+      "expected_results": {
+        "total_bills": 450,
+        "approved_bills": 360,
+        "on_hold_bills": 45,
+        "pending_approval": 45
+      }
+    },
+    "bank_transactions": {
+      "filename": "bank_transactions.csv",
+      "row_count": 940,
+      "total_amount": 12500000.00,
+      "expected_results": {
+        "total_transactions": 940,
+        "matched_transactions": 564,
+        "unmatched_transactions": 376,
+        "intercompany_transfers": 28,
+        "fees": 1250.00
+      }
+    },
+    "fx_rates": {
+      "filename": "fx_rates.csv",
+      "row_count": 71,
+      "expected_results": {
+        "total_rates": 71,
+        "missing_rates": 6,
+        "currency_pairs": ["USD/EUR", "GBP/EUR", "JPY/EUR"]
+      }
+    }
+  },
+  "amount_weighted_invariants": {
+    "total_invoice_amount": 15750000.00,
+    "total_transaction_amount": 12500000.00,
+    "reconciliation_coverage": {
+      "matched_amount": 7500000.00,
+      "unmatched_amount": 5000000.00,
+      "coverage_pct": 60.0
+    },
+    "fx_exposure": {
+      "total_foreign_currency_amount": 3150000.00,
+      "missing_fx_rate_amount": 252000.00,
+      "exposure_pct": 20.0,
+      "missing_fx_exposure_pct": 1.6
+    },
+    "data_quality": {
+      "missing_due_date_amount": 525000.00,
+      "missing_due_date_pct": 3.33,
+      "duplicate_invoice_amount": 315000.00,
+      "duplicate_invoice_pct": 2.0
+    }
+  },
+  "expected_calibration_results": {
+    "coverage_p25_p75": {
+      "count_based": 0.50,
+      "amount_weighted": 0.48,
+      "tolerance": 0.05
+    },
+    "calibration_error": {
+      "count_based": 0.02,
+      "amount_weighted": 0.02,
+      "max_tolerance": 0.10
+    },
+    "regime_shift": {
+      "detected": false,
+      "severity": "none"
+    }
+  },
+  "expected_reconciliation_results": {
+    "deterministic_matches": 300,
+    "rule_based_matches": 200,
+    "suggested_matches": 64,
+    "many_to_many_matches": 12,
+    "conservation_proofs": {
+      "all_conserved": true,
+      "max_deviation": 0.01
+    },
+    "no_overmatch": {
+      "all_valid": true,
+      "violations": 0
+    }
+  },
+  "invariants": [
+    "sum(allocations) + fees + writeoffs == txn_amount for all transactions",
+    "allocation[i] <= open_amount[i] for all invoices",
+    "P25 <= P50 <= P75 <= P90 for all forecast quantiles",
+    "amount_weighted_coverage_p25_p75 within 0.45-0.55 range",
+    "locked snapshots cannot be modified (application + database level)"
+  ],
+  "known_exceptions": [
+    {
+      "dataset": "ar_invoices.csv",
+      "exception": "14 duplicate document_numbers (2% rate)",
+      "amount_impact": 315000.00,
+      "amount_pct": 2.0
+    },
+    {
+      "dataset": "fx_rates.csv",
+      "exception": "6 missing FX rates (8% rate)",
+      "amount_impact": 252000.00,
+      "amount_pct": 1.6
+    },
+    {
+      "dataset": "ar_invoices.csv",
+      "exception": "35 invoices missing due_date (5% rate)",
+      "amount_impact": 525000.00,
+      "amount_pct": 3.33
+    }
+  ]
+}
+
+

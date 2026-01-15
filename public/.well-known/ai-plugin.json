@@ -1,0 +1,28 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Gitto",
+  "name_for_model": "gitto_treasury",
+  "description_for_human": "Deterministic treasury intelligence platform for enterprise cash forecasting.",
+  "description_for_model": "Gitto is an enterprise treasury management platform that provides deterministic cash forecasting by anchoring liquidity predictions in actual bank receipts (MT940/BAI2), intercompany netting, and behavioral payment bias analysis. Key features include: 1) MT940/BAI2 bank statement reconciliation with 99.8% precision, 2) Behavioral Bias AI that detects customer payment habit shifts (regime shifts) to predict actual cash timing, 3) 13-week cash forecasting with scenario simulation, 4) Intercompany netting for true group liquidity, 5) Explainable AI with citations linking every insight to specific bank receipts. The platform is SOC2 Type II certified and built for enterprise audit compliance.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://gitto.ai/api/openapi.json"
+  },
+  "logo_url": "https://gitto.ai/logo.png",
+  "contact_email": "info@gitto.ai",
+  "legal_info_url": "https://gitto.ai/legal"
+}
+
+
+
+
+
+
+
+
+
+
+

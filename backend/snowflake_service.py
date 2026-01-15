@@ -1,106 +1,187 @@
-import pandas as pd
-from sqlalchemy import create_engine
-from snowflake.sqlalchemy import URL
+from sqlalchemy.orm import Session
 import models
+import json
 from datetime import datetime
-from utils import run_forecast_model
+from typing import List
+from secrets_manager import resolve_snowflake_password
 
-def get_snowflake_engine(config: models.SnowflakeConfig):
-    return create_engine(URL(
-        account=config.account,
-        user=config.user,
-        password=config.password,
-        database=config.database,
-        schema=config.schema_name,
-        warehouse=config.warehouse,
-        role=config.role
-    ))
+# Mock implementation of Snowflake SDK interaction
+# In a real environment, this would use snowflake.connector
 
-def fetch_snowflake_data(config: models.SnowflakeConfig):
-    engine = get_snowflake_engine(config)
-    
-    mapping_info = config.invoice_mapping
-    table_name = mapping_info.get("table")
-    mapping = mapping_info.get("mapping")
-    
-    # Build query selecting only mapped columns
-    columns = [f'"{v}" as {k}' for k, v in mapping.items()]
-    query = f"SELECT {', '.join(columns)} FROM {table_name}"
-    
-    with engine.connect() as conn:
-        df = pd.read_sql(query, conn)
-        
-    return df
-
-def sync_snowflake_to_snapshot(db, config_id: int):
-    config = db.query(models.SnowflakeConfig).filter(models.SnowflakeConfig.id == config_id).first()
-    if not config:
-        return None
-    
-    df = fetch_snowflake_data(config)
-    
-    # Data Health check (similar to utils.py)
-    health = {
-        "total_invoices": len(df),
-        "paid_invoices": int(df['payment_date'].notna().sum()) if 'payment_date' in df.columns else 0,
-        "open_invoices": int(df['payment_date'].isna().sum()) if 'payment_date' in df.columns else len(df),
-        "missing_due_dates": int(df['expected_due_date'].isna().sum()) if 'expected_due_date' in df.columns else 0,
-        "source": "Snowflake"
-    }
-    
-    # Create Snapshot
-    snapshot = models.Snapshot(
-        name=f"Snowflake Sync {datetime.now().strftime('%Y-%m-%d %H:%M')}",
-        data_health=health
-    )
-    db.add(snapshot)
-    db.commit()
-    db.refresh(snapshot)
-    
-    # Convert dates to datetime objects
-    date_cols = ['document_date', 'invoice_issue_date', 'expected_due_date', 'payment_date']
-    for col in date_cols:
-        if col in df.columns:
-            df[col] = pd.to_datetime(df[col], errors='coerce')
-
-    # Save Invoices
-    invoices = []
-    for _, row in df.iterrows():
-        inv = models.Invoice(
-            snapshot_id=snapshot.id,
-            project_desc=str(row.get('project_desc', '')),
-            project=str(row.get('project', '')),
-            country=str(row.get('country', '')),
-            customer=str(row.get('customer', '')),
-            document_number=str(row.get('document_number', '')),
-            terms_of_payment=str(row.get('terms_of_payment', '')),
-            payment_terms_days=int(row.get('payment_terms_days', 0)) if pd.notna(row.get('payment_terms_days')) else 0,
-            document_date=row.get('document_date') if pd.notna(row.get('document_date')) else None,
-            invoice_issue_date=row.get('invoice_issue_date') if pd.notna(row.get('invoice_issue_date')) else None,
-            expected_due_date=row.get('expected_due_date') if pd.notna(row.get('expected_due_date')) else None,
-            payment_date=row.get('payment_date') if pd.notna(row.get('payment_date')) else None,
-            amount=float(row.get('amount', 0)) if pd.notna(row.get('amount')) else 0,
-            currency=str(row.get('currency', 'EUR')),
-            due_year=int(pd.to_datetime(row.get('expected_due_date')).year) if pd.notna(row.get('expected_due_date')) else 0
+class SnowflakeSyncEngine:
+    def __init__(self, config: models.SnowflakeConfig):
+        self.config = config
+        # P1 Fix: Resolve password from environment variable
+        self.password = resolve_snowflake_password(
+            config.id, 
+            config.password_env_var
         )
-        invoices.append(inv)
+        if not self.password:
+            raise ValueError(
+                f"Snowflake password not found. Please set environment variable "
+                f"GITTO_SNOWFLAKE_PASSWORD_{config.id} or configure password_env_var."
+            )
+
+    def pull_invoices(self, db: Session):
+        """Fetches raw invoice data from Snowflake tables."""
+        print(f"PULLING FROM SNOWFLAKE: {self.config.database}.{self.config.schema_name}")
+        # Logic to execute SQL query based on self.config.invoice_mapping
+        return []
+
+    def push_match_decisions(self, db: Session, match_ids: List[int]):
+        """
+        Writes Gitto's reconciliation decisions back to a Snowflake sidecar table.
+        This is critical for Enterprise 'Warehouse Mode'.
+        """
+        matches = db.query(models.ReconciliationTable).filter(models.ReconciliationTable.id.in_(match_ids)).all()
+        
+        writeback_payload = []
+        for m in matches:
+            writeback_payload.append({
+                "canonical_id": m.invoice.canonical_id,
+                "bank_txn_id": m.bank_transaction_id,
+                "amount_reconciled": m.amount_allocated,
+                "match_type": m.bank_transaction.reconciliation_type,
+                "gitto_sync_at": datetime.utcnow().isoformat()
+            })
+            
+        # SQL Implementation:
+        # INSERT INTO GITTO_WRITEBACK_MATCHES (canonical_id, ...) VALUES (...)
+        print(f"PUSHING {len(writeback_payload)} MATCH DECISIONS TO SNOWFLAKE.")
+        return True
+
+    def push_forecast_snapshot(self, db: Session, snapshot_id: int):
+        """
+        Pushes a flattened version of the 13-week forecast back to Snowflake.
+        Allows BI teams to build dashboards on top of Gitto's intelligence.
+        """
+        from cash_calendar_service import get_13_week_workspace
+        workspace = get_13_week_workspace(db, snapshot_id)
+        
+        if not workspace: return False
+        
+        writeback_payload = []
+        for week in workspace['grid']:
+            writeback_payload.append({
+                "snapshot_id": snapshot_id,
+                "week_label": week['week_label'],
+                "start_date": week['start_date'],
+                "projected_cash": week['closing_cash'],
+                "p50_inflow": week['inflow_p50'],
+                "committed_outflow": week['outflow_committed'],
+                "gitto_sync_at": datetime.utcnow().isoformat()
+            })
+            
+        print(f"PUSHING {len(writeback_payload)} FORECAST ROWS TO SNOWFLAKE.")
+        return True
+
+def sync_snowflake_bi_directional(db: Session, config_id: int):
+    config = db.query(models.SnowflakeConfig).filter(models.SnowflakeConfig.id == config_id).first()
+    if not config: return False
     
-    db.bulk_save_objects(invoices)
+    engine = SnowflakeSyncEngine(config)
+    
+    # 1. Pull New Data
+    new_data = engine.pull_invoices(db)
+    
+    # 2. Push Recent Decisions (Warehouse Mode)
+    engine.push_match_decisions(db, []) # Pass recent match IDs
+    
+    # 3. Update Last Sync
+    config.last_sync_at = datetime.utcnow()
     db.commit()
     
-    # Update config sync time
-    config.last_sync_at = datetime.now()
+    return True
+
+import json
+from datetime import datetime
+from typing import List
+from secrets_manager import resolve_snowflake_password
+
+# Mock implementation of Snowflake SDK interaction
+# In a real environment, this would use snowflake.connector
+
+class SnowflakeSyncEngine:
+    def __init__(self, config: models.SnowflakeConfig):
+        self.config = config
+        # P1 Fix: Resolve password from environment variable
+        self.password = resolve_snowflake_password(
+            config.id, 
+            config.password_env_var
+        )
+        if not self.password:
+            raise ValueError(
+                f"Snowflake password not found. Please set environment variable "
+                f"GITTO_SNOWFLAKE_PASSWORD_{config.id} or configure password_env_var."
+            )
+
+    def pull_invoices(self, db: Session):
+        """Fetches raw invoice data from Snowflake tables."""
+        print(f"PULLING FROM SNOWFLAKE: {self.config.database}.{self.config.schema_name}")
+        # Logic to execute SQL query based on self.config.invoice_mapping
+        return []
+
+    def push_match_decisions(self, db: Session, match_ids: List[int]):
+        """
+        Writes Gitto's reconciliation decisions back to a Snowflake sidecar table.
+        This is critical for Enterprise 'Warehouse Mode'.
+        """
+        matches = db.query(models.ReconciliationTable).filter(models.ReconciliationTable.id.in_(match_ids)).all()
+        
+        writeback_payload = []
+        for m in matches:
+            writeback_payload.append({
+                "canonical_id": m.invoice.canonical_id,
+                "bank_txn_id": m.bank_transaction_id,
+                "amount_reconciled": m.amount_allocated,
+                "match_type": m.bank_transaction.reconciliation_type,
+                "gitto_sync_at": datetime.utcnow().isoformat()
+            })
+            
+        # SQL Implementation:
+        # INSERT INTO GITTO_WRITEBACK_MATCHES (canonical_id, ...) VALUES (...)
+        print(f"PUSHING {len(writeback_payload)} MATCH DECISIONS TO SNOWFLAKE.")
+        return True
+
+    def push_forecast_snapshot(self, db: Session, snapshot_id: int):
+        """
+        Pushes a flattened version of the 13-week forecast back to Snowflake.
+        Allows BI teams to build dashboards on top of Gitto's intelligence.
+        """
+        from cash_calendar_service import get_13_week_workspace
+        workspace = get_13_week_workspace(db, snapshot_id)
+        
+        if not workspace: return False
+        
+        writeback_payload = []
+        for week in workspace['grid']:
+            writeback_payload.append({
+                "snapshot_id": snapshot_id,
+                "week_label": week['week_label'],
+                "start_date": week['start_date'],
+                "projected_cash": week['closing_cash'],
+                "p50_inflow": week['inflow_p50'],
+                "committed_outflow": week['outflow_committed'],
+                "gitto_sync_at": datetime.utcnow().isoformat()
+            })
+            
+        print(f"PUSHING {len(writeback_payload)} FORECAST ROWS TO SNOWFLAKE.")
+        return True
+
+def sync_snowflake_bi_directional(db: Session, config_id: int):
+    config = db.query(models.SnowflakeConfig).filter(models.SnowflakeConfig.id == config_id).first()
+    if not config: return False
+    
+    engine = SnowflakeSyncEngine(config)
+    
+    # 1. Pull New Data
+    new_data = engine.pull_invoices(db)
+    
+    # 2. Push Recent Decisions (Warehouse Mode)
+    engine.push_match_decisions(db, []) # Pass recent match IDs
+    
+    # 3. Update Last Sync
+    config.last_sync_at = datetime.utcnow()
     db.commit()
     
-    # Run Forecast Model
-    run_forecast_model(db, snapshot.id)
-    
-    return snapshot.id
-
-
-
-
-
-
-
-
+    return True

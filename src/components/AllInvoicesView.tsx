@@ -6,6 +6,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { Button } from "./ui/button";
 import { api } from '../lib/api';
 import { ChevronLeft, ChevronRight, Search, Filter, Download } from "lucide-react";
+import { TruthBadge, getTruthLevelFromSource } from './ui/truth-badge';
 
 export default function AllInvoicesView({ snapshotId }: { snapshotId: number }) {
   const [data, setData] = useState<any>(null);
@@ -77,6 +78,7 @@ export default function AllInvoicesView({ snapshotId }: { snapshotId: number }) 
                 <TableHead className="font-black uppercase text-[10px] tracking-widest">Country</TableHead>
                 <TableHead className="font-black uppercase text-[10px] tracking-widest">Due Date</TableHead>
                 <TableHead className="font-black uppercase text-[10px] tracking-widest">Status</TableHead>
+                <TableHead className="font-black uppercase text-[10px] tracking-widest">Truth</TableHead>
                 <TableHead className="text-right px-8 font-black uppercase text-[10px] tracking-widest">Amount</TableHead>
               </TableRow>
             </TableHeader>
@@ -97,6 +99,13 @@ export default function AllInvoicesView({ snapshotId }: { snapshotId: number }) 
                     ) : (
                       <span className="px-2 py-1 rounded-md bg-amber-50 text-amber-600 text-[10px] font-black uppercase tracking-wider">Open</span>
                     )}
+                  </TableCell>
+                  <TableCell>
+                    <TruthBadge 
+                      level={getTruthLevelFromSource(inv.truth_label || (inv.payment_date ? 'reconciled' : 'modeled'))} 
+                      compact 
+                      showLabel={false} 
+                    />
                   </TableCell>
                   <TableCell className="text-right px-8 font-black text-slate-900 text-xs">
                     €{inv.amount.toLocaleString()}
@@ -132,5 +141,4 @@ export default function AllInvoicesView({ snapshotId }: { snapshotId: number }) 
     </div>
   );
 }
-
 

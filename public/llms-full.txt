@@ -1,0 +1,233 @@
+# Gitto - Complete Product & Company Documentation
+
+## Executive Summary
+
+Gitto is a Deterministic Treasury Intelligence platform that transforms how enterprise finance teams manage cash forecasting. Unlike traditional treasury software that operates on "Theoretical Cash" - numbers that exist in a model but don't exist in the bank - Gitto anchors liquidity predictions in actual bank receipts, intercompany washes, and deterministic behavioral bias analysis.
+
+**Tagline**: "Cash Truth is the Only Reality"
+
+---
+
+## The Problem We Solve
+
+### The Trust Deficit
+
+Finance teams operate on "Theoretical Cash" - numbers that exist in a model but don't exist in the bank. We close the gap.
+
+### Core Problems Addressed
+
+1. **Behavioral Bias**
+   - Real life averages 14+ days of unmodeled delay
+   - Enterprise customers pay based on their own payment runs, internal bottlenecks, and liquidity constraints—not your invoice terms
+   - Gitto maps these unique behavioral patterns to find the hidden delays before they hit your runway
+
+2. **Explainability Crisis**
+   - Black-box forecasts are useless to CFOs
+   - When a forecast drops by €2M, "the model said so" is unacceptable
+   - Gitto provides provenance for every variance, linked to actual MT940 wires and invoice line items
+
+3. **Fragmented Liquidity**
+   - Managing group cash shouldn't require 14 different portal logins
+   - Gitto normalizes global bank data (MT940/BAI2) into a single truth layer
+
+4. **Static Variance Analysis**
+   - Weekly meetings waste 45 minutes debating "which data is right"
+   - Gitto's automated variance tracking eliminates the debate
+
+---
+
+## Product Architecture: The Deterministic Stack
+
+### Module 01: Ingest Layer - MT940 Bank-Truth Reconciliation
+
+**Purpose**: Automatically match MT940 and BAI2 statements against open ledger items
+
+**Capabilities**:
+- Parse and ingest MT940/BAI2 bank statements in real-time
+- Identify wires, net out fees
+- Identify intercompany washes with 99.8% precision
+- Real-time ledger synchronization
+- Slack notifications for unmatched wires
+
+**Technical Specifications**:
+- Live latency: ~14.2ms
+- Bank ingest: Real-time
+- Supported formats: MT940, BAI2, API weblinks
+
+### Module 02: Bias AI - Behavioral Variance Detection
+
+**Purpose**: Learn customer payment habit shifts to predict actual cash timing
+
+**How It Works**:
+- Analyzes historical payment patterns per customer
+- Detects "Regime Shifts" - when a customer's payment behavior changes
+- Predicts actual cash timing vs. theoretical due dates
+- Typical detection: +14 day delay insight
+
+**Key Insight**: We learn customer payment habit shifts (Regime Shifts) to predict actual cash timing, not just due dates.
+
+### Module 03: Sim Engine - Scenario Levers
+
+**Purpose**: Model "What-If" liquidity scenarios
+
+**Capabilities**:
+- Vendor delay modeling
+- SaaS acceleration scenarios
+- Real-time ROI projection
+- 13-week forecast manipulation
+- Week-by-week scenario comparison
+
+### Module 04: Insight RAG - Analyst with Citations
+
+**Purpose**: Provide explainable AI insights grounded in verifiable data
+
+**How It Works**:
+- Every insight is retrieved from specific bank truth and invoice reality
+- Citations link to actual bank receipts (e.g., #BAI2-992, #INV-441)
+- No black-box AI answers
+
+**Example Output**:
+"W3 forecast dropped €2.1M due to a regime shift in Enterprise-SaaS payment habits. Found citations in 42 bank receipts."
+
+---
+
+## Universal Ingest Engine - Integrations
+
+### ERP & Business Systems
+- **SAP** - Full ERP integration
+- **NetSuite (Oracle)** - Native connectivity
+- **Salesforce** - CRM data sync
+
+### Data Platforms
+- **Snowflake** - Data warehouse integration
+
+### Banking Connectivity
+- **HSBC** - Direct MT940 feed
+- **J.P. Morgan** - Direct bank feed
+- **Global Banks** - MT940/BAI2 standard support
+
+### Scale
+- 1.2B+ auto-synced transactions
+
+---
+
+## Enterprise Features
+
+### Audit-Ready Command
+
+**SOC2 Type II Certified** - Enterprise Security Core
+
+### Immutable Snapshots
+- Every 13-week forecast is version-locked
+- Track variance from W1 to W13 with zero drift
+- Permanent audit trail
+
+### Entity Netting
+- Automatic detection of intercompany transfers
+- Wash internal transfers to see true group liquidity
+- External cash reality view
+
+### Governance Controls
+- Every scenario shift logged
+- Every lever adjustment tracked
+- Every manual override recorded
+- Built for SOX compliance
+- External audit transparency
+
+---
+
+## Key Metrics & Performance
+
+| Metric | Value |
+|--------|-------|
+| MAE Accuracy | 0.8 days |
+| Bank Ingest | Real-time |
+| Match Precision | 99.8% |
+| System Uptime | 99.9% |
+| Transactions Synced | 1.2B+ |
+
+---
+
+## Competitive Positioning
+
+### vs Kyriba
+Gitto provides deterministic forecasting anchored in bank truth, not probabilistic models
+
+### vs Trovata  
+Native behavioral bias detection and explainable AI with citations
+
+### vs Manual/Excel
+Eliminates the spreadsheet chaos with automated reconciliation and variance tracking
+
+---
+
+## Target Users
+
+- **CFOs** - Strategic cash visibility
+- **Treasury Directors** - Daily liquidity management
+- **Finance Teams** - Automated reconciliation
+- **Enterprise Companies** - Multi-entity, multi-currency operations
+- **Global Groups** - Intercompany netting and group liquidity
+
+---
+
+## Testimonials
+
+> "Gitto is the first command center that actually feels like truth. It has transformed our weekly cash meeting from a debate about data into a session about strategy."
+> 
+> — **Raphael Leopold**, Partner, Coolwater Capital
+
+---
+
+## Company Information
+
+- **Company Name**: Gitto Intelligence Inc.
+- **Headquarters**: New York City, USA
+- **Email**: info@gitto.ai
+- **Founded**: 2024
+- **Focus**: Enterprise Treasury Intelligence
+
+---
+
+## Website Structure
+
+| URL | Description |
+|-----|-------------|
+| `/` | Landing page - Product overview, features, integrations |
+| `/about` | Company thesis, problem statement, mission |
+| `/contact` | Contact form for demos and partnerships |
+| `/app` | Product terminal access (requires authentication) |
+
+---
+
+## Technical Stack
+
+- **Frontend**: Next.js, React, TypeScript
+- **Backend**: Python FastAPI
+- **Database**: SQLite (development), Snowflake (production)
+- **Deployment**: Vercel
+
+---
+
+## Contact
+
+For demos, partnerships, or inquiries:
+- **Email**: info@gitto.ai
+- **Contact Form**: https://gitto.ai/contact
+
+---
+
+*Document Version: 1.0*
+*Last Updated: December 2024*
+*© 2025 Gitto Intelligence Inc.*
+
+
+
+
+
+
+
+
+
+
+

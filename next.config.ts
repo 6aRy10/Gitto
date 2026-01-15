@@ -4,20 +4,22 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  experimental: {
-    turbopack: {
-      // Explicitly set the root directory to the current project folder
-      // to avoid conflicts with lockfiles in parent directories.
-      root: __dirname,
-    },
-  },
   async rewrites() {
-    return [
-      {
-        source: '/api/:path*',
-        destination: 'http://localhost:8000/:path*',
-      },
-    ];
+    // Only proxy to localhost in development
+    // In production, use NEXT_PUBLIC_API_URL environment variable
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+    
+    if (process.env.NODE_ENV === 'development' && !apiUrl) {
+      return [
+        {
+          source: '/api/:path*',
+          destination: 'http://localhost:8000/:path*',
+        },
+      ];
+    }
+    
+    // In production, don't use rewrites - use the API URL directly
+    return [];
   },
 };
 

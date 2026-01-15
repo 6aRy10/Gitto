@@ -1,0 +1,72 @@
+# Gitto - Deterministic Treasury Intelligence
+
+> Gitto is an enterprise treasury management platform that provides deterministic cash forecasting by anchoring liquidity predictions in actual bank receipts (MT940/BAI2), intercompany netting, and behavioral payment bias analysis.
+
+## Product Overview
+
+Gitto eliminates the "Bank-Truth Gap" - the dangerous disconnect between theoretical cash forecasts and actual bank reality. Most treasury software displays assumptions in graphs, but assumptions don't pay bills—cash does.
+
+## Core Capabilities
+
+### 1. MT940/BAI2 Bank-Truth Reconciliation
+Automatically match MT940 and BAI2 statements against open ledger items. The engine identifies wires, nets out fees, and identifies intercompany washes with 99.8% precision.
+
+### 2. Behavioral Bias AI
+Learns customer payment habit shifts (Regime Shifts) to predict actual cash timing, not just due dates. Detects the hidden 14-day delay before it hits your runway.
+
+### 3. Scenario Simulation Engine  
+Model "What-If" liquidity levers like vendor delays or SaaS acceleration with real-time ROI projection across 13-week forecasts.
+
+### 4. Analyst RAG with Citations
+Every insight is retrieved from specific bank truth and invoice reality, grounded in verifiable citations. No black-box AI answers.
+
+## Key Differentiators
+
+- **Deterministic Forecasting**: Anchored in actual MT940 bank receipts, not assumptions
+- **Explainability**: Every variance linked directly to specific bank statements and invoices
+- **Group Liquidity**: Consolidates global bank feeds into a single truth layer
+- **Intercompany Netting**: Automatically detects and washes internal transfers
+- **Multi-Currency Core**: Real-time FX normalization with snapshot-locked rates
+
+## Integrations
+
+Universal Ingest Engine supporting:
+- ERP: SAP, NetSuite (Oracle), Salesforce
+- Data Platforms: Snowflake
+- Banks: HSBC, J.P. Morgan, and global MT940/BAI2 feeds
+- 1.2B+ auto-synced transactions
+
+## Enterprise & Compliance
+
+- SOC2 Type II Certified
+- Immutable forecast snapshots with version locking
+- Permanent audit trail for external auditors
+- Built for SOX and external audit transparency
+
+## Company Information
+
+- **Headquarters**: NYC
+- **Email**: info@gitto.ai
+- **Website**: https://gitto.ai
+
+## Pages
+
+- `/` - Landing page with product overview
+- `/about` - Company thesis and problem statement
+- `/contact` - Contact form for demos and partnerships
+- `/app` - Product terminal access
+
+## For More Information
+
+See `/llms-full.txt` for complete detailed documentation.
+
+
+
+
+
+
+
+
+
+
+

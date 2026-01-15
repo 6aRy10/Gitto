@@ -1,0 +1,47 @@
+# Robots.txt for Gitto
+# https://gitto.ai
+
+# Allow all crawlers including AI/LLM crawlers
+User-agent: *
+Allow: /
+
+# AI-specific crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+# Point to LLM-specific content
+# These files contain structured information for AI systems
+# /llms.txt - Summary for LLMs
+# /llms-full.txt - Detailed documentation for LLMs
+
+# Sitemap location
+Sitemap: https://gitto.ai/sitemap.xml
+
+
+
+
+
+
+
+
+
+
+

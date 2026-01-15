@@ -1,0 +1,709 @@
+entity_id,document_number,customer,country,currency,amount,invoice_issue_date,expected_due_date,payment_date,payment_terms_days,terms_of_payment,document_type,project,project_desc,relationship_type,parent_invoice_id,is_blocked,dispute_status
+1,INV-01-00001,TechStart Inc,SE,NOK,44716.8,2025-07-13T13:09:45.867176,2025-08-27T13:09:45.867176,2025-09-03T13:09:45.867176,45,Net 30,Invoice,Project-3,Services for TechStart Inc,,,0,active
+1,INV-01-00002,StartupHub,SE,NOK,27702.13,2025-07-13T13:09:45.867176,2025-08-12T13:09:45.867176,2025-08-24T13:09:45.867176,30,Net 30,Invoice,Project-6,Services for StartupHub,,,0,active
+1,INV-01-00003,TechStart Inc,NL,EUR,18589.99,2025-07-29T13:09:45.867176,2025-08-28T13:09:45.867176,2025-09-12T13:09:45.867176,30,Net 30,Invoice,Project-15,Services for TechStart Inc,,,0,active
+1,INV-01-00004,Smart Solutions,,DKK,31803.35,2025-08-27T13:09:45.867176,2025-09-11T13:09:45.867176,,15,Net 60,Invoice,Project-3,Services for Smart Solutions,,,0,active
+1,INV-01-00005,TechStart Inc,NL,GBP,23217.1,2025-07-20T13:09:45.867176,2025-08-19T13:09:45.867176,,30,Net 15,Invoice,Project-7,Services for TechStart Inc,,,0,active
+1,INV-01-00006,NextGen Industries,SE,USD,27172.85,2025-10-05T13:09:45.867176,2025-10-20T13:09:45.867176,,15,Net 15,Invoice,Project-18,Services for NextGen Industries,,,0,active
+1,INV-01-00007,Enterprise Systems,US,DKK,16457.2,2025-10-16T13:09:45.867176,2025-10-31T13:09:45.867176,2025-11-04T13:09:45.867176,15,2/10 Net 30,Invoice,Project-11,Services for Enterprise Systems,,,0,active
+1,INV-01-00008,StartupHub,CH,SEK,13874.34,2025-10-31T13:09:45.867176,2025-12-30T13:09:45.867176,2026-01-09T13:09:45.867176,60,Net 45,Invoice,Project-12,Services for StartupHub,,,0,active
+1,INV-01-00009,TechStart Inc,US,DKK,6372.81,2025-09-13T13:09:45.867176,2025-11-12T13:09:45.867176,,60,Net 45,Invoice,Project-20,Services for TechStart Inc,,,0,active
+1,INV-01-00010,Smart Solutions,US,NOK,36315.37,2025-09-07T13:09:45.867176,2025-10-22T13:09:45.867176,2025-11-02T13:09:45.867176,45,Net 15,Invoice,Project-11,Services for Smart Solutions,,,0,active
+1,INV-01-00011,Digital Dynamics,CH,DKK,9753.94,2025-09-06T13:09:45.867176,2025-09-21T13:09:45.867176,2025-10-17T13:09:45.867176,15,Net 15,Invoice,Project-17,Services for Digital Dynamics,,,0,active
+1,INV-01-00012,Smart Solutions,CH,EUR,30348.28,2025-10-15T13:09:45.867176,2025-11-14T13:09:45.867176,2025-11-15T13:09:45.867176,30,Net 15,Invoice,Project-10,Services for Smart Solutions,,,0,active
+1,INV-01-00013,TechStart Inc,CH,DKK,7162.27,2025-09-20T13:09:45.867176,2025-10-05T13:09:45.867176,2025-10-21T13:09:45.867176,15,Net 60,Invoice,Project-9,Services for TechStart Inc,,,0,active
+1,INV-01-00014,StartupHub,IT,CHF,49762.32,2025-08-06T13:09:45.867176,2025-09-05T13:09:45.867176,2025-09-17T13:09:45.867176,30,2/10 Net 30,Invoice,Project-15,Services for StartupHub,,,0,active
+1,INV-01-00015,Enterprise Systems,US,EUR,35684.21,2025-08-22T13:09:45.867176,2025-09-06T13:09:45.867176,2025-09-06T13:09:45.867176,15,Net 30,Invoice,Project-11,Services for Enterprise Systems,,,0,active
+1,INV-01-00016,Enterprise Systems,CH,USD,36444.28,2025-10-03T13:09:45.867176,2025-12-02T13:09:45.867176,2025-12-05T13:09:45.867176,60,Net 60,Invoice,Project-16,Services for Enterprise Systems,,,0,active
+1,INV-01-00017,StartupHub,US,NOK,33019.32,2025-07-22T13:09:45.867176,2025-09-20T13:09:45.867176,2025-09-20T13:09:45.867176,60,Due on Receipt,Invoice,Project-11,Services for StartupHub,,,0,active
+1,INV-01-00018,Smart Solutions,BE,USD,21672.2,2025-08-03T13:09:45.867176,2025-09-02T13:09:45.867176,2025-09-17T13:09:45.867176,30,Net 30,Invoice,Project-15,Services for Smart Solutions,,,0,active
+1,INV-01-00019,MegaCorp International,CH,DKK,1723.13,2025-07-22T13:09:45.867176,2025-08-06T13:09:45.867176,,15,Net 60,Invoice,Project-6,Services for MegaCorp International,,,0,active
+1,INV-01-00020,Acme Corporation,NL,GBP,46399.39,2025-10-28T13:09:45.867176,2025-12-27T13:09:45.867176,2026-01-07T13:09:45.867176,60,Due on Receipt,Invoice,Project-18,Services for Acme Corporation,,,0,active
+1,INV-01-00021,Enterprise Systems,US,SEK,37051.12,2025-08-03T13:09:45.867176,2025-09-17T13:09:45.867176,2025-09-20T13:09:45.867176,45,Net 30,Invoice,Project-19,Services for Enterprise Systems,,,0,active
+1,INV-01-00022,Acme Corporation,CH,EUR,42715.78,2025-09-15T13:09:45.867176,2025-10-15T13:09:45.867176,,30,Net 60,Invoice,Project-13,Services for Acme Corporation,,,0,active
+1,INV-01-00023,NextGen Industries,UK,CHF,33211.29,2025-08-10T13:09:45.867176,2025-08-25T13:09:45.867176,,15,Net 15,Invoice,Project-7,Services for NextGen Industries,,,0,active
+1,INV-01-00024,Future Tech,ES,DKK,4.69e+04,2025-08-12T13:09:45.867176,2025-10-11T13:09:45.867176,2025-10-27T13:09:45.867176,60,2/10 Net 30,Invoice,Project-4,Services for Future Tech,,,0,active
+1,INV-01-00025,Cloud Services Co,UK,USD,19106.83,2025-08-12T13:09:45.867176,2025-09-11T13:09:45.867176,2025-09-28T13:09:45.867176,30,Due on Receipt,Invoice,Project-10,Services for Cloud Services Co,,,0,active
+1,INV-01-00026,MegaCorp International,CH,GBP,46656.05,2025-10-01T13:09:45.867176,2025-10-16T13:09:45.867176,,15,Net 15,Invoice,Project-4,Services for MegaCorp International,,,0,active
+1,INV-01-00027,Digital Dynamics,AT,USD,36163.0,2025-07-29T13:09:45.867176,2025-09-12T13:09:45.867176,,45,Net 15,Invoice,Project-17,Services for Digital Dynamics,,,0,active
+1,INV-01-00028,TechStart Inc,SE,CHF,41638.06,2025-10-26T13:09:45.867176,2025-11-10T13:09:45.867176,,15,Net 60,Invoice,Project-9,Services for TechStart Inc,,,0,active
+1,INV-01-00029,StartupHub,DE,SEK,2765.38,2025-10-08T13:09:45.867176,2025-12-07T13:09:45.867176,2025-12-09T13:09:45.867176,60,Net 45,Invoice,,Services for StartupHub,,,0,active
+1,INV-01-00030,Cloud Services Co,FR,NOK,13226.96,2025-10-19T13:09:45.867176,2025-11-03T13:09:45.867176,,15,Net 45,Invoice,Project-20,Services for Cloud Services Co,,,0,active
+1,INV-01-00031,Global Solutions Ltd,NL,EUR,9788.67,2025-08-09T13:09:45.867176,2025-09-08T13:09:45.867176,,30,Net 45,Invoice,Project-8,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00032,Acme Corporation,,USD,10779.07,2025-07-23T13:09:45.867176,2025-09-21T13:09:45.867176,,60,Net 60,Invoice,Project-8,Services for Acme Corporation,,,0,active
+1,INV-01-00033,Digital Dynamics,ES,NOK,25960.88,2025-08-14T13:09:45.867176,2025-08-29T13:09:45.867176,2025-09-03T13:09:45.867176,15,Net 15,Invoice,Project-1,Services for Digital Dynamics,,,0,active
+1,INV-01-00034,Acme Corporation,UK,SEK,22293.62,2025-08-01T13:09:45.867176,2025-09-15T13:09:45.867176,,45,2/10 Net 30,Invoice,Project-17,Services for Acme Corporation,,,0,active
+1,INV-01-00035,Acme Corporation,NO,CHF,1082.87,2025-08-03T13:09:45.867176,2025-09-17T13:09:45.867176,,45,Due on Receipt,Invoice,Project-7,Services for Acme Corporation,,,0,active
+1,INV-01-00036,TechStart Inc,NO,GBP,25849.0,2025-10-03T13:09:45.867176,2025-11-17T13:09:45.867176,2025-11-14T13:09:45.867176,45,Due on Receipt,Invoice,Project-10,Services for TechStart Inc,,,0,active
+1,INV-01-00037,MegaCorp International,NO,USD,31160.23,2025-10-03T13:09:45.867176,2025-12-02T13:09:45.867176,2025-11-29T13:09:45.867176,60,Net 30,Invoice,Project-10,Services for MegaCorp International,,,0,active
+1,INV-01-00038,Enterprise Systems,CH,CHF,39893.03,2025-09-22T13:09:45.867176,2025-11-06T13:09:45.867176,2025-11-03T13:09:45.867176,45,Due on Receipt,Invoice,Project-3,Services for Enterprise Systems,,,0,active
+1,INV-01-00039,TechStart Inc,FR,NOK,16210.55,2025-09-27T13:09:45.867176,2025-11-11T13:09:45.867176,,45,Net 30,Invoice,Project-8,Services for TechStart Inc,,,0,active
+1,INV-01-00040,Future Tech,NL,NOK,29207.87,2025-10-16T13:09:45.867176,2025-10-31T13:09:45.867176,2025-11-09T13:09:45.867176,15,Net 45,Invoice,Project-8,Services for Future Tech,,,0,active
+1,INV-01-00041,Innovation Partners,FR,USD,40401.38,2025-11-01T13:09:45.867176,2025-11-16T13:09:45.867176,,15,2/10 Net 30,Invoice,Project-8,Services for Innovation Partners,,,0,active
+1,INV-01-00042,NextGen Industries,ES,DKK,44679.87,2025-07-27T13:09:45.867176,2025-09-25T13:09:45.867176,2025-09-18T13:09:45.867176,60,2/10 Net 30,Invoice,Project-14,Services for NextGen Industries,,,0,active
+1,INV-01-00043,StartupHub,BE,CHF,13700.39,2025-11-01T13:09:45.867176,2025-12-01T13:09:45.867176,2025-11-21T13:09:45.867176,30,2/10 Net 30,Invoice,Project-16,Services for StartupHub,,,0,active
+1,INV-01-00044,Smart Solutions,UK,USD,8390.7,2025-07-19T13:09:45.867176,2025-09-02T13:09:45.867176,2025-09-09T13:09:45.867176,45,Net 60,Invoice,Project-3,Services for Smart Solutions,,,0,active
+1,INV-01-00045,Acme Corporation,FR,DKK,21587.03,2025-09-07T13:09:45.867176,2025-11-06T13:09:45.867176,2025-11-22T13:09:45.867176,60,Due on Receipt,Invoice,Project-1,Services for Acme Corporation,,,0,active
+1,INV-01-00046,Acme Corporation,ES,GBP,37920.28,2025-08-27T13:09:45.867176,2025-10-26T13:09:45.867176,,60,Net 45,Invoice,Project-18,Services for Acme Corporation,,,0,active
+1,INV-01-00047,Future Tech,US,CHF,17470.35,2025-09-25T13:09:45.867176,2025-10-25T13:09:45.867176,2025-10-25T13:09:45.867176,30,Net 60,Invoice,Project-15,Services for Future Tech,,,0,active
+1,INV-01-00048,Innovation Partners,AT,SEK,33486.99,2025-09-16T13:09:45.867176,2025-10-01T13:09:45.867176,,15,Net 45,Invoice,Project-6,Services for Innovation Partners,,,0,active
+1,INV-01-00049,Cloud Services Co,ES,DKK,44102.36,2025-08-06T13:09:45.867176,2025-10-05T13:09:45.867176,2025-10-12T13:09:45.867176,60,Net 45,Invoice,Project-9,Services for Cloud Services Co,,,0,active
+1,INV-01-00050,MegaCorp International,UK,DKK,47906.99,2025-10-13T13:09:45.867176,2025-10-28T13:09:45.867176,2025-11-13T13:09:45.867176,15,Net 60,Invoice,Project-7,Services for MegaCorp International,,,0,active
+1,INV-01-00051,Future Tech,SE,EUR,28634.51,2025-08-09T13:09:45.867176,2025-09-08T13:09:45.867176,2025-09-14T13:09:45.867176,30,Net 15,Invoice,Project-6,Services for Future Tech,,,0,active
+1,INV-01-00052,Global Solutions Ltd,IT,EUR,29355.55,2025-10-09T13:09:45.867176,2025-10-24T13:09:45.867176,,15,Net 45,Invoice,Project-13,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00053,MegaCorp International,AT,DKK,6931.7,2025-09-23T13:09:45.867176,2025-10-23T13:09:45.867176,2025-11-12T13:09:45.867176,30,Net 15,Invoice,Project-18,Services for MegaCorp International,,,0,active
+1,INV-01-00054,Acme Corporation,NL,DKK,25019.88,2025-09-12T13:09:45.867176,2025-10-27T13:09:45.867176,2025-11-13T13:09:45.867176,45,Net 45,Invoice,Project-5,Services for Acme Corporation,,,0,active
+1,INV-01-00055,NextGen Industries,CH,DKK,24691.38,2025-10-01T13:09:45.867176,2025-11-15T13:09:45.867176,,45,Net 15,Invoice,Project-11,Services for NextGen Industries,,,0,active
+1,INV-01-00056,Future Tech,FR,DKK,23770.71,2025-07-21T13:09:45.867176,2025-09-04T13:09:45.867176,,45,Net 30,Invoice,Project-16,Services for Future Tech,,,0,active
+1,INV-01-00057,NextGen Industries,NO,GBP,28233.76,2025-08-06T13:09:45.867176,2025-09-20T13:09:45.867176,2025-09-29T13:09:45.867176,45,Net 60,Invoice,Project-14,Services for NextGen Industries,,,0,active
+1,INV-01-00058,MegaCorp International,NO,CHF,22960.55,2025-10-06T13:09:45.867176,2025-12-05T13:09:45.867176,,60,Net 45,Invoice,Project-8,Services for MegaCorp International,,,0,active
+1,INV-01-00059,Innovation Partners,NO,SEK,17208.77,2025-09-08T13:09:45.867176,2025-10-23T13:09:45.867176,2025-10-22T13:09:45.867176,45,Net 15,Invoice,Project-8,Services for Innovation Partners,,,0,active
+1,INV-01-00060,Digital Dynamics,NO,SEK,48853.74,2025-07-25T13:09:45.867176,2025-08-24T13:09:45.867176,2025-09-05T13:09:45.867176,30,Net 30,Invoice,Project-7,Services for Digital Dynamics,,,0,active
+1,INV-01-00061,StartupHub,CH,USD,14441.26,2025-08-17T13:09:45.867176,2025-09-01T13:09:45.867176,2025-09-23T13:09:45.867176,15,Due on Receipt,Invoice,Project-5,Services for StartupHub,,,0,active
+1,INV-01-00062,NextGen Industries,IT,CHF,24457.0,2025-07-23T13:09:45.867176,2025-08-07T13:09:45.867176,,15,Net 15,Invoice,Project-16,Services for NextGen Industries,,,0,active
+1,INV-01-00063,Global Solutions Ltd,DE,DKK,28579.14,2025-09-10T13:09:45.867176,2025-09-25T13:09:45.867176,2025-09-19T13:09:45.867176,15,Net 30,Invoice,Project-18,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00064,Smart Solutions,NL,CHF,45516.71,2025-10-19T13:09:45.867176,2025-11-18T13:09:45.867176,2025-11-18T13:09:45.867176,30,Net 45,Invoice,Project-10,Services for Smart Solutions,,,0,active
+1,INV-01-00065,Enterprise Systems,IT,NOK,4978.19,2025-10-12T13:09:45.867176,2025-10-27T13:09:45.867176,2025-11-09T13:09:45.867176,15,Net 60,Invoice,Project-1,Services for Enterprise Systems,,,0,active
+1,INV-01-00066,Acme Corporation,FR,GBP,35640.84,2025-09-08T13:09:45.867176,2025-10-23T13:09:45.867176,,45,Due on Receipt,Invoice,Project-8,Services for Acme Corporation,,,0,active
+1,INV-01-00067,Innovation Partners,UK,SEK,12015.66,2025-09-28T13:09:45.867176,2025-10-28T13:09:45.867176,,30,Net 60,Invoice,Project-3,Services for Innovation Partners,,,0,active
+1,INV-01-00068,Future Tech,UK,CHF,34745.22,2025-09-24T13:09:45.867176,2025-11-08T13:09:45.867176,,45,2/10 Net 30,Invoice,Project-18,Services for Future Tech,,,0,active
+1,INV-01-00069,StartupHub,ES,SEK,13268.03,2025-07-15T13:09:45.867176,2025-09-13T13:09:45.867176,2025-09-17T13:09:45.867176,60,2/10 Net 30,Invoice,Project-19,Services for StartupHub,,,0,active
+1,INV-01-00070,NextGen Industries,US,DKK,38057.17,2025-10-04T13:09:45.867176,2025-11-18T13:09:45.867176,,45,Net 15,Invoice,Project-6,Services for NextGen Industries,,,0,active
+1,INV-01-00071,Innovation Partners,ES,GBP,33836.54,2025-10-22T13:09:45.867176,2025-12-21T13:09:45.867176,2026-01-08T13:09:45.867176,60,Due on Receipt,Invoice,Project-16,Services for Innovation Partners,,,0,active
+1,INV-01-00072,Future Tech,UK,GBP,13367.54,2025-10-22T13:09:45.867176,2025-11-06T13:09:45.867176,,15,2/10 Net 30,Invoice,Project-1,Services for Future Tech,,,0,active
+1,INV-01-00073,Enterprise Systems,CH,GBP,31509.06,2025-08-31T13:09:45.867176,2025-09-15T13:09:45.867176,2025-09-19T13:09:45.867176,15,Net 30,Invoice,Project-7,Services for Enterprise Systems,,,0,active
+1,INV-01-00074,Acme Corporation,SE,SEK,40166.37,2025-08-15T13:09:45.867176,2025-10-14T13:09:45.867176,2025-10-29T13:09:45.867176,60,Net 30,Invoice,Project-18,Services for Acme Corporation,,,0,active
+1,INV-01-00075,Future Tech,UK,NOK,41775.02,2025-10-25T13:09:45.867176,2025-11-09T13:09:45.867176,2025-11-09T13:09:45.867176,15,2/10 Net 30,Invoice,Project-9,Services for Future Tech,,,0,active
+1,INV-01-00076,Enterprise Systems,AT,SEK,37568.33,2025-09-08T13:09:45.867176,2025-10-08T13:09:45.867176,2025-10-09T13:09:45.867176,30,Net 45,Invoice,Project-11,Services for Enterprise Systems,,,0,active
+1,INV-01-00077,Digital Dynamics,NO,GBP,42036.32,2025-10-23T13:09:45.867176,2025-11-07T13:09:45.867176,2025-11-15T13:09:45.867176,15,Net 60,Invoice,Project-15,Services for Digital Dynamics,,,0,active
+1,INV-01-00078,Enterprise Systems,NO,USD,29018.08,2025-09-18T13:09:45.867176,2025-11-17T13:09:45.867176,2025-11-16T13:09:45.867176,60,Net 30,Invoice,Project-11,Services for Enterprise Systems,,,0,active
+1,INV-01-00079,Innovation Partners,SE,DKK,41216.63,2025-10-21T13:09:45.867176,2025-12-20T13:09:45.867176,,60,Net 30,Invoice,Project-5,Services for Innovation Partners,,,0,active
+1,INV-01-00080,Future Tech,UK,SEK,45611.64,2025-10-29T13:09:45.867176,2025-11-13T13:09:45.867176,2025-11-22T13:09:45.867176,15,Due on Receipt,Invoice,Project-5,Services for Future Tech,,,0,active
+1,INV-01-00081,NextGen Industries,NO,CHF,32842.0,2025-08-12T13:09:45.867176,2025-09-26T13:09:45.867176,,45,2/10 Net 30,Invoice,Project-13,Services for NextGen Industries,,,0,active
+1,INV-01-00082,TechStart Inc,FR,NOK,34535.58,2025-10-31T13:09:45.867176,2025-12-30T13:09:45.867176,2026-01-07T13:09:45.867176,60,Net 30,Invoice,Project-14,Services for TechStart Inc,,,0,active
+1,INV-01-00083,Future Tech,DE,NOK,15673.84,2025-10-08T13:09:45.867176,2025-10-23T13:09:45.867176,,15,Net 30,Invoice,Project-10,Services for Future Tech,,,0,active
+1,INV-01-00084,NextGen Industries,SE,DKK,9822.79,2025-08-10T13:09:45.867176,2025-10-09T13:09:45.867176,2025-10-14T13:09:45.867176,60,Net 45,Invoice,Project-20,Services for NextGen Industries,,,0,active
+1,INV-01-00085,Future Tech,IT,NOK,1460.47,2025-09-22T13:09:45.867176,2025-10-22T13:09:45.867176,2025-10-30T13:09:45.867176,30,Due on Receipt,Invoice,Project-18,Services for Future Tech,,,0,active
+1,INV-01-00086,MegaCorp International,NL,NOK,13254.81,2025-08-23T13:09:45.867176,2025-10-07T13:09:45.867176,2025-10-28T13:09:45.867176,45,Net 45,Invoice,Project-16,Services for MegaCorp International,,,0,active
+1,INV-01-00087,MegaCorp International,NL,GBP,1396.8,2025-08-24T13:09:45.867176,2025-10-08T13:09:45.867176,2025-10-23T13:09:45.867176,45,Net 30,Invoice,Project-20,Services for MegaCorp International,,,0,active
+1,INV-01-00088,Enterprise Systems,AT,DKK,18263.73,2025-11-02T13:09:45.867176,2025-12-17T13:09:45.867176,,45,Due on Receipt,Invoice,Project-5,Services for Enterprise Systems,,,0,active
+1,INV-01-00089,Digital Dynamics,BE,EUR,29399.12,2025-09-30T13:09:45.867176,2025-10-15T13:09:45.867176,,15,Net 15,Invoice,Project-11,Services for Digital Dynamics,,,0,active
+1,INV-01-00090,Smart Solutions,CH,GBP,41693.16,2025-07-26T13:09:45.867176,2025-09-09T13:09:45.867176,2025-09-15T13:09:45.867176,45,Net 45,Invoice,Project-10,Services for Smart Solutions,,,0,active
+1,INV-01-00091,Enterprise Systems,SE,NOK,34045.91,2025-07-24T13:09:45.867176,2025-09-22T13:09:45.867176,2025-10-04T13:09:45.867176,60,2/10 Net 30,Invoice,Project-12,Services for Enterprise Systems,,,0,active
+1,INV-01-00092,Future Tech,ES,NOK,37701.57,2025-08-12T13:09:45.867176,2025-08-27T13:09:45.867176,2025-09-01T13:09:45.867176,15,Due on Receipt,Invoice,Project-12,Services for Future Tech,,,0,active
+1,INV-01-00093,TechStart Inc,,DKK,23749.11,2025-07-13T13:09:45.867176,2025-08-27T13:09:45.867176,2025-09-09T13:09:45.867176,45,Net 30,Invoice,Project-5,Services for TechStart Inc,,,0,active
+1,INV-01-00094,TechStart Inc,FR,SEK,7647.54,2025-09-11T13:09:45.867176,2025-09-26T13:09:45.867176,2025-09-29T13:09:45.867176,15,Due on Receipt,Invoice,Project-18,Services for TechStart Inc,,,0,active
+1,INV-01-00095,MegaCorp International,UK,DKK,24978.0,2025-07-29T13:09:45.867176,2025-09-27T13:09:45.867176,,60,Net 30,Invoice,Project-12,Services for MegaCorp International,,,0,active
+1,INV-01-00096,Smart Solutions,SE,GBP,3966.95,2025-08-09T13:09:45.867176,2025-09-23T13:09:45.867176,2025-10-12T13:09:45.867176,45,Net 45,Invoice,Project-3,Services for Smart Solutions,,,0,active
+1,INV-01-00097,Acme Corporation,ES,USD,49452.22,2025-09-24T13:09:45.867176,2025-10-09T13:09:45.867176,2025-10-24T13:09:45.867176,15,2/10 Net 30,Invoice,Project-7,Services for Acme Corporation,,,0,active
+1,INV-01-00098,Global Solutions Ltd,AT,EUR,14586.47,2025-08-08T13:09:45.867176,2025-09-22T13:09:45.867176,,45,2/10 Net 30,Invoice,Project-9,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00099,Enterprise Systems,AT,GBP,1773.27,2025-10-28T13:09:45.867176,2025-11-12T13:09:45.867176,2025-11-25T13:09:45.867176,15,Net 45,Invoice,Project-17,Services for Enterprise Systems,,,0,active
+1,INV-01-00100,Smart Solutions,AT,EUR,23148.27,2025-09-05T13:09:45.867176,2025-10-20T13:09:45.867176,2025-11-02T13:09:45.867176,45,Due on Receipt,Invoice,Project-17,Services for Smart Solutions,,,0,active
+1,INV-01-00101,Innovation Partners,SE,EUR,25023.17,2025-07-13T13:09:45.867176,2025-07-28T13:09:45.867176,2025-08-23T13:09:45.867176,15,Net 30,Invoice,Project-11,Services for Innovation Partners,,,0,active
+1,INV-01-00102,Innovation Partners,AT,SEK,15449.99,2025-08-14T13:09:45.867176,2025-09-28T13:09:45.867176,2025-10-04T13:09:45.867176,45,Due on Receipt,Invoice,Project-4,Services for Innovation Partners,,,0,active
+1,INV-01-00103,Innovation Partners,BE,USD,21276.86,2025-10-16T13:09:45.867176,2025-11-15T13:09:45.867176,,30,Due on Receipt,Invoice,Project-4,Services for Innovation Partners,,,0,active
+1,INV-01-00104,Future Tech,UK,EUR,41756.82,2025-08-11T13:09:45.867176,2025-09-25T13:09:45.867176,2025-10-16T13:09:45.867176,45,Due on Receipt,Invoice,Project-12,Services for Future Tech,,,0,active
+1,INV-01-00105,MegaCorp International,UK,CHF,18326.31,2025-09-23T13:09:45.867176,2025-11-07T13:09:45.867176,2025-11-09T13:09:45.867176,45,Due on Receipt,Invoice,Project-2,Services for MegaCorp International,,,0,active
+1,INV-01-00106,MegaCorp International,BE,USD,42516.47,2025-08-24T13:09:45.867176,2025-09-08T13:09:45.867176,2025-09-08T13:09:45.867176,15,Net 30,Invoice,Project-9,Services for MegaCorp International,,,0,active
+1,INV-01-00107,NextGen Industries,SE,DKK,34980.09,2025-10-26T13:09:45.867176,2025-11-10T13:09:45.867176,,15,Net 15,Invoice,Project-11,Services for NextGen Industries,,,0,active
+1,INV-01-00108,TechStart Inc,DE,NOK,32025.43,2025-07-28T13:09:45.867176,2025-09-26T13:09:45.867176,2025-09-29T13:09:45.867176,60,Net 60,Invoice,Project-13,Services for TechStart Inc,,,0,active
+1,INV-01-00109,NextGen Industries,AT,EUR,44283.77,2025-08-26T13:09:45.867176,2025-10-10T13:09:45.867176,2025-10-13T13:09:45.867176,45,Net 30,Invoice,Project-3,Services for NextGen Industries,,,0,active
+1,INV-01-00110,Innovation Partners,IT,USD,37992.21,2025-09-10T13:09:45.867176,2025-11-09T13:09:45.867176,,60,Net 15,Invoice,Project-19,Services for Innovation Partners,,,0,active
+1,INV-01-00111,Innovation Partners,AT,EUR,1376.67,2025-07-15T13:09:45.867176,2025-08-14T13:09:45.867176,,30,Net 60,Invoice,Project-9,Services for Innovation Partners,,,0,active
+1,INV-01-00112,Global Solutions Ltd,DE,CHF,27096.54,2025-09-11T13:09:45.867176,2025-11-10T13:09:45.867176,2025-10-31T13:09:45.867176,60,Due on Receipt,Invoice,Project-12,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00113,Acme Corporation,BE,EUR,43243.39,2025-07-15T13:09:45.867176,2025-09-13T13:09:45.867176,,60,Due on Receipt,Invoice,Project-14,Services for Acme Corporation,,,0,active
+1,INV-01-00114,StartupHub,ES,EUR,22398.88,2025-08-20T13:09:45.867176,2025-09-19T13:09:45.867176,2025-09-30T13:09:45.867176,30,Net 45,Invoice,Project-17,Services for StartupHub,,,0,active
+1,INV-01-00115,Enterprise Systems,ES,DKK,9238.5,2025-10-13T13:09:45.867176,2025-11-27T13:09:45.867176,,45,2/10 Net 30,Invoice,Project-7,Services for Enterprise Systems,,,0,active
+1,INV-01-00116,Enterprise Systems,UK,USD,13542.44,2025-10-11T13:09:45.867176,2025-11-10T13:09:45.867176,2025-11-04T13:09:45.867176,30,Due on Receipt,Invoice,Project-3,Services for Enterprise Systems,,,0,active
+1,INV-01-00117,NextGen Industries,AT,CHF,34375.54,2025-09-11T13:09:45.867176,2025-11-10T13:09:45.867176,,60,2/10 Net 30,Invoice,Project-11,Services for NextGen Industries,,,0,active
+1,INV-01-00118,Digital Dynamics,IT,SEK,3752.43,2025-07-29T13:09:45.867176,2025-09-27T13:09:45.867176,2025-10-13T13:09:45.867176,60,Net 45,Invoice,Project-2,Services for Digital Dynamics,,,0,active
+1,INV-01-00119,NextGen Industries,AT,SEK,19839.64,2025-07-19T13:09:45.867176,2025-08-03T13:09:45.867176,,15,Due on Receipt,Invoice,Project-2,Services for NextGen Industries,,,0,active
+1,INV-01-00120,Cloud Services Co,AT,CHF,25567.0,2025-10-01T13:09:45.867176,2025-10-31T13:09:45.867176,,30,Net 15,Invoice,Project-3,Services for Cloud Services Co,,,0,active
+1,INV-01-00121,Future Tech,CH,SEK,30880.46,2025-08-10T13:09:45.867176,2025-10-09T13:09:45.867176,2025-10-20T13:09:45.867176,60,Net 45,Invoice,Project-14,Services for Future Tech,,,0,active
+1,INV-01-00122,TechStart Inc,ES,EUR,28340.2,2025-07-16T13:09:45.867176,2025-08-30T13:09:45.867176,,45,Due on Receipt,Invoice,Project-20,Services for TechStart Inc,,,0,active
+1,INV-01-00123,MegaCorp International,NO,NOK,20205.94,2025-09-22T13:09:45.867176,2025-10-22T13:09:45.867176,2025-11-05T13:09:45.867176,30,Net 15,Invoice,Project-18,Services for MegaCorp International,,,0,active
+1,INV-01-00124,MegaCorp International,NO,DKK,47408.32,2025-10-22T13:09:45.867176,2025-11-21T13:09:45.867176,,30,Net 30,Invoice,Project-14,Services for MegaCorp International,,,0,active
+1,INV-01-00125,Enterprise Systems,ES,DKK,24827.28,2025-08-18T13:09:45.867176,2025-09-17T13:09:45.867176,2025-09-19T13:09:45.867176,30,Net 30,Invoice,Project-10,Services for Enterprise Systems,,,0,active
+1,INV-01-00126,NextGen Industries,DE,SEK,19459.27,2025-10-16T13:09:45.867176,2025-10-31T13:09:45.867176,2025-10-28T13:09:45.867176,15,2/10 Net 30,Invoice,Project-6,Services for NextGen Industries,,,0,active
+1,INV-01-00127,Future Tech,AT,GBP,37867.17,2025-08-25T13:09:45.867176,2025-09-24T13:09:45.867176,2025-09-14T13:09:45.867176,30,Net 60,Invoice,Project-10,Services for Future Tech,,,0,active
+1,INV-01-00128,Cloud Services Co,SE,SEK,49237.55,2025-11-02T13:09:45.867176,2025-12-02T13:09:45.867176,,30,Net 45,Invoice,Project-17,Services for Cloud Services Co,,,0,active
+1,INV-01-00129,NextGen Industries,DE,DKK,13250.16,2025-10-22T13:09:45.867176,2025-11-21T13:09:45.867176,,30,2/10 Net 30,Invoice,Project-4,Services for NextGen Industries,,,0,active
+1,INV-01-00130,Future Tech,CH,USD,41721.29,2025-07-25T13:09:45.867176,2025-09-08T13:09:45.867176,2025-09-20T13:09:45.867176,45,Net 45,Invoice,Project-12,Services for Future Tech,,,0,active
+1,INV-01-00131,Enterprise Systems,NL,EUR,19370.72,2025-08-29T13:09:45.867176,2025-10-13T13:09:45.867176,2025-10-22T13:09:45.867176,45,Due on Receipt,Invoice,Project-11,Services for Enterprise Systems,,,0,active
+1,INV-01-00056,StartupHub,BE,CHF,31152.06,2025-08-15T13:09:45.867176,2025-10-14T13:09:45.867176,2025-10-19T13:09:45.867176,60,Net 60,Invoice,Project-18,Services for StartupHub,,,0,active
+1,INV-01-00133,Digital Dynamics,FR,GBP,6970.57,2025-09-02T13:09:45.867176,2025-09-17T13:09:45.867176,2025-09-18T13:09:45.867176,15,2/10 Net 30,Invoice,Project-15,Services for Digital Dynamics,,,0,active
+1,INV-01-00134,MegaCorp International,CH,SEK,12854.97,2025-09-11T13:09:45.867176,2025-09-26T13:09:45.867176,,15,2/10 Net 30,Invoice,Project-12,Services for MegaCorp International,,,0,active
+1,INV-01-00135,Smart Solutions,CH,SEK,39534.2,2025-10-03T13:09:45.867176,2025-10-18T13:09:45.867176,2025-10-16T13:09:45.867176,15,Net 45,Invoice,Project-2,Services for Smart Solutions,,,0,active
+1,INV-01-00136,Cloud Services Co,UK,GBP,12815.17,2025-08-11T13:09:45.867176,2025-08-26T13:09:45.867176,,15,2/10 Net 30,Invoice,Project-11,Services for Cloud Services Co,,,0,active
+1,INV-01-00137,MegaCorp International,,NOK,24448.03,2025-08-22T13:09:45.867176,2025-09-21T13:09:45.867176,2025-09-26T13:09:45.867176,30,Due on Receipt,Invoice,Project-15,Services for MegaCorp International,,,0,active
+1,INV-01-00138,Innovation Partners,CH,CHF,13412.37,2025-08-04T13:09:45.867176,2025-08-19T13:09:45.867176,2025-08-22T13:09:45.867176,15,Net 15,Invoice,Project-2,Services for Innovation Partners,,,0,active
+1,INV-01-00139,Innovation Partners,NL,NOK,22547.1,2025-07-25T13:09:45.867176,2025-09-08T13:09:45.867176,2025-09-22T13:09:45.867176,45,Net 60,Invoice,Project-16,Services for Innovation Partners,,,0,active
+1,INV-01-00140,TechStart Inc,NL,SEK,49759.81,2025-10-20T13:09:45.867176,2025-12-04T13:09:45.867176,2025-12-16T13:09:45.867176,45,Net 30,Invoice,Project-3,Services for TechStart Inc,,,0,active
+1,INV-01-00141,Global Solutions Ltd,NO,CHF,18225.8,2025-09-05T13:09:45.867176,2025-11-04T13:09:45.867176,2025-10-27T13:09:45.867176,60,Net 15,Invoice,Project-20,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00142,Cloud Services Co,,DKK,37745.0,2025-10-19T13:09:45.867176,2025-11-03T13:09:45.867176,2025-11-22T13:09:45.867176,15,2/10 Net 30,Invoice,Project-15,Services for Cloud Services Co,,,0,active
+1,INV-01-00143,Cloud Services Co,NL,SEK,2586.88,2025-09-30T13:09:45.867176,2025-11-14T13:09:45.867176,2025-11-27T13:09:45.867176,45,Net 15,Invoice,Project-12,Services for Cloud Services Co,,,0,active
+1,INV-01-00144,Enterprise Systems,UK,EUR,37048.07,2025-07-27T13:09:45.867176,2025-09-10T13:09:45.867176,2025-09-06T13:09:45.867176,45,2/10 Net 30,Invoice,Project-4,Services for Enterprise Systems,,,0,active
+1,INV-01-00145,NextGen Industries,IT,NOK,45907.47,2025-09-05T13:09:45.867176,2025-10-05T13:09:45.867176,2025-10-20T13:09:45.867176,30,Net 30,Invoice,Project-15,Services for NextGen Industries,,,0,active
+1,INV-01-00146,MegaCorp International,ES,NOK,4182.01,2025-07-21T13:09:45.867176,2025-09-04T13:09:45.867176,,45,Net 60,Invoice,Project-6,Services for MegaCorp International,,,0,active
+1,INV-01-00147,Future Tech,US,GBP,28147.05,2025-07-25T13:09:45.867176,2025-08-24T13:09:45.867176,2025-09-01T13:09:45.867176,30,2/10 Net 30,Invoice,Project-5,Services for Future Tech,,,0,active
+1,INV-01-00148,StartupHub,NO,CHF,26759.09,2025-08-18T13:09:45.867176,2025-10-17T13:09:45.867176,2025-10-17T13:09:45.867176,60,Net 30,Invoice,Project-5,Services for StartupHub,,,0,active
+1,INV-01-00149,Smart Solutions,SE,SEK,9916.19,2025-09-05T13:09:45.867176,2025-11-04T13:09:45.867176,2025-11-07T13:09:45.867176,60,Net 30,Invoice,Project-4,Services for Smart Solutions,,,0,active
+1,INV-01-00150,StartupHub,FR,GBP,47426.67,2025-07-30T13:09:45.867176,2025-09-13T13:09:45.867176,2025-09-12T13:09:45.867176,45,Net 30,Invoice,Project-9,Services for StartupHub,,,0,active
+1,INV-01-00151,MegaCorp International,IT,SEK,27140.42,2025-08-14T13:09:45.867176,2025-09-13T13:09:45.867176,,30,2/10 Net 30,Invoice,Project-5,Services for MegaCorp International,,,0,active
+1,INV-01-00152,Acme Corporation,UK,EUR,47478.8,2025-11-02T13:09:45.867176,2025-12-17T13:09:45.867176,2025-12-31T13:09:45.867176,45,Net 60,Invoice,Project-19,Services for Acme Corporation,,,0,active
+1,INV-01-00153,MegaCorp International,IT,CHF,12999.02,2025-09-11T13:09:45.867176,2025-10-26T13:09:45.867176,2025-10-23T13:09:45.867176,45,Net 45,Invoice,Project-3,Services for MegaCorp International,,,0,active
+1,INV-01-00154,Global Solutions Ltd,ES,DKK,36199.78,2025-09-01T13:09:45.867176,2025-10-31T13:09:45.867176,2025-10-30T13:09:45.867176,60,Net 45,Invoice,Project-5,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00155,Enterprise Systems,BE,EUR,14106.11,2025-07-23T13:09:45.867176,2025-09-06T13:09:45.867176,2025-09-15T13:09:45.867176,45,Net 15,Invoice,Project-13,Services for Enterprise Systems,,,0,active
+1,INV-01-00156,StartupHub,ES,USD,38392.95,2025-10-28T13:09:45.867176,2025-11-27T13:09:45.867176,2025-12-13T13:09:45.867176,30,Net 45,Invoice,Project-10,Services for StartupHub,,,0,active
+1,INV-01-00157,Enterprise Systems,FR,SEK,18291.86,2025-08-29T13:09:45.867176,2025-10-28T13:09:45.867176,2025-10-18T13:09:45.867176,60,Due on Receipt,Invoice,Project-16,Services for Enterprise Systems,,,0,active
+1,INV-01-00158,Cloud Services Co,NL,GBP,3216.88,2025-07-23T13:09:45.867176,2025-09-21T13:09:45.867176,2025-10-03T13:09:45.867176,60,Net 15,Invoice,Project-18,Services for Cloud Services Co,,,0,active
+1,INV-01-00159,NextGen Industries,SE,SEK,6821.74,2025-09-05T13:09:45.867176,2025-10-20T13:09:45.867176,2025-11-01T13:09:45.867176,45,Net 15,Invoice,Project-18,Services for NextGen Industries,,,0,active
+1,INV-01-00160,Smart Solutions,US,EUR,2906.78,2025-08-04T13:09:45.867176,2025-10-03T13:09:45.867176,,60,2/10 Net 30,Invoice,Project-15,Services for Smart Solutions,,,0,active
+1,INV-01-00161,NextGen Industries,ES,USD,20254.77,2025-07-27T13:09:45.867176,2025-09-10T13:09:45.867176,,45,2/10 Net 30,Invoice,Project-11,Services for NextGen Industries,,,0,active
+1,INV-01-00162,Cloud Services Co,SE,EUR,49015.0,2025-09-10T13:09:45.867176,2025-10-25T13:09:45.867176,2025-10-30T13:09:45.867176,45,Due on Receipt,Invoice,Project-1,Services for Cloud Services Co,,,0,active
+1,INV-01-00163,StartupHub,US,SEK,24541.99,2025-10-01T13:09:45.867176,2025-10-31T13:09:45.867176,2025-11-07T13:09:45.867176,30,Net 45,Invoice,Project-5,Services for StartupHub,,,0,active
+1,INV-01-00164,Innovation Partners,DE,CHF,34834.51,2025-09-21T13:09:45.867176,2025-10-06T13:09:45.867176,2025-10-16T13:09:45.867176,15,Net 45,Invoice,Project-2,Services for Innovation Partners,,,0,active
+1,INV-01-00165,MegaCorp International,BE,SEK,19464.41,2025-09-19T13:09:45.867176,2025-11-03T13:09:45.867176,2025-11-20T13:09:45.867176,45,2/10 Net 30,Invoice,Project-11,Services for MegaCorp International,,,0,active
+1,INV-01-00166,NextGen Industries,BE,USD,47909.53,2025-10-29T13:09:45.867176,2025-12-13T13:09:45.867176,,45,Net 15,Invoice,Project-10,Services for NextGen Industries,,,0,active
+1,INV-01-00167,Future Tech,ES,SEK,46751.32,2025-09-10T13:09:45.867176,2025-10-25T13:09:45.867176,,45,Net 30,Invoice,Project-19,Services for Future Tech,,,0,active
+1,INV-01-00168,Digital Dynamics,US,GBP,47810.37,2025-08-29T13:09:45.867176,2025-10-13T13:09:45.867176,2025-11-06T13:09:45.867176,45,Due on Receipt,Invoice,Project-9,Services for Digital Dynamics,,,0,active
+1,INV-01-00169,Smart Solutions,NO,GBP,7726.37,2025-10-23T13:09:45.867176,2025-12-07T13:09:45.867176,2025-12-08T13:09:45.867176,45,Net 60,Invoice,Project-2,Services for Smart Solutions,,,0,active
+1,INV-01-00170,StartupHub,BE,EUR,34378.41,2025-09-29T13:09:45.867176,2025-10-29T13:09:45.867176,2025-11-14T13:09:45.867176,30,Net 60,Invoice,Project-14,Services for StartupHub,,,0,active
+1,INV-01-00171,MegaCorp International,FR,DKK,48231.79,2025-09-08T13:09:45.867176,2025-11-07T13:09:45.867176,,60,Net 30,Invoice,Project-19,Services for MegaCorp International,,,0,active
+1,INV-01-00172,Global Solutions Ltd,NL,DKK,9613.65,2025-10-26T13:09:45.867176,2025-11-10T13:09:45.867176,,15,Net 45,Invoice,Project-16,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00173,Acme Corporation,US,GBP,28830.13,2025-10-29T13:09:45.867176,2025-12-13T13:09:45.867176,,45,Net 15,Invoice,Project-15,Services for Acme Corporation,,,0,active
+1,INV-01-00174,Smart Solutions,BE,GBP,10447.76,2025-09-11T13:09:45.867176,2025-10-11T13:09:45.867176,2025-10-21T13:09:45.867176,30,Net 45,Invoice,Project-9,Services for Smart Solutions,,,0,active
+1,INV-01-00175,Global Solutions Ltd,AT,DKK,32297.56,2025-08-22T13:09:45.867176,2025-10-06T13:09:45.867176,2025-09-28T13:09:45.867176,45,Net 15,Invoice,Project-3,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00176,Cloud Services Co,FR,EUR,13778.48,2025-07-27T13:09:45.867176,2025-09-25T13:09:45.867176,2025-09-25T13:09:45.867176,60,Net 15,Invoice,Project-10,Services for Cloud Services Co,,,0,active
+1,INV-01-00177,TechStart Inc,BE,GBP,8826.12,2025-08-12T13:09:45.867176,2025-09-26T13:09:45.867176,2025-10-01T13:09:45.867176,45,Due on Receipt,Invoice,Project-10,Services for TechStart Inc,,,0,active
+1,INV-01-00178,Cloud Services Co,AT,USD,11737.3,2025-11-07T13:09:45.867176,2025-12-22T13:09:45.867176,2025-12-25T13:09:45.867176,45,Due on Receipt,Invoice,Project-20,Services for Cloud Services Co,,,0,active
+1,INV-01-00179,Smart Solutions,SE,DKK,11702.17,2025-11-03T13:09:45.867176,2026-01-02T13:09:45.867176,,60,Net 30,Invoice,Project-17,Services for Smart Solutions,,,0,active
+1,INV-01-00180,Acme Corporation,CH,SEK,10905.68,2025-07-19T13:09:45.867176,2025-08-03T13:09:45.867176,,15,2/10 Net 30,Invoice,Project-15,Services for Acme Corporation,,,0,active
+1,INV-01-00181,Acme Corporation,BE,USD,26149.14,2025-09-22T13:09:45.867176,2025-11-21T13:09:45.867176,2025-12-08T13:09:45.867176,60,Net 45,Invoice,Project-10,Services for Acme Corporation,,,0,active
+1,INV-01-00182,StartupHub,FR,SEK,4578.45,2025-10-22T13:09:45.867176,2025-11-06T13:09:45.867176,2025-11-19T13:09:45.867176,15,2/10 Net 30,Invoice,Project-2,Services for StartupHub,,,0,active
+1,INV-01-00183,Global Solutions Ltd,SE,NOK,32648.16,2025-11-06T13:09:45.867176,2026-01-05T13:09:45.867176,2026-01-22T13:09:45.867176,60,Net 45,Invoice,Project-15,Services for Global Solutions Ltd,,,0,active
+1,INV-01-00184,MegaCorp International,SE,DKK,27425.71,2025-08-27T13:09:45.867176,2025-09-11T13:09:45.867176,,15,Net 60,Invoice,Project-18,Services for MegaCorp International,,,0,active
+1,INV-01-00185,Acme Corporation,IT,CHF,34001.49,2025-08-07T13:09:45.867176,2025-08-22T13:09:45.867176,2025-08-31T13:09:45.867176,15,Net 60,Invoice,Project-8,Services for Acme Corporation,,,0,active
+1,INV-01-00186,NextGen Industries,US,USD,11098.0,2025-08-03T13:09:45.867176,2025-08-18T13:09:45.867176,2025-09-08T13:09:45.867176,15,2/10 Net 30,Invoice,Project-2,Services for NextGen Industries,,,0,active
+1,INV-01-00187,Smart Solutions,FR,DKK,43322.78,2025-09-04T13:09:45.867176,2025-10-04T13:09:45.867176,2025-10-13T13:09:45.867176,30,Net 15,Invoice,Project-8,Services for Smart Solutions,,,0,active
+1,INV-01-00188,Enterprise Systems,IT,USD,49299.08,2025-08-19T13:09:45.867176,2025-10-03T13:09:45.867176,,45,Net 15,Invoice,Project-2,Services for Enterprise Systems,,,0,active
+1,INV-01-00189,Future Tech,US,GBP,47137.73,2025-10-12T13:09:45.867176,2025-11-11T13:09:45.867176,2025-11-11T13:09:45.867176,30,Net 15,Invoice,Project-14,Services for Future Tech,,,0,active
+1,INV-01-00190,Enterprise Systems,FR,GBP,43019.52,2025-08-02T13:09:45.867176,2025-10-01T13:09:45.867176,2025-10-01T13:09:45.867176,60,Net 30,Invoice,Project-18,Services for Enterprise Systems,,,0,active
+1,INV-01-00191,Cloud Services Co,SE,EUR,46189.08,2025-09-15T13:09:45.867176,2025-10-15T13:09:45.867176,2025-10-16T13:09:45.867176,30,Due on Receipt,Invoice,Project-7,Services for Cloud Services Co,,,0,active
+1,INV-01-00192,TechStart Inc,FR,DKK,38323.12,2025-09-25T13:09:45.867176,2025-10-10T13:09:45.867176,2025-10-21T13:09:45.867176,15,Net 45,Invoice,Project-7,Services for TechStart Inc,,,0,active
+1,INV-01-00193,StartupHub,UK,NOK,49979.03,2025-11-03T13:09:45.867176,2025-11-18T13:09:45.867176,2025-11-26T13:09:45.867176,15,2/10 Net 30,Invoice,Project-7,Services for StartupHub,,,0,active
+1,INV-01-00194,Innovation Partners,BE,SEK,32787.35,2025-08-20T13:09:45.867176,2025-10-04T13:09:45.867176,2025-10-17T13:09:45.867176,45,Net 45,Invoice,Project-15,Services for Innovation Partners,,,0,active
+1,INV-01-00195,Enterprise Systems,ES,GBP,21282.58,2025-09-08T13:09:45.867176,2025-10-23T13:09:45.867176,,45,Net 60,Invoice,Project-1,Services for Enterprise Systems,,,0,active
+1,INV-01-00196,Digital Dynamics,DE,USD,17163.4,2025-09-22T13:09:45.867176,2025-11-21T13:09:45.867176,,60,Net 45,Invoice,Project-18,Services for Digital Dynamics,,,0,active
+1,INV-01-00197,StartupHub,SE,NOK,25039.18,2025-08-11T13:09:45.867176,2025-10-10T13:09:45.867176,,60,Net 60,Invoice,Project-5,Services for StartupHub,,,0,active
+1,INV-01-00198,TechStart Inc,SE,EUR,38452.6,2025-11-04T13:09:45.867176,2025-11-19T13:09:45.867176,2025-11-09T13:09:45.867176,15,Net 60,Invoice,Project-3,Services for TechStart Inc,,,0,active
+1,INV-01-00199,Cloud Services Co,US,SEK,32248.7,2025-09-12T13:09:45.867176,2025-11-11T13:09:45.867176,2025-11-15T13:09:45.867176,60,Due on Receipt,Invoice,Project-16,,,,0,active
+1,INV-01-00200,Digital Dynamics,US,SEK,40844.7,2025-07-11T13:09:45.867176,2025-07-26T13:09:45.867176,2025-07-26T13:09:45.867176,15,Net 60,Invoice,Project-4,Services for Digital Dynamics,,,0,active
+1,CN-INV-01-00063,Global Solutions Ltd,DE,DKK,-5612.59,2025-10-04T13:09:45.867176,,,0,Net 30,Credit Note,Project-18,Credit for INV-01-00063,credit_note,,0,active
+1,CN-INV-01-00101,Innovation Partners,SE,EUR,-10662.02,2025-07-26T13:09:45.867176,,,0,Net 30,Credit Note,Project-11,Credit for INV-01-00101,credit_note,,0,active
+1,CN-INV-01-00155,Enterprise Systems,BE,EUR,-1856.47,2025-08-09T13:09:45.867176,,,0,Net 15,Credit Note,Project-13,Credit for INV-01-00155,credit_note,,0,active
+1,CN-INV-01-00178,Cloud Services Co,AT,USD,-3826.37,2025-12-04T13:09:45.867176,,,0,Due on Receipt,Credit Note,Project-20,Credit for INV-01-00178,credit_note,,0,active
+1,CN-INV-01-00092,Future Tech,ES,NOK,-8293.96,2025-08-19T13:09:45.867176,,,0,Due on Receipt,Credit Note,Project-12,Credit for INV-01-00092,credit_note,,0,active
+1,CN-INV-01-00013,TechStart Inc,CH,DKK,-984.1,2025-10-07T13:09:45.867176,,,0,Net 60,Credit Note,Project-9,Credit for INV-01-00013,credit_note,,0,active
+1,CN-INV-01-00149,Smart Solutions,SE,SEK,-3183.9,2025-09-11T13:09:45.867176,,,0,Net 30,Credit Note,Project-4,Credit for INV-01-00149,credit_note,,0,active
+1,CN-INV-01-00003,TechStart Inc,NL,EUR,-7085.35,2025-08-05T13:09:45.867176,,,0,Net 30,Credit Note,Project-15,Credit for INV-01-00003,credit_note,,0,active
+1,CN-INV-01-00192,TechStart Inc,FR,DKK,-16790.58,2025-10-20T13:09:45.867176,,,0,Net 45,Credit Note,Project-7,Credit for INV-01-00192,credit_note,,0,active
+1,CN-INV-01-00135,Smart Solutions,CH,SEK,-12901.7,2025-10-11T13:09:45.867176,,,0,Net 45,Credit Note,Project-2,Credit for INV-01-00135,credit_note,,0,active
+1,RE-INV-01-00136,Cloud Services Co,UK,GBP,14963.77,2025-08-15T13:09:45.867176,2025-08-30T13:09:45.867176,,15,2/10 Net 30,Rebill,Project-11,Rebill of INV-01-00136,rebill,,0,active
+1,RE-INV-01-00178,Cloud Services Co,AT,USD,13556.84,2025-11-15T13:09:45.867176,2025-12-27T13:09:45.867176,,45,Due on Receipt,Rebill,Project-20,Rebill of INV-01-00178,rebill,,0,active
+1,RE-INV-01-00012,Smart Solutions,CH,EUR,35497.28,2025-10-20T13:09:45.867176,2025-11-23T13:09:45.867176,,30,Net 15,Rebill,Project-10,Rebill of INV-01-00012,rebill,,0,active
+1,RE-INV-01-00145,NextGen Industries,IT,NOK,48810.83,2025-09-08T13:09:45.867176,2025-10-11T13:09:45.867176,,30,Net 30,Rebill,Project-15,Rebill of INV-01-00145,rebill,,0,active
+1,RE-INV-01-00005,TechStart Inc,NL,GBP,27502.69,2025-07-30T13:09:45.867176,2025-08-22T13:09:45.867176,,30,Net 15,Rebill,Project-7,Rebill of INV-01-00005,rebill,,0,active
+1,RE-INV-01-00193,StartupHub,UK,NOK,56390.15,2025-11-10T13:09:45.867176,2025-11-20T13:09:45.867176,,15,2/10 Net 30,Rebill,Project-7,Rebill of INV-01-00193,rebill,,0,active
+1,PART-INV-01-00110,Innovation Partners,IT,USD,13866.4,2025-09-10T13:09:45.867176,2025-11-09T13:09:45.867176,2025-11-16T13:09:45.867176,60,Net 15,Partial Payment,Project-19,Partial payment for INV-01-00110,partial,,0,active
+1,PART-INV-01-00134,MegaCorp International,CH,SEK,7337.8,2025-09-11T13:09:45.867176,2025-09-26T13:09:45.867176,2025-10-13T13:09:45.867176,15,2/10 Net 30,Partial Payment,Project-12,Partial payment for INV-01-00134,partial,,0,active
+1,PART-INV-01-00117,NextGen Industries,AT,CHF,15590.63,2025-09-11T13:09:45.867176,2025-11-10T13:09:45.867176,2025-12-03T13:09:45.867176,60,2/10 Net 30,Partial Payment,Project-11,Partial payment for INV-01-00117,partial,,0,active
+1,PART-INV-01-00046,Acme Corporation,ES,GBP,23366.45,2025-08-27T13:09:45.867176,2025-10-26T13:09:45.867176,2025-11-17T13:09:45.867176,60,Net 45,Partial Payment,Project-18,Partial payment for INV-01-00046,partial,,0,active
+1,PART-INV-01-00030,Cloud Services Co,FR,NOK,6617.67,2025-10-19T13:09:45.867176,2025-11-03T13:09:45.867176,2025-11-14T13:09:45.867176,15,Net 45,Partial Payment,Project-20,Partial payment for INV-01-00030,partial,,0,active
+1,PART-INV-01-00023,NextGen Industries,UK,CHF,11261.1,2025-08-10T13:09:45.867176,2025-08-25T13:09:45.867176,2025-09-01T13:09:45.867176,15,Net 15,Partial Payment,Project-7,Partial payment for INV-01-00023,partial,,0,active
+1,PART-INV-01-00028,TechStart Inc,SE,CHF,18164.07,2025-10-26T13:09:45.867176,2025-11-10T13:09:45.867176,2025-12-04T13:09:45.867176,15,Net 60,Partial Payment,Project-9,Partial payment for INV-01-00028,partial,,0,active
+1,PART-INV-01-00136,Cloud Services Co,UK,GBP,8811.3,2025-08-11T13:09:45.867176,2025-08-26T13:09:45.867176,2025-09-05T13:09:45.867176,15,2/10 Net 30,Partial Payment,Project-11,Partial payment for INV-01-00136,partial,,0,active
+1,PART-INV-01-00009,TechStart Inc,US,DKK,3528.3,2025-09-13T13:09:45.867176,2025-11-12T13:09:45.867176,2025-12-07T13:09:45.867176,60,Net 45,Partial Payment,Project-20,Partial payment for INV-01-00009,partial,,0,active
+1,PART-INV-01-00171,MegaCorp International,FR,DKK,23934.61,2025-09-08T13:09:45.867176,2025-11-07T13:09:45.867176,2025-11-18T13:09:45.867176,60,Net 30,Partial Payment,Project-19,Partial payment for INV-01-00171,partial,,0,active
+1,PART-INV-01-00129,NextGen Industries,DE,DKK,6263.87,2025-10-22T13:09:45.867176,2025-11-21T13:09:45.867176,2025-12-12T13:09:45.867176,30,2/10 Net 30,Partial Payment,Project-4,Partial payment for INV-01-00129,partial,,0,active
+1,PART-INV-01-00129,NextGen Industries,DE,DKK,4429.23,2025-10-22T13:09:45.867176,2025-11-21T13:09:45.867176,2025-12-10T13:09:45.867176,30,2/10 Net 30,Partial Payment,Project-4,Partial payment for INV-01-00129,partial,,0,active
+1,PART-INV-01-00107,NextGen Industries,SE,DKK,21660.44,2025-10-26T13:09:45.867176,2025-11-10T13:09:45.867176,2025-12-02T13:09:45.867176,15,Net 15,Partial Payment,Project-11,Partial payment for INV-01-00107,partial,,0,active
+1,PART-INV-01-00028,TechStart Inc,SE,CHF,13857.78,2025-10-26T13:09:45.867176,2025-11-10T13:09:45.867176,2025-11-14T13:09:45.867176,15,Net 60,Partial Payment,Project-9,Partial payment for INV-01-00028,partial,,0,active
+1,PART-INV-01-00129,NextGen Industries,DE,DKK,7746.98,2025-10-22T13:09:45.867176,2025-11-21T13:09:45.867176,2025-12-11T13:09:45.867176,30,2/10 Net 30,Partial Payment,Project-4,Partial payment for INV-01-00129,partial,,0,active
+1,PART-INV-01-00052,Global Solutions Ltd,IT,EUR,17491.86,2025-10-09T13:09:45.867176,2025-10-24T13:09:45.867176,2025-11-03T13:09:45.867176,15,Net 45,Partial Payment,Project-13,Partial payment for INV-01-00052,partial,,0,active
+1,PART-INV-01-00124,MegaCorp International,NO,DKK,16243.06,2025-10-22T13:09:45.867176,2025-11-21T13:09:45.867176,2025-11-21T13:09:45.867176,30,Net 30,Partial Payment,Project-14,Partial payment for INV-01-00124,partial,,0,active
+1,PART-INV-01-00111,Innovation Partners,AT,EUR,657.9,2025-07-15T13:09:45.867176,2025-08-14T13:09:45.867176,2025-09-07T13:09:45.867176,30,Net 60,Partial Payment,Project-9,Partial payment for INV-01-00111,partial,,0,active
+1,PART-INV-01-00095,MegaCorp International,UK,DKK,8514.81,2025-07-29T13:09:45.867176,2025-09-27T13:09:45.867176,2025-09-29T13:09:45.867176,60,Net 30,Partial Payment,Project-12,Partial payment for INV-01-00095,partial,,0,active
+1,PART-INV-01-00062,NextGen Industries,IT,CHF,11553.29,2025-07-23T13:09:45.867176,2025-08-07T13:09:45.867176,2025-08-24T13:09:45.867176,15,Net 15,Partial Payment,Project-16,Partial payment for INV-01-00062,partial,,0,active
+2,INV-02-00001,Acme Corporation,UK,GBP,28156.77,2025-08-31T13:09:45.870360,2025-09-15T13:09:45.870360,2025-09-20T13:09:45.870360,15,Net 45,Invoice,Project-1,Services for Acme Corporation,,,0,active
+2,INV-02-00002,Innovation Partners,DE,USD,14177.03,2025-07-20T13:09:45.870360,2025-08-19T13:09:45.870360,2025-08-20T13:09:45.870360,30,Net 60,Invoice,Project-14,Services for Innovation Partners,,,0,active
+2,INV-02-00003,Cloud Services Co,IT,USD,36324.07,2025-10-18T13:09:45.870360,2025-11-02T13:09:45.870360,2025-11-06T13:09:45.870360,15,Net 45,Invoice,Project-4,Services for Cloud Services Co,,,0,active
+2,INV-02-00004,Cloud Services Co,BE,GBP,22100.19,2025-08-29T13:09:45.870360,2025-10-13T13:09:45.870360,2025-10-25T13:09:45.870360,45,2/10 Net 30,Invoice,Project-5,Services for Cloud Services Co,,,0,active
+2,INV-02-00005,Future Tech,ES,USD,48264.16,2025-10-06T13:09:45.870360,2025-11-05T13:09:45.870360,2025-11-04T13:09:45.870360,30,Due on Receipt,Invoice,Project-16,Services for Future Tech,,,0,active
+2,INV-02-00006,Digital Dynamics,NL,GBP,6580.5,2025-08-20T13:09:45.870360,2025-10-19T13:09:45.870360,,60,2/10 Net 30,Invoice,Project-6,Services for Digital Dynamics,,,0,active
+2,INV-02-00007,Digital Dynamics,NO,EUR,41129.31,2025-10-11T13:09:45.870360,2025-12-10T13:09:45.870360,2025-12-23T13:09:45.870360,60,Net 45,Invoice,Project-5,Services for Digital Dynamics,,,0,active
+2,INV-02-00008,StartupHub,NL,DKK,19472.55,2025-10-02T13:09:45.870360,2025-11-01T13:09:45.870360,2025-11-05T13:09:45.870360,30,2/10 Net 30,Invoice,Project-13,Services for StartupHub,,,0,active
+2,INV-02-00009,Smart Solutions,US,DKK,48452.97,2025-10-29T13:09:45.870360,2025-12-28T13:09:45.870360,,60,2/10 Net 30,Invoice,Project-3,Services for Smart Solutions,,,0,active
+2,INV-02-00010,NextGen Industries,SE,NOK,32690.44,2025-10-03T13:09:45.870360,2025-11-17T13:09:45.870360,2025-11-30T13:09:45.870360,45,Net 45,Invoice,,Services for NextGen Industries,,,0,active
+2,INV-02-00011,Future Tech,ES,CHF,23690.1,2025-10-13T13:09:45.870360,2025-11-12T13:09:45.870360,2025-11-30T13:09:45.870360,30,Net 60,Invoice,Project-12,Services for Future Tech,,,0,active
+2,INV-02-00012,StartupHub,DE,GBP,16282.63,2025-08-16T13:09:45.870360,2025-10-15T13:09:45.870360,2025-10-25T13:09:45.870360,60,Net 45,Invoice,Project-12,Services for StartupHub,,,0,active
+2,INV-02-00013,Cloud Services Co,UK,GBP,3189.47,2025-10-07T13:09:45.870360,2025-12-06T13:09:45.870360,2025-12-10T13:09:45.870360,60,Net 15,Invoice,Project-4,Services for Cloud Services Co,,,0,active
+2,INV-02-00014,Cloud Services Co,CH,CHF,47964.67,2025-10-12T13:09:45.870360,2025-11-11T13:09:45.870360,2025-11-06T13:09:45.870360,30,Net 60,Invoice,Project-6,Services for Cloud Services Co,,,0,active
+2,INV-02-00015,Future Tech,AT,CHF,20052.95,2025-07-13T13:09:45.870360,2025-08-12T13:09:45.870360,2025-08-17T13:09:45.870360,30,Due on Receipt,Invoice,Project-3,Services for Future Tech,,,0,active
+2,INV-02-00016,Cloud Services Co,ES,USD,23419.97,2025-09-16T13:09:45.870360,2025-10-16T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-11,Services for Cloud Services Co,,,0,active
+2,INV-02-00017,NextGen Industries,DE,DKK,34005.85,2025-09-23T13:09:45.870360,2025-10-08T13:09:45.870360,2025-10-04T13:09:45.870360,15,2/10 Net 30,Invoice,Project-3,Services for NextGen Industries,,,0,active
+2,INV-02-00018,TechStart Inc,DE,GBP,34978.39,2025-08-09T13:09:45.870360,2025-09-23T13:09:45.870360,2025-10-15T13:09:45.870360,45,Net 60,Invoice,Project-19,Services for TechStart Inc,,,0,active
+2,INV-02-00019,Global Solutions Ltd,DE,GBP,42257.28,2025-09-29T13:09:45.870360,2025-10-29T13:09:45.870360,2025-10-26T13:09:45.870360,30,Net 30,Invoice,Project-16,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00020,Innovation Partners,,CHF,21365.89,2025-09-19T13:09:45.870360,2025-11-18T13:09:45.870360,,60,Net 30,Invoice,Project-19,Services for Innovation Partners,,,0,active
+2,INV-02-00021,Smart Solutions,IT,USD,39256.27,2025-08-14T13:09:45.870360,2025-09-13T13:09:45.870360,2025-09-16T13:09:45.870360,30,Net 45,Invoice,Project-18,Services for Smart Solutions,,,0,active
+2,INV-02-00022,StartupHub,BE,SEK,11708.55,2025-08-13T13:09:45.870360,2025-09-27T13:09:45.870360,2025-09-18T13:09:45.870360,45,Due on Receipt,Invoice,Project-8,Services for StartupHub,,,0,active
+2,INV-02-00023,Cloud Services Co,UK,CHF,43399.23,2025-09-05T13:09:45.870360,2025-10-20T13:09:45.870360,,45,Net 60,Invoice,Project-19,Services for Cloud Services Co,,,0,active
+2,INV-02-00024,Global Solutions Ltd,AT,USD,39457.62,2025-09-26T13:09:45.870360,2025-11-25T13:09:45.870360,,60,2/10 Net 30,Invoice,Project-12,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00025,StartupHub,IT,GBP,29064.04,2025-07-31T13:09:45.870360,2025-09-14T13:09:45.870360,2025-09-16T13:09:45.870360,45,Due on Receipt,Invoice,Project-4,Services for StartupHub,,,0,active
+2,INV-02-00026,Digital Dynamics,SE,USD,35369.9,2025-08-31T13:09:45.870360,2025-09-15T13:09:45.870360,,15,Net 15,Invoice,Project-8,Services for Digital Dynamics,,,0,active
+2,INV-02-00027,NextGen Industries,SE,GBP,31762.83,2025-09-10T13:09:45.870360,2025-10-10T13:09:45.870360,,30,Net 30,Invoice,Project-13,Services for NextGen Industries,,,0,active
+2,INV-02-00028,NextGen Industries,US,DKK,38932.63,2025-11-06T13:09:45.870360,2025-12-21T13:09:45.870360,2025-12-17T13:09:45.870360,45,Net 45,Invoice,Project-12,Services for NextGen Industries,,,0,active
+2,INV-02-00029,Innovation Partners,FR,CHF,14158.31,2025-08-29T13:09:45.870360,2025-09-28T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-5,Services for Innovation Partners,,,0,active
+2,INV-02-00030,Acme Corporation,UK,NOK,39410.6,2025-08-22T13:09:45.870360,2025-09-06T13:09:45.870360,2025-09-16T13:09:45.870360,15,Net 60,Invoice,Project-15,Services for Acme Corporation,,,0,active
+2,INV-02-00031,StartupHub,DE,NOK,15791.41,2025-09-02T13:09:45.870360,2025-10-02T13:09:45.870360,,30,Net 30,Invoice,Project-12,Services for StartupHub,,,0,active
+2,INV-02-00032,StartupHub,NO,DKK,12473.05,2025-11-02T13:09:45.870360,2025-12-02T13:09:45.870360,2025-12-22T13:09:45.870360,30,Net 30,Invoice,Project-7,Services for StartupHub,,,0,active
+2,INV-02-00033,Acme Corporation,US,NOK,17835.13,2025-08-07T13:09:45.870360,2025-10-06T13:09:45.870360,2025-10-17T13:09:45.870360,60,Due on Receipt,Invoice,Project-5,Services for Acme Corporation,,,0,active
+2,INV-02-00034,Digital Dynamics,DE,CHF,38899.56,2025-07-21T13:09:45.870360,2025-08-05T13:09:45.870360,2025-08-19T13:09:45.870360,15,Due on Receipt,Invoice,Project-5,Services for Digital Dynamics,,,0,active
+2,INV-02-00035,Future Tech,ES,NOK,11439.72,2025-09-26T13:09:45.870360,2025-10-26T13:09:45.870360,2025-11-07T13:09:45.870360,30,2/10 Net 30,Invoice,Project-15,Services for Future Tech,,,0,active
+2,INV-02-00036,Innovation Partners,ES,CHF,16410.68,2025-07-22T13:09:45.870360,2025-08-21T13:09:45.870360,2025-08-28T13:09:45.870360,30,Net 30,Invoice,Project-8,Services for Innovation Partners,,,0,active
+2,INV-02-00037,StartupHub,US,DKK,42506.43,2025-09-25T13:09:45.870360,2025-11-09T13:09:45.870360,2025-11-03T13:09:45.870360,45,2/10 Net 30,Invoice,Project-17,Services for StartupHub,,,0,active
+2,INV-02-00038,Enterprise Systems,BE,CHF,6524.44,2025-09-30T13:09:45.870360,2025-10-15T13:09:45.870360,2025-10-25T13:09:45.870360,15,2/10 Net 30,Invoice,Project-1,Services for Enterprise Systems,,,0,active
+2,INV-02-00039,NextGen Industries,NL,GBP,27771.45,2025-07-26T13:09:45.870360,2025-09-24T13:09:45.870360,,60,Net 30,Invoice,Project-1,Services for NextGen Industries,,,0,active
+2,INV-02-00040,Acme Corporation,NL,SEK,15037.9,2025-08-06T13:09:45.870360,2025-08-21T13:09:45.870360,2025-08-11T13:09:45.870360,15,Net 45,Invoice,Project-13,Services for Acme Corporation,,,0,active
+2,INV-02-00041,Smart Solutions,FR,DKK,8613.48,2025-09-26T13:09:45.870360,2025-10-26T13:09:45.870360,2025-10-31T13:09:45.870360,30,Due on Receipt,Invoice,Project-3,Services for Smart Solutions,,,0,active
+2,INV-02-00042,Acme Corporation,FR,EUR,46306.76,2025-10-26T13:09:45.870360,2025-11-25T13:09:45.870360,2025-12-10T13:09:45.870360,30,Net 30,Invoice,Project-10,Services for Acme Corporation,,,0,active
+2,INV-02-00043,Acme Corporation,NO,USD,35373.48,2025-08-01T13:09:45.870360,2025-08-16T13:09:45.870360,,15,2/10 Net 30,Invoice,Project-17,Services for Acme Corporation,,,0,active
+2,INV-02-00044,Global Solutions Ltd,NO,DKK,43799.54,2025-07-31T13:09:45.870360,2025-09-14T13:09:45.870360,,45,Net 30,Invoice,Project-11,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00045,TechStart Inc,BE,CHF,26028.31,2025-07-18T13:09:45.870360,2025-09-01T13:09:45.870360,2025-09-04T13:09:45.870360,45,Net 60,Invoice,Project-12,Services for TechStart Inc,,,0,active
+2,INV-02-00003,Enterprise Systems,NO,SEK,1125.86,2025-11-01T13:09:45.870360,2025-11-16T13:09:45.870360,,15,Net 45,Invoice,Project-12,Services for Enterprise Systems,,,0,active
+2,INV-02-00047,Smart Solutions,NO,NOK,33129.46,2025-11-06T13:09:45.870360,2025-11-21T13:09:45.870360,2025-11-16T13:09:45.870360,15,Due on Receipt,Invoice,Project-11,Services for Smart Solutions,,,0,active
+2,INV-02-00048,Global Solutions Ltd,FR,DKK,26272.93,2025-08-26T13:09:45.870360,2025-09-10T13:09:45.870360,2025-08-31T13:09:45.870360,15,Net 45,Invoice,Project-10,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00049,Acme Corporation,ES,USD,15288.16,2025-07-21T13:09:45.870360,2025-09-19T13:09:45.870360,2025-09-25T13:09:45.870360,60,Net 60,Invoice,Project-15,Services for Acme Corporation,,,0,active
+2,INV-02-00050,StartupHub,CH,DKK,40002.7,2025-10-16T13:09:45.870360,2025-11-15T13:09:45.870360,,30,Net 30,Invoice,Project-8,Services for StartupHub,,,0,active
+2,INV-02-00051,MegaCorp International,NL,DKK,37166.05,2025-10-06T13:09:45.870360,2025-10-21T13:09:45.870360,2025-10-28T13:09:45.870360,15,Net 60,Invoice,Project-14,Services for MegaCorp International,,,0,active
+2,INV-02-00052,TechStart Inc,US,USD,44967.09,2025-07-28T13:09:45.870360,2025-09-11T13:09:45.870360,2025-09-17T13:09:45.870360,45,Net 15,Invoice,Project-15,Services for TechStart Inc,,,0,active
+2,INV-02-00053,NextGen Industries,AT,EUR,22314.16,2025-07-22T13:09:45.870360,2025-08-21T13:09:45.870360,2025-08-21T13:09:45.870360,30,Net 15,Invoice,Project-11,Services for NextGen Industries,,,0,active
+2,INV-02-00054,Cloud Services Co,BE,GBP,12446.95,2025-10-24T13:09:45.870360,2025-12-08T13:09:45.870360,2025-12-08T13:09:45.870360,45,2/10 Net 30,Invoice,Project-4,Services for Cloud Services Co,,,0,active
+2,INV-02-00055,Enterprise Systems,BE,GBP,23703.98,2025-09-07T13:09:45.870360,2025-10-22T13:09:45.870360,2025-10-19T13:09:45.870360,45,Due on Receipt,Invoice,Project-10,Services for Enterprise Systems,,,0,active
+2,INV-02-00056,Cloud Services Co,DE,EUR,35846.71,2025-07-15T13:09:45.870360,2025-08-14T13:09:45.870360,,30,Net 30,Invoice,Project-10,Services for Cloud Services Co,,,0,active
+2,INV-02-00057,Future Tech,,NOK,27955.92,2025-07-13T13:09:45.870360,2025-09-11T13:09:45.870360,,60,Net 60,Invoice,Project-4,Services for Future Tech,,,0,active
+2,INV-02-00058,Cloud Services Co,SE,NOK,46941.17,2025-10-23T13:09:45.870360,2025-12-22T13:09:45.870360,2026-01-04T13:09:45.870360,60,Net 30,Invoice,Project-1,Services for Cloud Services Co,,,0,active
+2,INV-02-00059,Cloud Services Co,UK,EUR,47171.75,2025-09-30T13:09:45.870360,2025-11-29T13:09:45.870360,2025-12-07T13:09:45.870360,60,Net 45,Invoice,Project-13,Services for Cloud Services Co,,,0,active
+2,INV-02-00060,Cloud Services Co,FR,USD,14474.11,2025-09-02T13:09:45.870360,2025-10-02T13:09:45.870360,2025-10-04T13:09:45.870360,30,2/10 Net 30,Invoice,Project-20,Services for Cloud Services Co,,,0,active
+2,INV-02-00061,TechStart Inc,IT,CHF,7724.56,2025-09-11T13:09:45.870360,2025-11-10T13:09:45.870360,2025-11-25T13:09:45.870360,60,2/10 Net 30,Invoice,Project-8,Services for TechStart Inc,,,0,active
+2,INV-02-00062,Innovation Partners,NO,GBP,24504.54,2025-10-19T13:09:45.870360,2025-11-03T13:09:45.870360,,15,2/10 Net 30,Invoice,Project-17,Services for Innovation Partners,,,0,active
+2,INV-02-00063,NextGen Industries,FR,EUR,44892.47,2025-07-13T13:09:45.870360,2025-08-27T13:09:45.870360,2025-08-27T13:09:45.870360,45,Net 45,Invoice,Project-17,Services for NextGen Industries,,,0,active
+2,INV-02-00064,Digital Dynamics,CH,DKK,39770.62,2025-08-08T13:09:45.870360,2025-09-07T13:09:45.870360,2025-09-25T13:09:45.870360,30,Net 60,Invoice,Project-19,Services for Digital Dynamics,,,0,active
+2,INV-02-00065,Global Solutions Ltd,FR,SEK,16582.21,2025-08-24T13:09:45.870360,2025-09-23T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-1,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00066,NextGen Industries,FR,DKK,49412.3,2025-09-20T13:09:45.870360,2025-10-20T13:09:45.870360,2025-11-04T13:09:45.870360,30,Net 15,Invoice,Project-6,Services for NextGen Industries,,,0,active
+2,INV-02-00067,Cloud Services Co,AT,USD,40515.83,2025-08-08T13:09:45.870360,2025-09-07T13:09:45.870360,2025-09-25T13:09:45.870360,30,Net 15,Invoice,Project-2,,,,0,active
+2,INV-02-00068,Smart Solutions,ES,EUR,19305.95,2025-07-28T13:09:45.870360,2025-08-12T13:09:45.870360,,15,Net 30,Invoice,Project-11,Services for Smart Solutions,,,0,active
+2,INV-02-00069,MegaCorp International,BE,NOK,16546.89,2025-07-30T13:09:45.870360,2025-09-28T13:09:45.870360,2025-10-06T13:09:45.870360,60,2/10 Net 30,Invoice,Project-12,Services for MegaCorp International,,,0,active
+2,INV-02-00070,Global Solutions Ltd,DE,NOK,1088.1,2025-08-01T13:09:45.870360,2025-09-30T13:09:45.870360,2025-10-01T13:09:45.870360,60,2/10 Net 30,Invoice,Project-2,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00071,MegaCorp International,AT,EUR,46897.7,2025-10-21T13:09:45.870360,2025-11-20T13:09:45.870360,2025-12-11T13:09:45.870360,30,Net 60,Invoice,Project-12,Services for MegaCorp International,,,0,active
+2,INV-02-00072,StartupHub,ES,CHF,1558.39,2025-10-31T13:09:45.870360,2025-11-15T13:09:45.870360,2025-11-28T13:09:45.870360,15,Net 15,Invoice,Project-9,Services for StartupHub,,,0,active
+2,INV-02-00073,Future Tech,NO,CHF,48485.99,2025-07-16T13:09:45.870360,2025-09-14T13:09:45.870360,,60,Net 45,Invoice,Project-12,Services for Future Tech,,,0,active
+2,INV-02-00074,Global Solutions Ltd,BE,EUR,40160.53,2025-09-09T13:09:45.870360,2025-10-09T13:09:45.870360,2025-10-03T13:09:45.870360,30,Net 15,Invoice,Project-4,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00075,TechStart Inc,ES,SEK,49278.53,2025-08-27T13:09:45.870360,2025-09-26T13:09:45.870360,2025-10-01T13:09:45.870360,30,Net 45,Invoice,Project-6,Services for TechStart Inc,,,0,active
+2,INV-02-00076,Cloud Services Co,FR,USD,21054.71,2025-07-16T13:09:45.870360,2025-07-31T13:09:45.870360,2025-07-26T13:09:45.870360,15,2/10 Net 30,Invoice,Project-9,Services for Cloud Services Co,,,0,active
+2,INV-02-00077,Future Tech,DE,EUR,18680.62,2025-07-22T13:09:45.870360,2025-08-06T13:09:45.870360,2025-08-04T13:09:45.870360,15,Due on Receipt,Invoice,Project-20,Services for Future Tech,,,0,active
+2,INV-02-00078,MegaCorp International,IT,EUR,24204.96,2025-08-05T13:09:45.870360,2025-09-04T13:09:45.870360,2025-09-18T13:09:45.870360,30,Net 45,Invoice,Project-16,Services for MegaCorp International,,,0,active
+2,INV-02-00079,Cloud Services Co,DE,CHF,3186.23,2025-09-30T13:09:45.870360,2025-11-29T13:09:45.870360,2025-12-14T13:09:45.870360,60,Net 15,Invoice,Project-19,Services for Cloud Services Co,,,0,active
+2,INV-02-00080,TechStart Inc,SE,GBP,40600.83,2025-10-03T13:09:45.870360,2025-10-18T13:09:45.870360,,15,Net 60,Invoice,Project-18,Services for TechStart Inc,,,0,active
+2,INV-02-00081,Smart Solutions,SE,DKK,46881.71,2025-09-14T13:09:45.870360,2025-11-13T13:09:45.870360,2025-12-09T13:09:45.870360,60,Net 15,Invoice,Project-3,Services for Smart Solutions,,,0,active
+2,INV-02-00082,TechStart Inc,,USD,47504.01,2025-07-14T13:09:45.870360,2025-08-13T13:09:45.870360,,30,Net 60,Invoice,Project-5,Services for TechStart Inc,,,0,active
+2,INV-02-00083,MegaCorp International,DE,DKK,30157.34,2025-09-03T13:09:45.870360,2025-10-03T13:09:45.870360,,30,Net 30,Invoice,Project-3,Services for MegaCorp International,,,0,active
+2,INV-02-00084,Acme Corporation,NO,SEK,29791.23,2025-08-20T13:09:45.870360,2025-10-04T13:09:45.870360,2025-09-24T13:09:45.870360,45,Net 60,Invoice,Project-5,Services for Acme Corporation,,,0,active
+2,INV-02-00085,TechStart Inc,AT,DKK,5948.53,2025-11-07T13:09:45.870360,2025-11-22T13:09:45.870360,2025-11-26T13:09:45.870360,15,Net 15,Invoice,Project-14,Services for TechStart Inc,,,0,active
+2,INV-02-00086,Acme Corporation,DE,GBP,20745.72,2025-09-21T13:09:45.870360,2025-11-20T13:09:45.870360,,60,Net 45,Invoice,Project-2,Services for Acme Corporation,,,0,active
+2,INV-02-00087,Acme Corporation,NO,CHF,46120.91,2025-10-06T13:09:45.870360,2025-11-05T13:09:45.870360,,30,Net 15,Invoice,Project-10,Services for Acme Corporation,,,0,active
+2,INV-02-00088,Digital Dynamics,NO,CHF,38927.51,2025-10-07T13:09:45.870360,2025-10-22T13:09:45.870360,2025-11-05T13:09:45.870360,15,2/10 Net 30,Invoice,Project-3,Services for Digital Dynamics,,,0,active
+2,INV-02-00089,StartupHub,BE,DKK,26308.57,2025-10-23T13:09:45.870360,2025-12-22T13:09:45.870360,2025-12-27T13:09:45.870360,60,Net 60,Invoice,Project-3,Services for StartupHub,,,0,active
+2,INV-02-00090,Enterprise Systems,US,USD,2620.48,2025-07-27T13:09:45.870360,2025-08-11T13:09:45.870360,2025-08-27T13:09:45.870360,15,Net 60,Invoice,Project-9,Services for Enterprise Systems,,,0,active
+2,INV-02-00091,MegaCorp International,US,USD,19250.87,2025-08-29T13:09:45.870360,2025-09-13T13:09:45.870360,2025-10-08T13:09:45.870360,15,Net 45,Invoice,Project-19,Services for MegaCorp International,,,0,active
+2,INV-02-00092,Digital Dynamics,US,CHF,3432.9,2025-10-25T13:09:45.870360,2025-12-09T13:09:45.870360,2025-12-15T13:09:45.870360,45,Net 60,Invoice,Project-8,Services for Digital Dynamics,,,0,active
+2,INV-02-00017,Smart Solutions,US,DKK,39234.88,2025-08-13T13:09:45.870360,2025-10-12T13:09:45.870360,,60,Due on Receipt,Invoice,Project-6,Services for Smart Solutions,,,0,active
+2,INV-02-00094,StartupHub,NO,NOK,14493.55,2025-08-11T13:09:45.870360,2025-09-25T13:09:45.870360,2025-09-17T13:09:45.870360,45,Net 45,Invoice,Project-9,Services for StartupHub,,,0,active
+2,INV-02-00095,MegaCorp International,ES,SEK,32719.76,2025-09-14T13:09:45.870360,2025-11-13T13:09:45.870360,2025-11-18T13:09:45.870360,60,Net 30,Invoice,Project-16,Services for MegaCorp International,,,0,active
+2,INV-02-00096,Digital Dynamics,IT,NOK,35843.6,2025-09-29T13:09:45.870360,2025-11-13T13:09:45.870360,,45,Net 60,Invoice,Project-17,Services for Digital Dynamics,,,0,active
+2,INV-02-00097,MegaCorp International,ES,NOK,7856.55,2025-10-21T13:09:45.870360,2025-12-20T13:09:45.870360,,60,Net 15,Invoice,Project-9,Services for MegaCorp International,,,0,active
+2,INV-02-00098,NextGen Industries,NO,SEK,40984.72,2025-10-12T13:09:45.870360,2025-10-27T13:09:45.870360,2025-11-02T13:09:45.870360,15,Due on Receipt,Invoice,Project-18,Services for NextGen Industries,,,0,active
+2,INV-02-00099,MegaCorp International,CH,USD,15395.42,2025-11-07T13:09:45.870360,2025-12-22T13:09:45.870360,2025-12-12T13:09:45.870360,45,Due on Receipt,Invoice,Project-18,Services for MegaCorp International,,,0,active
+2,INV-02-00100,MegaCorp International,UK,USD,18408.89,2025-10-05T13:09:45.870360,2025-11-19T13:09:45.870360,2025-11-25T13:09:45.870360,45,Net 15,Invoice,Project-12,Services for MegaCorp International,,,0,active
+2,INV-02-00101,NextGen Industries,AT,SEK,4489.57,2025-10-26T13:09:45.870360,2025-11-10T13:09:45.870360,2025-10-31T13:09:45.870360,15,Due on Receipt,Invoice,Project-13,Services for NextGen Industries,,,0,active
+2,INV-02-00102,Global Solutions Ltd,FR,GBP,21050.4,2025-10-29T13:09:45.870360,2025-11-28T13:09:45.870360,2025-12-08T13:09:45.870360,30,Net 45,Invoice,Project-5,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00103,Future Tech,ES,NOK,49345.38,2025-10-17T13:09:45.870360,2025-11-01T13:09:45.870360,,15,Net 45,Invoice,Project-9,Services for Future Tech,,,0,active
+2,INV-02-00104,Future Tech,UK,USD,31109.51,2025-09-21T13:09:45.870360,2025-10-21T13:09:45.870360,,30,Net 45,Invoice,Project-13,,,,0,active
+2,INV-02-00105,Smart Solutions,FR,EUR,34160.66,2025-08-26T13:09:45.870360,2025-09-10T13:09:45.870360,2025-09-30T13:09:45.870360,15,Due on Receipt,Invoice,Project-12,Services for Smart Solutions,,,0,active
+2,INV-02-00106,Global Solutions Ltd,UK,DKK,3240.2,2025-09-12T13:09:45.870360,2025-10-27T13:09:45.870360,2025-10-24T13:09:45.870360,45,2/10 Net 30,Invoice,Project-20,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00107,Cloud Services Co,FR,USD,47456.13,2025-10-05T13:09:45.870360,2025-11-04T13:09:45.870360,2025-10-31T13:09:45.870360,30,Net 60,Invoice,Project-8,Services for Cloud Services Co,,,0,active
+2,INV-02-00108,NextGen Industries,CH,USD,7034.94,2025-10-11T13:09:45.870360,2025-10-26T13:09:45.870360,2025-11-19T13:09:45.870360,15,Net 45,Invoice,Project-9,Services for NextGen Industries,,,0,active
+2,INV-02-00109,Acme Corporation,US,NOK,6673.7,2025-09-24T13:09:45.870360,2025-10-09T13:09:45.870360,2025-10-09T13:09:45.870360,15,Net 15,Invoice,Project-16,Services for Acme Corporation,,,0,active
+2,INV-02-00110,Digital Dynamics,NL,NOK,5948.01,2025-10-05T13:09:45.870360,2025-10-20T13:09:45.870360,2025-10-15T13:09:45.870360,15,Due on Receipt,Invoice,Project-5,Services for Digital Dynamics,,,0,active
+2,INV-02-00111,Digital Dynamics,UK,DKK,6206.92,2025-09-13T13:09:45.870360,2025-09-28T13:09:45.870360,,15,Net 15,Invoice,Project-17,Services for Digital Dynamics,,,0,active
+2,INV-02-00112,Enterprise Systems,NO,CHF,1.72e+04,2025-08-31T13:09:45.870360,2025-10-15T13:09:45.870360,2025-10-28T13:09:45.870360,45,Net 30,Invoice,Project-19,Services for Enterprise Systems,,,0,active
+2,INV-02-00113,StartupHub,NO,EUR,45334.19,2025-07-21T13:09:45.870360,2025-08-05T13:09:45.870360,2025-08-22T13:09:45.870360,15,Net 15,Invoice,Project-9,Services for StartupHub,,,0,active
+2,INV-02-00114,MegaCorp International,ES,CHF,37188.47,2025-08-01T13:09:45.870360,2025-08-16T13:09:45.870360,2025-08-28T13:09:45.870360,15,Net 30,Invoice,Project-1,Services for MegaCorp International,,,0,active
+2,INV-02-00115,Cloud Services Co,BE,SEK,14147.16,2025-07-31T13:09:45.870360,2025-09-14T13:09:45.870360,,45,Net 15,Invoice,Project-6,Services for Cloud Services Co,,,0,active
+2,INV-02-00116,Innovation Partners,NO,DKK,24434.01,2025-09-06T13:09:45.870360,2025-10-21T13:09:45.870360,2025-10-21T13:09:45.870360,45,Net 60,Invoice,Project-4,Services for Innovation Partners,,,0,active
+2,INV-02-00117,TechStart Inc,NL,SEK,24651.07,2025-11-07T13:09:45.870360,2025-12-07T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-13,Services for TechStart Inc,,,0,active
+2,INV-02-00112,Innovation Partners,BE,EUR,4103.47,2025-10-28T13:09:45.870360,2025-11-27T13:09:45.870360,2025-11-23T13:09:45.870360,30,Due on Receipt,Invoice,Project-17,Services for Innovation Partners,,,0,active
+2,INV-02-00119,MegaCorp International,ES,SEK,26632.06,2025-09-20T13:09:45.870360,2025-10-20T13:09:45.870360,2025-10-28T13:09:45.870360,30,Due on Receipt,Invoice,Project-8,Services for MegaCorp International,,,0,active
+2,INV-02-00120,Global Solutions Ltd,CH,SEK,3673.74,2025-09-30T13:09:45.870360,2025-11-29T13:09:45.870360,,60,Net 45,Invoice,Project-16,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00121,Acme Corporation,CH,USD,27974.28,2025-09-10T13:09:45.870360,2025-10-25T13:09:45.870360,2025-11-02T13:09:45.870360,45,Net 30,Invoice,Project-15,Services for Acme Corporation,,,0,active
+2,INV-02-00052,Future Tech,ES,EUR,49052.87,2025-07-21T13:09:45.870360,2025-09-19T13:09:45.870360,2025-10-22T13:09:45.870360,60,Net 45,Invoice,Project-2,Services for Future Tech,,,0,active
+2,INV-02-00123,MegaCorp International,SE,CHF,47567.4,2025-07-21T13:09:45.870360,2025-09-04T13:09:45.870360,2025-09-20T13:09:45.870360,45,Net 60,Invoice,Project-15,Services for MegaCorp International,,,0,active
+2,INV-02-00124,StartupHub,SE,GBP,36079.76,2025-09-24T13:09:45.870360,2025-11-23T13:09:45.870360,,60,Net 60,Invoice,Project-1,Services for StartupHub,,,0,active
+2,INV-02-00125,Smart Solutions,CH,GBP,35402.71,2025-10-20T13:09:45.870360,2025-12-04T13:09:45.870360,,45,Net 60,Invoice,Project-14,Services for Smart Solutions,,,0,active
+2,INV-02-00126,Innovation Partners,FR,CHF,41403.15,2025-08-03T13:09:45.870360,2025-08-18T13:09:45.870360,2025-08-17T13:09:45.870360,15,Net 45,Invoice,Project-2,Services for Innovation Partners,,,0,active
+2,INV-02-00127,Future Tech,BE,NOK,29876.49,2025-09-23T13:09:45.870360,2025-10-08T13:09:45.870360,,15,Net 30,Invoice,Project-17,Services for Future Tech,,,0,active
+2,INV-02-00128,Global Solutions Ltd,NO,SEK,9508.86,2025-09-03T13:09:45.870360,2025-11-02T13:09:45.870360,2025-11-24T13:09:45.870360,60,Due on Receipt,Invoice,Project-20,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00129,Innovation Partners,AT,NOK,38356.36,2025-10-30T13:09:45.870360,2025-12-29T13:09:45.870360,2025-12-29T13:09:45.870360,60,Net 15,Invoice,Project-15,Services for Innovation Partners,,,0,active
+2,INV-02-00130,Cloud Services Co,NO,NOK,46840.09,2025-09-25T13:09:45.870360,2025-11-09T13:09:45.870360,2025-11-22T13:09:45.870360,45,2/10 Net 30,Invoice,Project-10,Services for Cloud Services Co,,,0,active
+2,INV-02-00131,Smart Solutions,CH,NOK,32206.99,2025-07-26T13:09:45.870360,2025-08-25T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-16,Services for Smart Solutions,,,0,active
+2,INV-02-00132,MegaCorp International,NO,DKK,27161.24,2025-10-08T13:09:45.870360,2025-12-07T13:09:45.870360,,60,Net 30,Invoice,Project-17,Services for MegaCorp International,,,0,active
+2,INV-02-00133,Enterprise Systems,IT,DKK,39491.08,2025-07-16T13:09:45.870360,2025-07-31T13:09:45.870360,2025-07-28T13:09:45.870360,15,Net 60,Invoice,Project-2,Services for Enterprise Systems,,,0,active
+2,INV-02-00134,NextGen Industries,SE,NOK,28532.36,2025-10-14T13:09:45.870360,2025-10-29T13:09:45.870360,2025-10-29T13:09:45.870360,15,Net 45,Invoice,Project-8,Services for NextGen Industries,,,0,active
+2,INV-02-00135,StartupHub,SE,EUR,46397.76,2025-10-07T13:09:45.870360,2025-11-21T13:09:45.870360,,45,Due on Receipt,Invoice,Project-11,Services for StartupHub,,,0,active
+2,INV-02-00136,Enterprise Systems,AT,DKK,39265.32,2025-10-13T13:09:45.870360,2025-11-27T13:09:45.870360,2025-12-12T13:09:45.870360,45,Due on Receipt,Invoice,Project-12,Services for Enterprise Systems,,,0,active
+2,INV-02-00137,Digital Dynamics,BE,USD,49189.21,2025-09-25T13:09:45.870360,2025-10-25T13:09:45.870360,2025-11-05T13:09:45.870360,30,Due on Receipt,Invoice,Project-17,Services for Digital Dynamics,,,0,active
+2,INV-02-00138,Global Solutions Ltd,DE,SEK,4.25e+04,2025-08-14T13:09:45.870360,2025-09-28T13:09:45.870360,2025-09-18T13:09:45.870360,45,Net 60,Invoice,Project-2,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00139,Cloud Services Co,UK,DKK,35676.4,2025-07-16T13:09:45.870360,2025-08-30T13:09:45.870360,2025-08-24T13:09:45.870360,45,2/10 Net 30,Invoice,Project-3,Services for Cloud Services Co,,,0,active
+2,INV-02-00140,TechStart Inc,ES,USD,44286.44,2025-09-17T13:09:45.870360,2025-11-16T13:09:45.870360,2025-11-23T13:09:45.870360,60,Net 15,Invoice,Project-7,Services for TechStart Inc,,,0,active
+2,INV-02-00141,Enterprise Systems,SE,SEK,46011.76,2025-09-08T13:09:45.870360,2025-09-23T13:09:45.870360,2025-10-06T13:09:45.870360,15,Net 15,Invoice,Project-13,Services for Enterprise Systems,,,0,active
+2,INV-02-00142,Smart Solutions,NO,GBP,2210.58,2025-08-28T13:09:45.870360,2025-10-12T13:09:45.870360,,45,2/10 Net 30,Invoice,Project-17,Services for Smart Solutions,,,0,active
+2,INV-02-00143,Cloud Services Co,,EUR,47462.38,2025-11-01T13:09:45.870360,2025-12-01T13:09:45.870360,2025-12-14T13:09:45.870360,30,2/10 Net 30,Invoice,Project-18,Services for Cloud Services Co,,,0,active
+2,INV-02-00144,TechStart Inc,FR,SEK,41608.68,2025-09-28T13:09:45.870360,2025-10-28T13:09:45.870360,2025-11-10T13:09:45.870360,30,Net 45,Invoice,Project-3,Services for TechStart Inc,,,0,active
+2,INV-02-00145,Acme Corporation,UK,EUR,3659.14,2025-09-06T13:09:45.870360,2025-10-21T13:09:45.870360,2025-10-21T13:09:45.870360,45,2/10 Net 30,Invoice,Project-8,Services for Acme Corporation,,,0,active
+2,INV-02-00146,MegaCorp International,,SEK,1289.05,2025-09-05T13:09:45.870360,2025-11-04T13:09:45.870360,2025-11-09T13:09:45.870360,60,Due on Receipt,Invoice,Project-19,Services for MegaCorp International,,,0,active
+2,INV-02-00147,Digital Dynamics,SE,GBP,30721.73,2025-09-12T13:09:45.870360,2025-09-27T13:09:45.870360,2025-10-04T13:09:45.870360,15,Net 45,Invoice,Project-13,Services for Digital Dynamics,,,0,active
+2,INV-02-00148,Smart Solutions,IT,NOK,8059.7,2025-07-30T13:09:45.870360,2025-08-29T13:09:45.870360,2025-09-11T13:09:45.870360,30,Due on Receipt,Invoice,Project-12,Services for Smart Solutions,,,0,active
+2,INV-02-00149,TechStart Inc,US,EUR,29063.21,2025-10-29T13:09:45.870360,2025-11-28T13:09:45.870360,2025-12-12T13:09:45.870360,30,Net 30,Invoice,Project-10,Services for TechStart Inc,,,0,active
+2,INV-02-00150,Enterprise Systems,NL,NOK,42721.48,2025-10-10T13:09:45.870360,2025-11-24T13:09:45.870360,,45,2/10 Net 30,Invoice,Project-9,Services for Enterprise Systems,,,0,active
+2,INV-02-00151,Smart Solutions,BE,NOK,27933.57,2025-10-20T13:09:45.870360,2025-11-04T13:09:45.870360,2025-11-24T13:09:45.870360,15,Net 30,Invoice,Project-7,Services for Smart Solutions,,,0,active
+2,INV-02-00152,Global Solutions Ltd,SE,NOK,12492.11,2025-08-21T13:09:45.870360,2025-10-05T13:09:45.870360,2025-09-25T13:09:45.870360,45,Net 60,Invoice,Project-11,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00064,NextGen Industries,ES,DKK,16500.32,2025-10-02T13:09:45.870360,2025-11-16T13:09:45.870360,2025-11-20T13:09:45.870360,45,Net 60,Invoice,Project-14,Services for NextGen Industries,,,0,active
+2,INV-02-00154,Future Tech,BE,CHF,18578.34,2025-10-04T13:09:45.870360,2025-11-18T13:09:45.870360,2025-11-19T13:09:45.870360,45,Net 60,Invoice,Project-20,Services for Future Tech,,,0,active
+2,INV-02-00155,StartupHub,SE,EUR,36643.84,2025-10-23T13:09:45.870360,2025-11-22T13:09:45.870360,2025-12-04T13:09:45.870360,30,Due on Receipt,Invoice,Project-1,Services for StartupHub,,,0,active
+2,INV-02-00156,Acme Corporation,CH,GBP,27630.0,2025-10-16T13:09:45.870360,2025-11-15T13:09:45.870360,2025-11-17T13:09:45.870360,30,Net 60,Invoice,Project-12,Services for Acme Corporation,,,0,active
+2,INV-02-00157,Global Solutions Ltd,BE,SEK,26010.19,2025-09-23T13:09:45.870360,2025-11-07T13:09:45.870360,,45,Due on Receipt,Invoice,Project-8,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00158,Smart Solutions,DE,CHF,8801.9,2025-09-26T13:09:45.870360,2025-10-26T13:09:45.870360,,30,Net 60,Invoice,Project-16,Services for Smart Solutions,,,0,active
+2,INV-02-00159,Enterprise Systems,US,NOK,11131.93,2025-10-15T13:09:45.870360,2025-12-14T13:09:45.870360,2025-12-21T13:09:45.870360,60,Net 45,Invoice,Project-15,Services for Enterprise Systems,,,0,active
+2,INV-02-00160,TechStart Inc,NO,SEK,32044.78,2025-10-01T13:09:45.870360,2025-11-15T13:09:45.870360,2025-11-29T13:09:45.870360,45,2/10 Net 30,Invoice,Project-18,Services for TechStart Inc,,,0,active
+2,INV-02-00161,TechStart Inc,CH,GBP,19440.11,2025-08-27T13:09:45.870360,2025-10-11T13:09:45.870360,2025-10-01T13:09:45.870360,45,Net 15,Invoice,Project-12,Services for TechStart Inc,,,0,active
+2,INV-02-00162,Smart Solutions,DE,CHF,9114.69,2025-09-25T13:09:45.870360,2025-10-10T13:09:45.870360,2025-10-06T13:09:45.870360,15,Net 60,Invoice,Project-5,Services for Smart Solutions,,,0,active
+2,INV-02-00163,Cloud Services Co,,EUR,24594.32,2025-10-09T13:09:45.870360,2025-10-24T13:09:45.870360,2025-10-25T13:09:45.870360,15,Net 60,Invoice,Project-14,Services for Cloud Services Co,,,0,active
+2,INV-02-00164,Global Solutions Ltd,SE,SEK,2920.35,2025-09-23T13:09:45.870360,2025-10-23T13:09:45.870360,2025-10-22T13:09:45.870360,30,Net 15,Invoice,Project-6,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00165,Digital Dynamics,UK,USD,23010.96,2025-09-20T13:09:45.870360,2025-10-05T13:09:45.870360,2025-10-23T13:09:45.870360,15,Net 60,Invoice,Project-8,Services for Digital Dynamics,,,0,active
+2,INV-02-00166,NextGen Industries,SE,SEK,13961.51,2025-10-19T13:09:45.870360,2025-11-18T13:09:45.870360,2025-11-14T13:09:45.870360,30,Net 45,Invoice,Project-20,Services for NextGen Industries,,,0,active
+2,INV-02-00167,Smart Solutions,SE,CHF,41499.2,2025-08-28T13:09:45.870360,2025-09-27T13:09:45.870360,2025-10-09T13:09:45.870360,30,2/10 Net 30,Invoice,Project-20,,,,0,active
+2,INV-02-00167,Future Tech,SE,USD,45197.25,2025-07-25T13:09:45.870360,2025-08-09T13:09:45.870360,2025-08-20T13:09:45.870360,15,Net 45,Invoice,Project-17,Services for Future Tech,,,0,active
+2,INV-02-00169,Enterprise Systems,BE,DKK,38664.91,2025-10-07T13:09:45.870360,2025-12-06T13:09:45.870360,,60,Due on Receipt,Invoice,Project-19,Services for Enterprise Systems,,,0,active
+2,INV-02-00170,NextGen Industries,CH,CHF,1.36e+04,2025-09-09T13:09:45.870360,2025-10-09T13:09:45.870360,2025-10-19T13:09:45.870360,30,Net 30,Invoice,Project-19,Services for NextGen Industries,,,0,active
+2,INV-02-00171,StartupHub,ES,CHF,18751.22,2025-08-27T13:09:45.870360,2025-09-26T13:09:45.870360,2025-09-30T13:09:45.870360,30,Net 15,Invoice,Project-9,Services for StartupHub,,,0,active
+2,INV-02-00172,Enterprise Systems,NL,SEK,39405.63,2025-08-25T13:09:45.870360,2025-10-09T13:09:45.870360,2025-10-26T13:09:45.870360,45,2/10 Net 30,Invoice,Project-16,Services for Enterprise Systems,,,0,active
+2,INV-02-00173,StartupHub,DE,DKK,43327.7,2025-08-23T13:09:45.870360,2025-10-22T13:09:45.870360,2025-10-28T13:09:45.870360,60,Due on Receipt,Invoice,Project-6,Services for StartupHub,,,0,active
+2,INV-02-00024,MegaCorp International,NO,EUR,8876.16,2025-10-18T13:09:45.870360,2025-12-02T13:09:45.870360,2025-12-13T13:09:45.870360,45,Net 60,Invoice,Project-16,Services for MegaCorp International,,,0,active
+2,INV-02-00175,Enterprise Systems,ES,EUR,30842.41,2025-07-18T13:09:45.870360,2025-09-01T13:09:45.870360,2025-08-26T13:09:45.870360,45,Net 45,Invoice,Project-20,Services for Enterprise Systems,,,0,active
+2,INV-02-00176,MegaCorp International,BE,CHF,1524.81,2025-09-24T13:09:45.870360,2025-10-09T13:09:45.870360,2025-11-02T13:09:45.870360,15,2/10 Net 30,Invoice,Project-10,Services for MegaCorp International,,,0,active
+2,INV-02-00041,NextGen Industries,DE,NOK,2767.0,2025-09-13T13:09:45.870360,2025-10-13T13:09:45.870360,,30,Net 30,Invoice,Project-9,Services for NextGen Industries,,,0,active
+2,INV-02-00178,NextGen Industries,FR,SEK,1752.96,2025-08-29T13:09:45.870360,2025-10-28T13:09:45.870360,2025-10-28T13:09:45.870360,60,2/10 Net 30,Invoice,Project-10,Services for NextGen Industries,,,0,active
+2,INV-02-00045,Enterprise Systems,AT,USD,23283.19,2025-09-22T13:09:45.870360,2025-11-06T13:09:45.870360,2025-11-03T13:09:45.870360,45,Net 45,Invoice,Project-17,Services for Enterprise Systems,,,0,active
+2,INV-02-00180,TechStart Inc,CH,GBP,43929.54,2025-08-16T13:09:45.870360,2025-09-30T13:09:45.870360,2025-10-22T13:09:45.870360,45,Due on Receipt,Invoice,Project-15,Services for TechStart Inc,,,0,active
+2,INV-02-00181,Future Tech,SE,CHF,44929.67,2025-10-16T13:09:45.870360,2025-11-15T13:09:45.870360,2025-11-23T13:09:45.870360,30,Net 15,Invoice,Project-3,Services for Future Tech,,,0,active
+2,INV-02-00182,Cloud Services Co,NL,GBP,2.63e+04,2025-08-07T13:09:45.870360,2025-09-06T13:09:45.870360,,30,Net 60,Invoice,Project-10,Services for Cloud Services Co,,,0,active
+2,INV-02-00183,TechStart Inc,CH,USD,24351.22,2025-10-23T13:09:45.870360,2025-12-07T13:09:45.870360,,45,Net 15,Invoice,Project-6,Services for TechStart Inc,,,0,active
+2,INV-02-00184,Future Tech,NO,USD,12508.21,2025-11-03T13:09:45.870360,2025-12-03T13:09:45.870360,,30,Net 60,Invoice,Project-7,Services for Future Tech,,,0,active
+2,INV-02-00185,TechStart Inc,UK,EUR,34114.79,2025-08-24T13:09:45.870360,2025-09-23T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-2,Services for TechStart Inc,,,0,active
+2,INV-02-00186,NextGen Industries,IT,CHF,9960.72,2025-08-19T13:09:45.870360,2025-10-18T13:09:45.870360,2025-10-08T13:09:45.870360,60,Net 45,Invoice,Project-8,Services for NextGen Industries,,,0,active
+2,INV-02-00187,Smart Solutions,ES,CHF,43159.61,2025-09-15T13:09:45.870360,2025-11-14T13:09:45.870360,2025-11-09T13:09:45.870360,60,Net 30,Invoice,Project-17,Services for Smart Solutions,,,0,active
+2,INV-02-00188,Innovation Partners,AT,EUR,16946.37,2025-07-11T13:09:45.870360,2025-08-10T13:09:45.870360,,30,2/10 Net 30,Invoice,Project-9,Services for Innovation Partners,,,0,active
+2,INV-02-00189,Cloud Services Co,DE,CHF,21773.2,2025-09-26T13:09:45.870360,2025-11-10T13:09:45.870360,2025-11-18T13:09:45.870360,45,Net 15,Invoice,Project-13,Services for Cloud Services Co,,,0,active
+2,INV-02-00190,Enterprise Systems,CH,CHF,42959.13,2025-07-26T13:09:45.870360,2025-08-25T13:09:45.870360,2025-09-07T13:09:45.870360,30,Due on Receipt,Invoice,Project-5,Services for Enterprise Systems,,,0,active
+2,INV-02-00191,Global Solutions Ltd,SE,SEK,27165.15,2025-09-01T13:09:45.870360,2025-10-31T13:09:45.870360,2025-10-24T13:09:45.870360,60,Net 15,Invoice,Project-18,Services for Global Solutions Ltd,,,0,active
+2,INV-02-00192,Future Tech,SE,EUR,23042.89,2025-07-22T13:09:45.870360,2025-08-21T13:09:45.870360,2025-09-14T13:09:45.870360,30,2/10 Net 30,Invoice,Project-18,Services for Future Tech,,,0,active
+2,INV-02-00193,TechStart Inc,ES,DKK,34299.71,2025-07-12T13:09:45.870360,2025-09-10T13:09:45.870360,2025-09-23T13:09:45.870360,60,Due on Receipt,Invoice,Project-18,Services for TechStart Inc,,,0,active
+2,INV-02-00194,MegaCorp International,CH,CHF,38962.47,2025-08-24T13:09:45.870360,2025-10-08T13:09:45.870360,,45,2/10 Net 30,Invoice,Project-10,Services for MegaCorp International,,,0,active
+2,INV-02-00195,MegaCorp International,ES,CHF,31932.4,2025-10-29T13:09:45.870360,2025-11-28T13:09:45.870360,,30,Net 30,Invoice,Project-3,Services for MegaCorp International,,,0,active
+2,INV-02-00196,Innovation Partners,IT,CHF,39267.73,2025-08-19T13:09:45.870360,2025-10-03T13:09:45.870360,2025-10-06T13:09:45.870360,45,2/10 Net 30,Invoice,Project-15,Services for Innovation Partners,,,0,active
+2,INV-02-00197,StartupHub,FR,NOK,13330.7,2025-07-12T13:09:45.870360,2025-08-11T13:09:45.870360,2025-08-05T13:09:45.870360,30,Net 60,Invoice,Project-6,Services for StartupHub,,,0,active
+2,INV-02-00198,Innovation Partners,CH,DKK,49804.67,2025-11-06T13:09:45.870360,2026-01-05T13:09:45.870360,2026-01-09T13:09:45.870360,60,Net 30,Invoice,Project-13,Services for Innovation Partners,,,0,active
+2,INV-02-00199,MegaCorp International,DE,USD,26810.37,2025-08-15T13:09:45.870360,2025-10-14T13:09:45.870360,2025-10-20T13:09:45.870360,60,Net 15,Invoice,Project-11,Services for MegaCorp International,,,0,active
+2,INV-02-00200,StartupHub,CH,USD,29950.72,2025-10-29T13:09:45.870360,2025-12-13T13:09:45.870360,2025-12-14T13:09:45.870360,45,2/10 Net 30,Invoice,Project-14,Services for StartupHub,,,0,active
+2,CN-INV-02-00189,Cloud Services Co,DE,CHF,-4874.25,2025-10-12T13:09:45.870360,,,0,Net 15,Credit Note,Project-13,Credit for INV-02-00189,credit_note,,0,active
+2,CN-INV-02-00170,NextGen Industries,CH,CHF,-4295.79,2025-10-09T13:09:45.870360,,,0,Net 30,Credit Note,Project-19,Credit for INV-02-00170,credit_note,,0,active
+2,CN-INV-02-00033,Acme Corporation,US,NOK,-4935.77,2025-08-23T13:09:45.870360,,,0,Due on Receipt,Credit Note,Project-5,Credit for INV-02-00033,credit_note,,0,active
+2,CN-INV-02-00148,Smart Solutions,IT,NOK,-1643.56,2025-08-13T13:09:45.870360,,,0,Due on Receipt,Credit Note,Project-12,Credit for INV-02-00148,credit_note,,0,active
+2,CN-INV-02-00003,Cloud Services Co,IT,USD,-3633.75,2025-11-16T13:09:45.870360,,,0,Net 45,Credit Note,Project-4,Credit for INV-02-00003,credit_note,,0,active
+2,CN-INV-02-00049,Acme Corporation,ES,USD,-3631.76,2025-08-10T13:09:45.870360,,,0,Net 60,Credit Note,Project-15,Credit for INV-02-00049,credit_note,,0,active
+2,CN-INV-02-00189,Cloud Services Co,DE,CHF,-2249.76,2025-10-16T13:09:45.870360,,,0,Net 15,Credit Note,Project-13,Credit for INV-02-00189,credit_note,,0,active
+2,CN-INV-02-00167,Future Tech,SE,USD,-9936.35,2025-08-23T13:09:45.870360,,,0,Net 45,Credit Note,Project-17,Credit for INV-02-00167,credit_note,,0,active
+2,CN-INV-02-00154,Future Tech,BE,CHF,-7787.78,2025-10-28T13:09:45.870360,,,0,Net 60,Credit Note,Project-20,Credit for INV-02-00154,credit_note,,0,active
+2,CN-INV-02-00084,Acme Corporation,NO,SEK,-12473.8,2025-09-11T13:09:45.870360,,,0,Net 60,Credit Note,Project-5,Credit for INV-02-00084,credit_note,,0,active
+2,RE-INV-02-00096,Digital Dynamics,IT,NOK,31378.51,2025-10-08T13:09:45.870360,2025-11-20T13:09:45.870360,,45,Net 60,Rebill,Project-17,Rebill of INV-02-00096,rebill,,0,active
+2,RE-INV-02-00102,Global Solutions Ltd,FR,GBP,18944.49,2025-11-05T13:09:45.870360,2025-12-05T13:09:45.870360,,30,Net 45,Rebill,Project-5,Rebill of INV-02-00102,rebill,,0,active
+2,RE-INV-02-00057,Future Tech,,NOK,25305.48,2025-07-20T13:09:45.870360,2025-09-15T13:09:45.870360,,60,Net 60,Rebill,Project-4,Rebill of INV-02-00057,rebill,,0,active
+2,RE-INV-02-00133,Enterprise Systems,IT,DKK,43669.84,2025-07-26T13:09:45.870360,2025-08-05T13:09:45.870360,,15,Net 60,Rebill,Project-2,Rebill of INV-02-00133,rebill,,0,active
+2,RE-INV-02-00073,Future Tech,NO,CHF,51365.22,2025-07-25T13:09:45.870360,2025-09-19T13:09:45.870360,,60,Net 45,Rebill,Project-12,Rebill of INV-02-00073,rebill,,0,active
+2,RE-INV-02-00106,Global Solutions Ltd,UK,DKK,2835.82,2025-09-14T13:09:45.870360,2025-10-30T13:09:45.870360,,45,2/10 Net 30,Rebill,Project-20,Rebill of INV-02-00106,rebill,,0,active
+2,PART-INV-02-00029,Innovation Partners,FR,CHF,5887.57,2025-08-29T13:09:45.870360,2025-09-28T13:09:45.870360,2025-10-18T13:09:45.870360,30,2/10 Net 30,Partial Payment,Project-5,Partial payment for INV-02-00029,partial,,0,active
+2,PART-INV-02-00103,Future Tech,ES,NOK,26996.45,2025-10-17T13:09:45.870360,2025-11-01T13:09:45.870360,2025-11-09T13:09:45.870360,15,Net 45,Partial Payment,Project-9,Partial payment for INV-02-00103,partial,,0,active
+2,PART-INV-02-00158,Smart Solutions,DE,CHF,4833.14,2025-09-26T13:09:45.870360,2025-10-26T13:09:45.870360,2025-11-01T13:09:45.870360,30,Net 60,Partial Payment,Project-16,Partial payment for INV-02-00158,partial,,0,active
+2,PART-INV-02-00073,Future Tech,NO,CHF,14921.96,2025-07-16T13:09:45.870360,2025-09-14T13:09:45.870360,2025-09-15T13:09:45.870360,60,Net 45,Partial Payment,Project-12,Partial payment for INV-02-00073,partial,,0,active
+2,PART-INV-02-00120,Global Solutions Ltd,CH,SEK,1134.64,2025-09-30T13:09:45.870360,2025-11-29T13:09:45.870360,2025-12-02T13:09:45.870360,60,Net 45,Partial Payment,Project-16,Partial payment for INV-02-00120,partial,,0,active
+2,PART-INV-02-00065,Global Solutions Ltd,FR,SEK,6760.2,2025-08-24T13:09:45.870360,2025-09-23T13:09:45.870360,2025-10-15T13:09:45.870360,30,2/10 Net 30,Partial Payment,Project-1,Partial payment for INV-02-00065,partial,,0,active
+2,PART-INV-02-00097,MegaCorp International,ES,NOK,4641.99,2025-10-21T13:09:45.870360,2025-12-20T13:09:45.870360,2025-12-27T13:09:45.870360,60,Net 15,Partial Payment,Project-9,Partial payment for INV-02-00097,partial,,0,active
+2,PART-INV-02-00024,Global Solutions Ltd,AT,USD,14215.53,2025-09-26T13:09:45.870360,2025-11-25T13:09:45.870360,2025-12-10T13:09:45.870360,60,2/10 Net 30,Partial Payment,Project-12,Partial payment for INV-02-00024,partial,,0,active
+2,PART-INV-02-00003,Enterprise Systems,NO,SEK,491.74,2025-11-01T13:09:45.870360,2025-11-16T13:09:45.870360,2025-11-25T13:09:45.870360,15,Net 45,Partial Payment,Project-12,Partial payment for INV-02-00003,partial,,0,active
+2,PART-INV-02-00185,TechStart Inc,UK,EUR,21143.83,2025-08-24T13:09:45.870360,2025-09-23T13:09:45.870360,2025-10-04T13:09:45.870360,30,2/10 Net 30,Partial Payment,Project-2,Partial payment for INV-02-00185,partial,,0,active
+2,PART-INV-02-00103,Future Tech,ES,NOK,28559.82,2025-10-17T13:09:45.870360,2025-11-01T13:09:45.870360,2025-11-02T13:09:45.870360,15,Net 45,Partial Payment,Project-9,Partial payment for INV-02-00103,partial,,0,active
+2,PART-INV-02-00080,TechStart Inc,SE,GBP,13483.1,2025-10-03T13:09:45.870360,2025-10-18T13:09:45.870360,2025-11-11T13:09:45.870360,15,Net 60,Partial Payment,Project-18,Partial payment for INV-02-00080,partial,,0,active
+2,PART-INV-02-00031,StartupHub,DE,NOK,5091.39,2025-09-02T13:09:45.870360,2025-10-02T13:09:45.870360,2025-10-26T13:09:45.870360,30,Net 30,Partial Payment,Project-12,Partial payment for INV-02-00031,partial,,0,active
+2,PART-INV-02-00087,Acme Corporation,NO,CHF,15153.2,2025-10-06T13:09:45.870360,2025-11-05T13:09:45.870360,2025-11-20T13:09:45.870360,30,Net 15,Partial Payment,Project-10,Partial payment for INV-02-00087,partial,,0,active
+2,PART-INV-02-00043,Acme Corporation,NO,USD,13331.45,2025-08-01T13:09:45.870360,2025-08-16T13:09:45.870360,2025-09-11T13:09:45.870360,15,2/10 Net 30,Partial Payment,Project-17,Partial payment for INV-02-00043,partial,,0,active
+2,PART-INV-02-00057,Future Tech,,NOK,17525.57,2025-07-13T13:09:45.870360,2025-09-11T13:09:45.870360,2025-10-07T13:09:45.870360,60,Net 60,Partial Payment,Project-4,Partial payment for INV-02-00057,partial,,0,active
+2,PART-INV-02-00006,Digital Dynamics,NL,GBP,2295.18,2025-08-20T13:09:45.870360,2025-10-19T13:09:45.870360,2025-11-12T13:09:45.870360,60,2/10 Net 30,Partial Payment,Project-6,Partial payment for INV-02-00006,partial,,0,active
+2,PART-INV-02-00169,Enterprise Systems,BE,DKK,15449.92,2025-10-07T13:09:45.870360,2025-12-06T13:09:45.870360,2025-12-30T13:09:45.870360,60,Due on Receipt,Partial Payment,Project-19,Partial payment for INV-02-00169,partial,,0,active
+2,PART-INV-02-00097,MegaCorp International,ES,NOK,3133.7,2025-10-21T13:09:45.870360,2025-12-20T13:09:45.870360,2025-12-21T13:09:45.870360,60,Net 15,Partial Payment,Project-9,Partial payment for INV-02-00097,partial,,0,active
+2,PART-INV-02-00044,Global Solutions Ltd,NO,DKK,21213.6,2025-07-31T13:09:45.870360,2025-09-14T13:09:45.870360,2025-10-08T13:09:45.870360,45,Net 30,Partial Payment,Project-11,Partial payment for INV-02-00044,partial,,0,active
+3,INV-03-00001,Future Tech,NL,NOK,48099.48,2025-10-03T13:09:45.873332,2025-11-02T13:09:45.873332,2025-11-07T13:09:45.873332,30,Due on Receipt,Invoice,Project-2,Services for Future Tech,,,0,active
+3,INV-03-00002,Cloud Services Co,US,DKK,33668.04,2025-07-25T13:09:45.873332,2025-09-08T13:09:45.873332,2025-09-07T13:09:45.873332,45,Net 45,Invoice,,Services for Cloud Services Co,,,0,active
+3,INV-03-00003,Acme Corporation,US,SEK,39390.29,2025-08-29T13:09:45.873332,2025-09-28T13:09:45.873332,2025-10-05T13:09:45.873332,30,Net 15,Invoice,Project-3,Services for Acme Corporation,,,0,active
+3,INV-03-00004,MegaCorp International,US,EUR,18420.37,2025-10-05T13:09:45.873332,2025-11-19T13:09:45.873332,2025-12-26T13:09:45.873332,45,Net 30,Invoice,Project-5,Services for MegaCorp International,,,0,active
+3,INV-03-00005,Future Tech,NO,USD,2046.29,2025-09-19T13:09:45.873332,2025-11-03T13:09:45.873332,2025-10-27T13:09:45.873332,45,Net 15,Invoice,Project-2,Services for Future Tech,,,0,active
+3,INV-03-00006,Cloud Services Co,ES,NOK,23951.34,2025-08-16T13:09:45.873332,2025-10-15T13:09:45.873332,2025-10-24T13:09:45.873332,60,2/10 Net 30,Invoice,Project-6,Services for Cloud Services Co,,,0,active
+3,INV-03-00007,Smart Solutions,ES,CHF,1035.27,2025-08-16T13:09:45.873332,2025-09-30T13:09:45.873332,2025-10-12T13:09:45.873332,45,Net 60,Invoice,Project-1,Services for Smart Solutions,,,0,active
+3,INV-03-00008,Smart Solutions,NL,USD,26679.42,2025-09-27T13:09:45.873332,2025-10-27T13:09:45.873332,2025-11-01T13:09:45.873332,30,2/10 Net 30,Invoice,Project-10,Services for Smart Solutions,,,0,active
+3,INV-03-00009,Smart Solutions,SE,EUR,3145.09,2025-07-24T13:09:45.873332,2025-08-08T13:09:45.873332,2025-08-18T13:09:45.873332,15,Net 30,Invoice,Project-7,Services for Smart Solutions,,,0,active
+3,INV-03-00010,StartupHub,AT,GBP,3405.2,2025-07-14T13:09:45.873332,2025-09-12T13:09:45.873332,2025-09-12T13:09:45.873332,60,Net 30,Invoice,Project-7,Services for StartupHub,,,0,active
+3,INV-03-00011,Future Tech,SE,EUR,18685.38,2025-10-24T13:09:45.873332,2025-11-08T13:09:45.873332,,15,Net 15,Invoice,Project-2,Services for Future Tech,,,0,active
+3,INV-03-00012,Digital Dynamics,UK,USD,48068.75,2025-07-15T13:09:45.873332,2025-07-30T13:09:45.873332,2025-07-27T13:09:45.873332,15,2/10 Net 30,Invoice,Project-13,Services for Digital Dynamics,,,0,active
+3,INV-03-00013,StartupHub,UK,DKK,32292.59,2025-08-10T13:09:45.873332,2025-09-09T13:09:45.873332,2025-09-05T13:09:45.873332,30,Due on Receipt,Invoice,Project-14,Services for StartupHub,,,0,active
+3,INV-03-00014,Smart Solutions,ES,NOK,8750.65,2025-08-02T13:09:45.873332,2025-10-01T13:09:45.873332,2025-10-03T13:09:45.873332,60,Net 15,Invoice,Project-11,Services for Smart Solutions,,,0,active
+3,INV-03-00015,Innovation Partners,SE,CHF,41481.59,2025-10-26T13:09:45.873332,2025-12-10T13:09:45.873332,,45,2/10 Net 30,Invoice,Project-7,Services for Innovation Partners,,,0,active
+3,INV-03-00003,Innovation Partners,US,NOK,2698.48,2025-10-13T13:09:45.873332,2025-11-27T13:09:45.873332,2025-11-27T13:09:45.873332,45,Net 15,Invoice,Project-1,Services for Innovation Partners,,,0,active
+3,INV-03-00017,Acme Corporation,NO,DKK,14521.9,2025-10-27T13:09:45.873332,2025-12-11T13:09:45.873332,2025-12-26T13:09:45.873332,45,2/10 Net 30,Invoice,Project-5,Services for Acme Corporation,,,0,active
+3,INV-03-00018,Enterprise Systems,FR,GBP,40742.64,2025-07-29T13:09:45.873332,2025-08-28T13:09:45.873332,2025-09-02T13:09:45.873332,30,Net 60,Invoice,Project-3,Services for Enterprise Systems,,,0,active
+3,INV-03-00019,StartupHub,NO,SEK,41156.25,2025-08-01T13:09:45.873332,2025-09-30T13:09:45.873332,,60,Net 30,Invoice,Project-19,Services for StartupHub,,,0,active
+3,INV-03-00020,Cloud Services Co,NL,CHF,46582.06,2025-11-04T13:09:45.873332,2025-12-19T13:09:45.873332,,45,Due on Receipt,Invoice,Project-20,Services for Cloud Services Co,,,0,active
+3,INV-03-00021,Acme Corporation,IT,SEK,3017.93,2025-09-28T13:09:45.873332,2025-11-27T13:09:45.873332,2025-12-24T13:09:45.873332,60,2/10 Net 30,Invoice,Project-8,Services for Acme Corporation,,,0,active
+3,INV-03-00022,NextGen Industries,AT,SEK,5414.06,2025-08-29T13:09:45.873332,2025-10-28T13:09:45.873332,,60,Net 60,Invoice,Project-5,Services for NextGen Industries,,,0,active
+3,INV-03-00023,Innovation Partners,CH,CHF,38917.43,2025-10-13T13:09:45.873332,2025-10-28T13:09:45.873332,2025-10-28T13:09:45.873332,15,2/10 Net 30,Invoice,Project-7,Services for Innovation Partners,,,0,active
+3,INV-03-00024,Enterprise Systems,UK,GBP,39061.82,2025-08-04T13:09:45.873332,2025-09-03T13:09:45.873332,,30,Net 30,Invoice,Project-4,Services for Enterprise Systems,,,0,active
+3,INV-03-00025,Cloud Services Co,ES,SEK,33115.08,2025-08-23T13:09:45.873332,2025-09-22T13:09:45.873332,2025-09-26T13:09:45.873332,30,Net 15,Invoice,Project-20,Services for Cloud Services Co,,,0,active
+3,INV-03-00026,Future Tech,US,DKK,12440.99,2025-09-27T13:09:45.873332,2025-10-27T13:09:45.873332,,30,Due on Receipt,Invoice,Project-3,Services for Future Tech,,,0,active
+3,INV-03-00027,Acme Corporation,ES,NOK,40409.76,2025-09-27T13:09:45.873332,2025-10-27T13:09:45.873332,2025-11-15T13:09:45.873332,30,Net 15,Invoice,Project-7,Services for Acme Corporation,,,0,active
+3,INV-03-00028,Smart Solutions,BE,SEK,36766.26,2025-09-17T13:09:45.873332,2025-11-01T13:09:45.873332,2025-10-26T13:09:45.873332,45,Net 30,Invoice,Project-13,Services for Smart Solutions,,,0,active
+3,INV-03-00029,Global Solutions Ltd,US,GBP,10834.11,2025-07-15T13:09:45.873332,2025-08-29T13:09:45.873332,,45,Net 45,Invoice,Project-1,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00030,TechStart Inc,US,GBP,43503.11,2025-10-02T13:09:45.873332,2025-11-16T13:09:45.873332,,45,Net 45,Invoice,Project-17,Services for TechStart Inc,,,0,active
+3,INV-03-00031,Global Solutions Ltd,FR,SEK,48372.78,2025-08-19T13:09:45.873332,2025-10-18T13:09:45.873332,2025-11-02T13:09:45.873332,60,Net 30,Invoice,Project-8,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00032,StartupHub,DE,EUR,17992.22,2025-09-10T13:09:45.873332,2025-11-09T13:09:45.873332,2025-11-07T13:09:45.873332,60,Net 60,Invoice,Project-17,Services for StartupHub,,,0,active
+3,INV-03-00033,Acme Corporation,CH,GBP,12053.55,2025-08-11T13:09:45.873332,2025-10-10T13:09:45.873332,2025-10-31T13:09:45.873332,60,Net 60,Invoice,Project-3,Services for Acme Corporation,,,0,active
+3,INV-03-00034,Innovation Partners,FR,SEK,8484.71,2025-10-04T13:09:45.873332,2025-11-03T13:09:45.873332,2025-10-30T13:09:45.873332,30,Net 15,Invoice,Project-15,Services for Innovation Partners,,,0,active
+3,INV-03-00035,StartupHub,CH,USD,22073.15,2025-07-27T13:09:45.873332,2025-08-26T13:09:45.873332,2025-09-07T13:09:45.873332,30,Due on Receipt,Invoice,Project-19,Services for StartupHub,,,0,active
+3,INV-03-00036,Global Solutions Ltd,ES,DKK,44102.27,2025-09-19T13:09:45.873332,2025-10-04T13:09:45.873332,2025-10-04T13:09:45.873332,15,Net 45,Invoice,Project-14,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00037,Global Solutions Ltd,FR,EUR,7445.75,2025-10-23T13:09:45.873332,2025-12-07T13:09:45.873332,,45,2/10 Net 30,Invoice,Project-9,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00038,TechStart Inc,NO,DKK,24353.51,2025-09-24T13:09:45.873332,2025-10-24T13:09:45.873332,2025-10-31T13:09:45.873332,30,Due on Receipt,Invoice,Project-12,Services for TechStart Inc,,,0,active
+3,INV-03-00018,Global Solutions Ltd,FR,USD,2579.25,2025-09-08T13:09:45.873332,2025-10-08T13:09:45.873332,2025-10-17T13:09:45.873332,30,Net 45,Invoice,Project-8,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00040,TechStart Inc,DE,CHF,43489.32,2025-10-14T13:09:45.873332,2025-11-13T13:09:45.873332,,30,Net 45,Invoice,Project-8,Services for TechStart Inc,,,0,active
+3,INV-03-00041,StartupHub,ES,CHF,30963.74,2025-09-25T13:09:45.873332,2025-11-24T13:09:45.873332,,60,2/10 Net 30,Invoice,Project-2,Services for StartupHub,,,0,active
+3,INV-03-00042,Smart Solutions,NL,NOK,2923.33,2025-10-23T13:09:45.873332,2025-11-07T13:09:45.873332,2025-11-19T13:09:45.873332,15,Net 30,Invoice,Project-7,Services for Smart Solutions,,,0,active
+3,INV-03-00043,Future Tech,DE,CHF,15426.57,2025-08-17T13:09:45.873332,2025-10-01T13:09:45.873332,2025-10-02T13:09:45.873332,45,Net 60,Invoice,Project-15,Services for Future Tech,,,0,active
+3,INV-03-00044,StartupHub,CH,USD,20260.27,2025-10-10T13:09:45.873332,2025-10-25T13:09:45.873332,2025-11-06T13:09:45.873332,15,Net 45,Invoice,Project-19,Services for StartupHub,,,0,active
+3,INV-03-00045,TechStart Inc,IT,GBP,34894.15,2025-10-30T13:09:45.873332,2025-12-29T13:09:45.873332,,60,Due on Receipt,Invoice,Project-4,Services for TechStart Inc,,,0,active
+3,INV-03-00046,TechStart Inc,CH,NOK,19820.28,2025-09-29T13:09:45.873332,2025-11-13T13:09:45.873332,,45,Net 60,Invoice,Project-13,Services for TechStart Inc,,,0,active
+3,INV-03-00047,NextGen Industries,SE,DKK,8354.4,2025-07-31T13:09:45.873332,2025-09-14T13:09:45.873332,2025-10-02T13:09:45.873332,45,Due on Receipt,Invoice,Project-2,Services for NextGen Industries,,,0,active
+3,INV-03-00048,Global Solutions Ltd,FR,EUR,31505.46,2025-10-16T13:09:45.873332,2025-12-15T13:09:45.873332,2025-12-20T13:09:45.873332,60,Net 45,Invoice,Project-18,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00049,Enterprise Systems,AT,NOK,24309.89,2025-09-11T13:09:45.873332,2025-10-11T13:09:45.873332,2025-10-24T13:09:45.873332,30,2/10 Net 30,Invoice,Project-1,Services for Enterprise Systems,,,0,active
+3,INV-03-00050,MegaCorp International,ES,EUR,8123.35,2025-09-27T13:09:45.873332,2025-10-27T13:09:45.873332,2025-11-08T13:09:45.873332,30,2/10 Net 30,Invoice,Project-10,Services for MegaCorp International,,,0,active
+3,INV-03-00051,Global Solutions Ltd,DE,NOK,14934.65,2025-07-23T13:09:45.873332,2025-09-21T13:09:45.873332,2025-09-29T13:09:45.873332,60,2/10 Net 30,Invoice,Project-18,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00052,Digital Dynamics,ES,GBP,44978.96,2025-09-22T13:09:45.873332,2025-11-06T13:09:45.873332,2025-11-17T13:09:45.873332,45,2/10 Net 30,Invoice,Project-3,Services for Digital Dynamics,,,0,active
+3,INV-03-00053,Cloud Services Co,CH,CHF,26707.66,2025-10-06T13:09:45.873332,2025-11-20T13:09:45.873332,2025-11-25T13:09:45.873332,45,Net 30,Invoice,Project-19,Services for Cloud Services Co,,,0,active
+3,INV-03-00054,StartupHub,IT,CHF,30833.39,2025-07-21T13:09:45.873332,2025-09-19T13:09:45.873332,2025-09-23T13:09:45.873332,60,2/10 Net 30,Invoice,Project-12,Services for StartupHub,,,0,active
+3,INV-03-00055,Future Tech,DE,SEK,12403.36,2025-09-11T13:09:45.873332,2025-11-10T13:09:45.873332,2025-11-04T13:09:45.873332,60,Net 30,Invoice,Project-1,Services for Future Tech,,,0,active
+3,INV-03-00056,NextGen Industries,NL,CHF,3229.12,2025-10-12T13:09:45.873332,2025-11-11T13:09:45.873332,,30,Net 60,Invoice,Project-1,Services for NextGen Industries,,,0,active
+3,INV-03-00057,Digital Dynamics,IT,SEK,27949.69,2025-08-11T13:09:45.873332,2025-08-26T13:09:45.873332,,15,Net 15,Invoice,Project-11,Services for Digital Dynamics,,,0,active
+3,INV-03-00058,MegaCorp International,BE,CHF,40065.46,2025-07-13T13:09:45.873332,2025-08-12T13:09:45.873332,2025-08-25T13:09:45.873332,30,Due on Receipt,Invoice,Project-15,Services for MegaCorp International,,,0,active
+3,INV-03-00059,Innovation Partners,NO,EUR,41920.18,2025-08-21T13:09:45.873332,2025-10-20T13:09:45.873332,2025-11-13T13:09:45.873332,60,Net 15,Invoice,Project-18,Services for Innovation Partners,,,0,active
+3,INV-03-00060,Cloud Services Co,UK,USD,14742.54,2025-10-05T13:09:45.873332,2025-11-19T13:09:45.873332,2025-12-02T13:09:45.873332,45,Due on Receipt,Invoice,Project-18,Services for Cloud Services Co,,,0,active
+3,INV-03-00061,NextGen Industries,UK,DKK,39334.85,2025-08-28T13:09:45.873332,2025-09-27T13:09:45.873332,2025-09-17T13:09:45.873332,30,Due on Receipt,Invoice,Project-2,Services for NextGen Industries,,,0,active
+3,INV-03-00062,Digital Dynamics,FR,SEK,15813.6,2025-10-30T13:09:45.873332,2025-11-29T13:09:45.873332,2025-11-23T13:09:45.873332,30,Net 60,Invoice,Project-3,Services for Digital Dynamics,,,0,active
+3,INV-03-00063,Enterprise Systems,ES,CHF,36889.61,2025-09-09T13:09:45.873332,2025-10-09T13:09:45.873332,2025-10-29T13:09:45.873332,30,Net 60,Invoice,Project-4,Services for Enterprise Systems,,,0,active
+3,INV-03-00064,Enterprise Systems,NO,EUR,23509.05,2025-10-04T13:09:45.873332,2025-11-03T13:09:45.873332,,30,Net 30,Invoice,Project-10,Services for Enterprise Systems,,,0,active
+3,INV-03-00065,Cloud Services Co,BE,EUR,6052.04,2025-09-24T13:09:45.873332,2025-10-09T13:09:45.873332,,15,Net 30,Invoice,Project-19,Services for Cloud Services Co,,,0,active
+3,INV-03-00066,Smart Solutions,ES,DKK,22614.67,2025-08-05T13:09:45.873332,2025-09-19T13:09:45.873332,2025-09-28T13:09:45.873332,45,Net 15,Invoice,Project-4,,,,0,active
+3,INV-03-00067,Smart Solutions,ES,SEK,16605.76,2025-07-23T13:09:45.873332,2025-08-22T13:09:45.873332,2025-09-05T13:09:45.873332,30,Net 15,Invoice,Project-19,Services for Smart Solutions,,,0,active
+3,INV-03-00068,Acme Corporation,BE,NOK,3472.34,2025-09-26T13:09:45.873332,2025-11-10T13:09:45.873332,2025-11-13T13:09:45.873332,45,Net 45,Invoice,Project-6,Services for Acme Corporation,,,0,active
+3,INV-03-00069,NextGen Industries,ES,GBP,17284.27,2025-09-28T13:09:45.873332,2025-11-27T13:09:45.873332,,60,2/10 Net 30,Invoice,Project-3,Services for NextGen Industries,,,0,active
+3,INV-03-00070,TechStart Inc,NO,CHF,5765.89,2025-09-07T13:09:45.873332,2025-10-07T13:09:45.873332,,30,Net 45,Invoice,Project-16,Services for TechStart Inc,,,0,active
+3,INV-03-00071,Cloud Services Co,NL,USD,35281.12,2025-10-28T13:09:45.873332,2025-12-12T13:09:45.873332,2025-12-18T13:09:45.873332,45,Net 15,Invoice,Project-15,Services for Cloud Services Co,,,0,active
+3,INV-03-00072,Digital Dynamics,ES,SEK,29159.23,2025-07-24T13:09:45.873332,2025-09-07T13:09:45.873332,2025-08-28T13:09:45.873332,45,Due on Receipt,Invoice,Project-4,Services for Digital Dynamics,,,0,active
+3,INV-03-00073,Smart Solutions,BE,CHF,29936.26,2025-10-19T13:09:45.873332,2025-12-03T13:09:45.873332,2025-12-12T13:09:45.873332,45,Net 60,Invoice,Project-16,Services for Smart Solutions,,,0,active
+3,INV-03-00074,Cloud Services Co,CH,NOK,12571.56,2025-10-22T13:09:45.873332,2025-12-21T13:09:45.873332,2025-12-30T13:09:45.873332,60,Due on Receipt,Invoice,Project-19,Services for Cloud Services Co,,,0,active
+3,INV-03-00075,Cloud Services Co,CH,EUR,41279.13,2025-09-24T13:09:45.873332,2025-11-23T13:09:45.873332,2025-11-20T13:09:45.873332,60,Net 30,Invoice,Project-20,Services for Cloud Services Co,,,0,active
+3,INV-03-00076,Cloud Services Co,BE,NOK,33348.07,2025-10-16T13:09:45.873332,2025-12-15T13:09:45.873332,,60,2/10 Net 30,Invoice,Project-1,Services for Cloud Services Co,,,0,active
+3,INV-03-00077,Innovation Partners,AT,SEK,22910.83,2025-09-05T13:09:45.873332,2025-10-20T13:09:45.873332,,45,Net 15,Invoice,Project-19,Services for Innovation Partners,,,0,active
+3,INV-03-00078,StartupHub,ES,EUR,29553.62,2025-11-04T13:09:45.873332,2026-01-03T13:09:45.873332,,60,Net 60,Invoice,Project-10,Services for StartupHub,,,0,active
+3,INV-03-00079,StartupHub,CH,DKK,48956.12,2025-07-16T13:09:45.873332,2025-07-31T13:09:45.873332,,15,Net 30,Invoice,Project-8,Services for StartupHub,,,0,active
+3,INV-03-00080,Innovation Partners,CH,USD,33461.89,2025-09-28T13:09:45.873332,2025-11-12T13:09:45.873332,2025-11-16T13:09:45.873332,45,Net 45,Invoice,Project-12,Services for Innovation Partners,,,0,active
+3,INV-03-00081,Global Solutions Ltd,US,EUR,32771.07,2025-10-29T13:09:45.873332,2025-11-28T13:09:45.873332,2025-11-26T13:09:45.873332,30,Due on Receipt,Invoice,Project-14,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00082,StartupHub,AT,CHF,31539.18,2025-07-27T13:09:45.873332,2025-09-25T13:09:45.873332,2025-10-15T13:09:45.873332,60,Net 45,Invoice,Project-13,Services for StartupHub,,,0,active
+3,INV-03-00083,NextGen Industries,BE,DKK,36814.76,2025-09-25T13:09:45.873332,2025-10-10T13:09:45.873332,2025-10-01T13:09:45.873332,15,2/10 Net 30,Invoice,Project-19,Services for NextGen Industries,,,0,active
+3,INV-03-00084,StartupHub,ES,EUR,29433.17,2025-09-20T13:09:45.873332,2025-11-19T13:09:45.873332,,60,Due on Receipt,Invoice,Project-17,Services for StartupHub,,,0,active
+3,INV-03-00085,Future Tech,CH,EUR,26644.48,2025-10-17T13:09:45.873332,2025-12-01T13:09:45.873332,,45,Due on Receipt,Invoice,Project-3,Services for Future Tech,,,0,active
+3,INV-03-00086,Smart Solutions,US,CHF,23247.7,2025-09-22T13:09:45.873332,2025-11-06T13:09:45.873332,2025-10-28T13:09:45.873332,45,Net 15,Invoice,Project-14,Services for Smart Solutions,,,0,active
+3,INV-03-00087,Global Solutions Ltd,US,NOK,46220.36,2025-08-16T13:09:45.873332,2025-09-30T13:09:45.873332,,45,2/10 Net 30,Invoice,Project-9,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00088,MegaCorp International,IT,DKK,37131.62,2025-07-31T13:09:45.873332,2025-08-15T13:09:45.873332,2025-08-08T13:09:45.873332,15,Net 60,Invoice,Project-17,Services for MegaCorp International,,,0,active
+3,INV-03-00089,NextGen Industries,IT,GBP,43035.06,2025-08-11T13:09:45.873332,2025-09-10T13:09:45.873332,,30,Net 60,Invoice,Project-19,Services for NextGen Industries,,,0,active
+3,INV-03-00090,Digital Dynamics,NO,USD,24761.01,2025-08-26T13:09:45.873332,2025-09-25T13:09:45.873332,,30,Net 15,Invoice,Project-3,Services for Digital Dynamics,,,0,active
+3,INV-03-00091,Innovation Partners,NL,USD,33372.7,2025-10-23T13:09:45.873332,2025-11-22T13:09:45.873332,2025-12-07T13:09:45.873332,30,2/10 Net 30,Invoice,Project-12,Services for Innovation Partners,,,0,active
+3,INV-03-00092,Acme Corporation,DE,CHF,20538.5,2025-10-22T13:09:45.873332,2025-11-06T13:09:45.873332,2025-10-30T13:09:45.873332,15,2/10 Net 30,Invoice,Project-8,Services for Acme Corporation,,,0,active
+3,INV-03-00093,Global Solutions Ltd,CH,DKK,22301.98,2025-09-08T13:09:45.873332,2025-10-23T13:09:45.873332,,45,Net 45,Invoice,Project-11,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00094,Smart Solutions,SE,GBP,47853.0,2025-07-15T13:09:45.873332,2025-07-30T13:09:45.873332,,15,Net 15,Invoice,Project-11,Services for Smart Solutions,,,0,active
+3,INV-03-00095,Future Tech,SE,NOK,12848.05,2025-08-11T13:09:45.873332,2025-10-10T13:09:45.873332,,60,2/10 Net 30,Invoice,Project-11,Services for Future Tech,,,0,active
+3,INV-03-00096,MegaCorp International,US,DKK,4329.65,2025-08-19T13:09:45.873332,2025-09-03T13:09:45.873332,,15,Due on Receipt,Invoice,Project-15,Services for MegaCorp International,,,0,active
+3,INV-03-00097,Acme Corporation,US,SEK,5505.12,2025-08-11T13:09:45.873332,2025-09-10T13:09:45.873332,,30,Net 60,Invoice,Project-20,Services for Acme Corporation,,,0,active
+3,INV-03-00098,NextGen Industries,DE,CHF,33163.34,2025-07-25T13:09:45.873332,2025-08-09T13:09:45.873332,,15,Net 60,Invoice,Project-4,Services for NextGen Industries,,,0,active
+3,INV-03-00099,Digital Dynamics,NL,NOK,45266.18,2025-09-07T13:09:45.873332,2025-09-22T13:09:45.873332,2025-09-15T13:09:45.873332,15,Net 60,Invoice,Project-3,Services for Digital Dynamics,,,0,active
+3,INV-03-00100,Acme Corporation,IT,DKK,13968.58,2025-08-28T13:09:45.873332,2025-10-12T13:09:45.873332,2025-10-02T13:09:45.873332,45,Net 60,Invoice,Project-20,Services for Acme Corporation,,,0,active
+3,INV-03-00101,NextGen Industries,SE,EUR,45717.85,2025-07-23T13:09:45.873332,2025-08-22T13:09:45.873332,2025-08-19T13:09:45.873332,30,Net 30,Invoice,Project-3,Services for NextGen Industries,,,0,active
+3,INV-03-00102,Future Tech,DE,NOK,32376.43,2025-09-05T13:09:45.873332,2025-09-20T13:09:45.873332,2025-09-24T13:09:45.873332,15,Net 15,Invoice,Project-5,Services for Future Tech,,,0,active
+3,INV-03-00103,Smart Solutions,NO,DKK,25043.29,2025-09-21T13:09:45.873332,2025-10-06T13:09:45.873332,,15,Net 30,Invoice,Project-18,Services for Smart Solutions,,,0,active
+3,INV-03-00104,Cloud Services Co,ES,NOK,15838.58,2025-10-06T13:09:45.873332,2025-12-05T13:09:45.873332,2025-12-20T13:09:45.873332,60,Due on Receipt,Invoice,Project-3,Services for Cloud Services Co,,,0,active
+3,INV-03-00105,Future Tech,IT,NOK,10952.9,2025-08-22T13:09:45.873332,2025-09-06T13:09:45.873332,,15,Due on Receipt,Invoice,Project-7,Services for Future Tech,,,0,active
+3,INV-03-00106,Future Tech,UK,NOK,22461.2,2025-07-23T13:09:45.873332,2025-09-06T13:09:45.873332,2025-09-21T13:09:45.873332,45,Net 30,Invoice,Project-19,Services for Future Tech,,,0,active
+3,INV-03-00107,Future Tech,US,EUR,17624.97,2025-10-19T13:09:45.873332,2025-12-03T13:09:45.873332,2025-11-23T13:09:45.873332,45,Net 45,Invoice,Project-4,Services for Future Tech,,,0,active
+3,INV-03-00108,MegaCorp International,CH,USD,37311.52,2025-09-14T13:09:45.873332,2025-11-13T13:09:45.873332,,60,Due on Receipt,Invoice,Project-5,Services for MegaCorp International,,,0,active
+3,INV-03-00109,Enterprise Systems,NO,NOK,7396.35,2025-11-03T13:09:45.873332,2025-11-18T13:09:45.873332,2025-11-25T13:09:45.873332,15,Net 15,Invoice,Project-4,Services for Enterprise Systems,,,0,active
+3,INV-03-00110,Future Tech,AT,DKK,31165.8,2025-09-23T13:09:45.873332,2025-10-08T13:09:45.873332,2025-10-16T13:09:45.873332,15,Net 15,Invoice,Project-13,Services for Future Tech,,,0,active
+3,INV-03-00111,Cloud Services Co,FR,DKK,3233.74,2025-09-21T13:09:45.873332,2025-10-21T13:09:45.873332,,30,Net 15,Invoice,Project-5,Services for Cloud Services Co,,,0,active
+3,INV-03-00112,Future Tech,FR,SEK,2994.25,2025-08-26T13:09:45.873332,2025-09-25T13:09:45.873332,2025-09-27T13:09:45.873332,30,2/10 Net 30,Invoice,Project-13,Services for Future Tech,,,0,active
+3,INV-03-00113,TechStart Inc,NO,NOK,30092.8,2025-09-10T13:09:45.873332,2025-09-25T13:09:45.873332,2025-10-08T13:09:45.873332,15,Net 45,Invoice,Project-5,Services for TechStart Inc,,,0,active
+3,INV-03-00114,Innovation Partners,FR,USD,30916.36,2025-09-14T13:09:45.873332,2025-11-13T13:09:45.873332,2025-11-20T13:09:45.873332,60,Net 45,Invoice,Project-20,Services for Innovation Partners,,,0,active
+3,INV-03-00115,Enterprise Systems,FR,EUR,49343.57,2025-10-18T13:09:45.873332,2025-12-02T13:09:45.873332,2025-12-08T13:09:45.873332,45,2/10 Net 30,Invoice,Project-17,Services for Enterprise Systems,,,0,active
+3,INV-03-00116,Digital Dynamics,US,USD,6521.28,2025-10-02T13:09:45.873332,2025-11-01T13:09:45.873332,,30,Net 45,Invoice,Project-16,Services for Digital Dynamics,,,0,active
+3,INV-03-00117,MegaCorp International,ES,GBP,11269.9,2025-07-15T13:09:45.873332,2025-07-30T13:09:45.873332,,15,Net 45,Invoice,Project-2,Services for MegaCorp International,,,0,active
+3,INV-03-00118,Global Solutions Ltd,US,CHF,26230.28,2025-09-16T13:09:45.873332,2025-10-16T13:09:45.873332,2025-10-23T13:09:45.873332,30,Net 45,Invoice,Project-19,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00119,Enterprise Systems,UK,USD,37149.65,2025-10-13T13:09:45.873332,2025-11-27T13:09:45.873332,2025-12-04T13:09:45.873332,45,Net 60,Invoice,Project-3,Services for Enterprise Systems,,,0,active
+3,INV-03-00120,Global Solutions Ltd,FR,SEK,23294.55,2025-10-31T13:09:45.873332,2025-12-30T13:09:45.873332,2026-01-10T13:09:45.873332,60,Due on Receipt,Invoice,Project-7,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00121,Global Solutions Ltd,US,NOK,28864.63,2025-08-04T13:09:45.873332,2025-09-18T13:09:45.873332,,45,Net 45,Invoice,Project-15,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00122,NextGen Industries,DE,DKK,39933.7,2025-08-07T13:09:45.873332,2025-09-21T13:09:45.873332,,45,2/10 Net 30,Invoice,Project-18,Services for NextGen Industries,,,0,active
+3,INV-03-00123,Future Tech,BE,GBP,1710.69,2025-10-27T13:09:45.873332,2025-12-26T13:09:45.873332,2026-01-06T13:09:45.873332,60,Net 60,Invoice,Project-11,Services for Future Tech,,,0,active
+3,INV-03-00124,NextGen Industries,US,CHF,49029.02,2025-11-05T13:09:45.873332,2025-12-05T13:09:45.873332,2025-12-06T13:09:45.873332,30,2/10 Net 30,Invoice,Project-2,Services for NextGen Industries,,,0,active
+3,INV-03-00125,Smart Solutions,US,NOK,36857.53,2025-10-21T13:09:45.873332,2025-11-05T13:09:45.873332,2025-11-05T13:09:45.873332,15,Net 15,Invoice,Project-8,Services for Smart Solutions,,,0,active
+3,INV-03-00126,Global Solutions Ltd,NO,CHF,43038.18,2025-09-09T13:09:45.873332,2025-10-24T13:09:45.873332,2025-11-02T13:09:45.873332,45,Net 45,Invoice,Project-15,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00127,Cloud Services Co,SE,CHF,3.55e+04,2025-08-30T13:09:45.873332,2025-09-29T13:09:45.873332,,30,Net 45,Invoice,Project-11,Services for Cloud Services Co,,,0,active
+3,INV-03-00128,NextGen Industries,FR,DKK,34548.59,2025-10-14T13:09:45.873332,2025-11-28T13:09:45.873332,2025-11-30T13:09:45.873332,45,Net 30,Invoice,Project-17,Services for NextGen Industries,,,0,active
+3,INV-03-00129,TechStart Inc,NL,GBP,23802.29,2025-10-31T13:09:45.873332,2025-11-15T13:09:45.873332,,15,Due on Receipt,Invoice,Project-18,Services for TechStart Inc,,,0,active
+3,INV-03-00130,Global Solutions Ltd,ES,USD,27442.06,2025-10-17T13:09:45.873332,2025-11-16T13:09:45.873332,2025-11-10T13:09:45.873332,30,2/10 Net 30,Invoice,Project-7,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00131,Digital Dynamics,CH,NOK,21723.53,2025-08-20T13:09:45.873332,2025-10-04T13:09:45.873332,,45,Net 45,Invoice,Project-16,Services for Digital Dynamics,,,0,active
+3,INV-03-00132,Future Tech,AT,GBP,40195.29,2025-09-08T13:09:45.873332,2025-10-23T13:09:45.873332,,45,Net 30,Invoice,Project-7,Services for Future Tech,,,0,active
+3,INV-03-00133,TechStart Inc,UK,USD,14521.19,2025-07-20T13:09:45.873332,2025-09-18T13:09:45.873332,2025-10-01T13:09:45.873332,60,Net 60,Invoice,Project-17,Services for TechStart Inc,,,0,active
+3,INV-03-00134,Future Tech,ES,CHF,22749.14,2025-09-01T13:09:45.873332,2025-10-01T13:09:45.873332,2025-10-03T13:09:45.873332,30,Net 30,Invoice,Project-1,Services for Future Tech,,,0,active
+3,INV-03-00135,MegaCorp International,ES,CHF,30074.51,2025-09-14T13:09:45.873332,2025-10-29T13:09:45.873332,2025-10-29T13:09:45.873332,45,Net 45,Invoice,Project-15,Services for MegaCorp International,,,0,active
+3,INV-03-00136,Global Solutions Ltd,IT,USD,24727.91,2025-10-19T13:09:45.873332,2025-12-03T13:09:45.873332,2025-12-14T13:09:45.873332,45,Net 30,Invoice,Project-5,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00137,Global Solutions Ltd,NO,NOK,45330.85,2025-07-31T13:09:45.873332,2025-08-30T13:09:45.873332,2025-09-04T13:09:45.873332,30,Net 30,Invoice,Project-2,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00138,Cloud Services Co,DE,USD,28561.87,2025-09-04T13:09:45.873332,2025-10-19T13:09:45.873332,2025-10-19T13:09:45.873332,45,Net 15,Invoice,Project-5,Services for Cloud Services Co,,,0,active
+3,INV-03-00139,Future Tech,DE,CHF,46462.75,2025-07-30T13:09:45.873332,2025-09-13T13:09:45.873332,2025-09-21T13:09:45.873332,45,2/10 Net 30,Invoice,Project-17,Services for Future Tech,,,0,active
+3,INV-03-00140,NextGen Industries,SE,USD,40179.23,2025-09-08T13:09:45.873332,2025-10-23T13:09:45.873332,,45,Net 15,Invoice,Project-4,Services for NextGen Industries,,,0,active
+3,INV-03-00141,Digital Dynamics,US,CHF,31258.58,2025-07-27T13:09:45.873332,2025-08-11T13:09:45.873332,,15,Net 15,Invoice,Project-2,Services for Digital Dynamics,,,0,active
+3,INV-03-00142,Digital Dynamics,FR,EUR,5095.89,2025-09-15T13:09:45.873332,2025-10-15T13:09:45.873332,2025-10-23T13:09:45.873332,30,Net 30,Invoice,Project-17,Services for Digital Dynamics,,,0,active
+3,INV-03-00089,Global Solutions Ltd,NO,DKK,21954.38,2025-09-25T13:09:45.873332,2025-10-10T13:09:45.873332,2025-10-24T13:09:45.873332,15,Net 15,Invoice,Project-10,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00144,StartupHub,BE,NOK,49637.26,2025-07-21T13:09:45.873332,2025-08-20T13:09:45.873332,,30,Due on Receipt,Invoice,Project-14,Services for StartupHub,,,0,active
+3,INV-03-00145,Global Solutions Ltd,FR,GBP,24256.04,2025-10-24T13:09:45.873332,2025-11-08T13:09:45.873332,2025-11-09T13:09:45.873332,15,Net 30,Invoice,Project-19,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00146,StartupHub,AT,DKK,45828.73,2025-08-31T13:09:45.873332,2025-10-15T13:09:45.873332,2025-10-12T13:09:45.873332,45,Net 15,Invoice,Project-18,Services for StartupHub,,,0,active
+3,INV-03-00068,Future Tech,CH,NOK,23709.14,2025-08-17T13:09:45.873332,2025-10-01T13:09:45.873332,,45,Net 15,Invoice,Project-16,Services for Future Tech,,,0,active
+3,INV-03-00148,Global Solutions Ltd,BE,NOK,32594.51,2025-08-15T13:09:45.873332,2025-10-14T13:09:45.873332,,60,Net 45,Invoice,Project-3,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00149,Digital Dynamics,SE,NOK,24325.99,2025-09-09T13:09:45.873332,2025-11-08T13:09:45.873332,2025-11-21T13:09:45.873332,60,2/10 Net 30,Invoice,,Services for Digital Dynamics,,,0,active
+3,INV-03-00150,Global Solutions Ltd,ES,USD,3591.53,2025-07-17T13:09:45.873332,2025-08-16T13:09:45.873332,2025-08-15T13:09:45.873332,30,Net 15,Invoice,Project-2,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00151,Smart Solutions,FR,DKK,31773.47,2025-11-06T13:09:45.873332,2025-11-21T13:09:45.873332,2025-12-16T13:09:45.873332,15,Net 60,Invoice,Project-18,Services for Smart Solutions,,,0,active
+3,INV-03-00133,Cloud Services Co,UK,SEK,29422.29,2025-10-26T13:09:45.873332,2025-12-10T13:09:45.873332,2025-12-14T13:09:45.873332,45,Net 15,Invoice,Project-12,Services for Cloud Services Co,,,0,active
+3,INV-03-00153,TechStart Inc,FR,USD,25665.76,2025-11-04T13:09:45.873332,2025-12-04T13:09:45.873332,2025-12-26T13:09:45.873332,30,2/10 Net 30,Invoice,Project-20,Services for TechStart Inc,,,0,active
+3,INV-03-00090,Innovation Partners,BE,EUR,6711.72,2025-10-26T13:09:45.873332,2025-11-10T13:09:45.873332,,15,Net 15,Invoice,Project-12,Services for Innovation Partners,,,0,active
+3,INV-03-00155,StartupHub,UK,USD,7307.01,2025-09-24T13:09:45.873332,2025-11-08T13:09:45.873332,2025-11-19T13:09:45.873332,45,Net 15,Invoice,Project-5,Services for StartupHub,,,0,active
+3,INV-03-00156,TechStart Inc,US,DKK,24728.49,2025-09-02T13:09:45.873332,2025-09-17T13:09:45.873332,,15,Net 30,Invoice,Project-17,Services for TechStart Inc,,,0,active
+3,INV-03-00157,Acme Corporation,UK,GBP,33711.73,2025-11-03T13:09:45.873332,2025-12-18T13:09:45.873332,2026-01-01T13:09:45.873332,45,2/10 Net 30,Invoice,Project-7,Services for Acme Corporation,,,0,active
+3,INV-03-00158,StartupHub,IT,SEK,18043.99,2025-10-03T13:09:45.873332,2025-11-17T13:09:45.873332,2025-11-29T13:09:45.873332,45,Due on Receipt,Invoice,Project-20,Services for StartupHub,,,0,active
+3,INV-03-00159,Smart Solutions,FR,NOK,10385.83,2025-07-22T13:09:45.873332,2025-08-06T13:09:45.873332,2025-08-14T13:09:45.873332,15,2/10 Net 30,Invoice,Project-1,Services for Smart Solutions,,,0,active
+3,INV-03-00160,Future Tech,SE,EUR,9861.58,2025-08-06T13:09:45.873332,2025-10-05T13:09:45.873332,2025-10-04T13:09:45.873332,60,Net 60,Invoice,Project-17,Services for Future Tech,,,0,active
+3,INV-03-00161,Future Tech,UK,SEK,7659.71,2025-08-19T13:09:45.873332,2025-09-03T13:09:45.873332,2025-09-19T13:09:45.873332,15,2/10 Net 30,Invoice,Project-2,Services for Future Tech,,,0,active
+3,INV-03-00162,MegaCorp International,BE,USD,28141.88,2025-08-28T13:09:45.873332,2025-10-12T13:09:45.873332,2025-10-04T13:09:45.873332,45,Net 60,Invoice,Project-3,Services for MegaCorp International,,,0,active
+3,INV-03-00163,Global Solutions Ltd,US,NOK,25090.77,2025-11-07T13:09:45.873332,2025-12-22T13:09:45.873332,,45,Due on Receipt,Invoice,Project-3,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00164,StartupHub,DE,EUR,18821.79,2025-10-06T13:09:45.873332,2025-10-21T13:09:45.873332,2025-11-01T13:09:45.873332,15,Net 45,Invoice,Project-4,Services for StartupHub,,,0,active
+3,INV-03-00165,NextGen Industries,IT,DKK,39685.14,2025-09-11T13:09:45.873332,2025-10-26T13:09:45.873332,2025-11-03T13:09:45.873332,45,Net 45,Invoice,Project-20,Services for NextGen Industries,,,0,active
+3,INV-03-00166,Global Solutions Ltd,BE,EUR,6987.31,2025-09-13T13:09:45.873332,2025-10-28T13:09:45.873332,,45,Net 60,Invoice,Project-1,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00167,MegaCorp International,US,USD,19749.02,2025-07-18T13:09:45.873332,2025-09-16T13:09:45.873332,2025-09-07T13:09:45.873332,60,2/10 Net 30,Invoice,Project-20,Services for MegaCorp International,,,0,active
+3,INV-03-00168,MegaCorp International,,CHF,25734.94,2025-10-14T13:09:45.873332,2025-12-13T13:09:45.873332,2025-12-21T13:09:45.873332,60,2/10 Net 30,Invoice,Project-18,Services for MegaCorp International,,,0,active
+3,INV-03-00169,Innovation Partners,BE,GBP,42790.84,2025-10-30T13:09:45.873332,2025-11-14T13:09:45.873332,,15,Net 60,Invoice,Project-18,Services for Innovation Partners,,,0,active
+3,INV-03-00170,Future Tech,NL,USD,16310.52,2025-10-31T13:09:45.873332,2025-11-30T13:09:45.873332,,30,2/10 Net 30,Invoice,Project-16,Services for Future Tech,,,0,active
+3,INV-03-00171,Future Tech,CH,DKK,8659.24,2025-09-21T13:09:45.873332,2025-11-20T13:09:45.873332,,60,2/10 Net 30,Invoice,Project-13,Services for Future Tech,,,0,active
+3,INV-03-00172,Acme Corporation,US,SEK,3210.8,2025-08-15T13:09:45.873332,2025-09-29T13:09:45.873332,2025-09-29T13:09:45.873332,45,Due on Receipt,Invoice,Project-19,,,,0,active
+3,INV-03-00173,Cloud Services Co,US,NOK,12967.22,2025-07-22T13:09:45.873332,2025-09-20T13:09:45.873332,2025-09-21T13:09:45.873332,60,Net 30,Invoice,Project-3,Services for Cloud Services Co,,,0,active
+3,INV-03-00174,Smart Solutions,ES,EUR,23584.56,2025-07-31T13:09:45.873332,2025-08-15T13:09:45.873332,2025-08-29T13:09:45.873332,15,Net 45,Invoice,,Services for Smart Solutions,,,0,active
+3,INV-03-00175,TechStart Inc,BE,EUR,34852.33,2025-08-19T13:09:45.873332,2025-10-18T13:09:45.873332,2025-10-18T13:09:45.873332,60,Due on Receipt,Invoice,Project-11,Services for TechStart Inc,,,0,active
+3,INV-03-00176,Future Tech,SE,DKK,48731.26,2025-09-03T13:09:45.873332,2025-10-03T13:09:45.873332,2025-10-06T13:09:45.873332,30,Net 60,Invoice,Project-10,Services for Future Tech,,,0,active
+3,INV-03-00177,TechStart Inc,NO,DKK,29331.47,2025-09-21T13:09:45.873332,2025-11-20T13:09:45.873332,2025-12-01T13:09:45.873332,60,2/10 Net 30,Invoice,Project-17,Services for TechStart Inc,,,0,active
+3,INV-03-00178,MegaCorp International,IT,SEK,40402.21,2025-10-19T13:09:45.873332,2025-11-03T13:09:45.873332,2025-10-28T13:09:45.873332,15,Net 60,Invoice,Project-14,Services for MegaCorp International,,,0,active
+3,INV-03-00179,Smart Solutions,DE,SEK,25460.98,2025-09-06T13:09:45.873332,2025-10-06T13:09:45.873332,2025-10-23T13:09:45.873332,30,Net 45,Invoice,Project-9,Services for Smart Solutions,,,0,active
+3,INV-03-00180,NextGen Industries,NO,NOK,3934.2,2025-09-26T13:09:45.873332,2025-11-25T13:09:45.873332,2025-11-23T13:09:45.873332,60,Net 60,Invoice,Project-5,Services for NextGen Industries,,,0,active
+3,INV-03-00181,Innovation Partners,ES,DKK,41680.5,2025-10-26T13:09:45.873332,2025-12-25T13:09:45.873332,,60,Net 45,Invoice,Project-9,Services for Innovation Partners,,,0,active
+3,INV-03-00182,Enterprise Systems,US,USD,40055.19,2025-08-11T13:09:45.873332,2025-09-10T13:09:45.873332,2025-09-12T13:09:45.873332,30,Net 45,Invoice,Project-14,Services for Enterprise Systems,,,0,active
+3,INV-03-00183,Global Solutions Ltd,US,GBP,39693.82,2025-07-30T13:09:45.873332,2025-09-13T13:09:45.873332,2025-09-22T13:09:45.873332,45,Due on Receipt,Invoice,Project-2,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00184,NextGen Industries,IT,DKK,4115.5,2025-07-12T13:09:45.873332,2025-07-27T13:09:45.873332,2025-08-05T13:09:45.873332,15,Due on Receipt,Invoice,Project-3,Services for NextGen Industries,,,0,active
+3,INV-03-00185,Enterprise Systems,UK,SEK,36989.54,2025-10-25T13:09:45.873332,2025-11-24T13:09:45.873332,,30,2/10 Net 30,Invoice,Project-17,Services for Enterprise Systems,,,0,active
+3,INV-03-00186,Cloud Services Co,ES,DKK,29631.98,2025-08-09T13:09:45.873332,2025-08-24T13:09:45.873332,,15,Net 60,Invoice,Project-14,Services for Cloud Services Co,,,0,active
+3,INV-03-00187,Future Tech,NL,GBP,43282.1,2025-08-06T13:09:45.873332,2025-09-20T13:09:45.873332,2025-09-23T13:09:45.873332,45,Due on Receipt,Invoice,Project-4,Services for Future Tech,,,0,active
+3,INV-03-00188,Global Solutions Ltd,ES,CHF,36067.89,2025-10-05T13:09:45.873332,2025-11-04T13:09:45.873332,2025-12-01T13:09:45.873332,30,2/10 Net 30,Invoice,Project-2,Services for Global Solutions Ltd,,,0,active
+3,INV-03-00189,StartupHub,SE,USD,13396.16,2025-11-07T13:09:45.873332,2025-11-22T13:09:45.873332,,15,Due on Receipt,Invoice,Project-12,Services for StartupHub,,,0,active
+3,INV-03-00190,Future Tech,NL,EUR,45579.67,2025-09-16T13:09:45.873332,2025-10-16T13:09:45.873332,,30,Net 15,Invoice,Project-10,Services for Future Tech,,,0,active
+3,INV-03-00191,Enterprise Systems,DE,CHF,31936.28,2025-08-09T13:09:45.873332,2025-09-23T13:09:45.873332,,45,Net 45,Invoice,Project-2,Services for Enterprise Systems,,,0,active
+3,INV-03-00192,Future Tech,NO,CHF,46398.36,2025-10-17T13:09:45.873332,2025-12-16T13:09:45.873332,2025-12-18T13:09:45.873332,60,Net 30,Invoice,Project-6,Services for Future Tech,,,0,active
+3,INV-03-00193,StartupHub,ES,CHF,35065.29,2025-08-24T13:09:45.873332,2025-10-23T13:09:45.873332,2025-10-16T13:09:45.873332,60,Net 60,Invoice,Project-15,Services for StartupHub,,,0,active
+3,INV-03-00194,MegaCorp International,IT,GBP,29214.66,2025-08-30T13:09:45.873332,2025-09-29T13:09:45.873332,2025-09-26T13:09:45.873332,30,Due on Receipt,Invoice,Project-5,Services for MegaCorp International,,,0,active
+3,INV-03-00195,Future Tech,BE,DKK,37023.43,2025-10-19T13:09:45.873332,2025-12-03T13:09:45.873332,,45,Net 15,Invoice,Project-10,Services for Future Tech,,,0,active
+3,INV-03-00196,NextGen Industries,FR,EUR,47457.35,2025-08-02T13:09:45.873332,2025-10-01T13:09:45.873332,2025-10-25T13:09:45.873332,60,Due on Receipt,Invoice,Project-8,Services for NextGen Industries,,,0,active
+3,INV-03-00197,StartupHub,DE,EUR,20650.71,2025-08-04T13:09:45.873332,2025-09-18T13:09:45.873332,,45,Net 30,Invoice,Project-12,Services for StartupHub,,,0,active
+3,INV-03-00198,Future Tech,SE,CHF,6807.11,2025-07-11T13:09:45.873332,2025-09-09T13:09:45.873332,2025-08-31T13:09:45.873332,60,Net 15,Invoice,Project-10,Services for Future Tech,,,0,active
+3,INV-03-00199,Digital Dynamics,NO,NOK,10278.8,2025-09-03T13:09:45.873332,2025-10-03T13:09:45.873332,2025-09-23T13:09:45.873332,30,Net 30,Invoice,Project-10,Services for Digital Dynamics,,,0,active
+3,INV-03-00200,Cloud Services Co,AT,NOK,32714.54,2025-09-05T13:09:45.873332,2025-10-05T13:09:45.873332,2025-09-25T13:09:45.873332,30,Net 15,Invoice,Project-13,Services for Cloud Services Co,,,0,active
+3,CN-INV-03-00151,Smart Solutions,FR,DKK,-12181.35,2025-12-04T13:09:45.873332,,,0,Net 60,Credit Note,Project-18,Credit for INV-03-00151,credit_note,,0,active
+3,CN-INV-03-00101,NextGen Industries,SE,EUR,-5907.76,2025-08-14T13:09:45.873332,,,0,Net 30,Credit Note,Project-3,Credit for INV-03-00101,credit_note,,0,active
+3,CN-INV-03-00018,Enterprise Systems,FR,GBP,-4923.55,2025-08-10T13:09:45.873332,,,0,Net 60,Credit Note,Project-3,Credit for INV-03-00018,credit_note,,0,active
+3,CN-INV-03-00180,NextGen Industries,NO,NOK,-1822.68,2025-10-20T13:09:45.873332,,,0,Net 60,Credit Note,Project-5,Credit for INV-03-00180,credit_note,,0,active
+3,CN-INV-03-00013,StartupHub,UK,DKK,-3298.51,2025-08-31T13:09:45.873332,,,0,Due on Receipt,Credit Note,Project-14,Credit for INV-03-00013,credit_note,,0,active
+3,CN-INV-03-00150,Global Solutions Ltd,ES,USD,-793.74,2025-08-03T13:09:45.873332,,,0,Net 15,Credit Note,Project-2,Credit for INV-03-00150,credit_note,,0,active
+3,CN-INV-03-00145,Global Solutions Ltd,FR,GBP,-3708.63,2025-11-15T13:09:45.873332,,,0,Net 30,Credit Note,Project-19,Credit for INV-03-00145,credit_note,,0,active
+3,CN-INV-03-00012,Digital Dynamics,UK,USD,-15968.19,2025-07-28T13:09:45.873332,,,0,2/10 Net 30,Credit Note,Project-13,Credit for INV-03-00012,credit_note,,0,active
+3,CN-INV-03-00060,Cloud Services Co,UK,USD,-4444.86,2025-10-20T13:09:45.873332,,,0,Due on Receipt,Credit Note,Project-18,Credit for INV-03-00060,credit_note,,0,active
+3,CN-INV-03-00179,Smart Solutions,DE,SEK,-3889.62,2025-09-21T13:09:45.873332,,,0,Net 45,Credit Note,Project-9,Credit for INV-03-00179,credit_note,,0,active
+3,RE-INV-03-00182,Enterprise Systems,US,USD,40542.64,2025-08-14T13:09:45.873332,2025-09-15T13:09:45.873332,,30,Net 45,Rebill,Project-14,Rebill of INV-03-00182,rebill,,0,active
+3,RE-INV-03-00030,TechStart Inc,US,GBP,40253.77,2025-10-05T13:09:45.873332,2025-11-24T13:09:45.873332,,45,Net 45,Rebill,Project-17,Rebill of INV-03-00030,rebill,,0,active
+3,RE-INV-03-00072,Digital Dynamics,ES,SEK,32049.77,2025-07-31T13:09:45.873332,2025-09-12T13:09:45.873332,,45,Due on Receipt,Rebill,Project-4,Rebill of INV-03-00072,rebill,,0,active
+3,RE-INV-03-00068,Acme Corporation,BE,NOK,3629.19,2025-10-01T13:09:45.873332,2025-11-19T13:09:45.873332,,45,Net 45,Rebill,Project-6,Rebill of INV-03-00068,rebill,,0,active
+3,RE-INV-03-00081,Global Solutions Ltd,US,EUR,31929.19,2025-11-01T13:09:45.873332,2025-12-04T13:09:45.873332,,30,Due on Receipt,Rebill,Project-14,Rebill of INV-03-00081,rebill,,0,active
+3,RE-INV-03-00189,StartupHub,SE,USD,16046.27,2025-11-10T13:09:45.873332,2025-12-01T13:09:45.873332,,15,Due on Receipt,Rebill,Project-12,Rebill of INV-03-00189,rebill,,0,active
+3,PART-INV-03-00169,Innovation Partners,BE,GBP,13748.22,2025-10-30T13:09:45.873332,2025-11-14T13:09:45.873332,2025-11-18T13:09:45.873332,15,Net 60,Partial Payment,Project-18,Partial payment for INV-03-00169,partial,,0,active
+3,PART-INV-03-00026,Future Tech,US,DKK,4876.17,2025-09-27T13:09:45.873332,2025-10-27T13:09:45.873332,2025-10-28T13:09:45.873332,30,Due on Receipt,Partial Payment,Project-3,Partial payment for INV-03-00026,partial,,0,active
+3,PART-INV-03-00185,Enterprise Systems,UK,SEK,14947.09,2025-10-25T13:09:45.873332,2025-11-24T13:09:45.873332,2025-12-16T13:09:45.873332,30,2/10 Net 30,Partial Payment,Project-17,Partial payment for INV-03-00185,partial,,0,active
+3,PART-INV-03-00181,Innovation Partners,ES,DKK,19780.4,2025-10-26T13:09:45.873332,2025-12-25T13:09:45.873332,2026-01-22T13:09:45.873332,60,Net 45,Partial Payment,Project-9,Partial payment for INV-03-00181,partial,,0,active
+3,PART-INV-03-00190,Future Tech,NL,EUR,14417.61,2025-09-16T13:09:45.873332,2025-10-16T13:09:45.873332,2025-10-27T13:09:45.873332,30,Net 15,Partial Payment,Project-10,Partial payment for INV-03-00190,partial,,0,active
+3,PART-INV-03-00189,StartupHub,SE,USD,6471.74,2025-11-07T13:09:45.873332,2025-11-22T13:09:45.873332,2025-11-25T13:09:45.873332,15,Due on Receipt,Partial Payment,Project-12,Partial payment for INV-03-00189,partial,,0,active
+3,PART-INV-03-00069,NextGen Industries,ES,GBP,6040.19,2025-09-28T13:09:45.873332,2025-11-27T13:09:45.873332,2025-11-29T13:09:45.873332,60,2/10 Net 30,Partial Payment,Project-3,Partial payment for INV-03-00069,partial,,0,active
+3,PART-INV-03-00087,Global Solutions Ltd,US,NOK,29917.02,2025-08-16T13:09:45.873332,2025-09-30T13:09:45.873332,2025-10-05T13:09:45.873332,45,2/10 Net 30,Partial Payment,Project-9,Partial payment for INV-03-00087,partial,,0,active
+3,PART-INV-03-00077,Innovation Partners,AT,SEK,13745.92,2025-09-05T13:09:45.873332,2025-10-20T13:09:45.873332,2025-11-15T13:09:45.873332,45,Net 15,Partial Payment,Project-19,Partial payment for INV-03-00077,partial,,0,active
+3,PART-INV-03-00098,NextGen Industries,DE,CHF,17420.67,2025-07-25T13:09:45.873332,2025-08-09T13:09:45.873332,2025-08-30T13:09:45.873332,15,Net 60,Partial Payment,Project-4,Partial payment for INV-03-00098,partial,,0,active
+3,PART-INV-03-00089,NextGen Industries,IT,GBP,22955.72,2025-08-11T13:09:45.873332,2025-09-10T13:09:45.873332,2025-09-10T13:09:45.873332,30,Net 60,Partial Payment,Project-19,Partial payment for INV-03-00089,partial,,0,active
+3,PART-INV-03-00079,StartupHub,CH,DKK,22841.34,2025-07-16T13:09:45.873332,2025-07-31T13:09:45.873332,2025-08-02T13:09:45.873332,15,Net 30,Partial Payment,Project-8,Partial payment for INV-03-00079,partial,,0,active
+3,PART-INV-03-00095,Future Tech,SE,NOK,7802.64,2025-08-11T13:09:45.873332,2025-10-10T13:09:45.873332,2025-10-31T13:09:45.873332,60,2/10 Net 30,Partial Payment,Project-11,Partial payment for INV-03-00095,partial,,0,active
+3,PART-INV-03-00045,TechStart Inc,IT,GBP,22853.82,2025-10-30T13:09:45.873332,2025-12-29T13:09:45.873332,2025-12-29T13:09:45.873332,60,Due on Receipt,Partial Payment,Project-4,Partial payment for INV-03-00045,partial,,0,active
+3,PART-INV-03-00105,Future Tech,IT,NOK,6270.81,2025-08-22T13:09:45.873332,2025-09-06T13:09:45.873332,2025-09-27T13:09:45.873332,15,Due on Receipt,Partial Payment,Project-7,Partial payment for INV-03-00105,partial,,0,active
+3,PART-INV-03-00057,Digital Dynamics,IT,SEK,12791.68,2025-08-11T13:09:45.873332,2025-08-26T13:09:45.873332,2025-09-13T13:09:45.873332,15,Net 15,Partial Payment,Project-11,Partial payment for INV-03-00057,partial,,0,active
+3,PART-INV-03-00046,TechStart Inc,CH,NOK,12581.73,2025-09-29T13:09:45.873332,2025-11-13T13:09:45.873332,2025-11-17T13:09:45.873332,45,Net 60,Partial Payment,Project-13,Partial payment for INV-03-00046,partial,,0,active
+3,PART-INV-03-00020,Cloud Services Co,NL,CHF,15485.06,2025-11-04T13:09:45.873332,2025-12-19T13:09:45.873332,2026-01-14T13:09:45.873332,45,Due on Receipt,Partial Payment,Project-20,Partial payment for INV-03-00020,partial,,0,active
+3,PART-INV-03-00186,Cloud Services Co,ES,DKK,14271.42,2025-08-09T13:09:45.873332,2025-08-24T13:09:45.873332,2025-09-23T13:09:45.873332,15,Net 60,Partial Payment,Project-14,Partial payment for INV-03-00186,partial,,0,active
+3,PART-INV-03-00098,NextGen Industries,DE,CHF,17831.32,2025-07-25T13:09:45.873332,2025-08-09T13:09:45.873332,2025-08-09T13:09:45.873332,15,Net 60,Partial Payment,Project-4,Partial payment for INV-03-00098,partial,,0,active

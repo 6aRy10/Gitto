@@ -1,0 +1,4 @@
+id,name,currency,payment_run_day,internal_account_ids
+1,Gitto US,USD,3,"['INT-ACC-1-0', 'INT-ACC-1-1']"
+2,Gitto EU,EUR,1,"['INT-ACC-2-0', 'INT-ACC-2-1']"
+3,Gitto UK,GBP,2,"['INT-ACC-3-0', 'INT-ACC-3-1']"

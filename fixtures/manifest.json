@@ -1,0 +1,99 @@
+{
+  "generated_at": "2026-01-06T07:39:45.865916+00:00",
+  "random_seed": 42,
+  "edge_case_config": {
+    "duplicate_rate": 0.02,
+    "credit_note_rate": 0.05,
+    "rebill_rate": 0.03,
+    "partial_payment_rate": 0.1,
+    "noisy_reference_rate": 0.15,
+    "blank_field_rate": 0.05,
+    "scientific_notation_rate": 0.01,
+    "missing_fx_rate": 0.08
+  },
+  "datasets": {
+    "entities": {
+      "filename": "entities.csv",
+      "row_count": 3,
+      "description": "Multi-entity structure with payment run policies"
+    },
+    "ar_invoices": {
+      "filename": "ar_invoices.csv",
+      "row_count": 708,
+      "description": "AR invoices with open and paid history, credit notes, rebills, partials"
+    },
+    "ap_vendor_bills": {
+      "filename": "ap_vendor_bills.csv",
+      "row_count": 450,
+      "description": "AP vendor bills with approval/hold states and payment run scheduling"
+    },
+    "fx_rates": {
+      "filename": "fx_rates.csv",
+      "row_count": 71,
+      "description": "FX rates per week with intentional missing-rate gaps"
+    },
+    "bank_transactions": {
+      "filename": "bank_transactions.csv",
+      "row_count": 940,
+      "description": "Bank transactions in CSV format"
+    },
+    "bank_statements_mt940": {
+      "filename": "bank_statements.mt940",
+      "format": "MT940",
+      "description": "Bank statements in SWIFT MT940 format"
+    },
+    "bank_statements_bai2": {
+      "filename": "bank_statements.bai2",
+      "format": "BAI2",
+      "description": "Bank statements in BAI2 format"
+    },
+    "bank_statements_camt053": {
+      "filename": "bank_statements_camt053.xml",
+      "format": "camt.053 (ISO 20022)",
+      "description": "Bank statements in camt.053 XML format"
+    }
+  },
+  "invariants": [
+    "All invoices have entity_id matching an entity",
+    "All vendor bills have entity_id matching an entity",
+    "Credit notes have negative amounts",
+    "Partial payments sum to less than or equal to parent invoice amount",
+    "Intercompany transfers are marked with is_wash=1",
+    "Bank transactions match invoice amounts (within tolerance) when reconciled",
+    "FX rates are positive numbers",
+    "Payment dates are after invoice dates",
+    "Due dates are after invoice dates"
+  ],
+  "known_exceptions": [
+    {
+      "dataset": "ar_invoices.csv",
+      "exception": "Some invoices have blank country/project fields (5% rate)",
+      "reason": "Simulates merged-cell-like blanks from Excel imports"
+    },
+    {
+      "dataset": "ar_invoices.csv",
+      "exception": "Some amounts use scientific notation (1% rate)",
+      "reason": "Edge case from Excel exports"
+    },
+    {
+      "dataset": "ar_invoices.csv",
+      "exception": "Duplicate document_numbers exist (2% rate)",
+      "reason": "Simulates data quality issues"
+    },
+    {
+      "dataset": "bank_transactions.csv",
+      "exception": "Some references are noisy/variations of invoice numbers (15% rate)",
+      "reason": "Real-world bank statement variations"
+    },
+    {
+      "dataset": "fx_rates.csv",
+      "exception": "Some currency pairs missing for certain weeks (8% rate)",
+      "reason": "Simulates missing FX rate data"
+    },
+    {
+      "dataset": "bank_transactions.csv",
+      "exception": "Intercompany transfers appear in both source and target entity",
+      "reason": "Expected behavior - both sides of transfer are recorded"
+    }
+  ]
+}
