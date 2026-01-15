@@ -156,4 +156,55 @@ export const startAsyncForecast = (snapshotId: number) =>
 export const getAsyncTaskStatus = (taskId: string) =>
   api.get(`/async/tasks/${taskId}`).then(res => res.data);
 
+// ═══════════════════════════════════════════════════════════════════════════════
+// TRUST REPORT API
+// ═══════════════════════════════════════════════════════════════════════════════
+
+export const getTrustReport = (snapshotId: number, regenerate: boolean = false) =>
+  api.get(`/snapshots/${snapshotId}/trust${regenerate ? '?regenerate=true' : ''}`).then(res => res.data);
+
+export const getTrustReportHistory = (snapshotId: number, limit: number = 10) =>
+  api.get(`/snapshots/${snapshotId}/trust/history?limit=${limit}`).then(res => res.data);
+
+export const getTrustMetricDetails = (snapshotId: number, metricKey: string) =>
+  api.get(`/snapshots/${snapshotId}/trust/metric/${metricKey}`).then(res => res.data);
+
+export const lockSnapshot = (snapshotId: number, payload: {
+  user_id: string;
+  user_email?: string;
+  user_role?: string;
+  override_acknowledgment?: string;
+  override_reason?: string;
+}) =>
+  api.post(`/snapshots/${snapshotId}/lock`, payload).then(res => res.data);
+
+export const getOverrideLogs = (snapshotId: number) =>
+  api.get(`/snapshots/${snapshotId}/overrides`).then(res => res.data);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// INVARIANT ENGINE API
+// ═══════════════════════════════════════════════════════════════════════════════
+
+export const runInvariants = (snapshotId: number, triggeredBy: string = 'ui') =>
+  api.post(`/snapshots/${snapshotId}/invariants/run?triggered_by=${triggeredBy}`).then(res => res.data);
+
+export const getLatestInvariants = (snapshotId: number) =>
+  api.get(`/snapshots/${snapshotId}/invariants/latest`).then(res => res.data);
+
+export const getInvariantHistory = (snapshotId: number, limit: number = 10) =>
+  api.get(`/snapshots/${snapshotId}/invariants/history?limit=${limit}`).then(res => res.data);
+
+export const getInvariantSummary = (snapshotId: number) =>
+  api.get(`/snapshots/${snapshotId}/invariants/summary`).then(res => res.data);
+
+// ═══════════════════════════════════════════════════════════════════════════════
+// DATA HEALTH REPORT API
+// ═══════════════════════════════════════════════════════════════════════════════
+
+export const getDatasetHealth = (datasetId: string) =>
+  api.get(`/datasets/${datasetId}/health`).then(res => res.data);
+
+export const getConnectionHealthLatest = (connectionId: number) =>
+  api.get(`/connections/${connectionId}/health/latest`).then(res => res.data);
+
 
