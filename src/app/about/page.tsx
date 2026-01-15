@@ -350,7 +350,7 @@ export default function About() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-4">Bank-Truth Foundation</h3>
                 <p className="text-white/50 leading-relaxed mb-8 flex-1">
-                  Every number in Gitto traces back to a bank transaction, invoice, or explicit manual adjustment. We maintain four data tiers—Bank-True, Reconciled, Modeled, and Unknown—so you always know the provenance and confidence level of what you're seeing.
+                  Every number in Gitto traces back to a bank transaction, invoice, or explicit manual adjustment. We maintain four data tiers—Bank-True, Reconciled, Modeled, and Unknown—so you always know the provenance and confidence level of what you&apos;re seeing.
                 </p>
                 <div className="grid grid-cols-2 gap-4 pt-6 border-t border-white/10">
                   <div>

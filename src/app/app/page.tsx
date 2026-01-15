@@ -40,14 +40,18 @@ const Sparkles = ({ className }: { className?: string }) => (
 
 export default function Dashboard() {
   const [activeTab, setActiveTab] = useState('cfo');
-  const [snapshots, setSnapshots] = useState<any[]>([]);
-  const [entities, setEntities] = useState<any[]>([]);
+  const [snapshots, setSnapshots] = useState<Array<{ id: number; name: string; [key: string]: unknown }>>([]);
+  const [entities, setEntities] = useState<Array<{ id: number; name: string; [key: string]: unknown }>>([]);
   const [selectedEntity, setSelectedEntity] = useState<number | null>(null);
   const [selectedSnapshot, setSelectedSnapshot] = useState<number | null>(null);
   const [compareSnapshot, setCompareSnapshot] = useState<number | null>(null);
-  const [kpis, setKpis] = useState<any>(null);
-  const [globalStats, setGlobalStats] = useState<any>(null);
-  const [forecast, setForecast] = useState<any[]>([]);
+  const [kpis, setKpis] = useState<Record<string, unknown> | null>(null);
+  const [globalStats, setGlobalStats] = useState<{
+    cash_flow_by_year?: Array<{ year: number; cash: number }>;
+    overdue_chart_data?: Array<{ label: string; amount: number }>;
+    [key: string]: unknown;
+  } | null>(null);
+  const [forecast, setForecast] = useState<Array<Record<string, unknown>>>([]);
   const [loading, setLoading] = useState(false);
   const [initError, setInitError] = useState<string | null>(null);
   const [uploadError, setUploadError] = useState<string | null>(null);
@@ -57,11 +61,7 @@ export default function Dashboard() {
   const [currentFile, setCurrentFile] = useState<File | null>(null);
   const [fileColumns, setFileColumns] = useState<string[]>([]);
   const [activeMapping, setActiveMapping] = useState<Record<string, string>>({});
-  const [healthData, setHealthData] = useState<any>(null);
-
-  useEffect(() => {
-    initData();
-  }, []);
+  const [healthData, setHealthData] = useState<Record<string, unknown> | null>(null);
 
   const initData = async () => {
     setInitError(null);
@@ -89,15 +89,9 @@ export default function Dashboard() {
       }
     } catch (globalErr) {
       console.error("Global init data error:", globalErr);
-      setInitError("Unable to reach the backend. Please ensure the API is running at http://localhost:8000.");
+      setInitError("Unable to reach the backend. Please ensure the API server is running.");
     }
   };
-
-  useEffect(() => {
-    if (selectedSnapshot) {
-      loadSnapshotData(selectedSnapshot);
-    }
-  }, [selectedSnapshot]);
 
   const loadSnapshotData = async (id: number) => {
     setLoading(true);
@@ -109,6 +103,18 @@ export default function Dashboard() {
     
     setLoading(false);
   };
+
+  // Initialize data on mount
+  useEffect(() => {
+    initData();
+  }, []);
+
+  // Load snapshot data when selection changes
+  useEffect(() => {
+    if (selectedSnapshot) {
+      loadSnapshotData(selectedSnapshot);
+    }
+  }, [selectedSnapshot]);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files?.[0]) {
@@ -387,7 +393,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="h-[320px] w-full">
-                      {globalStats?.cash_flow_by_year?.length > 0 ? (
+                      {globalStats?.cash_flow_by_year && globalStats.cash_flow_by_year.length > 0 ? (
                         <ResponsiveContainer width="100%" height="100%">
                           <LineChart data={globalStats.cash_flow_by_year}>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />
@@ -412,7 +418,7 @@ export default function Dashboard() {
                       </div>
                     </div>
                     <div className="h-[320px] w-full">
-                      {globalStats?.overdue_chart_data?.length > 0 ? (
+                      {globalStats?.overdue_chart_data && globalStats.overdue_chart_data.length > 0 ? (
                         <ResponsiveContainer width="100%" height="100%">
                           <BarChart data={globalStats.overdue_chart_data}>
                             <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.05)" />

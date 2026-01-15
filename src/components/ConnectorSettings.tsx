@@ -496,7 +496,7 @@ export default function ConnectorSettings() {
                             className="w-full px-4 py-3 bg-[#141419] border border-gray-700 rounded-lg text-white focus:outline-none focus:border-emerald-500"
                           >
                             <option value="">Select...</option>
-                            {field.options?.map((opt) => (
+                            {'options' in field && field.options?.map((opt: string) => (
                               <option key={opt} value={opt}>{opt}</option>
                             ))}
                           </select>
@@ -506,7 +506,7 @@ export default function ConnectorSettings() {
                               type={field.type === 'password' && !showSecrets[field.key] ? 'password' : 'text'}
                               value={formData[field.key] || ''}
                               onChange={(e) => setFormData({ ...formData, [field.key]: e.target.value })}
-                              placeholder={field.placeholder}
+                              placeholder={'placeholder' in field ? field.placeholder : ''}
                               className="w-full px-4 py-3 bg-[#141419] border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 pr-12"
                             />
                             {field.type === 'password' && (
@@ -530,7 +530,10 @@ export default function ConnectorSettings() {
                           className="w-full flex items-center justify-center gap-2 px-4 py-3 bg-[#141419] border border-gray-700 rounded-lg text-white hover:border-gray-500 transition-colors"
                         >
                           <ExternalLink className="w-4 h-4" />
-                          {CONNECTOR_TYPES[newConnectorType as keyof typeof CONNECTOR_TYPES]?.oauthLabel}
+                          {(() => {
+                            const connectorType = CONNECTOR_TYPES[newConnectorType as keyof typeof CONNECTOR_TYPES];
+                            return 'oauthLabel' in connectorType ? connectorType.oauthLabel : 'Connect';
+                          })()}
                         </button>
                         <p className="text-sm text-gray-500 mt-2 text-center">
                           You'll be redirected to authorize access

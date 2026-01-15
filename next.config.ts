@@ -1,9 +1,6 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  typescript: {
-    ignoreBuildErrors: true,
-  },
   async rewrites() {
     // Only proxy to localhost in development
     // In production, use NEXT_PUBLIC_API_URL environment variable
