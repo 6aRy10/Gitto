@@ -74,6 +74,14 @@ def init_db():
     import health_report_models
     health_report_models.Base.metadata.create_all(bind=engine)
     
+    # Initialize invariant models (separate Base)
+    import invariant_models
+    invariant_models.Base.metadata.create_all(bind=engine)
+    
+    # Initialize trust report models (separate Base)
+    import trust_report_models
+    trust_report_models.Base.metadata.create_all(bind=engine)
+    
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints
     try:

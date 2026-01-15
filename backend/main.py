@@ -92,6 +92,14 @@ app.include_router(upload_router)
 from health_report_api import router as health_report_router
 app.include_router(health_report_router)
 
+# Register invariant engine API router (Deterministic Correctness Checks)
+from invariant_api import router as invariant_router
+app.include_router(invariant_router)
+
+# Register trust report API router (Trust Certification + Lock Gates)
+from trust_report_api import router as trust_report_router
+app.include_router(trust_report_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
