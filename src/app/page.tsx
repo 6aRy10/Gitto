@@ -1529,6 +1529,228 @@ export default function Landing() {
                 </WorkersVisualFrame>
               </div>
                   </div>
+
+            {/* ═══════════════════════════════════════════════════════════════════ */}
+            {/* MEET TRUST CERTIFICATION */}
+            {/* ═══════════════════════════════════════════════════════════════════ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative group">
+              {/* Subtle gradient background */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-emerald-500/5 via-transparent to-green-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10" />
+              
+              <div className="order-2 lg:order-1 transform group-hover:scale-[1.02] transition-transform duration-500 pb-16">
+                {/* Trust Score Visual */}
+                <div className="bg-[#0D0D12] rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                  <div className="bg-white/5 border-b border-white/10 px-4 py-2.5 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-lg bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center">
+                        <ApprovalStampIcon className="w-4 h-4 text-emerald-400" />
+                      </div>
+                      <span className="text-xs font-semibold text-white">Trust Report</span>
+                    </div>
+                    <span className="text-[10px] font-mono text-emerald-400">LOCK ELIGIBLE ✓</span>
+                  </div>
+                  <div className="p-5">
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center p-4 bg-white/5 rounded-xl">
+                        <div className="text-3xl font-bold text-emerald-400">94%</div>
+                        <div className="text-[10px] text-white/40 mt-1">Trust Score</div>
+                      </div>
+                      <div className="text-center p-4 bg-white/5 rounded-xl">
+                        <div className="text-3xl font-bold text-white">97%</div>
+                        <div className="text-[10px] text-white/40 mt-1">Cash Explained</div>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      {[
+                        { label: 'Unknown Exposure', value: '€12,400', status: 'pass' },
+                        { label: 'Missing FX', value: '€0', status: 'pass' },
+                        { label: 'Invariants', value: '7/7 pass', status: 'pass' },
+                      ].map((item, i) => (
+                        <div key={i} className="flex items-center justify-between py-2 px-3 bg-white/5 rounded-lg">
+                          <span className="text-xs text-white/60">{item.label}</span>
+                          <span className={`text-xs font-semibold ${item.status === 'pass' ? 'text-emerald-400' : 'text-amber-400'}`}>{item.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 space-y-6">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-full text-[11px] font-semibold text-emerald-400 uppercase tracking-wide mb-4 group-hover:bg-emerald-500/20 transition-colors duration-300">
+                    Meet Trust Certification
+                  </span>
+                  <h3 className="text-2xl font-bold text-white leading-tight">
+                    Trust scores, not just numbers.<br />
+                    <span className="text-white/40">CFO lock gates enforced.</span>
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    'Amount-weighted trust metrics: Cash Explained %, Unknown Exposure €',
+                    '7 invariant checks: cash math, conservation, no-overmatch, FX safety',
+                    'Lock gates: thresholds block snapshot lock until resolved',
+                    'CFO override with explicit acknowledgment text + audit log',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/60">
+                      <ApprovalStampIcon className="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-xs text-white/40">
+                    <span className="font-semibold text-white/60">Under the hood:</span> InvariantEngine runs 7 checks. TrustReport aggregates metrics. Override requires ≥20 char acknowledgment.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* ═══════════════════════════════════════════════════════════════════ */}
+            {/* MEET DATA LINEAGE */}
+            {/* ═══════════════════════════════════════════════════════════════════ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative group">
+              {/* Subtle gradient background */}
+              <div className="absolute -inset-8 bg-gradient-to-bl from-violet-500/5 via-transparent to-indigo-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10" />
+              
+              <div className="space-y-6">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-violet-500/10 border border-violet-500/20 rounded-full text-[11px] font-semibold text-violet-400 uppercase tracking-wide mb-4 group-hover:bg-violet-500/20 transition-colors duration-300">
+                    Meet Data Lineage
+                  </span>
+                  <h3 className="text-2xl font-bold text-white leading-tight">
+                    Every row has a birthdate.<br />
+                    <span className="text-white/40">Every import is tracked.</span>
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    'SyncRun spine: every import creates an auditable Dataset record',
+                    'Canonical IDs: 10-component fingerprint ensures idempotency',
+                    'Schema fingerprinting: detect drift between imports',
+                    'Evidence links: click any number → see source rows',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/60">
+                      <ApprovalStampIcon className="w-5 h-5 text-violet-400 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-xs text-white/40">
+                    <span className="font-semibold text-white/60">Under the hood:</span> UNIQUE(dataset_id, canonical_id) at DB level. Re-imports don't duplicate. Health reports per Dataset.
+                  </p>
+                </div>
+              </div>
+              <div className="pb-16">
+                {/* Lineage Visual */}
+                <div className="bg-[#0D0D12] rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                  <div className="bg-white/5 border-b border-white/10 px-4 py-2.5 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-lg bg-violet-500/20 border border-violet-500/30 flex items-center justify-center">
+                        <AuditLogIcon className="w-4 h-4 text-violet-400" />
+                      </div>
+                      <span className="text-xs font-semibold text-white">Data Lineage</span>
+                    </div>
+                    <span className="text-[10px] font-mono text-white/40">3 SyncRuns today</span>
+                  </div>
+                  <div className="p-4 space-y-3">
+                    {[
+                      { type: 'Bank Statement', source: 'Main Operating EUR', rows: 247, status: 'healthy' },
+                      { type: 'AR Invoices', source: 'NetSuite Export', rows: 1420, status: 'healthy' },
+                      { type: 'AP Bills', source: 'SAP Excel Upload', rows: 892, status: 'drift' },
+                    ].map((item, i) => (
+                      <div key={i} className="flex items-center justify-between py-2.5 px-3 bg-white/5 rounded-lg">
+                        <div>
+                          <div className="text-xs font-medium text-white">{item.type}</div>
+                          <div className="text-[10px] text-white/40">{item.source}</div>
+                        </div>
+                        <div className="text-right">
+                          <div className="text-xs font-mono text-white/60">{item.rows} rows</div>
+                          <div className={`text-[9px] ${item.status === 'healthy' ? 'text-emerald-400' : 'text-amber-400'}`}>
+                            {item.status === 'healthy' ? '✓ Healthy' : '⚠ Schema Drift'}
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* ═══════════════════════════════════════════════════════════════════ */}
+            {/* MEET EXTERNAL CERTIFICATION */}
+            {/* ═══════════════════════════════════════════════════════════════════ */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative group">
+              {/* Subtle gradient background */}
+              <div className="absolute -inset-8 bg-gradient-to-br from-sky-500/5 via-transparent to-blue-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-all duration-700 -z-10" />
+              
+              <div className="order-2 lg:order-1 transform group-hover:scale-[1.02] transition-transform duration-500 pb-16">
+                {/* Certification Visual */}
+                <div className="bg-[#0D0D12] rounded-2xl border border-white/10 shadow-2xl overflow-hidden">
+                  <div className="bg-white/5 border-b border-white/10 px-4 py-2.5 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-lg bg-sky-500/20 border border-sky-500/30 flex items-center justify-center">
+                        <MatchIcon className="w-4 h-4 text-sky-400" />
+                      </div>
+                      <span className="text-xs font-semibold text-white">External vs Gitto</span>
+                    </div>
+                    <span className="text-[10px] font-mono text-emerald-400">CERTIFIED ✓</span>
+                  </div>
+                  <div className="p-4">
+                    <div className="grid grid-cols-2 gap-4 mb-4">
+                      <div className="text-center p-3 bg-white/5 rounded-lg">
+                        <div className="text-[10px] text-white/40 mb-1">External TMS</div>
+                        <div className="text-lg font-bold text-white">€2,586,700</div>
+                      </div>
+                      <div className="text-center p-3 bg-white/5 rounded-lg">
+                        <div className="text-[10px] text-white/40 mb-1">Gitto Bank-Truth</div>
+                        <div className="text-lg font-bold text-emerald-400">€2,586,700</div>
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <div className="flex justify-between text-xs py-1.5 border-b border-white/5">
+                        <span className="text-white/40">Difference</span>
+                        <span className="text-emerald-400 font-semibold">€0</span>
+                      </div>
+                      <div className="flex justify-between text-xs py-1.5">
+                        <span className="text-white/40">Attributed discrepancies</span>
+                        <span className="text-white/60">0 items</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="order-1 lg:order-2 space-y-6">
+                <div>
+                  <span className="inline-block px-3 py-1 bg-sky-500/10 border border-sky-500/20 rounded-full text-[11px] font-semibold text-sky-400 uppercase tracking-wide mb-4 group-hover:bg-sky-500/20 transition-colors duration-300">
+                    Meet External Certification
+                  </span>
+                  <h3 className="text-2xl font-bold text-white leading-tight">
+                    Compare TMS to bank-truth.<br />
+                    <span className="text-white/40">Attribute every discrepancy.</span>
+                  </h3>
+                </div>
+                <ul className="space-y-3">
+                  {[
+                    'Import external TMS cash positions as CSV extract',
+                    'Compare totals: External vs Gitto for same as-of period',
+                    'Attribution: unmatched txns, FX policy, stale data, mapping gaps',
+                    'Evidence links for every discrepancy—exportable report',
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-3 text-white/60">
+                      <ApprovalStampIcon className="w-5 h-5 text-sky-400 mt-0.5 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-white/10">
+                  <p className="text-xs text-white/40">
+                    <span className="font-semibold text-white/60">Under the hood:</span> CertificationReport with 7 discrepancy categories. Reports attachable to snapshot. Full audit trail.
+                  </p>
+                </div>
+              </div>
+            </div>
             
                </div>
             </div>
