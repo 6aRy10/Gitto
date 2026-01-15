@@ -84,6 +84,10 @@ app.include_router(collaboration_router)
 from lineage_api import router as lineage_router
 app.include_router(lineage_router)
 
+# Register upload API router (Connector SDK uploads)
+from upload_api import router as upload_router
+app.include_router(upload_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
