@@ -1087,7 +1087,7 @@ export default function Landing() {
             <div className="space-y-8">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 animate-text-reveal reveal-delay-1">
                 <div className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-xs font-medium text-emerald-400 tracking-wide">For finance teams that run weekly cash meetings</span>
+                <span className="text-xs font-medium text-emerald-400 tracking-wide">Gitto is FP&A planning that is continuously certified by bank truth.</span>
               </div>
 
               {/* Solcoa-style headline - Manrope, gradient fade, tight tracking */}
