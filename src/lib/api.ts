@@ -1,6 +1,13 @@
 import axios from 'axios';
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL || '/api';
+const envApiBase = process.env.NEXT_PUBLIC_API_URL;
+const isProd = process.env.NODE_ENV === 'production';
+
+if (isProd && !envApiBase) {
+  throw new Error('NEXT_PUBLIC_API_URL must be set in production to reach the backend API');
+}
+
+const API_BASE_URL = envApiBase || '/api';
 
 export const api = axios.create({
   baseURL: API_BASE_URL,

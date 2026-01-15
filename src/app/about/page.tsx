@@ -618,7 +618,7 @@ export default function About() {
             </div>
           </div>
           <div className="pt-8 border-t border-white/10 flex items-center justify-between text-xs text-white/30">
-            <span>© 2025 Gitto Intelligence Inc.</span>
+            <span>© {new Date().getFullYear()} Gitto Intelligence Inc.</span>
             <span>info@gitto.ai</span>
           </div>
         </div>
