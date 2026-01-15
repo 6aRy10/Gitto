@@ -82,9 +82,9 @@ def init_db():
     import trust_report_models
     trust_report_models.Base.metadata.create_all(bind=engine)
     
-    # Initialize external certification models (separate Base)
+    # External certification models use models.Base, so they're created with models above
+    # Just import to ensure they're registered
     import external_certification_models
-    external_certification_models.Base.metadata.create_all(bind=engine)
     
     # Create database constraints for immutable snapshots
     from db_constraints import create_snapshot_immutability_constraints

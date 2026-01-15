@@ -2,9 +2,11 @@ import axios from 'axios';
 
 const envApiBase = process.env.NEXT_PUBLIC_API_URL;
 const isProd = process.env.NODE_ENV === 'production';
+const isBrowser = typeof window !== 'undefined';
 
-if (isProd && !envApiBase) {
-  throw new Error('NEXT_PUBLIC_API_URL must be set in production to reach the backend API');
+// Only warn in browser at runtime, not during build
+if (isBrowser && isProd && !envApiBase) {
+  console.error('[Gitto] NEXT_PUBLIC_API_URL is not set. API calls will fail.');
 }
 
 const API_BASE_URL = envApiBase || '/api';

@@ -244,11 +244,9 @@ export default function ThirteenWeekWorkspace({ snapshotId }: { snapshotId: numb
       <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4">
         {snapshotMeta && (
           <AsOfStamp 
-            asOf={snapshotMeta.metadata?.as_of}
-            snapshotId={snapshotMeta.id}
-            snapshotName={snapshotMeta.name}
-            statementPeriod={snapshotMeta.metadata?.statement_period}
-            lastSync={snapshotMeta.metadata?.last_sync}
+            timestamp={snapshotMeta.metadata?.as_of || snapshotMeta.created_at || new Date().toISOString()}
+            label={`Snapshot: ${snapshotMeta.name}`}
+            source="bank"
           />
         )}
         <TruthBadgeLegend />

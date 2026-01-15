@@ -5,7 +5,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { Button } from "./ui/button";
 import { 
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
-  LineChart, Line
+  LineChart, Line, AreaChart, Area
 } from 'recharts';
 import { Download, FileText, Printer, Share2, Mail, ExternalLink, ShieldCheck } from "lucide-react";
 

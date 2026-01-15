@@ -9,11 +9,11 @@ from sqlalchemy import (
     Enum as SQLEnum, JSON, Boolean, CheckConstraint
 )
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from datetime import datetime
 import enum
 
-Base = declarative_base()
+# Import Base from models to share the same metadata
+from models import Base
 
 
 class DiscrepancyCategory(enum.Enum):
