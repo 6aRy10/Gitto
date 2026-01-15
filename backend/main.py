@@ -88,6 +88,10 @@ app.include_router(lineage_router)
 from upload_api import router as upload_router
 app.include_router(upload_router)
 
+# Register health report API router (Data Health Reports)
+from health_report_api import router as health_report_router
+app.include_router(health_report_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
