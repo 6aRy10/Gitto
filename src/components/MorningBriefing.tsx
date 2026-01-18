@@ -75,8 +75,8 @@ export function MorningBriefing() {
     try {
       setLoading(true);
       setError(null);
-      const data = await api.get('/fpa-analyst/morning-briefing?entity_id=1');
-      setBriefing(data);
+      const response = await api.get('/fpa-analyst/morning-briefing?entity_id=1');
+      setBriefing(response.data);
     } catch (err) {
       console.error('Failed to load briefing:', err);
       setError('Failed to load morning briefing');
@@ -89,13 +89,13 @@ export function MorningBriefing() {
     try {
       setGenerating(true);
       setError(null);
-      const data = await api.post('/fpa-analyst/workflows/morning_briefing/run?entity_id=1', {
+      const response = await api.post('/fpa-analyst/workflows/morning_briefing/run?entity_id=1', {
         triggered_by: 'manual',
         user_id: 'dashboard',
         params: {},
       });
-      if (data.result) {
-        setBriefing(data.result);
+      if (response.data?.result) {
+        setBriefing(response.data.result);
       } else {
         await loadBriefing();
       }

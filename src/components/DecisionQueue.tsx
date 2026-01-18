@@ -54,7 +54,7 @@ export function DecisionQueue({ onDecisionAction }: DecisionQueueProps) {
     try {
       setLoading(true);
       const response = await api.get('/fpa-analyst/decisions?entity_id=1&limit=50');
-      setDecisions(response.decisions || []);
+      setDecisions(response.data?.decisions || []);
     } catch (err) {
       console.error('Failed to load decisions:', err);
     } finally {

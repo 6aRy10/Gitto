@@ -65,8 +65,8 @@ export function AIAnalystDashboard() {
         api.get('/fpa-analyst/status?entity_id=1'),
         api.get('/fpa-analyst/insights?limit=10'),
       ]);
-      setStatus(statusRes);
-      setInsights(insightsRes.insights || []);
+      setStatus(statusRes.data);
+      setInsights(insightsRes.data?.insights || []);
     } catch (err) {
       console.error('Failed to load analyst data:', err);
       setError('Failed to load AI Analyst data. The service may not be running.');

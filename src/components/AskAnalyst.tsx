@@ -58,11 +58,11 @@ export function AskAnalyst() {
       const assistantMessage: Message = {
         id: `assistant-${Date.now()}`,
         role: 'assistant',
-        content: response.answer || 'No response generated.',
+        content: response.data?.answer || 'No response generated.',
         timestamp: new Date(),
-        confidence: response.confidence,
-        sources: response.sources,
-        follow_ups: response.follow_up_questions,
+        confidence: response.data?.confidence,
+        sources: response.data?.sources,
+        follow_ups: response.data?.follow_up_questions,
       };
 
       setMessages(prev => [...prev, assistantMessage]);
