@@ -120,6 +120,14 @@ app.include_router(board_pack_router)
 from agents.agent_api import router as agent_router
 app.include_router(agent_router)
 
+# FP&A Planning System API
+from fpa_api import router as fpa_router
+app.include_router(fpa_router)
+
+# FP&A Workflow API
+from fpa_workflow_api import router as fpa_workflow_router
+app.include_router(fpa_workflow_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
