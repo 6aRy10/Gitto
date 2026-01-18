@@ -116,6 +116,10 @@ app.include_router(startup_planning_router)
 from board_pack_api import router as board_pack_router
 app.include_router(board_pack_router)
 
+# AI FP&A Analyst API
+from agents.agent_api import router as agent_router
+app.include_router(agent_router)
+
 # Health check endpoint
 @app.get("/health")
 def health_check():
